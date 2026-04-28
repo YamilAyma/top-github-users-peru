@@ -1,20 +1,20 @@
-name: Top GitHub Users
+name: Peru GitHub Rankings
 on:
   schedule:
-    - cron: '* */24 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 jobs:
   release:
     name: GitHub Active Users
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.CUSTOM_TOKEN }}
-      - uses: actions/setup-node@v2.1.5
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14.17.0
+          node-version: 20
       - uses: gayanvoice/top-github-users-action@master
         env:
           CUSTOM_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
