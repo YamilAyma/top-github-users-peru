@@ -1,25 +1,211 @@
-# Top GitHub Users - Peru 🇵🇪 [<img alt="Image of insights" src="https://github.com/gayanvoice/insights/blob/master/graph/373383893/small/week.png" height="24">](https://github.com/gayanvoice/insights/blob/master/readme/373383893/week.md)
-[![Peru GitHub Rankings](https://github.com/YamilAyma/top-github-users-peru/actions/workflows/action.yml/badge.svg)](https://github.com/YamilAyma/top-github-users-peru/actions/workflows/action.yml)
+# Top GitHub Users By Country [<img alt="Image of insights" src="https://github.com/gayanvoice/insights/blob/master/graph/373383893/small/week.png" height="24">](https://github.com/gayanvoice/insights/blob/master/readme/373383893/week.md)
+[![Top GitHub Users](https://github.com/gayanvoice/top-github-users/actions/workflows/action.yml/badge.svg)](https://github.com/gayanvoice/top-github-users/actions/workflows/action.yml) [![Image of insights](https://github.com/gayanvoice/insights/blob/master/svg/373383893/badge.svg)](https://github.com/gayanvoice/insights/blob/master/readme/373383893/week.md)
 
-Lista de los usuarios de GitHub más activos en **Perú** basada en `contribuciones públicas`, `contribuciones totales` y `seguidores`. Esta lista se actualiza automáticamente todos los días a la medianoche UTC.
+<a href="https://gayanvoice.github.io/top-github-users/index.html">
+	<img align="right" width="400" src="https://github.com/gayanvoice/top-github-users-monitor/raw/master/public/images/banner/top-github-users-map.png" alt="top-github-users-by-country">
+</a>
 
-> [!TIP]
-> Esta es una versión optimizada y enfocada exclusivamente en el ecosistema tech peruano, basada en el proyecto original [gayanvoice/top-github-users](https://github.com/gayanvoice/top-github-users).
+List of most active GitHub users based on `public contributions` `private contributions` and `number of followers`  by country or state. The list updated `2026/4/29 12:03 AM UTC`.
 
-## 🏆 Rankings
+This repository contains users `1 countries` and `34 cities`. 
+To get into the list you need to have minimum number of followers that varies in each country. The list can be found in [config.json](https://github.com/YamilAyma/top-github-users-peru/blob/main/config.json).
 
-| Categoría | Link |
-| :--- | :--- |
-| **Contribuciones Públicas** | [Ver Ranking](./markdown/public_contributions/peru.md) |
-| **Contribuciones Totales** | [Ver Ranking](./markdown/total_contributions/peru.md) |
-| **Seguidores** | [Ver Ranking](./markdown/followers/peru.md) |
+Contribute to GitHub action [gayanvoice/top-github-users-action](https://github.com/gayanvoice/top-github-users-action). The project maintained by [gayanvoice](https://github.com/gayanvoice). Don't forget to follow him on [GitHub](https://github.com/gayanvoice), [Twitter](https://twitter.com/gayanvoice), and [Medium](https://gayanvoice.medium.com/).
 
-## 🏙️ Cobertura Nacional
-Monitoreamos usuarios en todas las regiones del país, incluyendo las 24 capitales departamentales:
-`Lima`, `Arequipa`, `Trujillo`, `Chiclayo`, `Piura`, `Huancayo`, `Cusco`, `Iquitos`, `Pucallpa`, `Chimbote`, `Tacna`, `Juliaca`, `Ica`, `Cajamarca`, `Sullana`, `Ayacucho`, `Tarapoto`, `Puno`, `Huacho`, `Pisco`, `Chachapoyas`, `Huaraz`, `Abancay`, `Callao`, `Huancavelica`, `Huánuco`, `Puerto Maldonado`, `Moquegua`, `Cerro de Pasco`, `Moyobamba`, `Tumbes`, `Talara`, `Chincha`, `Huaral`.
+<table>
+	<tr>
+		<td>
+			Don't forget to star ⭐ this repository
+		</td>
+	</tr>
+</table>
 
-## ⚙️ ¿Cómo aparecer en la lista?
-Para ser incluido, asegúrate de que el campo **Location** en tu perfil de GitHub contenga "Peru" o alguna de las ciudades mencionadas arriba.
+### 🚀 Share on
 
----
-Mantenido por [Yamil Ayma](https://github.com/YamilAyma). Si te gusta este proyecto, ¡no olvides darle una ⭐!
+<table>
+	<tr>
+		<td>
+			<a href="https://web.facebook.com/sharer.php?t=Top%20GitHub%20Users%20By%20Country&u=https://github.com/YamilAyma/top-github-users-peru&_rdc=1&_rdr">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/raw/master/public/images/icons/facebook.svg" height="48" width="48" alt="Facebook"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.facebook.com/dialog/send?link=https://github.com/YamilAyma/top-github-users-peru&app_id=291494419107518&redirect_uri=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/raw/master/public/images/icons/facebook_messenger.svg" height="48" width="48" alt="Facebook Messenger"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://twitter.com/intent/tweet?text=Top%20GitHub%20Users%20By%20Country&url=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/raw/master/public/images/icons/twitter.svg" height="48" width="48" alt="Twitter"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://web.whatsapp.com/send?text=Top%20GitHub%20Users%20By%20Country https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/whatsapp.svg" height="48" width="48" alt="WhatsApp"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://t.me/share/url?url=https://github.com/YamilAyma/top-github-users-peru&text=Top%20GitHub%20Users%20By%20Country">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/telegram.svg" height="48" width="48" alt="Telegram"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.linkedin.com/shareArticle?title=Top%20GitHub%20Users%20By%20Country&url=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/linkedin.svg" height="48" width="48" alt="LinkedIn"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://vk.com/share.php?url=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/vkontakte.svg" height="48" width="48" alt="Vkontakte"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.blogger.com/blog-this.g?n=List%20of%20most%20active%20github%20users%20based%20on%20public%20contributions,%20total%20contributions,%20and%20number%20of%20followers%20by%20country&t=Top%20GitHub%20Users%20By%20Country&u=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/blogger.svg" height="48" width="48" alt="Blogger"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://wordpress.com/wp-admin/press-this.php?u=https://github.com/YamilAyma/top-github-users-peru&t=Top%20GitHub%20Users%20By%20Country&s=List%20of%20most%20active%20github%20users%20based%20on%20public%20contributions,%20total%20contributions,%20and%20number%20of%20followers%20by%20country&i=">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/wordpress.svg" height="48" width="48" alt="Wordpress"/>
+			</a>
+		</td>
+		<td>
+			<a href="mailto:recipient name?cc=cc&bcc=bcc&subject=Top%20GitHub%20Users%20By%20Country&body=List%20of%20most%20active%20github%20users%20based%20on%20public%20contributions,%20total%20contributions,%20and%20number%20of%20followers%20by%20country-https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/gmail.svg" height="48" width="48" alt="Email"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.reddit.com/submit?title=Top%20GitHub%20Users%20By%20Country&url=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/reddit.svg" height="48" width="48" alt="Reddit"/>
+			</a>
+		</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<th>
+			Country/State
+		</th>
+		<th>
+			Cities
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://github.com/YamilAyma/top-github-users-peru/blob/main/markdown/public_contributions/peru.md">
+				Peru
+			</a>
+		</td>
+		<td>
+			<code>Lima</code> 
+			<code>Arequipa</code> 
+			<code>Trujillo</code> 
+			<code>Chiclayo</code> 
+			<code>Piura</code> 
+			<code>Huancayo</code> 
+			<code>Cusco</code> 
+			<code>Iquitos</code> 
+			<code>Pucallpa</code> 
+			<code>Chimbote</code> 
+			<code>Tacna</code> 
+			<code>Juliaca</code> 
+			<code>Ica</code> 
+			<code>Cajamarca</code> 
+			<code>Sullana</code> 
+			<code>Ayacucho</code> 
+			<code>Tarapoto</code> 
+			<code>Puno</code> 
+			<code>Huacho</code> 
+			<code>Pisco</code> 
+			<code>Chachapoyas</code> 
+			<code>Huaraz</code> 
+			<code>Abancay</code> 
+			<code>Callao</code> 
+			<code>Huancavelica</code> 
+			<code>Huanuco</code> 
+			<code>Puerto-maldonado</code> 
+			<code>Moquegua</code> 
+			<code>Cerro-de-pasco</code> 
+			<code>Moyobamba</code> 
+			<code>Tumbes</code> 
+			<code>Talara</code> 
+			<code>Chincha</code> 
+			<code>Huaral</code> 
+		</td>
+	</tr>
+</table>
+
+### 🚀 Share on
+
+<table>
+	<tr>
+		<td>
+			<a href="https://web.facebook.com/sharer.php?t=Top%20GitHub%20Users%20By%20Country&u=https://github.com/YamilAyma/top-github-users-peru&_rdc=1&_rdr">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/raw/master/public/images/icons/facebook.svg" height="48" width="48" alt="Facebook"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.facebook.com/dialog/send?link=https://github.com/YamilAyma/top-github-users-peru&app_id=291494419107518&redirect_uri=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/raw/master/public/images/icons/facebook_messenger.svg" height="48" width="48" alt="Facebook Messenger"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://twitter.com/intent/tweet?text=Top%20GitHub%20Users%20By%20Country&url=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/raw/master/public/images/icons/twitter.svg" height="48" width="48" alt="Twitter"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://web.whatsapp.com/send?text=Top%20GitHub%20Users%20By%20Country https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/whatsapp.svg" height="48" width="48" alt="WhatsApp"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://t.me/share/url?url=https://github.com/YamilAyma/top-github-users-peru&text=Top%20GitHub%20Users%20By%20Country">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/telegram.svg" height="48" width="48" alt="Telegram"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.linkedin.com/shareArticle?title=Top%20GitHub%20Users%20By%20Country&url=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/linkedin.svg" height="48" width="48" alt="LinkedIn"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://vk.com/share.php?url=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/vkontakte.svg" height="48" width="48" alt="Vkontakte"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.blogger.com/blog-this.g?n=List%20of%20most%20active%20github%20users%20based%20on%20public%20contributions,%20total%20contributions,%20and%20number%20of%20followers%20by%20country&t=Top%20GitHub%20Users%20By%20Country&u=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/blogger.svg" height="48" width="48" alt="Blogger"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://wordpress.com/wp-admin/press-this.php?u=https://github.com/YamilAyma/top-github-users-peru&t=Top%20GitHub%20Users%20By%20Country&s=List%20of%20most%20active%20github%20users%20based%20on%20public%20contributions,%20total%20contributions,%20and%20number%20of%20followers%20by%20country&i=">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/wordpress.svg" height="48" width="48" alt="Wordpress"/>
+			</a>
+		</td>
+		<td>
+			<a href="mailto:recipient name?cc=cc&bcc=bcc&subject=Top%20GitHub%20Users%20By%20Country&body=List%20of%20most%20active%20github%20users%20based%20on%20public%20contributions,%20total%20contributions,%20and%20number%20of%20followers%20by%20country-https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/gmail.svg" height="48" width="48" alt="Email"/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.reddit.com/submit?title=Top%20GitHub%20Users%20By%20Country&url=https://github.com/YamilAyma/top-github-users-peru">
+				<img src="https://github.com/gayanvoice/github-active-users-monitor/blob/master/public/images/icons/reddit.svg" height="48" width="48" alt="Reddit"/>
+			</a>
+		</td>
+	</tr>
+</table>
+
+## 📦 Third party
+
+- [@octokit/graphql](https://www.npmjs.com/package/@octokit/graphql) - Send GraphQL requests to GitHub API.
+- [fs-extra](https://www.npmjs.com/package/fs-extra) - Creating directories and files.
+- [simple-git](https://www.npmjs.com/package/simple-git) - Handling Git commands.
+## 📄 License
+
+- GitHub Action - [YamilAyma/top-github-users-peru-action](https://github.com/YamilAyma/top-github-users-peru-action)
+- Repository - [YamilAyma/top-github-users-peru](https://github.com/YamilAyma/top-github-users-peru)
+- Data in the `./cache` directory - [Open Database License](https://opendatacommons.org/licenses/odbl/1-0/)
+- Code - [MIT](./LICENSE) © [Gayan Kuruppu](https://github.com/gayanvoice)
