@@ -5,7 +5,7 @@
 	<img align="right" width="200" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg" alt="Peru">
 </a>
 
-The `number of followers` of users in Peru on `2026/5/25 2:39 AM UTC`. This list contains users from `Peru` and cities `Lima` `Arequipa` `Trujillo` `Chiclayo` `Piura` `Huancayo` `Cusco` `Iquitos` `Pucallpa` `Chimbote` `Tacna` `Juliaca` `Ica` `Cajamarca` `Sullana` `Ayacucho` `Tarapoto` `Puno` `Huacho` `Pisco` `Chachapoyas` `Huaraz` `Abancay` `Callao` `Huancavelica` `Huanuco` `Puerto-maldonado` `Moquegua` `Cerro-de-pasco` `Moyobamba` `Tumbes` `Talara` `Chincha` `Huaral`.
+The `number of followers` of users in Peru on `2026/5/26 2:18 AM UTC`. This list contains users from `Peru` and cities `Lima` `Arequipa` `Trujillo` `Chiclayo` `Piura` `Huancayo` `Cusco` `Iquitos` `Pucallpa` `Chimbote` `Tacna` `Juliaca` `Ica` `Cajamarca` `Sullana` `Ayacucho` `Tarapoto` `Puno` `Huacho` `Pisco` `Chachapoyas` `Huaraz` `Abancay` `Callao` `Huancavelica` `Huanuco` `Puerto-maldonado` `Moquegua` `Cerro-de-pasco` `Moyobamba` `Tumbes` `Talara` `Chincha` `Huaral`.
 
 There are `1 countries` and `34 cities` can be found [here](https://github.com/YamilAyma/top-github-users-peru).
 
@@ -154,7 +154,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Pulsar </td>
 		<td>No Twitter Username</td>
 		<td>Lima, Peru</td>
-		<td>1136</td>
+		<td>1137</td>
 	</tr>
 	<tr>
 		<td>5</td>
@@ -167,10 +167,23 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Edteam </td>
 		<td>No Twitter Username</td>
 		<td>Lima, Perú</td>
-		<td>1008</td>
+		<td>1009</td>
 	</tr>
 	<tr>
 		<td>6</td>
+		<td>
+			<a href="https://github.com/jaderytm">
+				<img src="https://avatars.githubusercontent.com/u/44056860?s=72&u=b80b540973047b06369b3a02d557a5c868dee854&v=4" width="24" alt="Avatar of jaderytm"> jaderytm
+			</a><br/>
+			Jade
+		</td>
+		<td>10pearls </td>
+		<td>No Twitter Username</td>
+		<td>Lima</td>
+		<td>850</td>
+	</tr>
+	<tr>
+		<td>7</td>
 		<td>
 			<a href="https://github.com/danielfuentes">
 				<img src="https://avatars.githubusercontent.com/u/4744927?s=72&u=5ab50a95dc1ffc1289007b7a1dd21767679a669b&v=4" width="24" alt="Avatar of danielfuentes"> danielfuentes
@@ -183,19 +196,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>839</td>
 	</tr>
 	<tr>
-		<td>7</td>
-		<td>
-			<a href="https://github.com/jaderytm">
-				<img src="https://avatars.githubusercontent.com/u/44056860?s=72&u=b80b540973047b06369b3a02d557a5c868dee854&v=4" width="24" alt="Avatar of jaderytm"> jaderytm
-			</a><br/>
-			Jade
-		</td>
-		<td>10pearls </td>
-		<td>No Twitter Username</td>
-		<td>Lima</td>
-		<td>816</td>
-	</tr>
-	<tr>
 		<td>8</td>
 		<td>
 			<a href="https://github.com/hexed-AAL1X">
@@ -206,7 +206,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td><a href="https://twitter.com/hexed_aal1x">hexed_aal1x</a></td>
 		<td>Perú/Lima</td>
-		<td>713</td>
+		<td>714</td>
 	</tr>
 	<tr>
 		<td>9</td>
@@ -388,7 +388,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@nonhuman-site </td>
 		<td><a href="https://twitter.com/jorgemunozla">jorgemunozla</a></td>
 		<td>Lima, Peru</td>
-		<td>395</td>
+		<td>392</td>
 	</tr>
 	<tr>
 		<td>23</td>
@@ -427,7 +427,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Huancayo, Peru</td>
-		<td>351</td>
+		<td>350</td>
 	</tr>
 	<tr>
 		<td>26</td>
@@ -531,7 +531,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@clerk </td>
 		<td><a href="https://twitter.com/raillyhugo">raillyhugo</a></td>
 		<td>Lima, Peru</td>
-		<td>311</td>
+		<td>312</td>
 	</tr>
 	<tr>
 		<td>34</td>
@@ -544,7 +544,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td><a href="https://twitter.com/MineiToshio">MineiToshio</a></td>
 		<td>Lima / Perú</td>
-		<td>311</td>
+		<td>310</td>
 	</tr>
 	<tr>
 		<td>35</td>
@@ -557,7 +557,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@boxting  </td>
 		<td><a href="https://twitter.com/enzoftware">enzoftware</a></td>
 		<td>Lima, Perú</td>
-		<td>307</td>
+		<td>306</td>
 	</tr>
 	<tr>
 		<td>36</td>
@@ -601,6 +601,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>39</td>
 		<td>
+			<a href="https://github.com/ivandevp">
+				<img src="https://avatars.githubusercontent.com/u/9284690?s=72&u=9db1849b3e8e9de28929cf1f43919bf64f265fa5&v=4" width="24" alt="Avatar of ivandevp"> ivandevp
+			</a><br/>
+			Ivan Medina
+		</td>
+		<td>Yalo </td>
+		<td><a href="https://twitter.com/ivandevp">ivandevp</a></td>
+		<td>Borned in Lima, Peru</td>
+		<td>264</td>
+	</tr>
+	<tr>
+		<td>40</td>
+		<td>
 			<a href="https://github.com/eyllanesc">
 				<img src="https://avatars.githubusercontent.com/u/4896200?s=72&u=28b65bc2ffb200b33477b3ebbd56243c0cc0be1d&v=4" width="24" alt="Avatar of eyllanesc"> eyllanesc
 			</a><br/>
@@ -610,19 +623,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td><a href="https://twitter.com/eyllanesc">eyllanesc</a></td>
 		<td>Lima-Perú</td>
 		<td>264</td>
-	</tr>
-	<tr>
-		<td>40</td>
-		<td>
-			<a href="https://github.com/ivandevp">
-				<img src="https://avatars.githubusercontent.com/u/9284690?s=72&u=9db1849b3e8e9de28929cf1f43919bf64f265fa5&v=4" width="24" alt="Avatar of ivandevp"> ivandevp
-			</a><br/>
-			Ivan Medina
-		</td>
-		<td>Yalo </td>
-		<td><a href="https://twitter.com/ivandevp">ivandevp</a></td>
-		<td>Borned in Lima, Peru</td>
-		<td>263</td>
 	</tr>
 	<tr>
 		<td>41</td>
@@ -648,7 +648,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@bobadilla-tech </td>
 		<td>No Twitter Username</td>
 		<td>Lima, Perú</td>
-		<td>260</td>
+		<td>261</td>
 	</tr>
 	<tr>
 		<td>43</td>
@@ -705,19 +705,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>47</td>
 		<td>
-			<a href="https://github.com/jhonatanseminario">
-				<img src="https://avatars.githubusercontent.com/u/146497717?s=72&u=ba28f29170ff1b6ba842ca685930b7ee25834246&v=4" width="24" alt="Avatar of jhonatanseminario"> jhonatanseminario
-			</a><br/>
-			Jhonatan Seminario
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Barranca, Lima</td>
-		<td>226</td>
-	</tr>
-	<tr>
-		<td>48</td>
-		<td>
 			<a href="https://github.com/PuercoPop">
 				<img src="https://avatars.githubusercontent.com/u/387111?s=72&u=b3f531e6ae652716a03990bad5f2a2337e5e83c7&v=4" width="24" alt="Avatar of PuercoPop"> PuercoPop
 			</a><br/>
@@ -729,7 +716,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>226</td>
 	</tr>
 	<tr>
-		<td>49</td>
+		<td>48</td>
 		<td>
 			<a href="https://github.com/ELECTROALL">
 				<img src="https://avatars.githubusercontent.com/u/40478271?s=72&u=eea3ca8b3a5a8ede81a20b9dd2b4a5b6212c99c7&v=4" width="24" alt="Avatar of ELECTROALL"> ELECTROALL
@@ -740,6 +727,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Twitter Username</td>
 		<td>Arequipa - Perú</td>
 		<td>225</td>
+	</tr>
+	<tr>
+		<td>49</td>
+		<td>
+			<a href="https://github.com/jhonatanseminario">
+				<img src="https://avatars.githubusercontent.com/u/146497717?s=72&u=ba28f29170ff1b6ba842ca685930b7ee25834246&v=4" width="24" alt="Avatar of jhonatanseminario"> jhonatanseminario
+			</a><br/>
+			Jhonatan Seminario
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Barranca, Lima</td>
+		<td>224</td>
 	</tr>
 	<tr>
 		<td>50</td>
@@ -778,23 +778,10 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Peru</td>
-		<td>210</td>
+		<td>211</td>
 	</tr>
 	<tr>
 		<td>53</td>
-		<td>
-			<a href="https://github.com/PieroCastillo">
-				<img src="https://avatars.githubusercontent.com/u/39932324?s=72&u=aff17d1731adfaba92a919c6a32317dc84385c54&v=4" width="24" alt="Avatar of PieroCastillo"> PieroCastillo
-			</a><br/>
-			Piero Castillo
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>201</td>
-	</tr>
-	<tr>
-		<td>54</td>
 		<td>
 			<a href="https://github.com/KattyaCuevas">
 				<img src="https://avatars.githubusercontent.com/u/4174791?s=72&u=1fc9974fb38d42553035bff4f2d596027cddb2d5&v=4" width="24" alt="Avatar of KattyaCuevas"> KattyaCuevas
@@ -807,7 +794,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>201</td>
 	</tr>
 	<tr>
-		<td>55</td>
+		<td>54</td>
 		<td>
 			<a href="https://github.com/mateusfreira">
 				<img src="https://avatars.githubusercontent.com/u/234049?s=72&u=c85e61f23d48ba4fef5b25952d1a7be5c7bd2b9b&v=4" width="24" alt="Avatar of mateusfreira"> mateusfreira
@@ -817,6 +804,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@vidadiagnostics  </td>
 		<td><a href="https://twitter.com/mateusfreira">mateusfreira</a></td>
 		<td>Nova Lima, MG, brazil</td>
+		<td>199</td>
+	</tr>
+	<tr>
+		<td>55</td>
+		<td>
+			<a href="https://github.com/PieroCastillo">
+				<img src="https://avatars.githubusercontent.com/u/39932324?s=72&u=aff17d1731adfaba92a919c6a32317dc84385c54&v=4" width="24" alt="Avatar of PieroCastillo"> PieroCastillo
+			</a><br/>
+			Piero Castillo
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
 		<td>199</td>
 	</tr>
 	<tr>
@@ -861,19 +861,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>59</td>
 		<td>
-			<a href="https://github.com/Lamk-S">
-				<img src="https://avatars.githubusercontent.com/u/173479017?s=72&u=5c30c54b212b59999b823a95fe729b49ee1b93ef&v=4" width="24" alt="Avatar of Lamk-S"> Lamk-S
-			</a><br/>
-			Melvin López
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Trujillo/La Libertad</td>
-		<td>179</td>
-	</tr>
-	<tr>
-		<td>60</td>
-		<td>
 			<a href="https://github.com/wajahat-ali-mir-dev">
 				<img src="https://avatars.githubusercontent.com/u/156110102?s=72&u=c407c0684339b08ac2d9c5bc14cd4bc8658c1ec6&v=4" width="24" alt="Avatar of wajahat-ali-mir-dev"> wajahat-ali-mir-dev
 			</a><br/>
@@ -882,7 +869,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Wajahat Ali Mir Solutions<br/><br/></td>
 		<td><a href="https://twitter.com/mrwajahatalimir">mrwajahatalimir</a></td>
 		<td>uk mx ksa drc cog togo cuba peru  pk mali oman usa rsa rok uae mk cod macau laos iraq qatar gabon kosovo haiti benin syria chile niger yemen ghana nepal sudan kenya japan china india egypt italy spain france russia ukraine germany norway sweden finland</td>
-		<td>177</td>
+		<td>178</td>
+	</tr>
+	<tr>
+		<td>60</td>
+		<td>
+			<a href="https://github.com/Lamk-S">
+				<img src="https://avatars.githubusercontent.com/u/173479017?s=72&u=5c30c54b212b59999b823a95fe729b49ee1b93ef&v=4" width="24" alt="Avatar of Lamk-S"> Lamk-S
+			</a><br/>
+			Melvin López
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Trujillo/La Libertad</td>
+		<td>178</td>
 	</tr>
 	<tr>
 		<td>61</td>
@@ -1043,19 +1043,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>73</td>
 		<td>
-			<a href="https://github.com/jesus-canales">
-				<img src="https://avatars.githubusercontent.com/u/177686251?s=72&u=bf6920081487fca21b727e2fd7d4430891c1e1fd&v=4" width="24" alt="Avatar of jesus-canales"> jesus-canales
-			</a><br/>
-			Jesús Canales
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>154</td>
-	</tr>
-	<tr>
-		<td>74</td>
-		<td>
 			<a href="https://github.com/jerson">
 				<img src="https://avatars.githubusercontent.com/u/325780?s=72&v=4" width="24" alt="Avatar of jerson"> jerson
 			</a><br/>
@@ -1065,6 +1052,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Twitter Username</td>
 		<td>Lima, Perú</td>
 		<td>154</td>
+	</tr>
+	<tr>
+		<td>74</td>
+		<td>
+			<a href="https://github.com/jesus-canales">
+				<img src="https://avatars.githubusercontent.com/u/177686251?s=72&u=bf6920081487fca21b727e2fd7d4430891c1e1fd&v=4" width="24" alt="Avatar of jesus-canales"> jesus-canales
+			</a><br/>
+			Jesús Canales
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
+		<td>153</td>
 	</tr>
 	<tr>
 		<td>75</td>
@@ -1155,7 +1155,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima, Peru</td>
-		<td>136</td>
+		<td>137</td>
 	</tr>
 	<tr>
 		<td>82</td>
@@ -1168,7 +1168,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@firstpointcompany </td>
 		<td>No Twitter Username</td>
 		<td>Peru</td>
-		<td>134</td>
+		<td>135</td>
 	</tr>
 	<tr>
 		<td>83</td>
@@ -1303,6 +1303,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>93</td>
 		<td>
+			<a href="https://github.com/aghersidev">
+				<img src="https://avatars.githubusercontent.com/u/150633334?s=72&u=f16781186cac62c1383c5671c7682a972cff9c6b&v=4" width="24" alt="Avatar of aghersidev"> aghersidev
+			</a><br/>
+			Andres Ghersi
+		</td>
+		<td>Inferialaboratories </td>
+		<td><a href="https://twitter.com/aeghersi">aeghersi</a></td>
+		<td>Lima, Peru</td>
+		<td>117</td>
+	</tr>
+	<tr>
+		<td>94</td>
+		<td>
 			<a href="https://github.com/jesulink2514">
 				<img src="https://avatars.githubusercontent.com/u/2278766?s=72&u=353ff80e2ed9f8ca42ab6c5d65b929108834712f&v=4" width="24" alt="Avatar of jesulink2514"> jesulink2514
 			</a><br/>
@@ -1314,7 +1327,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>116</td>
 	</tr>
 	<tr>
-		<td>94</td>
+		<td>95</td>
 		<td>
 			<a href="https://github.com/JaimeTR">
 				<img src="https://avatars.githubusercontent.com/u/38092883?s=72&u=4ec0cb936ee9461c320202d4bdc45dcba54e2591&v=4" width="24" alt="Avatar of JaimeTR"> JaimeTR
@@ -1325,19 +1338,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Twitter Username</td>
 		<td>Lima - Perú</td>
 		<td>115</td>
-	</tr>
-	<tr>
-		<td>95</td>
-		<td>
-			<a href="https://github.com/aghersidev">
-				<img src="https://avatars.githubusercontent.com/u/150633334?s=72&u=f16781186cac62c1383c5671c7682a972cff9c6b&v=4" width="24" alt="Avatar of aghersidev"> aghersidev
-			</a><br/>
-			Andres Ghersi
-		</td>
-		<td>Inferialaboratories </td>
-		<td><a href="https://twitter.com/aeghersi">aeghersi</a></td>
-		<td>Lima, Peru</td>
-		<td>114</td>
 	</tr>
 	<tr>
 		<td>96</td>
@@ -1381,6 +1381,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>99</td>
 		<td>
+			<a href="https://github.com/geraldmoreno993">
+				<img src="https://avatars.githubusercontent.com/u/171409258?s=72&u=c9522d5e146e83c811b01aee3cac18503137e430&v=4" width="24" alt="Avatar of geraldmoreno993"> geraldmoreno993
+			</a><br/>
+			Gerald Moreno Morales
+		</td>
+		<td>Universidad Nacional Mayor De<br/>San<br/>Marcos<br/></td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>112</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>
 			<a href="https://github.com/diegomc365">
 				<img src="https://avatars.githubusercontent.com/u/31108731?s=72&u=b4b23fbf8e84f5d51f3c71e3f95d22c73a609042&v=4" width="24" alt="Avatar of diegomc365"> diegomc365
 			</a><br/>
@@ -1390,19 +1403,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td><a href="https://twitter.com/diegomc365">diegomc365</a></td>
 		<td>Lima-Perú</td>
 		<td>112</td>
-	</tr>
-	<tr>
-		<td>100</td>
-		<td>
-			<a href="https://github.com/geraldmoreno993">
-				<img src="https://avatars.githubusercontent.com/u/171409258?s=72&u=c9522d5e146e83c811b01aee3cac18503137e430&v=4" width="24" alt="Avatar of geraldmoreno993"> geraldmoreno993
-			</a><br/>
-			Gerald Moreno Morales
-		</td>
-		<td>Universidad Nacional Mayor De<br/>San<br/>Marcos<br/></td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>111</td>
 	</tr>
 	<tr>
 		<td>101</td>
@@ -1415,7 +1415,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Personal </td>
 		<td>No Twitter Username</td>
 		<td>Peru</td>
-		<td>110</td>
+		<td>111</td>
 	</tr>
 	<tr>
 		<td>102</td>
@@ -1550,19 +1550,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>112</td>
 		<td>
-			<a href="https://github.com/cuevaio">
-				<img src="https://avatars.githubusercontent.com/u/83598208?s=72&u=d1f8b189cbc525c4b39026275dd4c894e62eba97&v=4" width="24" alt="Avatar of cuevaio"> cuevaio
-			</a><br/>
-			anthony
-		</td>
-		<td>Humanity </td>
-		<td><a href="https://twitter.com/cuevaio">cuevaio</a></td>
-		<td>Lima</td>
-		<td>102</td>
-	</tr>
-	<tr>
-		<td>113</td>
-		<td>
 			<a href="https://github.com/DeluxeAlonso">
 				<img src="https://avatars.githubusercontent.com/u/9066633?s=72&u=11804adc1bab46f1cc70455c7151a568f79ea48f&v=4" width="24" alt="Avatar of DeluxeAlonso"> DeluxeAlonso
 			</a><br/>
@@ -1574,7 +1561,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>102</td>
 	</tr>
 	<tr>
-		<td>114</td>
+		<td>113</td>
 		<td>
 			<a href="https://github.com/hydrocodes">
 				<img src="https://avatars.githubusercontent.com/u/60294726?s=72&u=3fc438b4c2c47f7add2014f6e90bcfb557637f1c&v=4" width="24" alt="Avatar of hydrocodes"> hydrocodes
@@ -1587,7 +1574,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>102</td>
 	</tr>
 	<tr>
-		<td>115</td>
+		<td>114</td>
 		<td>
 			<a href="https://github.com/romelgomez">
 				<img src="https://avatars.githubusercontent.com/u/2358251?s=72&u=6ed8c21b2d4ce30863fe0e530764ebaea84b904c&v=4" width="24" alt="Avatar of romelgomez"> romelgomez
@@ -1597,6 +1584,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Peru</td>
+		<td>101</td>
+	</tr>
+	<tr>
+		<td>115</td>
+		<td>
+			<a href="https://github.com/cuevaio">
+				<img src="https://avatars.githubusercontent.com/u/83598208?s=72&u=d1f8b189cbc525c4b39026275dd4c894e62eba97&v=4" width="24" alt="Avatar of cuevaio"> cuevaio
+			</a><br/>
+			anthony
+		</td>
+		<td>Humanity </td>
+		<td><a href="https://twitter.com/cuevaio">cuevaio</a></td>
+		<td>Lima</td>
 		<td>101</td>
 	</tr>
 	<tr>
@@ -1693,19 +1693,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>123</td>
 		<td>
-			<a href="https://github.com/cjosue15">
-				<img src="https://avatars.githubusercontent.com/u/51803643?s=72&u=309b3a8347878b6bc73691900101030a6db3f2ae&v=4" width="24" alt="Avatar of cjosue15"> cjosue15
-			</a><br/>
-			Carlos Morales
-		</td>
-		<td>No Company</td>
-		<td><a href="https://twitter.com/CarlosJosueDev">CarlosJosueDev</a></td>
-		<td>Perú, Lima</td>
-		<td>93</td>
-	</tr>
-	<tr>
-		<td>124</td>
-		<td>
 			<a href="https://github.com/jhony-v">
 				<img src="https://avatars.githubusercontent.com/u/55319455?s=72&u=b2a7f0ed85530df8cf39cfbb1f2190de6be79ac2&v=4" width="24" alt="Avatar of jhony-v"> jhony-v
 			</a><br/>
@@ -1717,7 +1704,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>93</td>
 	</tr>
 	<tr>
-		<td>125</td>
+		<td>124</td>
 		<td>
 			<a href="https://github.com/storres20">
 				<img src="https://avatars.githubusercontent.com/u/81504385?s=72&u=0cab869b8d477154509f494f3af83258b8c0ed88&v=4" width="24" alt="Avatar of storres20"> storres20
@@ -1730,6 +1717,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>93</td>
 	</tr>
 	<tr>
+		<td>125</td>
+		<td>
+			<a href="https://github.com/cjosue15">
+				<img src="https://avatars.githubusercontent.com/u/51803643?s=72&u=309b3a8347878b6bc73691900101030a6db3f2ae&v=4" width="24" alt="Avatar of cjosue15"> cjosue15
+			</a><br/>
+			Carlos Morales
+		</td>
+		<td>No Company</td>
+		<td><a href="https://twitter.com/CarlosJosueDev">CarlosJosueDev</a></td>
+		<td>Perú, Lima</td>
+		<td>92</td>
+	</tr>
+	<tr>
 		<td>126</td>
 		<td>
 			<a href="https://github.com/gustavojoaquin">
@@ -1740,7 +1740,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Peru</td>
-		<td>93</td>
+		<td>92</td>
 	</tr>
 	<tr>
 		<td>127</td>
@@ -2000,10 +2000,23 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima Perú</td>
-		<td>83</td>
+		<td>84</td>
 	</tr>
 	<tr>
 		<td>147</td>
+		<td>
+			<a href="https://github.com/RogerNatividad">
+				<img src="https://avatars.githubusercontent.com/u/826512?s=72&u=14afd5e775a920aa63fb16e9c2277612282518ce&v=4" width="24" alt="Avatar of RogerNatividad"> RogerNatividad
+			</a><br/>
+			Roger Natividad
+		</td>
+		<td>No Company</td>
+		<td><a href="https://twitter.com/rogernatividad5">rogernatividad5</a></td>
+		<td>Lima, Peru</td>
+		<td>83</td>
+	</tr>
+	<tr>
+		<td>148</td>
 		<td>
 			<a href="https://github.com/AAL1X">
 				<img src="https://avatars.githubusercontent.com/u/126899198?s=72&u=29337bdf2b4c5dacfb03af069675957599209bfa&v=4" width="24" alt="Avatar of AAL1X"> AAL1X
@@ -2016,7 +2029,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>83</td>
 	</tr>
 	<tr>
-		<td>148</td>
+		<td>149</td>
 		<td>
 			<a href="https://github.com/sotopro">
 				<img src="https://avatars.githubusercontent.com/u/18444597?s=72&u=2690f9c927cba4b64a8bd69e345b80d1b68a5264&v=4" width="24" alt="Avatar of sotopro"> sotopro
@@ -2029,7 +2042,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>82</td>
 	</tr>
 	<tr>
-		<td>149</td>
+		<td>150</td>
 		<td>
 			<a href="https://github.com/luisesanmartin">
 				<img src="https://avatars.githubusercontent.com/u/38444484?s=72&u=bbee7c28f6416a91d8085f76297fd6f7c6900dc0&v=4" width="24" alt="Avatar of luisesanmartin"> luisesanmartin
@@ -2042,7 +2055,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>82</td>
 	</tr>
 	<tr>
-		<td>150</td>
+		<td>151</td>
 		<td>
 			<a href="https://github.com/sheylaPozo">
 				<img src="https://avatars.githubusercontent.com/u/54015740?s=72&u=c6a33dd44bb9f67b90b52253b67704cc0489b7eb&v=4" width="24" alt="Avatar of sheylaPozo"> sheylaPozo
@@ -2055,7 +2068,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>82</td>
 	</tr>
 	<tr>
-		<td>151</td>
+		<td>152</td>
 		<td>
 			<a href="https://github.com/john-caballero">
 				<img src="https://avatars.githubusercontent.com/u/56380674?s=72&u=a5e498b05b0109c3c842a7f848f218765ba864b8&v=4" width="24" alt="Avatar of john-caballero"> john-caballero
@@ -2068,7 +2081,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>82</td>
 	</tr>
 	<tr>
-		<td>152</td>
+		<td>153</td>
 		<td>
 			<a href="https://github.com/luisreiskeys">
 				<img src="https://avatars.githubusercontent.com/u/27819268?s=72&u=992b345abe084c043e48ae96276f3ba7765307ea&v=4" width="24" alt="Avatar of luisreiskeys"> luisreiskeys
@@ -2081,7 +2094,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>82</td>
 	</tr>
 	<tr>
-		<td>153</td>
+		<td>154</td>
 		<td>
 			<a href="https://github.com/stephfz">
 				<img src="https://avatars.githubusercontent.com/u/1175372?s=72&u=94f447de29f0c99f1743eed07f9c09ee56e590b2&v=4" width="24" alt="Avatar of stephfz"> stephfz
@@ -2091,19 +2104,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima - Perú</td>
-		<td>82</td>
-	</tr>
-	<tr>
-		<td>154</td>
-		<td>
-			<a href="https://github.com/RogerNatividad">
-				<img src="https://avatars.githubusercontent.com/u/826512?s=72&u=14afd5e775a920aa63fb16e9c2277612282518ce&v=4" width="24" alt="Avatar of RogerNatividad"> RogerNatividad
-			</a><br/>
-			Roger Natividad
-		</td>
-		<td>No Company</td>
-		<td><a href="https://twitter.com/rogernatividad5">rogernatividad5</a></td>
-		<td>Lima, Peru</td>
 		<td>82</td>
 	</tr>
 	<tr>
@@ -2174,6 +2174,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>160</td>
 		<td>
+			<a href="https://github.com/no6data">
+				<img src="https://avatars.githubusercontent.com/u/167841090?s=72&u=21f534e51fb50cd3c12f0143ec205f280c146356&v=4" width="24" alt="Avatar of no6data"> no6data
+			</a><br/>
+			Elvis
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>79</td>
+	</tr>
+	<tr>
+		<td>161</td>
+		<td>
 			<a href="https://github.com/ArturoDeza">
 				<img src="https://avatars.githubusercontent.com/u/1279233?s=72&u=b70973a66bcb2ee0333b50be32e8c10df81bac9a&v=4" width="24" alt="Avatar of ArturoDeza"> ArturoDeza
 			</a><br/>
@@ -2185,20 +2198,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>78</td>
 	</tr>
 	<tr>
-		<td>161</td>
+		<td>162</td>
 		<td>
-			<a href="https://github.com/no6data">
-				<img src="https://avatars.githubusercontent.com/u/167841090?s=72&u=21f534e51fb50cd3c12f0143ec205f280c146356&v=4" width="24" alt="Avatar of no6data"> no6data
+			<a href="https://github.com/robintux">
+				<img src="https://avatars.githubusercontent.com/u/808946?s=72&u=37ad5eecb4de9d56f6f44e12454b7e62b5c69607&v=4" width="24" alt="Avatar of robintux"> robintux
 			</a><br/>
-			Elvis
+			Abraham Zamudio Chauca
 		</td>
-		<td>No Company</td>
+		<td>Gmmns </td>
 		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>78</td>
+		<td>Lima - Peru</td>
+		<td>77</td>
 	</tr>
 	<tr>
-		<td>162</td>
+		<td>163</td>
 		<td>
 			<a href="https://github.com/juaneladio">
 				<img src="https://avatars.githubusercontent.com/u/547722?s=72&u=e3c4fdd082c3e0cf7be29c451db51c83dad72bb3&v=4" width="24" alt="Avatar of juaneladio"> juaneladio
@@ -2211,20 +2224,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>77</td>
 	</tr>
 	<tr>
-		<td>163</td>
+		<td>164</td>
 		<td>
-			<a href="https://github.com/robintux">
-				<img src="https://avatars.githubusercontent.com/u/808946?s=72&u=37ad5eecb4de9d56f6f44e12454b7e62b5c69607&v=4" width="24" alt="Avatar of robintux"> robintux
+			<a href="https://github.com/crisstata">
+				<img src="https://avatars.githubusercontent.com/u/119689098?s=72&u=592cd3170d59387fbe9d1cd5d966e6b610c80317&v=4" width="24" alt="Avatar of crisstata"> crisstata
 			</a><br/>
-			Abraham Zamudio Chauca
+			Cristian Ramirez 
 		</td>
-		<td>Gmmns </td>
+		<td>No Company</td>
 		<td>No Twitter Username</td>
-		<td>Lima - Peru</td>
-		<td>76</td>
+		<td>Cajamarca 🌲 | Perú </td>
+		<td>75</td>
 	</tr>
 	<tr>
-		<td>164</td>
+		<td>165</td>
 		<td>
 			<a href="https://github.com/juliosguz">
 				<img src="https://avatars.githubusercontent.com/u/896522?s=72&u=ce4b961ff6b00eea465e3ea02ced9b30d9a8a6c4&v=4" width="24" alt="Avatar of juliosguz"> juliosguz
@@ -2237,7 +2250,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>74</td>
 	</tr>
 	<tr>
-		<td>165</td>
+		<td>166</td>
 		<td>
 			<a href="https://github.com/alfredopalhares">
 				<img src="https://avatars.githubusercontent.com/u/223763?s=72&u=0d048d9ee245b1ea4f093f96a749682e86e8f671&v=4" width="24" alt="Avatar of alfredopalhares"> alfredopalhares
@@ -2247,19 +2260,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Prozis </td>
 		<td>No Twitter Username</td>
 		<td>Ponte de Lima, Portugal </td>
-		<td>74</td>
-	</tr>
-	<tr>
-		<td>166</td>
-		<td>
-			<a href="https://github.com/crisstata">
-				<img src="https://avatars.githubusercontent.com/u/119689098?s=72&u=592cd3170d59387fbe9d1cd5d966e6b610c80317&v=4" width="24" alt="Avatar of crisstata"> crisstata
-			</a><br/>
-			Cristian Ramirez 
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Cajamarca 🌲 | Perú </td>
 		<td>74</td>
 	</tr>
 	<tr>
@@ -2356,6 +2356,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>174</td>
 		<td>
+			<a href="https://github.com/patrickkdev">
+				<img src="https://avatars.githubusercontent.com/u/115599753?s=72&u=655611b04844a6df9f0beb8e63f936b3232afdcf&v=4" width="24" alt="Avatar of patrickkdev"> patrickkdev
+			</a><br/>
+			Patrick Ferreira
+		</td>
+		<td>Makztech </td>
+		<td>No Twitter Username</td>
+		<td>Nova Lima - MG</td>
+		<td>70</td>
+	</tr>
+	<tr>
+		<td>175</td>
+		<td>
 			<a href="https://github.com/olanaso">
 				<img src="https://avatars.githubusercontent.com/u/4493483?s=72&u=5ab557f14613d532904390fdbab0162e320f06ad&v=4" width="24" alt="Avatar of olanaso"> olanaso
 			</a><br/>
@@ -2367,7 +2380,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>70</td>
 	</tr>
 	<tr>
-		<td>175</td>
+		<td>176</td>
 		<td>
 			<a href="https://github.com/josephmatheus">
 				<img src="https://avatars.githubusercontent.com/u/89085971?s=72&u=c9ca1d5e61705fa225a61489f00b356aa8d90871&v=4" width="24" alt="Avatar of josephmatheus"> josephmatheus
@@ -2380,7 +2393,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>70</td>
 	</tr>
 	<tr>
-		<td>176</td>
+		<td>177</td>
 		<td>
 			<a href="https://github.com/condef5">
 				<img src="https://avatars.githubusercontent.com/u/21107031?s=72&u=b81fd781e1e5ccced7bd33f666e417d248dd0f12&v=4" width="24" alt="Avatar of condef5"> condef5
@@ -2393,7 +2406,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>70</td>
 	</tr>
 	<tr>
-		<td>177</td>
+		<td>178</td>
 		<td>
 			<a href="https://github.com/Dav082004">
 				<img src="https://avatars.githubusercontent.com/u/73320918?s=72&u=aa778b13c8fd638a62a688ab63db9a254cc5a66c&v=4" width="24" alt="Avatar of Dav082004"> Dav082004
@@ -2406,7 +2419,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>69</td>
 	</tr>
 	<tr>
-		<td>178</td>
+		<td>179</td>
 		<td>
 			<a href="https://github.com/FraGoTe">
 				<img src="https://avatars.githubusercontent.com/u/1095778?s=72&u=c9ecf6a449e5667468e2ddab504c338431f953cc&v=4" width="24" alt="Avatar of FraGoTe"> FraGoTe
@@ -2419,7 +2432,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>69</td>
 	</tr>
 	<tr>
-		<td>179</td>
+		<td>180</td>
 		<td>
 			<a href="https://github.com/eLRuLL">
 				<img src="https://avatars.githubusercontent.com/u/1459486?s=72&u=c284cb96b20e3b9ed2f3e2e6f348da6a79d80e9d&v=4" width="24" alt="Avatar of eLRuLL"> eLRuLL
@@ -2432,7 +2445,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>69</td>
 	</tr>
 	<tr>
-		<td>180</td>
+		<td>181</td>
 		<td>
 			<a href="https://github.com/CoreyKaylor">
 				<img src="https://avatars.githubusercontent.com/u/121507?s=72&v=4" width="24" alt="Avatar of CoreyKaylor"> CoreyKaylor
@@ -2442,19 +2455,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima, Peru</td>
-		<td>68</td>
-	</tr>
-	<tr>
-		<td>181</td>
-		<td>
-			<a href="https://github.com/ederivero">
-				<img src="https://avatars.githubusercontent.com/u/4792446?s=72&u=18bb63ee8ae8bd55216afa9ff13bf4cc6ef011b0&v=4" width="24" alt="Avatar of ederivero"> ederivero
-			</a><br/>
-			Eduardo de Rivero Manrique
-		</td>
-		<td>Ravn </td>
-		<td><a href="https://twitter.com/ederivero">ederivero</a></td>
-		<td>Arequipa, Peru</td>
 		<td>68</td>
 	</tr>
 	<tr>
@@ -2512,6 +2512,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>186</td>
 		<td>
+			<a href="https://github.com/ederivero">
+				<img src="https://avatars.githubusercontent.com/u/4792446?s=72&u=18bb63ee8ae8bd55216afa9ff13bf4cc6ef011b0&v=4" width="24" alt="Avatar of ederivero"> ederivero
+			</a><br/>
+			Eduardo de Rivero Manrique
+		</td>
+		<td>Ravn </td>
+		<td><a href="https://twitter.com/ederivero">ederivero</a></td>
+		<td>Arequipa, Peru</td>
+		<td>67</td>
+	</tr>
+	<tr>
+		<td>187</td>
+		<td>
 			<a href="https://github.com/JoshDev1205">
 				<img src="https://avatars.githubusercontent.com/u/20880980?s=72&u=0308d1e60e85a1e2461cdbab11ed2e0ecd73df72&v=4" width="24" alt="Avatar of JoshDev1205"> JoshDev1205
 			</a><br/>
@@ -2523,7 +2536,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>67</td>
 	</tr>
 	<tr>
-		<td>187</td>
+		<td>188</td>
 		<td>
 			<a href="https://github.com/yusshu">
 				<img src="https://avatars.githubusercontent.com/u/45738853?s=72&u=716b1fff0ae668803f4b5664f4cb84e7429ca12b&v=4" width="24" alt="Avatar of yusshu"> yusshu
@@ -2536,7 +2549,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>66</td>
 	</tr>
 	<tr>
-		<td>188</td>
+		<td>189</td>
 		<td>
 			<a href="https://github.com/ernestcr">
 				<img src="https://avatars.githubusercontent.com/u/12020934?s=72&u=5f43dd754aee0f356b69de153169f5a7c75e2c3e&v=4" width="24" alt="Avatar of ernestcr"> ernestcr
@@ -2549,7 +2562,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>66</td>
 	</tr>
 	<tr>
-		<td>189</td>
+		<td>190</td>
 		<td>
 			<a href="https://github.com/Enriquefft">
 				<img src="https://avatars.githubusercontent.com/u/60308719?s=72&u=c5330869d6c5f61d1d26614b1c9dce689ae1be5a&v=4" width="24" alt="Avatar of Enriquefft"> Enriquefft
@@ -2562,7 +2575,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>65</td>
 	</tr>
 	<tr>
-		<td>190</td>
+		<td>191</td>
 		<td>
 			<a href="https://github.com/Grazen0">
 				<img src="https://avatars.githubusercontent.com/u/68793770?s=72&u=15be9d1d1650d2266cc6bfb0fcf37d100662a639&v=4" width="24" alt="Avatar of Grazen0"> Grazen0
@@ -2575,7 +2588,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>65</td>
 	</tr>
 	<tr>
-		<td>191</td>
+		<td>192</td>
 		<td>
 			<a href="https://github.com/gerardokaztro">
 				<img src="https://avatars.githubusercontent.com/u/49838578?s=72&u=638d28dc2c5d2449084c444274e13a5605a67781&v=4" width="24" alt="Avatar of gerardokaztro"> gerardokaztro
@@ -2588,7 +2601,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>65</td>
 	</tr>
 	<tr>
-		<td>192</td>
+		<td>193</td>
 		<td>
 			<a href="https://github.com/pablodz">
 				<img src="https://avatars.githubusercontent.com/u/28235457?s=72&u=567a3bd45bf1649bc52ae348b76a27b92c47b530&v=4" width="24" alt="Avatar of pablodz"> pablodz
@@ -2598,19 +2611,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Peru</td>
-		<td>64</td>
-	</tr>
-	<tr>
-		<td>193</td>
-		<td>
-			<a href="https://github.com/patrickkdev">
-				<img src="https://avatars.githubusercontent.com/u/115599753?s=72&u=655611b04844a6df9f0beb8e63f936b3232afdcf&v=4" width="24" alt="Avatar of patrickkdev"> patrickkdev
-			</a><br/>
-			Patrick Ferreira
-		</td>
-		<td>Makztech </td>
-		<td>No Twitter Username</td>
-		<td>Nova Lima - MG</td>
 		<td>64</td>
 	</tr>
 	<tr>
@@ -2720,19 +2720,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>202</td>
 		<td>
-			<a href="https://github.com/KatashiFukushima">
-				<img src="https://avatars.githubusercontent.com/u/101235863?s=72&u=6b4c0c7486fc981d30d63798a84cc80656b36aa7&v=4" width="24" alt="Avatar of KatashiFukushima"> KatashiFukushima
-			</a><br/>
-			Katashi Fukushima 
-		</td>
-		<td>Katashibot-md </td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>62</td>
-	</tr>
-	<tr>
-		<td>203</td>
-		<td>
 			<a href="https://github.com/edwinpgm">
 				<img src="https://avatars.githubusercontent.com/u/3245450?s=72&u=87fbc65b02fb60802e5c5c20703328d2d102689d&v=4" width="24" alt="Avatar of edwinpgm"> edwinpgm
 			</a><br/>
@@ -2744,7 +2731,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>61</td>
 	</tr>
 	<tr>
-		<td>204</td>
+		<td>203</td>
 		<td>
 			<a href="https://github.com/aragonc">
 				<img src="https://avatars.githubusercontent.com/u/2940509?s=72&u=bba74999a2ab50fb243768591a1f957509d76367&v=4" width="24" alt="Avatar of aragonc"> aragonc
@@ -2757,7 +2744,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>61</td>
 	</tr>
 	<tr>
-		<td>205</td>
+		<td>204</td>
 		<td>
 			<a href="https://github.com/arnoldbgm">
 				<img src="https://avatars.githubusercontent.com/u/108824074?s=72&u=e25f69c7bf58e4b1187594ca68468a5809ffc74d&v=4" width="24" alt="Avatar of arnoldbgm"> arnoldbgm
@@ -2770,7 +2757,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>61</td>
 	</tr>
 	<tr>
-		<td>206</td>
+		<td>205</td>
 		<td>
 			<a href="https://github.com/Raul1508">
 				<img src="https://avatars.githubusercontent.com/u/133258024?s=72&u=04be533e2cdeb5bfb891ef8af5d08263d2d544cb&v=4" width="24" alt="Avatar of Raul1508"> Raul1508
@@ -2783,7 +2770,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>61</td>
 	</tr>
 	<tr>
-		<td>207</td>
+		<td>206</td>
 		<td>
 			<a href="https://github.com/macespinoza">
 				<img src="https://avatars.githubusercontent.com/u/6079251?s=72&u=a806495afc08377eb50b5b3ff52c39a4ee5fe65f&v=4" width="24" alt="Avatar of macespinoza"> macespinoza
@@ -2793,6 +2780,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Digisoftperu </td>
 		<td>No Twitter Username</td>
 		<td>Lima, Peru</td>
+		<td>61</td>
+	</tr>
+	<tr>
+		<td>207</td>
+		<td>
+			<a href="https://github.com/KatashiFukushima">
+				<img src="https://avatars.githubusercontent.com/u/101235863?s=72&u=6b4c0c7486fc981d30d63798a84cc80656b36aa7&v=4" width="24" alt="Avatar of KatashiFukushima"> KatashiFukushima
+			</a><br/>
+			Katashi Fukushima 
+		</td>
+		<td>Katashibot-md </td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
 		<td>61</td>
 	</tr>
 	<tr>
@@ -2824,6 +2824,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>210</td>
 		<td>
+			<a href="https://github.com/ManuelLoaizaV">
+				<img src="https://avatars.githubusercontent.com/u/19366788?s=72&u=c02b393d978e32b826108f67fbb81b988a2b4770&v=4" width="24" alt="Avatar of ManuelLoaizaV"> ManuelLoaizaV
+			</a><br/>
+			Manuel Loaiza Vasquez
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>60</td>
+	</tr>
+	<tr>
+		<td>211</td>
+		<td>
 			<a href="https://github.com/mizhac">
 				<img src="https://avatars.githubusercontent.com/u/5867015?s=72&u=b582a7d9c36ee5be039deb81675a6450b4febd67&v=4" width="24" alt="Avatar of mizhac"> mizhac
 			</a><br/>
@@ -2835,7 +2848,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>60</td>
 	</tr>
 	<tr>
-		<td>211</td>
+		<td>212</td>
 		<td>
 			<a href="https://github.com/JohnProg">
 				<img src="https://avatars.githubusercontent.com/u/2661653?s=72&u=3c71d7627715009efb135e97a018a0c58a32eba2&v=4" width="24" alt="Avatar of JohnProg"> JohnProg
@@ -2848,7 +2861,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>60</td>
 	</tr>
 	<tr>
-		<td>212</td>
+		<td>213</td>
 		<td>
 			<a href="https://github.com/luisorlandobueno">
 				<img src="https://avatars.githubusercontent.com/u/105979241?s=72&u=20081420a8fa4aeb0b230077e0ac1499f50e4cfc&v=4" width="24" alt="Avatar of luisorlandobueno"> luisorlandobueno
@@ -2861,7 +2874,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>60</td>
 	</tr>
 	<tr>
-		<td>213</td>
+		<td>214</td>
 		<td>
 			<a href="https://github.com/juliocesardw">
 				<img src="https://avatars.githubusercontent.com/u/67384316?s=72&u=4748079be40914b1dafe6962141ab61090f400d6&v=4" width="24" alt="Avatar of juliocesardw"> juliocesardw
@@ -2874,7 +2887,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>60</td>
 	</tr>
 	<tr>
-		<td>214</td>
+		<td>215</td>
 		<td>
 			<a href="https://github.com/neunapp">
 				<img src="https://avatars.githubusercontent.com/u/14082070?s=72&u=2aa7df2fbc8aee6445616923e0197a8ac656d23a&v=4" width="24" alt="Avatar of neunapp"> neunapp
@@ -2887,7 +2900,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>60</td>
 	</tr>
 	<tr>
-		<td>215</td>
+		<td>216</td>
 		<td>
 			<a href="https://github.com/jpsca">
 				<img src="https://avatars.githubusercontent.com/u/67524204?s=72&u=4b42a339415e246c98bc593c8ee5a393631535b6&v=4" width="24" alt="Avatar of jpsca"> jpsca
@@ -2900,7 +2913,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>59</td>
 	</tr>
 	<tr>
-		<td>216</td>
+		<td>217</td>
 		<td>
 			<a href="https://github.com/elisealcala">
 				<img src="https://avatars.githubusercontent.com/u/16949569?s=72&u=da153ecd87b4a044be127dae6119f4742e3fc8d5&v=4" width="24" alt="Avatar of elisealcala"> elisealcala
@@ -2913,7 +2926,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>59</td>
 	</tr>
 	<tr>
-		<td>217</td>
+		<td>218</td>
 		<td>
 			<a href="https://github.com/bralegz">
 				<img src="https://avatars.githubusercontent.com/u/84947450?s=72&u=87b26e80084ad9439c073bb4f46759e16eb0a65e&v=4" width="24" alt="Avatar of bralegz"> bralegz
@@ -2923,19 +2936,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Peru</td>
-		<td>59</td>
-	</tr>
-	<tr>
-		<td>218</td>
-		<td>
-			<a href="https://github.com/ManuelLoaizaV">
-				<img src="https://avatars.githubusercontent.com/u/19366788?s=72&u=c02b393d978e32b826108f67fbb81b988a2b4770&v=4" width="24" alt="Avatar of ManuelLoaizaV"> ManuelLoaizaV
-			</a><br/>
-			Manuel Loaiza Vasquez
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
 		<td>59</td>
 	</tr>
 	<tr>
@@ -3071,19 +3071,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>229</td>
 		<td>
-			<a href="https://github.com/Ryzeon">
-				<img src="https://avatars.githubusercontent.com/u/60982533?s=72&u=a31f0d00d622336495f114089b962c044091a2db&v=4" width="24" alt="Avatar of Ryzeon"> Ryzeon
-			</a><br/>
-			Alex Avila
-		</td>
-		<td>No Company</td>
-		<td><a href="https://twitter.com/Ryzeon_">Ryzeon_</a></td>
-		<td>Peru</td>
-		<td>56</td>
-	</tr>
-	<tr>
-		<td>230</td>
-		<td>
 			<a href="https://github.com/pieropr2k">
 				<img src="https://avatars.githubusercontent.com/u/75139358?s=72&u=dcb651ea836fbc42fa44632a461b28c30e30f13c&v=4" width="24" alt="Avatar of pieropr2k"> pieropr2k
 			</a><br/>
@@ -3095,7 +3082,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>56</td>
 	</tr>
 	<tr>
-		<td>231</td>
+		<td>230</td>
 		<td>
 			<a href="https://github.com/paulsaenzsucre">
 				<img src="https://avatars.githubusercontent.com/u/10566417?s=72&u=a72ad6939e5201608f29533a60753949fbc61fbd&v=4" width="24" alt="Avatar of paulsaenzsucre"> paulsaenzsucre
@@ -3108,12 +3095,25 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>56</td>
 	</tr>
 	<tr>
-		<td>232</td>
+		<td>231</td>
 		<td>
 			<a href="https://github.com/jchavezlavalle">
 				<img src="https://avatars.githubusercontent.com/u/2277700?s=72&u=49ba6eaf969c6ef8dd90db9edb15ff7e1ac33cd2&v=4" width="24" alt="Avatar of jchavezlavalle"> jchavezlavalle
 			</a><br/>
 			Joana Chavez
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>56</td>
+	</tr>
+	<tr>
+		<td>232</td>
+		<td>
+			<a href="https://github.com/KenyiGM">
+				<img src="https://avatars.githubusercontent.com/u/91709827?s=72&u=a70327267f5b25afead804a07a1009940c5307c3&v=4" width="24" alt="Avatar of KenyiGM"> KenyiGM
+			</a><br/>
+			No Name
 		</td>
 		<td>No Company</td>
 		<td>No Twitter Username</td>
@@ -3136,19 +3136,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>234</td>
 		<td>
-			<a href="https://github.com/KenyiGM">
-				<img src="https://avatars.githubusercontent.com/u/91709827?s=72&u=a70327267f5b25afead804a07a1009940c5307c3&v=4" width="24" alt="Avatar of KenyiGM"> KenyiGM
-			</a><br/>
-			No Name
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>56</td>
-	</tr>
-	<tr>
-		<td>235</td>
-		<td>
 			<a href="https://github.com/elidepb">
 				<img src="https://avatars.githubusercontent.com/u/99272507?s=72&u=cf69ca36e4027580a3c1cf7f0ca30a2cc0367b5a&v=4" width="24" alt="Avatar of elidepb"> elidepb
 			</a><br/>
@@ -3160,7 +3147,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>55</td>
 	</tr>
 	<tr>
-		<td>236</td>
+		<td>235</td>
 		<td>
 			<a href="https://github.com/aleiva17">
 				<img src="https://avatars.githubusercontent.com/u/72392657?s=72&u=dfea99347b02df5e919da15ba2f4486e21a51e62&v=4" width="24" alt="Avatar of aleiva17"> aleiva17
@@ -3170,6 +3157,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Fitia </td>
 		<td>No Twitter Username</td>
 		<td>Lima, Perú</td>
+		<td>55</td>
+	</tr>
+	<tr>
+		<td>236</td>
+		<td>
+			<a href="https://github.com/Ryzeon">
+				<img src="https://avatars.githubusercontent.com/u/60982533?s=72&u=a31f0d00d622336495f114089b962c044091a2db&v=4" width="24" alt="Avatar of Ryzeon"> Ryzeon
+			</a><br/>
+			Alex Avila
+		</td>
+		<td>No Company</td>
+		<td><a href="https://twitter.com/Ryzeon_">Ryzeon_</a></td>
+		<td>Peru</td>
 		<td>55</td>
 	</tr>
 	<tr>
@@ -3201,19 +3201,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>239</td>
 		<td>
-			<a href="https://github.com/sabarense">
-				<img src="https://avatars.githubusercontent.com/u/113383378?s=72&u=ec1006780697f6db9808557ba847c601aba286cc&v=4" width="24" alt="Avatar of sabarense"> sabarense
-			</a><br/>
-			Yan Sabarense Coelho Silva
-		</td>
-		<td>Expertise </td>
-		<td>No Twitter Username</td>
-		<td>Nova Lima - MG</td>
-		<td>55</td>
-	</tr>
-	<tr>
-		<td>240</td>
-		<td>
 			<a href="https://github.com/elbereth">
 				<img src="https://avatars.githubusercontent.com/u/1632446?s=72&u=e3f651e7b025a65a1c3f9f4da14f5ae822dc8353&v=4" width="24" alt="Avatar of elbereth"> elbereth
 			</a><br/>
@@ -3225,7 +3212,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>55</td>
 	</tr>
 	<tr>
-		<td>241</td>
+		<td>240</td>
 		<td>
 			<a href="https://github.com/heygonzalocaira">
 				<img src="https://avatars.githubusercontent.com/u/21184592?s=72&u=9779cf9671f8c0fe2839b7334132a9771080ce34&v=4" width="24" alt="Avatar of heygonzalocaira"> heygonzalocaira
@@ -3238,7 +3225,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>55</td>
 	</tr>
 	<tr>
-		<td>242</td>
+		<td>241</td>
 		<td>
 			<a href="https://github.com/DanielCamarena">
 				<img src="https://avatars.githubusercontent.com/u/18169352?s=72&u=36476904aee6e20a8904241547b33ad409f38bde&v=4" width="24" alt="Avatar of DanielCamarena"> DanielCamarena
@@ -3251,7 +3238,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>55</td>
 	</tr>
 	<tr>
-		<td>243</td>
+		<td>242</td>
 		<td>
 			<a href="https://github.com/brimanz">
 				<img src="https://avatars.githubusercontent.com/u/67530609?s=72&u=d3776698ae2d1356483f35efec8b7967122abb75&v=4" width="24" alt="Avatar of brimanz"> brimanz
@@ -3264,7 +3251,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>55</td>
 	</tr>
 	<tr>
-		<td>244</td>
+		<td>243</td>
 		<td>
 			<a href="https://github.com/SebastianEPH">
 				<img src="https://avatars.githubusercontent.com/u/29019923?s=72&u=5b7fbbead0d00c1797e5f6592e3a0765b4e5f93d&v=4" width="24" alt="Avatar of SebastianEPH"> SebastianEPH
@@ -3275,6 +3262,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Twitter Username</td>
 		<td>Perú - Lima</td>
 		<td>55</td>
+	</tr>
+	<tr>
+		<td>244</td>
+		<td>
+			<a href="https://github.com/sabarense">
+				<img src="https://avatars.githubusercontent.com/u/113383378?s=72&u=ec1006780697f6db9808557ba847c601aba286cc&v=4" width="24" alt="Avatar of sabarense"> sabarense
+			</a><br/>
+			Yan Sabarense Coelho Silva
+		</td>
+		<td>Expertise </td>
+		<td>No Twitter Username</td>
+		<td>Nova Lima - MG</td>
+		<td>54</td>
 	</tr>
 	<tr>
 		<td>245</td>
@@ -3331,19 +3331,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>249</td>
 		<td>
-			<a href="https://github.com/W4lker19">
-				<img src="https://avatars.githubusercontent.com/u/62023102?s=72&u=a9943db89a76bc52e9516ab39742c3cec8bd224e&v=4" width="24" alt="Avatar of W4lker19"> W4lker19
-			</a><br/>
-			Walker19
-		</td>
-		<td>Fcup </td>
-		<td>No Twitter Username</td>
-		<td>Ponte de Lima</td>
-		<td>53</td>
-	</tr>
-	<tr>
-		<td>250</td>
-		<td>
 			<a href="https://github.com/PaulGuillen">
 				<img src="https://avatars.githubusercontent.com/u/43099030?s=72&u=2c9e72e96e488a2de1be8861091ef9b9b23bb871&v=4" width="24" alt="Avatar of PaulGuillen"> PaulGuillen
 			</a><br/>
@@ -3352,6 +3339,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td><a href="https://twitter.com/PaulGuillenAcu1">PaulGuillenAcu1</a></td>
 		<td>Lima,Peru</td>
+		<td>53</td>
+	</tr>
+	<tr>
+		<td>250</td>
+		<td>
+			<a href="https://github.com/W4lker19">
+				<img src="https://avatars.githubusercontent.com/u/62023102?s=72&u=a9943db89a76bc52e9516ab39742c3cec8bd224e&v=4" width="24" alt="Avatar of W4lker19"> W4lker19
+			</a><br/>
+			Walker19
+		</td>
+		<td>Fcup </td>
+		<td>No Twitter Username</td>
+		<td>Ponte de Lima</td>
 		<td>53</td>
 	</tr>
 	<tr>
@@ -3396,19 +3396,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>254</td>
 		<td>
-			<a href="https://github.com/AlexSystem19">
-				<img src="https://avatars.githubusercontent.com/u/100012260?s=72&u=13991b6551f7ece34ea282e74b772077ba0b980c&v=4" width="24" alt="Avatar of AlexSystem19"> AlexSystem19
-			</a><br/>
-			HuGod | UXDevOps.net
-		</td>
-		<td>Uxdevops </td>
-		<td>No Twitter Username</td>
-		<td>Lima / Callao</td>
-		<td>52</td>
-	</tr>
-	<tr>
-		<td>255</td>
-		<td>
 			<a href="https://github.com/rmfranciacastillo">
 				<img src="https://avatars.githubusercontent.com/u/6486733?s=72&u=670b777488d318f854c1c606b91eb306dc920d37&v=4" width="24" alt="Avatar of rmfranciacastillo"> rmfranciacastillo
 			</a><br/>
@@ -3420,7 +3407,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>52</td>
 	</tr>
 	<tr>
-		<td>256</td>
+		<td>255</td>
 		<td>
 			<a href="https://github.com/jjdelc">
 				<img src="https://avatars.githubusercontent.com/u/59393?s=72&v=4" width="24" alt="Avatar of jjdelc"> jjdelc
@@ -3433,7 +3420,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>52</td>
 	</tr>
 	<tr>
-		<td>257</td>
+		<td>256</td>
 		<td>
 			<a href="https://github.com/fabohax">
 				<img src="https://avatars.githubusercontent.com/u/25891040?s=72&u=bb75032d75bdea64f73811fe85abb95f793d0362&v=4" width="24" alt="Avatar of fabohax"> fabohax
@@ -3446,7 +3433,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>52</td>
 	</tr>
 	<tr>
-		<td>258</td>
+		<td>257</td>
 		<td>
 			<a href="https://github.com/jersonlatorre">
 				<img src="https://avatars.githubusercontent.com/u/5032737?s=72&u=50ddd264d2870c6d69e759a6c2d8f77c14fc706d&v=4" width="24" alt="Avatar of jersonlatorre"> jersonlatorre
@@ -3459,7 +3446,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>52</td>
 	</tr>
 	<tr>
-		<td>259</td>
+		<td>258</td>
 		<td>
 			<a href="https://github.com/CindyMendoza">
 				<img src="https://avatars.githubusercontent.com/u/24689560?s=72&u=a90622aa7ac6d2f04ef22cc622ed5c946d3214b2&v=4" width="24" alt="Avatar of CindyMendoza"> CindyMendoza
@@ -3470,6 +3457,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td><a href="https://twitter.com/Mendozaic">Mendozaic</a></td>
 		<td>Lima-Perú</td>
 		<td>52</td>
+	</tr>
+	<tr>
+		<td>259</td>
+		<td>
+			<a href="https://github.com/AlexSystem19">
+				<img src="https://avatars.githubusercontent.com/u/100012260?s=72&u=13991b6551f7ece34ea282e74b772077ba0b980c&v=4" width="24" alt="Avatar of AlexSystem19"> AlexSystem19
+			</a><br/>
+			HuGod | UXDevOps.net
+		</td>
+		<td>Uxdevops </td>
+		<td>No Twitter Username</td>
+		<td>Lima / Callao</td>
+		<td>51</td>
 	</tr>
 	<tr>
 		<td>260</td>
@@ -3630,6 +3630,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>272</td>
 		<td>
+			<a href="https://github.com/brianshoegaze04">
+				<img src="https://avatars.githubusercontent.com/u/140124803?s=72&u=4e8d2cfea77c8fc5783d9046f22393f11ef78d0b&v=4" width="24" alt="Avatar of brianshoegaze04"> brianshoegaze04
+			</a><br/>
+			Brian Gabriel Hurtado Moreno
+		</td>
+		<td>Soporte Técnico - Full<br/>Stack/frontend<br/>Engineer<br/>-<br/>Data<br/>Science<br/></td>
+		<td><a href="https://twitter.com/brianshoegaze04">brianshoegaze04</a></td>
+		<td>Lima</td>
+		<td>50</td>
+	</tr>
+	<tr>
+		<td>273</td>
+		<td>
 			<a href="https://github.com/MaiaRojas">
 				<img src="https://avatars.githubusercontent.com/u/25912510?s=72&u=422fe5703fd591d2a10e6b670b32f591557fd3f2&v=4" width="24" alt="Avatar of MaiaRojas"> MaiaRojas
 			</a><br/>
@@ -3641,7 +3654,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>50</td>
 	</tr>
 	<tr>
-		<td>273</td>
+		<td>274</td>
 		<td>
 			<a href="https://github.com/puentesarrin">
 				<img src="https://avatars.githubusercontent.com/u/321499?s=72&v=4" width="24" alt="Avatar of puentesarrin"> puentesarrin
@@ -3654,7 +3667,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>49</td>
 	</tr>
 	<tr>
-		<td>274</td>
+		<td>275</td>
 		<td>
 			<a href="https://github.com/angelolev">
 				<img src="https://avatars.githubusercontent.com/u/1801446?s=72&u=9af7757898a672f541da1d685581f59bdd80d440&v=4" width="24" alt="Avatar of angelolev"> angelolev
@@ -3667,7 +3680,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>49</td>
 	</tr>
 	<tr>
-		<td>275</td>
+		<td>276</td>
 		<td>
 			<a href="https://github.com/kusillus">
 				<img src="https://avatars.githubusercontent.com/u/2395750?s=72&u=c9fb98e152b9f5c92987762be0cb9772cfa90ab1&v=4" width="24" alt="Avatar of kusillus"> kusillus
@@ -3680,7 +3693,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>49</td>
 	</tr>
 	<tr>
-		<td>276</td>
+		<td>277</td>
 		<td>
 			<a href="https://github.com/gastonrodrig">
 				<img src="https://avatars.githubusercontent.com/u/113137162?s=72&u=d78c1ad18312091290e9706eebdb035b83e0bad4&v=4" width="24" alt="Avatar of gastonrodrig"> gastonrodrig
@@ -3693,7 +3706,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>49</td>
 	</tr>
 	<tr>
-		<td>277</td>
+		<td>278</td>
 		<td>
 			<a href="https://github.com/RenzoDD">
 				<img src="https://avatars.githubusercontent.com/u/55367961?s=72&u=dab2ca0090179fdd1d726d0d41c5d48b8e6d3a80&v=4" width="24" alt="Avatar of RenzoDD"> RenzoDD
@@ -3706,7 +3719,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>49</td>
 	</tr>
 	<tr>
-		<td>278</td>
+		<td>279</td>
 		<td>
 			<a href="https://github.com/dreyna">
 				<img src="https://avatars.githubusercontent.com/u/3770302?s=72&u=18267ab89b400ee3ec7a660f4ede7f156626ce00&v=4" width="24" alt="Avatar of dreyna"> dreyna
@@ -3716,19 +3729,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Universidad Peruana Unión </td>
 		<td>No Twitter Username</td>
 		<td>Altura Km. 19.5 Carretera Central, Ñaña-Lima</td>
-		<td>49</td>
-	</tr>
-	<tr>
-		<td>279</td>
-		<td>
-			<a href="https://github.com/Nic0Su4">
-				<img src="https://avatars.githubusercontent.com/u/103394814?s=72&v=4" width="24" alt="Avatar of Nic0Su4"> Nic0Su4
-			</a><br/>
-			Nicolas Suarez
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Trujillo - La Libertad, Perú</td>
 		<td>49</td>
 	</tr>
 	<tr>
@@ -3864,19 +3864,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>290</td>
 		<td>
-			<a href="https://github.com/calderonsamuel">
-				<img src="https://avatars.githubusercontent.com/u/19418298?s=72&u=712da5831e406718e272ce3f5e58d5d96952b399&v=4" width="24" alt="Avatar of calderonsamuel"> calderonsamuel
-			</a><br/>
-			Samuel Calderon
-		</td>
-		<td>@appsilon </td>
-		<td><a href="https://twitter.com/samucalse">samucalse</a></td>
-		<td>Lima, PE</td>
-		<td>48</td>
-	</tr>
-	<tr>
-		<td>291</td>
-		<td>
 			<a href="https://github.com/bdiazc90">
 				<img src="https://avatars.githubusercontent.com/u/20211744?s=72&u=93653563c171f28a5ca0822ac6ebd72dd12eec40&v=4" width="24" alt="Avatar of bdiazc90"> bdiazc90
 			</a><br/>
@@ -3888,7 +3875,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>48</td>
 	</tr>
 	<tr>
-		<td>292</td>
+		<td>291</td>
 		<td>
 			<a href="https://github.com/kandra">
 				<img src="https://avatars.githubusercontent.com/u/1261833?s=72&u=151c04b822967c4a3618c9399d23e9db77117c39&v=4" width="24" alt="Avatar of kandra"> kandra
@@ -3898,6 +3885,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima, Peru</td>
+		<td>48</td>
+	</tr>
+	<tr>
+		<td>292</td>
+		<td>
+			<a href="https://github.com/Nic0Su4">
+				<img src="https://avatars.githubusercontent.com/u/103394814?s=72&v=4" width="24" alt="Avatar of Nic0Su4"> Nic0Su4
+			</a><br/>
+			Nicolas Suarez
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Trujillo - La Libertad, Perú</td>
 		<td>48</td>
 	</tr>
 	<tr>
@@ -3929,19 +3929,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>295</td>
 		<td>
-			<a href="https://github.com/brianshoegaze04">
-				<img src="https://avatars.githubusercontent.com/u/140124803?s=72&u=4e8d2cfea77c8fc5783d9046f22393f11ef78d0b&v=4" width="24" alt="Avatar of brianshoegaze04"> brianshoegaze04
-			</a><br/>
-			Brian Gabriel Hurtado Moreno
-		</td>
-		<td>Soporte Técnico - Full<br/>Stack/frontend<br/>Engineer<br/>-<br/>Data<br/>Science<br/></td>
-		<td><a href="https://twitter.com/brianshoegaze04">brianshoegaze04</a></td>
-		<td>Lima</td>
-		<td>48</td>
-	</tr>
-	<tr>
-		<td>296</td>
-		<td>
 			<a href="https://github.com/gcavanunez">
 				<img src="https://avatars.githubusercontent.com/u/9332696?s=72&u=2056d0dd94e207df379586a0eebed23a48a935a6&v=4" width="24" alt="Avatar of gcavanunez"> gcavanunez
 			</a><br/>
@@ -3953,7 +3940,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>47</td>
 	</tr>
 	<tr>
-		<td>297</td>
+		<td>296</td>
 		<td>
 			<a href="https://github.com/KhanMaytok">
 				<img src="https://avatars.githubusercontent.com/u/5711547?s=72&u=fc160f1cafcb709179dd39b9c160219d4097d8e6&v=4" width="24" alt="Avatar of KhanMaytok"> KhanMaytok
@@ -3966,7 +3953,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>47</td>
 	</tr>
 	<tr>
-		<td>298</td>
+		<td>297</td>
 		<td>
 			<a href="https://github.com/hsztan">
 				<img src="https://avatars.githubusercontent.com/u/45613824?s=72&u=7ae24bb85c460f0d8f261b47dbcb09fcae51c2d8&v=4" width="24" alt="Avatar of hsztan"> hsztan
@@ -3979,7 +3966,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>47</td>
 	</tr>
 	<tr>
-		<td>299</td>
+		<td>298</td>
 		<td>
 			<a href="https://github.com/kennyhorna">
 				<img src="https://avatars.githubusercontent.com/u/16125117?s=72&u=e982265d3d1f8047c06aec9db9736e60afc3b910&v=4" width="24" alt="Avatar of kennyhorna"> kennyhorna
@@ -3992,7 +3979,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>47</td>
 	</tr>
 	<tr>
-		<td>300</td>
+		<td>299</td>
 		<td>
 			<a href="https://github.com/AnthonyLzq">
 				<img src="https://avatars.githubusercontent.com/u/43073718?s=72&u=167cf21907318fb11916eb38805235f80926acf6&v=4" width="24" alt="Avatar of AnthonyLzq"> AnthonyLzq
@@ -4002,6 +3989,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Distillery </td>
 		<td><a href="https://twitter.com/Anthony_Lzq">Anthony_Lzq</a></td>
 		<td>Lima, Perú</td>
+		<td>47</td>
+	</tr>
+	<tr>
+		<td>300</td>
+		<td>
+			<a href="https://github.com/calderonsamuel">
+				<img src="https://avatars.githubusercontent.com/u/19418298?s=72&u=712da5831e406718e272ce3f5e58d5d96952b399&v=4" width="24" alt="Avatar of calderonsamuel"> calderonsamuel
+			</a><br/>
+			Samuel Calderon
+		</td>
+		<td>@appsilon </td>
+		<td><a href="https://twitter.com/samucalse">samucalse</a></td>
+		<td>Lima, PE</td>
 		<td>47</td>
 	</tr>
 	<tr>
@@ -4098,19 +4098,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>308</td>
 		<td>
-			<a href="https://github.com/kevinrodbe">
-				<img src="https://avatars.githubusercontent.com/u/7063261?s=72&u=31044c0879dce830a827dd736a1b2769d3c25752&v=4" width="24" alt="Avatar of kevinrodbe"> kevinrodbe
-			</a><br/>
-			Kevin Rodríguez
-		</td>
-		<td>Kevinrodbe </td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>46</td>
-	</tr>
-	<tr>
-		<td>309</td>
-		<td>
 			<a href="https://github.com/jsatch">
 				<img src="https://avatars.githubusercontent.com/u/4576991?s=72&v=4" width="24" alt="Avatar of jsatch"> jsatch
 			</a><br/>
@@ -4122,7 +4109,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>46</td>
 	</tr>
 	<tr>
-		<td>310</td>
+		<td>309</td>
 		<td>
 			<a href="https://github.com/javsan77">
 				<img src="https://avatars.githubusercontent.com/u/1541854?s=72&u=a1c398b0693b1286a615675b08de89efed7a813d&v=4" width="24" alt="Avatar of javsan77"> javsan77
@@ -4135,7 +4122,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>46</td>
 	</tr>
 	<tr>
-		<td>311</td>
+		<td>310</td>
 		<td>
 			<a href="https://github.com/fvalverdeu">
 				<img src="https://avatars.githubusercontent.com/u/36082218?s=72&u=4730527cbd2c36404d90750945db64f432b38810&v=4" width="24" alt="Avatar of fvalverdeu"> fvalverdeu
@@ -4148,7 +4135,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>46</td>
 	</tr>
 	<tr>
-		<td>312</td>
+		<td>311</td>
 		<td>
 			<a href="https://github.com/wilsonvargas">
 				<img src="https://avatars.githubusercontent.com/u/22247447?s=72&u=d6c458d20da93cf656f2137c261dd4de8d6e3383&v=4" width="24" alt="Avatar of wilsonvargas"> wilsonvargas
@@ -4161,7 +4148,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>46</td>
 	</tr>
 	<tr>
-		<td>313</td>
+		<td>312</td>
 		<td>
 			<a href="https://github.com/kelymartinezp">
 				<img src="https://avatars.githubusercontent.com/u/1689010?s=72&u=9316248fe2c989f74d5e5d70e0065bd6f21d3121&v=4" width="24" alt="Avatar of kelymartinezp"> kelymartinezp
@@ -4174,7 +4161,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>46</td>
 	</tr>
 	<tr>
-		<td>314</td>
+		<td>313</td>
 		<td>
 			<a href="https://github.com/xorb">
 				<img src="https://avatars.githubusercontent.com/u/39509710?s=72&v=4" width="24" alt="Avatar of xorb"> xorb
@@ -4187,7 +4174,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>46</td>
 	</tr>
 	<tr>
-		<td>315</td>
+		<td>314</td>
 		<td>
 			<a href="https://github.com/renato145">
 				<img src="https://avatars.githubusercontent.com/u/6003546?s=72&u=dcd238062e5efad47189aeb944a20f8e57a1a811&v=4" width="24" alt="Avatar of renato145"> renato145
@@ -4200,7 +4187,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>45</td>
 	</tr>
 	<tr>
-		<td>316</td>
+		<td>315</td>
 		<td>
 			<a href="https://github.com/SegundoRP">
 				<img src="https://avatars.githubusercontent.com/u/81438006?s=72&u=6ae372cb90de8e86efe8a7f434ddc601c30cac18&v=4" width="24" alt="Avatar of SegundoRP"> SegundoRP
@@ -4213,7 +4200,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>45</td>
 	</tr>
 	<tr>
-		<td>317</td>
+		<td>316</td>
 		<td>
 			<a href="https://github.com/mrverdant13">
 				<img src="https://avatars.githubusercontent.com/u/42245236?s=72&u=53ee904784d62fa2a3bd3abafade9b7bdc378794&v=4" width="24" alt="Avatar of mrverdant13"> mrverdant13
@@ -4226,7 +4213,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>45</td>
 	</tr>
 	<tr>
-		<td>318</td>
+		<td>317</td>
 		<td>
 			<a href="https://github.com/gersongams">
 				<img src="https://avatars.githubusercontent.com/u/12853243?s=72&u=b818ca71a0d86df396549bdb13149577863be774&v=4" width="24" alt="Avatar of gersongams"> gersongams
@@ -4239,7 +4226,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>45</td>
 	</tr>
 	<tr>
-		<td>319</td>
+		<td>318</td>
 		<td>
 			<a href="https://github.com/imadori-PE">
 				<img src="https://avatars.githubusercontent.com/u/145484874?s=72&u=59a0dc5ba752d672a0ec7ff021950e92e99824a6&v=4" width="24" alt="Avatar of imadori-PE"> imadori-PE
@@ -4249,6 +4236,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Fegurri S.a.c </td>
 		<td><a href="https://twitter.com/ImadoriSempai">ImadoriSempai</a></td>
 		<td>Piura / Perú</td>
+		<td>45</td>
+	</tr>
+	<tr>
+		<td>319</td>
+		<td>
+			<a href="https://github.com/kevinrodbe">
+				<img src="https://avatars.githubusercontent.com/u/7063261?s=72&u=31044c0879dce830a827dd736a1b2769d3c25752&v=4" width="24" alt="Avatar of kevinrodbe"> kevinrodbe
+			</a><br/>
+			Kevin Rodríguez
+		</td>
+		<td>Kevinrodbe </td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
 		<td>45</td>
 	</tr>
 	<tr>
@@ -4462,19 +4462,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>336</td>
 		<td>
-			<a href="https://github.com/darwinva97">
-				<img src="https://avatars.githubusercontent.com/u/30082909?s=72&u=6af5db31c3fc2654578973a3cd7fcfeb5d7874b2&v=4" width="24" alt="Avatar of darwinva97"> darwinva97
-			</a><br/>
-			DarwinVA
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Los Olivos, Lima. Perú</td>
-		<td>43</td>
-	</tr>
-	<tr>
-		<td>337</td>
-		<td>
 			<a href="https://github.com/edwinrhc">
 				<img src="https://avatars.githubusercontent.com/u/33665660?s=72&u=525115abb864b685bd955f5d7049968d4aaecde2&v=4" width="24" alt="Avatar of edwinrhc"> edwinrhc
 			</a><br/>
@@ -4486,7 +4473,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>338</td>
+		<td>337</td>
 		<td>
 			<a href="https://github.com/brianmsm">
 				<img src="https://avatars.githubusercontent.com/u/28207224?s=72&u=f7423ab0d5f0ee24c8b0265820e948e92dd55c2c&v=4" width="24" alt="Avatar of brianmsm"> brianmsm
@@ -4499,7 +4486,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>339</td>
+		<td>338</td>
 		<td>
 			<a href="https://github.com/AliKnows">
 				<img src="https://avatars.githubusercontent.com/u/130936574?s=72&u=4b3894299d85201bc50073a893cad7e2609fbc83&v=4" width="24" alt="Avatar of AliKnows"> AliKnows
@@ -4512,7 +4499,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>340</td>
+		<td>339</td>
 		<td>
 			<a href="https://github.com/Pedro-HFelix">
 				<img src="https://avatars.githubusercontent.com/u/108374688?s=72&u=fe4df321798ffc540719ed77e04c66ae4c30ffa3&v=4" width="24" alt="Avatar of Pedro-HFelix"> Pedro-HFelix
@@ -4525,7 +4512,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>341</td>
+		<td>340</td>
 		<td>
 			<a href="https://github.com/AliceRamirez17">
 				<img src="https://avatars.githubusercontent.com/u/60928503?s=72&u=90d1796db187c99cf999e5f837c704a90c8097e3&v=4" width="24" alt="Avatar of AliceRamirez17"> AliceRamirez17
@@ -4538,7 +4525,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>342</td>
+		<td>341</td>
 		<td>
 			<a href="https://github.com/kevindels">
 				<img src="https://avatars.githubusercontent.com/u/835425?s=72&u=05d137d507bad41b842d74cb58b567e9b9f965da&v=4" width="24" alt="Avatar of kevindels"> kevindels
@@ -4551,7 +4538,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>343</td>
+		<td>342</td>
 		<td>
 			<a href="https://github.com/thainole">
 				<img src="https://avatars.githubusercontent.com/u/77159849?s=72&u=ae1fc46fbd7eea7a86843bd16b70e0040be18766&v=4" width="24" alt="Avatar of thainole"> thainole
@@ -4564,7 +4551,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>344</td>
+		<td>343</td>
 		<td>
 			<a href="https://github.com/asullom">
 				<img src="https://avatars.githubusercontent.com/u/3279901?s=72&v=4" width="24" alt="Avatar of asullom"> asullom
@@ -4577,7 +4564,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>345</td>
+		<td>344</td>
 		<td>
 			<a href="https://github.com/Aquima">
 				<img src="https://avatars.githubusercontent.com/u/2018080?s=72&u=14e2e07b864aa0813c1999e133c448987df1f0bb&v=4" width="24" alt="Avatar of Aquima"> Aquima
@@ -4590,7 +4577,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>346</td>
+		<td>345</td>
 		<td>
 			<a href="https://github.com/nitaly31">
 				<img src="https://avatars.githubusercontent.com/u/73443677?s=72&u=67ca31d9c63636646b61c46be9417c8b1d87e71d&v=4" width="24" alt="Avatar of nitaly31"> nitaly31
@@ -4603,7 +4590,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>347</td>
+		<td>346</td>
 		<td>
 			<a href="https://github.com/frontend-3">
 				<img src="https://avatars.githubusercontent.com/u/3493775?s=72&u=83bb46a24ba26a54cf96e5ce6bd3384ce9ee685f&v=4" width="24" alt="Avatar of frontend-3"> frontend-3
@@ -4616,7 +4603,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>43</td>
 	</tr>
 	<tr>
-		<td>348</td>
+		<td>347</td>
 		<td>
 			<a href="https://github.com/shiarauzo">
 				<img src="https://avatars.githubusercontent.com/u/43147102?s=72&u=0ec1db4c62fc2d1dc1daedc46fb7469ec3642b7a&v=4" width="24" alt="Avatar of shiarauzo"> shiarauzo
@@ -4629,7 +4616,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>42</td>
 	</tr>
 	<tr>
-		<td>349</td>
+		<td>348</td>
 		<td>
 			<a href="https://github.com/juliogarciag">
 				<img src="https://avatars.githubusercontent.com/u/362584?s=72&u=255b0d787540fe81c3d874f84d9fdf6fb0b15bd2&v=4" width="24" alt="Avatar of juliogarciag"> juliogarciag
@@ -4639,6 +4626,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@0xsplits  </td>
 		<td>No Twitter Username</td>
 		<td>Lima</td>
+		<td>42</td>
+	</tr>
+	<tr>
+		<td>349</td>
+		<td>
+			<a href="https://github.com/darwinva97">
+				<img src="https://avatars.githubusercontent.com/u/30082909?s=72&u=6af5db31c3fc2654578973a3cd7fcfeb5d7874b2&v=4" width="24" alt="Avatar of darwinva97"> darwinva97
+			</a><br/>
+			DarwinVA
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Los Olivos, Lima. Perú</td>
 		<td>42</td>
 	</tr>
 	<tr>
@@ -4683,19 +4683,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>353</td>
 		<td>
-			<a href="https://github.com/ccarruitero">
-				<img src="https://avatars.githubusercontent.com/u/1203517?s=72&v=4" width="24" alt="Avatar of ccarruitero"> ccarruitero
-			</a><br/>
-			César Carruitero
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>42</td>
-	</tr>
-	<tr>
-		<td>354</td>
-		<td>
 			<a href="https://github.com/wilsson">
 				<img src="https://avatars.githubusercontent.com/u/4754339?s=72&u=441ed815cfdf0e2151585583a7d2c8d0c8150b40&v=4" width="24" alt="Avatar of wilsson"> wilsson
 			</a><br/>
@@ -4704,6 +4691,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima, Perú</td>
+		<td>42</td>
+	</tr>
+	<tr>
+		<td>354</td>
+		<td>
+			<a href="https://github.com/ccarruitero">
+				<img src="https://avatars.githubusercontent.com/u/1203517?s=72&v=4" width="24" alt="Avatar of ccarruitero"> ccarruitero
+			</a><br/>
+			César Carruitero
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
 		<td>42</td>
 	</tr>
 	<tr>
@@ -4774,19 +4774,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>360</td>
 		<td>
-			<a href="https://github.com/piero-vic">
-				<img src="https://avatars.githubusercontent.com/u/71156605?s=72&u=f1cef541db6ab9fa4b32af3890a2a6038a6dc2dd&v=4" width="24" alt="Avatar of piero-vic"> piero-vic
-			</a><br/>
-			Piero Lescano
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>41</td>
-	</tr>
-	<tr>
-		<td>361</td>
-		<td>
 			<a href="https://github.com/DominidM">
 				<img src="https://avatars.githubusercontent.com/u/145924366?s=72&u=da27c37a280fbb92750e1c177319b7b89a7ce434&v=4" width="24" alt="Avatar of DominidM"> DominidM
 			</a><br/>
@@ -4798,7 +4785,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>41</td>
 	</tr>
 	<tr>
-		<td>362</td>
+		<td>361</td>
 		<td>
 			<a href="https://github.com/MAGALLANESJoseManuel">
 				<img src="https://avatars.githubusercontent.com/u/7110381?s=72&u=d5cfc7550ac52ea2444371b70a9e782b8a1e3a3c&v=4" width="24" alt="Avatar of MAGALLANESJoseManuel"> MAGALLANESJoseManuel
@@ -4811,7 +4798,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>41</td>
 	</tr>
 	<tr>
-		<td>363</td>
+		<td>362</td>
 		<td>
 			<a href="https://github.com/DevElCuy">
 				<img src="https://avatars.githubusercontent.com/u/284466?s=72&u=9c2f9a6a6b81031797ea433a3035c6cfcf9759fd&v=4" width="24" alt="Avatar of DevElCuy"> DevElCuy
@@ -4824,7 +4811,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>41</td>
 	</tr>
 	<tr>
-		<td>364</td>
+		<td>363</td>
 		<td>
 			<a href="https://github.com/eporroa">
 				<img src="https://avatars.githubusercontent.com/u/205025?s=72&u=f3799423b5355abc3f37f0381d479cb91c1c0836&v=4" width="24" alt="Avatar of eporroa"> eporroa
@@ -4837,20 +4824,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>41</td>
 	</tr>
 	<tr>
-		<td>365</td>
-		<td>
-			<a href="https://github.com/ManuelaFlores">
-				<img src="https://avatars.githubusercontent.com/u/31525603?s=72&u=618bf1a9cd5d0da21ff351e8f5fe32bef3a9942f&v=4" width="24" alt="Avatar of ManuelaFlores"> ManuelaFlores
-			</a><br/>
-			Manuela Flores
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima - Perú</td>
-		<td>41</td>
-	</tr>
-	<tr>
-		<td>366</td>
+		<td>364</td>
 		<td>
 			<a href="https://github.com/josersosa">
 				<img src="https://avatars.githubusercontent.com/u/9718222?s=72&u=0769b1e3930e71400881c5c95b04e365c9df6f25&v=4" width="24" alt="Avatar of josersosa"> josersosa
@@ -4863,7 +4837,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>41</td>
 	</tr>
 	<tr>
-		<td>367</td>
+		<td>365</td>
 		<td>
 			<a href="https://github.com/felipechang">
 				<img src="https://avatars.githubusercontent.com/u/33885294?s=72&u=db7d42e1fc316be5adef47dee49fef77689ff1fe&v=4" width="24" alt="Avatar of felipechang"> felipechang
@@ -4876,7 +4850,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>41</td>
 	</tr>
 	<tr>
-		<td>368</td>
+		<td>366</td>
 		<td>
 			<a href="https://github.com/claydergc">
 				<img src="https://avatars.githubusercontent.com/u/11069719?s=72&u=585af993a66c97ee3547adccf5fd46cb4bd64fc3&v=4" width="24" alt="Avatar of claydergc"> claydergc
@@ -4889,7 +4863,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>41</td>
 	</tr>
 	<tr>
-		<td>369</td>
+		<td>367</td>
 		<td>
 			<a href="https://github.com/xzitlou">
 				<img src="https://avatars.githubusercontent.com/u/1903014?s=72&u=32d1346f785a0ee146efd8cc3f8d7bd618ff7d85&v=4" width="24" alt="Avatar of xzitlou"> xzitlou
@@ -4902,7 +4876,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>370</td>
+		<td>368</td>
 		<td>
 			<a href="https://github.com/CristianLlanos">
 				<img src="https://avatars.githubusercontent.com/u/6595277?s=72&u=1d957b531a816d7178075ce0c322605fc4c6f867&v=4" width="24" alt="Avatar of CristianLlanos"> CristianLlanos
@@ -4915,7 +4889,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>371</td>
+		<td>369</td>
+		<td>
+			<a href="https://github.com/piero-vic">
+				<img src="https://avatars.githubusercontent.com/u/71156605?s=72&u=f1cef541db6ab9fa4b32af3890a2a6038a6dc2dd&v=4" width="24" alt="Avatar of piero-vic"> piero-vic
+			</a><br/>
+			Piero Lescano
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>40</td>
+	</tr>
+	<tr>
+		<td>370</td>
 		<td>
 			<a href="https://github.com/Kevincarlosqa">
 				<img src="https://avatars.githubusercontent.com/u/116055924?s=72&u=6475dd30dad12a1c4b9f2152587647b5e5dd2123&v=4" width="24" alt="Avatar of Kevincarlosqa"> Kevincarlosqa
@@ -4928,20 +4915,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>372</td>
-		<td>
-			<a href="https://github.com/EzerZuniga">
-				<img src="https://avatars.githubusercontent.com/u/214755104?s=72&u=f00d3341f009cdd892273641430a366d95254b60&v=4" width="24" alt="Avatar of EzerZuniga"> EzerZuniga
-			</a><br/>
-			Ezer Benito Zuñiga chura 
-		</td>
-		<td>Universidad Nacional San Antonio<br/>Abad<br/>Del<br/>Cusco<br/><br/></td>
-		<td><a href="https://twitter.com/EzerZuniga91844">EzerZuniga91844</a></td>
-		<td>Cusco - Perú</td>
-		<td>40</td>
-	</tr>
-	<tr>
-		<td>373</td>
+		<td>371</td>
 		<td>
 			<a href="https://github.com/shinnmar">
 				<img src="https://avatars.githubusercontent.com/u/65095938?s=72&u=16e9ca2d0f5cbd5e444f78b66b76b4aeefbeeb7f&v=4" width="24" alt="Avatar of shinnmar"> shinnmar
@@ -4954,7 +4928,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>374</td>
+		<td>372</td>
 		<td>
 			<a href="https://github.com/PBenavides">
 				<img src="https://avatars.githubusercontent.com/u/40007882?s=72&u=9cf0cb36ae93bab2b01f57463eba71f76e757411&v=4" width="24" alt="Avatar of PBenavides"> PBenavides
@@ -4967,7 +4941,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>375</td>
+		<td>373</td>
+		<td>
+			<a href="https://github.com/ManuelaFlores">
+				<img src="https://avatars.githubusercontent.com/u/31525603?s=72&u=618bf1a9cd5d0da21ff351e8f5fe32bef3a9942f&v=4" width="24" alt="Avatar of ManuelaFlores"> ManuelaFlores
+			</a><br/>
+			Manuela Flores
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima - Perú</td>
+		<td>40</td>
+	</tr>
+	<tr>
+		<td>374</td>
 		<td>
 			<a href="https://github.com/jrichardsz">
 				<img src="https://avatars.githubusercontent.com/u/3322836?s=72&u=b1cf5130afacd0606321f844a1552813a5d2d4b7&v=4" width="24" alt="Avatar of jrichardsz"> jrichardsz
@@ -4980,7 +4967,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>376</td>
+		<td>375</td>
 		<td>
 			<a href="https://github.com/PyarmandoCode">
 				<img src="https://avatars.githubusercontent.com/u/98427197?s=72&u=c9add202dcee42d44a08d2ab71d4d529dfc92ba0&v=4" width="24" alt="Avatar of PyarmandoCode"> PyarmandoCode
@@ -4993,7 +4980,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>377</td>
+		<td>376</td>
 		<td>
 			<a href="https://github.com/aguerraquispe">
 				<img src="https://avatars.githubusercontent.com/u/64237836?s=72&u=d67bb32e20a4613ef117578247f42bbb19ed12e3&v=4" width="24" alt="Avatar of aguerraquispe"> aguerraquispe
@@ -5006,7 +4993,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>378</td>
+		<td>377</td>
 		<td>
 			<a href="https://github.com/ChrisADR">
 				<img src="https://avatars.githubusercontent.com/u/14809105?s=72&u=8ac5cdbc4f537c6999ee3b6355890b2658dd347c&v=4" width="24" alt="Avatar of ChrisADR"> ChrisADR
@@ -5019,7 +5006,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>379</td>
+		<td>378</td>
 		<td>
 			<a href="https://github.com/GodoSanchezH">
 				<img src="https://avatars.githubusercontent.com/u/69484171?s=72&u=6c2fd594d3ef9f13c6dafd351621999819bc052d&v=4" width="24" alt="Avatar of GodoSanchezH"> GodoSanchezH
@@ -5032,7 +5019,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>380</td>
+		<td>379</td>
 		<td>
 			<a href="https://github.com/gquinodeveloper">
 				<img src="https://avatars.githubusercontent.com/u/31318966?s=72&u=0c7e008877aad1d1eb46bd0e6a9208a9471e2199&v=4" width="24" alt="Avatar of gquinodeveloper"> gquinodeveloper
@@ -5045,7 +5032,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>381</td>
+		<td>380</td>
 		<td>
 			<a href="https://github.com/VivianaGuerraCustodio">
 				<img src="https://avatars.githubusercontent.com/u/60787174?s=72&u=45d75bf52f5d8baf209d4c31bf7706c08cc734c5&v=4" width="24" alt="Avatar of VivianaGuerraCustodio"> VivianaGuerraCustodio
@@ -5058,7 +5045,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>382</td>
+		<td>381</td>
 		<td>
 			<a href="https://github.com/RoyYonathanCarbajalP">
 				<img src="https://avatars.githubusercontent.com/u/183530873?s=72&v=4" width="24" alt="Avatar of RoyYonathanCarbajalP"> RoyYonathanCarbajalP
@@ -5071,7 +5058,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>40</td>
 	</tr>
 	<tr>
-		<td>383</td>
+		<td>382</td>
 		<td>
 			<a href="https://github.com/RageHardrack">
 				<img src="https://avatars.githubusercontent.com/u/64567335?s=72&u=712bd9781f5474dc04a68f2b12ea39bfbb90865a&v=4" width="24" alt="Avatar of RageHardrack"> RageHardrack
@@ -5084,7 +5071,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>384</td>
+		<td>383</td>
 		<td>
 			<a href="https://github.com/JosueDurand96">
 				<img src="https://avatars.githubusercontent.com/u/38115798?s=72&u=144def01b534af690bde499e650283c77f4193d3&v=4" width="24" alt="Avatar of JosueDurand96"> JosueDurand96
@@ -5097,7 +5084,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>385</td>
+		<td>384</td>
 		<td>
 			<a href="https://github.com/And0re">
 				<img src="https://avatars.githubusercontent.com/u/27875951?s=72&u=dad3644aa5a2cc7e123729616c3746b35de522a9&v=4" width="24" alt="Avatar of And0re"> And0re
@@ -5110,33 +5097,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
+		<td>385</td>
+		<td>
+			<a href="https://github.com/EzerZuniga">
+				<img src="https://avatars.githubusercontent.com/u/214755104?s=72&u=f00d3341f009cdd892273641430a366d95254b60&v=4" width="24" alt="Avatar of EzerZuniga"> EzerZuniga
+			</a><br/>
+			Ezer Benito Zuñiga chura 
+		</td>
+		<td>Universidad Nacional San Antonio<br/>Abad<br/>Del<br/>Cusco<br/><br/></td>
+		<td><a href="https://twitter.com/EzerZuniga91844">EzerZuniga91844</a></td>
+		<td>Cusco - Perú</td>
+		<td>39</td>
+	</tr>
+	<tr>
 		<td>386</td>
-		<td>
-			<a href="https://github.com/bojorquezja">
-				<img src="https://avatars.githubusercontent.com/u/22382620?s=72&u=0ec8624a6f880feb29d0facb7130b060441644b3&v=4" width="24" alt="Avatar of bojorquezja"> bojorquezja
-			</a><br/>
-			Jorge Bojorquez
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>39</td>
-	</tr>
-	<tr>
-		<td>387</td>
-		<td>
-			<a href="https://github.com/justin-A18">
-				<img src="https://avatars.githubusercontent.com/u/111537538?s=72&u=4aaf1b33bc7f2b80ba4391cec576843a9cf2efd1&v=4" width="24" alt="Avatar of justin-A18"> justin-A18
-			</a><br/>
-			Justin Andre Huertas Vargas
-		</td>
-		<td>No Company</td>
-		<td><a href="https://twitter.com/DevJush">DevJush</a></td>
-		<td>Lima, Perú</td>
-		<td>39</td>
-	</tr>
-	<tr>
-		<td>388</td>
 		<td>
 			<a href="https://github.com/mysticBel">
 				<img src="https://avatars.githubusercontent.com/u/80657076?s=72&u=3bd866ede3592e2ec0fff1863033d7f8a8ba38e2&v=4" width="24" alt="Avatar of mysticBel"> mysticBel
@@ -5149,7 +5123,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>389</td>
+		<td>387</td>
 		<td>
 			<a href="https://github.com/EricJara">
 				<img src="https://avatars.githubusercontent.com/u/32911437?s=72&u=ed4c4d7d8a10daafe1979a67d59859f5eb15ff27&v=4" width="24" alt="Avatar of EricJara"> EricJara
@@ -5162,7 +5136,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>390</td>
+		<td>388</td>
 		<td>
 			<a href="https://github.com/dairdev">
 				<img src="https://avatars.githubusercontent.com/u/1166441?s=72&u=b168675c89d14d9171483c0c386d7c60ba086d98&v=4" width="24" alt="Avatar of dairdev"> dairdev
@@ -5175,7 +5149,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>391</td>
+		<td>389</td>
 		<td>
 			<a href="https://github.com/nestoraudante">
 				<img src="https://avatars.githubusercontent.com/u/11723435?s=72&u=d0b188fc73e7d1e6c5b8b9ab03296068bf499f3c&v=4" width="24" alt="Avatar of nestoraudante"> nestoraudante
@@ -5188,7 +5162,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>392</td>
+		<td>390</td>
 		<td>
 			<a href="https://github.com/hebertdev">
 				<img src="https://avatars.githubusercontent.com/u/31359121?s=72&u=8f22545083b4fa399c545fe05cd18d80fd18aab9&v=4" width="24" alt="Avatar of hebertdev"> hebertdev
@@ -5201,7 +5175,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>393</td>
+		<td>391</td>
 		<td>
 			<a href="https://github.com/damariis13">
 				<img src="https://avatars.githubusercontent.com/u/74875249?s=72&u=0d8296c08c83d1a1c2912482f33f44adcf17afd3&v=4" width="24" alt="Avatar of damariis13"> damariis13
@@ -5214,7 +5188,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>394</td>
+		<td>392</td>
 		<td>
 			<a href="https://github.com/javierayalar">
 				<img src="https://avatars.githubusercontent.com/u/83180625?s=72&u=260bb2db83a88bbd20b2e91093fbde9e8a35a1fe&v=4" width="24" alt="Avatar of javierayalar"> javierayalar
@@ -5227,7 +5201,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>39</td>
 	</tr>
 	<tr>
-		<td>395</td>
+		<td>393</td>
 		<td>
 			<a href="https://github.com/renxzen">
 				<img src="https://avatars.githubusercontent.com/u/13023797?s=72&u=dea1d02d97e0e05020c867d05226833422e416a2&v=4" width="24" alt="Avatar of renxzen"> renxzen
@@ -5240,7 +5214,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>38</td>
 	</tr>
 	<tr>
-		<td>396</td>
+		<td>394</td>
 		<td>
 			<a href="https://github.com/zmandel">
 				<img src="https://avatars.githubusercontent.com/u/4365607?s=72&u=f46373851c6f6895530a5d630f8fd2df26131046&v=4" width="24" alt="Avatar of zmandel"> zmandel
@@ -5253,7 +5227,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>38</td>
 	</tr>
 	<tr>
-		<td>397</td>
+		<td>395</td>
 		<td>
 			<a href="https://github.com/NunezGabriel">
 				<img src="https://avatars.githubusercontent.com/u/51795012?s=72&u=b054e4ad0e8986614e1551c156aea4011670bde4&v=4" width="24" alt="Avatar of NunezGabriel"> NunezGabriel
@@ -5266,7 +5240,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>38</td>
 	</tr>
 	<tr>
-		<td>398</td>
+		<td>396</td>
 		<td>
 			<a href="https://github.com/Nkaleth">
 				<img src="https://avatars.githubusercontent.com/u/26579035?s=72&u=d2d7e0666665d41cc3672e4f227ab7dd6411f7f7&v=4" width="24" alt="Avatar of Nkaleth"> Nkaleth
@@ -5276,6 +5250,32 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@microverseinc </td>
 		<td>No Twitter Username</td>
 		<td>Lima,Perú</td>
+		<td>38</td>
+	</tr>
+	<tr>
+		<td>397</td>
+		<td>
+			<a href="https://github.com/bojorquezja">
+				<img src="https://avatars.githubusercontent.com/u/22382620?s=72&u=0ec8624a6f880feb29d0facb7130b060441644b3&v=4" width="24" alt="Avatar of bojorquezja"> bojorquezja
+			</a><br/>
+			Jorge Bojorquez
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
+		<td>38</td>
+	</tr>
+	<tr>
+		<td>398</td>
+		<td>
+			<a href="https://github.com/justin-A18">
+				<img src="https://avatars.githubusercontent.com/u/111537538?s=72&u=4aaf1b33bc7f2b80ba4391cec576843a9cf2efd1&v=4" width="24" alt="Avatar of justin-A18"> justin-A18
+			</a><br/>
+			Justin Andre Huertas Vargas
+		</td>
+		<td>No Company</td>
+		<td><a href="https://twitter.com/DevJush">DevJush</a></td>
+		<td>Lima, Perú</td>
 		<td>38</td>
 	</tr>
 	<tr>
@@ -5437,19 +5437,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>411</td>
 		<td>
-			<a href="https://github.com/valec3">
-				<img src="https://avatars.githubusercontent.com/u/95582067?s=72&u=b530ce5942fb9f50faf6d3c2fe5967b02fc2c639&v=4" width="24" alt="Avatar of valec3"> valec3
-			</a><br/>
-			Victor Maye
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>36</td>
-	</tr>
-	<tr>
-		<td>412</td>
-		<td>
 			<a href="https://github.com/Akaidmaru">
 				<img src="https://avatars.githubusercontent.com/u/13859700?s=72&u=4b044663bc150fc30a2853b8eb9e780d8fa2d79e&v=4" width="24" alt="Avatar of Akaidmaru"> Akaidmaru
 			</a><br/>
@@ -5461,7 +5448,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>413</td>
+		<td>412</td>
 		<td>
 			<a href="https://github.com/tavolafourcade">
 				<img src="https://avatars.githubusercontent.com/u/63257157?s=72&u=595e1c9b261b2c57b838b5dca0c14fab05aa910c&v=4" width="24" alt="Avatar of tavolafourcade"> tavolafourcade
@@ -5474,20 +5461,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>414</td>
-		<td>
-			<a href="https://github.com/smavodev">
-				<img src="https://avatars.githubusercontent.com/u/43839357?s=72&u=fac2af10028283ee6ef7ade659bc97d4f0af37d4&v=4" width="24" alt="Avatar of smavodev"> smavodev
-			</a><br/>
-			Sergio Villagomez Ortega
-		</td>
-		<td>Bcp </td>
-		<td>No Twitter Username</td>
-		<td>Lima - Perú</td>
-		<td>36</td>
-	</tr>
-	<tr>
-		<td>415</td>
+		<td>413</td>
 		<td>
 			<a href="https://github.com/alonsofalconi">
 				<img src="https://avatars.githubusercontent.com/u/81522435?s=72&v=4" width="24" alt="Avatar of alonsofalconi"> alonsofalconi
@@ -5500,7 +5474,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>416</td>
+		<td>414</td>
 		<td>
 			<a href="https://github.com/NathaliaElen">
 				<img src="https://avatars.githubusercontent.com/u/90493304?s=72&u=43fd5965217f1a7f8f0af7458f683ea4f49d7818&v=4" width="24" alt="Avatar of NathaliaElen"> NathaliaElen
@@ -5513,7 +5487,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>417</td>
+		<td>415</td>
 		<td>
 			<a href="https://github.com/DeveloperRafael1996">
 				<img src="https://avatars.githubusercontent.com/u/32550691?s=72&u=50f0ea8bf5c32e1fecb71f451a68c487e3264063&v=4" width="24" alt="Avatar of DeveloperRafael1996"> DeveloperRafael1996
@@ -5526,7 +5500,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>418</td>
+		<td>416</td>
 		<td>
 			<a href="https://github.com/mokuzaru">
 				<img src="https://avatars.githubusercontent.com/u/6625399?s=72&u=043771e471cd59d643a8d621e4aeca12a80d459f&v=4" width="24" alt="Avatar of mokuzaru"> mokuzaru
@@ -5539,7 +5513,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>419</td>
+		<td>417</td>
 		<td>
 			<a href="https://github.com/adelgadop">
 				<img src="https://avatars.githubusercontent.com/u/52834007?s=72&u=800fe4340f0473706ab1e251973d81def270295e&v=4" width="24" alt="Avatar of adelgadop"> adelgadop
@@ -5552,7 +5526,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>420</td>
+		<td>418</td>
 		<td>
 			<a href="https://github.com/cesjam7">
 				<img src="https://avatars.githubusercontent.com/u/4822841?s=72&u=2f07edb2b8dcb273e1b1f15c2b8de5077efd66cc&v=4" width="24" alt="Avatar of cesjam7"> cesjam7
@@ -5565,7 +5539,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>421</td>
+		<td>419</td>
 		<td>
 			<a href="https://github.com/jlcallalle">
 				<img src="https://avatars.githubusercontent.com/u/1476498?s=72&u=106eebccd92d371c5b8aa05ad4e72f8e3f7fc82c&v=4" width="24" alt="Avatar of jlcallalle"> jlcallalle
@@ -5578,7 +5552,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>422</td>
+		<td>420</td>
 		<td>
 			<a href="https://github.com/jhonrolyol">
 				<img src="https://avatars.githubusercontent.com/u/92251336?s=72&u=e1d4775f5cb6d8ce57b7f2bfe988e427ab97ca99&v=4" width="24" alt="Avatar of jhonrolyol"> jhonrolyol
@@ -5591,7 +5565,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>423</td>
+		<td>421</td>
 		<td>
 			<a href="https://github.com/AlexandroBazan">
 				<img src="https://avatars.githubusercontent.com/u/3142308?s=72&u=c1c9712d65462317a3d3cb5379375f0ed32b85b3&v=4" width="24" alt="Avatar of AlexandroBazan"> AlexandroBazan
@@ -5604,7 +5578,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>36</td>
 	</tr>
 	<tr>
-		<td>424</td>
+		<td>422</td>
+		<td>
+			<a href="https://github.com/valec3">
+				<img src="https://avatars.githubusercontent.com/u/95582067?s=72&u=b530ce5942fb9f50faf6d3c2fe5967b02fc2c639&v=4" width="24" alt="Avatar of valec3"> valec3
+			</a><br/>
+			Victor Maye
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>35</td>
+	</tr>
+	<tr>
+		<td>423</td>
 		<td>
 			<a href="https://github.com/haroldeustaquio">
 				<img src="https://avatars.githubusercontent.com/u/138983271?s=72&u=215688d4630f85596fc6acf2d675d112e42524a6&v=4" width="24" alt="Avatar of haroldeustaquio"> haroldeustaquio
@@ -5614,6 +5601,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Universidad Nacional De Ingeniería<br/></td>
 		<td>No Twitter Username</td>
 		<td>Peru</td>
+		<td>35</td>
+	</tr>
+	<tr>
+		<td>424</td>
+		<td>
+			<a href="https://github.com/smavodev">
+				<img src="https://avatars.githubusercontent.com/u/43839357?s=72&u=fac2af10028283ee6ef7ade659bc97d4f0af37d4&v=4" width="24" alt="Avatar of smavodev"> smavodev
+			</a><br/>
+			Sergio Villagomez Ortega
+		</td>
+		<td>Bcp </td>
+		<td>No Twitter Username</td>
+		<td>Lima - Perú</td>
 		<td>35</td>
 	</tr>
 	<tr>
@@ -5632,6 +5632,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>426</td>
 		<td>
+			<a href="https://github.com/llabans">
+				<img src="https://avatars.githubusercontent.com/u/36491876?s=72&u=211ec51404a9b23f158fc1b2d849ed0a9dc764c9&v=4" width="24" alt="Avatar of llabans"> llabans
+			</a><br/>
+			Luis Labán Seminario
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>35</td>
+	</tr>
+	<tr>
+		<td>427</td>
+		<td>
 			<a href="https://github.com/Daniee19">
 				<img src="https://avatars.githubusercontent.com/u/142465643?s=72&u=e12d31d49031ea5d7566d1dbf0cfe972b4dfe98a&v=4" width="24" alt="Avatar of Daniee19"> Daniee19
 			</a><br/>
@@ -5643,7 +5656,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>427</td>
+		<td>428</td>
 		<td>
 			<a href="https://github.com/jaime-olivares">
 				<img src="https://avatars.githubusercontent.com/u/6194083?s=72&u=59e093513d11beb284597527b520a66d7a97106d&v=4" width="24" alt="Avatar of jaime-olivares"> jaime-olivares
@@ -5656,7 +5669,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>428</td>
+		<td>429</td>
 		<td>
 			<a href="https://github.com/gustavocadev">
 				<img src="https://avatars.githubusercontent.com/u/84424661?s=72&u=3b5f3c7a8f727d8840e6b5d83542e5bf80c5d3ad&v=4" width="24" alt="Avatar of gustavocadev"> gustavocadev
@@ -5669,7 +5682,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>429</td>
+		<td>430</td>
 		<td>
 			<a href="https://github.com/outlierd29">
 				<img src="https://avatars.githubusercontent.com/u/16096671?s=72&u=dfe3d8eed03acac34e4a8e6518ee39beac9e81b6&v=4" width="24" alt="Avatar of outlierd29"> outlierd29
@@ -5682,7 +5695,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>430</td>
+		<td>431</td>
 		<td>
 			<a href="https://github.com/drkdevv1">
 				<img src="https://avatars.githubusercontent.com/u/103902831?s=72&u=001d84fe5d54b6bc85cbcec1e7b1b5b179916ccc&v=4" width="24" alt="Avatar of drkdevv1"> drkdevv1
@@ -5695,7 +5708,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>431</td>
+		<td>432</td>
 		<td>
 			<a href="https://github.com/MDCIrony">
 				<img src="https://avatars.githubusercontent.com/u/86406248?s=72&u=c988a21141518e2d6e4c827b3c8553670c39524d&v=4" width="24" alt="Avatar of MDCIrony"> MDCIrony
@@ -5708,7 +5721,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>432</td>
+		<td>433</td>
 		<td>
 			<a href="https://github.com/Manuel-Idalgo">
 				<img src="https://avatars.githubusercontent.com/u/245618711?s=72&u=63560a34347742cc004a5d4670b649748c8047a0&v=4" width="24" alt="Avatar of Manuel-Idalgo"> Manuel-Idalgo
@@ -5721,7 +5734,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>433</td>
+		<td>434</td>
 		<td>
 			<a href="https://github.com/FatimaGR">
 				<img src="https://avatars.githubusercontent.com/u/98863199?s=72&u=2ff883c9b329877861680b64b6b425610dfb214f&v=4" width="24" alt="Avatar of FatimaGR"> FatimaGR
@@ -5734,7 +5747,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>434</td>
+		<td>435</td>
 		<td>
 			<a href="https://github.com/android-sos">
 				<img src="https://avatars.githubusercontent.com/u/6304388?s=72&u=90143c14997724652b39ec2f82425d26e0ec1fa1&v=4" width="24" alt="Avatar of android-sos"> android-sos
@@ -5747,7 +5760,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>435</td>
+		<td>436</td>
 		<td>
 			<a href="https://github.com/kerpie">
 				<img src="https://avatars.githubusercontent.com/u/1113924?s=72&v=4" width="24" alt="Avatar of kerpie"> kerpie
@@ -5760,7 +5773,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>436</td>
+		<td>437</td>
 		<td>
 			<a href="https://github.com/daniel24aaa">
 				<img src="https://avatars.githubusercontent.com/u/133530160?s=72&u=1d7a27babca929c9651aa6c80b6e926546ae40c8&v=4" width="24" alt="Avatar of daniel24aaa"> daniel24aaa
@@ -5773,7 +5786,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>437</td>
+		<td>438</td>
 		<td>
 			<a href="https://github.com/jphber">
 				<img src="https://avatars.githubusercontent.com/u/6091063?s=72&u=49538df0d2cfe9cc14dda84ae6e110bfaad5e637&v=4" width="24" alt="Avatar of jphber"> jphber
@@ -5786,7 +5799,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>438</td>
+		<td>439</td>
 		<td>
 			<a href="https://github.com/dyegofelipe08">
 				<img src="https://avatars.githubusercontent.com/u/81336646?s=72&u=6a7e331dcf206eb083480baf97d366e01d4e70d6&v=4" width="24" alt="Avatar of dyegofelipe08"> dyegofelipe08
@@ -5799,7 +5812,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>35</td>
 	</tr>
 	<tr>
-		<td>439</td>
+		<td>440</td>
 		<td>
 			<a href="https://github.com/jlmanrique">
 				<img src="https://avatars.githubusercontent.com/u/571019?s=72&u=b62857c06d1823fac8028d1d8c68e90e967ce9f9&v=4" width="24" alt="Avatar of jlmanrique"> jlmanrique
@@ -5810,19 +5823,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td><a href="https://twitter.com/jlmanrique">jlmanrique</a></td>
 		<td>Lima, Perú</td>
 		<td>35</td>
-	</tr>
-	<tr>
-		<td>440</td>
-		<td>
-			<a href="https://github.com/llabans">
-				<img src="https://avatars.githubusercontent.com/u/36491876?s=72&u=211ec51404a9b23f158fc1b2d849ed0a9dc764c9&v=4" width="24" alt="Avatar of llabans"> llabans
-			</a><br/>
-			Luis Labán Seminario
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>34</td>
 	</tr>
 	<tr>
 		<td>441</td>
@@ -5944,19 +5944,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>450</td>
 		<td>
-			<a href="https://github.com/d4n3436">
-				<img src="https://avatars.githubusercontent.com/u/39978852?s=72&u=08d052980bb85d09b153bbd0e0c8864547674ee2&v=4" width="24" alt="Avatar of d4n3436"> d4n3436
-			</a><br/>
-			d4n
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>33</td>
-	</tr>
-	<tr>
-		<td>451</td>
-		<td>
 			<a href="https://github.com/dortizp">
 				<img src="https://avatars.githubusercontent.com/u/4754285?s=72&v=4" width="24" alt="Avatar of dortizp"> dortizp
 			</a><br/>
@@ -5968,7 +5955,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>452</td>
+		<td>451</td>
 		<td>
 			<a href="https://github.com/jeguns">
 				<img src="https://avatars.githubusercontent.com/u/43099973?s=72&u=ae795b72043134d12041d2658fb9aa915d35c869&v=4" width="24" alt="Avatar of jeguns"> jeguns
@@ -5981,7 +5968,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>453</td>
+		<td>452</td>
 		<td>
 			<a href="https://github.com/merRen22">
 				<img src="https://avatars.githubusercontent.com/u/33866489?s=72&u=88f700fcd3c46e601fec91009e3491ddd911a8b1&v=4" width="24" alt="Avatar of merRen22"> merRen22
@@ -5994,7 +5981,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>454</td>
+		<td>453</td>
 		<td>
 			<a href="https://github.com/PatrickZurita">
 				<img src="https://avatars.githubusercontent.com/u/71539616?s=72&u=137e347f4b1695adf721e7fc2ba157dc89871a52&v=4" width="24" alt="Avatar of PatrickZurita"> PatrickZurita
@@ -6007,7 +5994,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>455</td>
+		<td>454</td>
 		<td>
 			<a href="https://github.com/FranH20">
 				<img src="https://avatars.githubusercontent.com/u/54047442?s=72&u=743a0274e9eb7efab735ed2d5c073c1733f5423f&v=4" width="24" alt="Avatar of FranH20"> FranH20
@@ -6020,7 +6007,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>456</td>
+		<td>455</td>
 		<td>
 			<a href="https://github.com/martinsam16">
 				<img src="https://avatars.githubusercontent.com/u/42879133?s=72&u=6cfbe73c40a98c33043015e8263be6f540f4585b&v=4" width="24" alt="Avatar of martinsam16"> martinsam16
@@ -6033,7 +6020,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>457</td>
+		<td>456</td>
 		<td>
 			<a href="https://github.com/CatRivas">
 				<img src="https://avatars.githubusercontent.com/u/125322181?s=72&u=3019ba126cd4cf9da4adf58c1dbd5035f31c7156&v=4" width="24" alt="Avatar of CatRivas"> CatRivas
@@ -6046,7 +6033,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>458</td>
+		<td>457</td>
 		<td>
 			<a href="https://github.com/AlonsoErnesto">
 				<img src="https://avatars.githubusercontent.com/u/46402355?s=72&u=67b89a5987a2d8763ec7f85d76689e1ec49ce077&v=4" width="24" alt="Avatar of AlonsoErnesto"> AlonsoErnesto
@@ -6059,7 +6046,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>459</td>
+		<td>458</td>
 		<td>
 			<a href="https://github.com/mig1098">
 				<img src="https://avatars.githubusercontent.com/u/4114998?s=72&u=bde9df1f8c8089789ce960e0b8385568f58b1018&v=4" width="24" alt="Avatar of mig1098"> mig1098
@@ -6072,7 +6059,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>460</td>
+		<td>459</td>
 		<td>
 			<a href="https://github.com/JuanDiegoGuerra">
 				<img src="https://avatars.githubusercontent.com/u/45726631?s=72&u=1b0d990262e774380dd8af91fe6b2c41d05e3f88&v=4" width="24" alt="Avatar of JuanDiegoGuerra"> JuanDiegoGuerra
@@ -6085,7 +6072,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>461</td>
+		<td>460</td>
 		<td>
 			<a href="https://github.com/Wesitos">
 				<img src="https://avatars.githubusercontent.com/u/651048?s=72&v=4" width="24" alt="Avatar of Wesitos"> Wesitos
@@ -6098,7 +6085,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>462</td>
+		<td>461</td>
 		<td>
 			<a href="https://github.com/Mishmore">
 				<img src="https://avatars.githubusercontent.com/u/25905631?s=72&u=08db29982fea60a73a68e1fed71bb433cafe1d30&v=4" width="24" alt="Avatar of Mishmore"> Mishmore
@@ -6111,7 +6098,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>463</td>
+		<td>462</td>
 		<td>
 			<a href="https://github.com/AlexanderPrincipe">
 				<img src="https://avatars.githubusercontent.com/u/31213239?s=72&u=246a5d7f720e9485af2bbc638b0eb48b428bbe09&v=4" width="24" alt="Avatar of AlexanderPrincipe"> AlexanderPrincipe
@@ -6124,7 +6111,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>464</td>
+		<td>463</td>
 		<td>
 			<a href="https://github.com/RJRCH123">
 				<img src="https://avatars.githubusercontent.com/u/90127713?s=72&u=00d93440a0299bb2a5cad4c1d36f91c524aa0285&v=4" width="24" alt="Avatar of RJRCH123"> RJRCH123
@@ -6137,7 +6124,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>465</td>
+		<td>464</td>
 		<td>
 			<a href="https://github.com/VilmaRomero">
 				<img src="https://avatars.githubusercontent.com/u/7862480?s=72&u=4271691722b985486ff269b0dc3f0e3c40ee0ac1&v=4" width="24" alt="Avatar of VilmaRomero"> VilmaRomero
@@ -6150,7 +6137,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>466</td>
+		<td>465</td>
 		<td>
 			<a href="https://github.com/Mateo-tem">
 				<img src="https://avatars.githubusercontent.com/u/79017590?s=72&u=bb06c44d2d8a27f6f75ec75cfc38729e01582b19&v=4" width="24" alt="Avatar of Mateo-tem"> Mateo-tem
@@ -6163,7 +6150,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>33</td>
 	</tr>
 	<tr>
-		<td>467</td>
+		<td>466</td>
 		<td>
 			<a href="https://github.com/A-PachecoT">
 				<img src="https://avatars.githubusercontent.com/u/99379128?s=72&u=a39979ad6cfba695e7a1f6d2210a4724dd2699a1&v=4" width="24" alt="Avatar of A-PachecoT"> A-PachecoT
@@ -6176,20 +6163,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>468</td>
-		<td>
-			<a href="https://github.com/ArmandoEnrique1010K">
-				<img src="https://avatars.githubusercontent.com/u/96834667?s=72&u=22e7d9f1aafbb77dd1bffaa036d14ba29cdca319&v=4" width="24" alt="Avatar of ArmandoEnrique1010K"> ArmandoEnrique1010K
-			</a><br/>
-			Armando KD
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>32</td>
-	</tr>
-	<tr>
-		<td>469</td>
+		<td>467</td>
 		<td>
 			<a href="https://github.com/PaulESantos">
 				<img src="https://avatars.githubusercontent.com/u/16847375?s=72&u=fcc0328448f4fd9e3af899ccb1ad8bc24aa74325&v=4" width="24" alt="Avatar of PaulESantos"> PaulESantos
@@ -6202,7 +6176,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>470</td>
+		<td>468</td>
 		<td>
 			<a href="https://github.com/alextina">
 				<img src="https://avatars.githubusercontent.com/u/119013795?s=72&u=f7d6385c92c59d9e870aa9d777404230bb7c8e76&v=4" width="24" alt="Avatar of alextina"> alextina
@@ -6215,7 +6189,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>471</td>
+		<td>469</td>
 		<td>
 			<a href="https://github.com/kevinPerezGarcia">
 				<img src="https://avatars.githubusercontent.com/u/52869811?s=72&u=97c5516b8d5a39b50042ac69bae2f6cb1f13a1c6&v=4" width="24" alt="Avatar of kevinPerezGarcia"> kevinPerezGarcia
@@ -6228,7 +6202,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>472</td>
+		<td>470</td>
 		<td>
 			<a href="https://github.com/MrJmpl3">
 				<img src="https://avatars.githubusercontent.com/u/21302114?s=72&u=8ea39b04340fe8c4ebd63b1097497e1bf0d1454f&v=4" width="24" alt="Avatar of MrJmpl3"> MrJmpl3
@@ -6241,7 +6215,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>473</td>
+		<td>471</td>
+		<td>
+			<a href="https://github.com/d4n3436">
+				<img src="https://avatars.githubusercontent.com/u/39978852?s=72&u=08d052980bb85d09b153bbd0e0c8864547674ee2&v=4" width="24" alt="Avatar of d4n3436"> d4n3436
+			</a><br/>
+			d4n
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>32</td>
+	</tr>
+	<tr>
+		<td>472</td>
 		<td>
 			<a href="https://github.com/jcmachicao">
 				<img src="https://avatars.githubusercontent.com/u/7496471?s=72&u=857da04c6ba279fe49b78294878e4d51e711db8c&v=4" width="24" alt="Avatar of jcmachicao"> jcmachicao
@@ -6254,7 +6241,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>474</td>
+		<td>473</td>
 		<td>
 			<a href="https://github.com/feelware">
 				<img src="https://avatars.githubusercontent.com/u/83146012?s=72&u=14cf3d28050c8f96fbf5a91947495fafda897541&v=4" width="24" alt="Avatar of feelware"> feelware
@@ -6267,7 +6254,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>475</td>
+		<td>474</td>
 		<td>
 			<a href="https://github.com/Gerb-istpa">
 				<img src="https://avatars.githubusercontent.com/u/214700356?s=72&u=a671f4fac45e69cbea9bc8a63aea32c97560f245&v=4" width="24" alt="Avatar of Gerb-istpa"> Gerb-istpa
@@ -6280,7 +6267,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>476</td>
+		<td>475</td>
 		<td>
 			<a href="https://github.com/DarienRomero">
 				<img src="https://avatars.githubusercontent.com/u/27095965?s=72&u=ab134a12f0c902679fcdfc70405aa714eae348f5&v=4" width="24" alt="Avatar of DarienRomero"> DarienRomero
@@ -6293,7 +6280,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>477</td>
+		<td>476</td>
 		<td>
 			<a href="https://github.com/ex">
 				<img src="https://avatars.githubusercontent.com/u/99072?s=72&u=e245ec544cda80c31c48bf49214115b83ddbb48f&v=4" width="24" alt="Avatar of ex"> ex
@@ -6306,7 +6293,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>478</td>
+		<td>477</td>
 		<td>
 			<a href="https://github.com/renaco">
 				<img src="https://avatars.githubusercontent.com/u/538234?s=72&u=ac92de19b25193483850356973269a94704f6527&v=4" width="24" alt="Avatar of renaco"> renaco
@@ -6319,7 +6306,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>479</td>
+		<td>478</td>
 		<td>
 			<a href="https://github.com/Vallejoanderson">
 				<img src="https://avatars.githubusercontent.com/u/48649209?s=72&u=fa49a89a6681c00e48223767c4408909a584aed8&v=4" width="24" alt="Avatar of Vallejoanderson"> Vallejoanderson
@@ -6332,7 +6319,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>480</td>
+		<td>479</td>
 		<td>
 			<a href="https://github.com/alejandrohdo">
 				<img src="https://avatars.githubusercontent.com/u/20448568?s=72&u=2fcadcdf8d8c703915831abb8891106e1d810622&v=4" width="24" alt="Avatar of alejandrohdo"> alejandrohdo
@@ -6345,7 +6332,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>481</td>
+		<td>480</td>
 		<td>
 			<a href="https://github.com/sochologa">
 				<img src="https://avatars.githubusercontent.com/u/114755714?s=72&u=7a12e4e5146abf13092f803058aa1d2346331f74&v=4" width="24" alt="Avatar of sochologa"> sochologa
@@ -6358,7 +6345,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>482</td>
+		<td>481</td>
 		<td>
 			<a href="https://github.com/paulrrdiaz">
 				<img src="https://avatars.githubusercontent.com/u/1366028?s=72&u=d4d5eff83e35a14d90350500cd35848802b8cd84&v=4" width="24" alt="Avatar of paulrrdiaz"> paulrrdiaz
@@ -6371,7 +6358,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>483</td>
+		<td>482</td>
 		<td>
 			<a href="https://github.com/LizRuelas">
 				<img src="https://avatars.githubusercontent.com/u/20446260?s=72&u=c24fe2e17a087ddf66a9c69a8d9dd8e1d25d0da7&v=4" width="24" alt="Avatar of LizRuelas"> LizRuelas
@@ -6384,7 +6371,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>484</td>
+		<td>483</td>
 		<td>
 			<a href="https://github.com/malpicado">
 				<img src="https://avatars.githubusercontent.com/u/89428500?s=72&u=73d14a02702b85c1e7d8f0589472b18678a059d3&v=4" width="24" alt="Avatar of malpicado"> malpicado
@@ -6397,7 +6384,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>485</td>
+		<td>484</td>
 		<td>
 			<a href="https://github.com/ArthurGC">
 				<img src="https://avatars.githubusercontent.com/u/79876959?s=72&u=76cd01d2b3d847b5c7cb498caf2aad7b9178eeb2&v=4" width="24" alt="Avatar of ArthurGC"> ArthurGC
@@ -6410,7 +6397,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>486</td>
+		<td>485</td>
 		<td>
 			<a href="https://github.com/Bluefox182">
 				<img src="https://avatars.githubusercontent.com/u/75035501?s=72&u=02d286a9d71d89275757b5ded65fb9b164213b7d&v=4" width="24" alt="Avatar of Bluefox182"> Bluefox182
@@ -6423,7 +6410,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>487</td>
+		<td>486</td>
 		<td>
 			<a href="https://github.com/lafifii">
 				<img src="https://avatars.githubusercontent.com/u/35583274?s=72&u=2255d0835fe611f15473e00c993ae22ef4dbc4ea&v=4" width="24" alt="Avatar of lafifii"> lafifii
@@ -6436,7 +6423,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>488</td>
+		<td>487</td>
 		<td>
 			<a href="https://github.com/NextKool">
 				<img src="https://avatars.githubusercontent.com/u/96707979?s=72&u=dcfad578913fdaea514b1f837a0b74aebab5c0fd&v=4" width="24" alt="Avatar of NextKool"> NextKool
@@ -6449,7 +6436,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>32</td>
 	</tr>
 	<tr>
-		<td>489</td>
+		<td>488</td>
 		<td>
 			<a href="https://github.com/rcaos">
 				<img src="https://avatars.githubusercontent.com/u/2030438?s=72&u=dd8a9b0d999a53e3983b28fa32216d36407a30af&v=4" width="24" alt="Avatar of rcaos"> rcaos
@@ -6462,7 +6449,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>31</td>
 	</tr>
 	<tr>
-		<td>490</td>
+		<td>489</td>
 		<td>
 			<a href="https://github.com/DinaRocio">
 				<img src="https://avatars.githubusercontent.com/u/70351020?s=72&u=16b82fb195ed54765a2f654ac4e4f8267b393ee3&v=4" width="24" alt="Avatar of DinaRocio"> DinaRocio
@@ -6475,7 +6462,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>31</td>
 	</tr>
 	<tr>
-		<td>491</td>
+		<td>490</td>
 		<td>
 			<a href="https://github.com/RaulArmasBenavides">
 				<img src="https://avatars.githubusercontent.com/u/20383126?s=72&u=9e7b8ca18dbc6fcc9a2bc5df0bdd14826cbe75f1&v=4" width="24" alt="Avatar of RaulArmasBenavides"> RaulArmasBenavides
@@ -6488,7 +6475,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>31</td>
 	</tr>
 	<tr>
-		<td>492</td>
+		<td>491</td>
 		<td>
 			<a href="https://github.com/dqarias">
 				<img src="https://avatars.githubusercontent.com/u/45292867?s=72&u=f33e86c1f5336bf8f16680b1d8aa69ffc8338810&v=4" width="24" alt="Avatar of dqarias"> dqarias
@@ -6501,7 +6488,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>31</td>
 	</tr>
 	<tr>
-		<td>493</td>
+		<td>492</td>
 		<td>
 			<a href="https://github.com/klujanrosas">
 				<img src="https://avatars.githubusercontent.com/u/4474353?s=72&u=ab7d33c978e1a2c19a87d388b055abd149e9330d&v=4" width="24" alt="Avatar of klujanrosas"> klujanrosas
@@ -6511,6 +6498,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>@kwri   </td>
 		<td>No Twitter Username</td>
 		<td>Lima, Perú.</td>
+		<td>31</td>
+	</tr>
+	<tr>
+		<td>493</td>
+		<td>
+			<a href="https://github.com/ArmandoEnrique1010K">
+				<img src="https://avatars.githubusercontent.com/u/96834667?s=72&u=22e7d9f1aafbb77dd1bffaa036d14ba29cdca319&v=4" width="24" alt="Avatar of ArmandoEnrique1010K"> ArmandoEnrique1010K
+			</a><br/>
+			Armando KD
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
 		<td>31</td>
 	</tr>
 	<tr>
@@ -6594,19 +6594,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>500</td>
 		<td>
-			<a href="https://github.com/nad21lc">
-				<img src="https://avatars.githubusercontent.com/u/91857416?s=72&u=d34cce11d8c77c8f5263739edcb1d4432dbf387a&v=4" width="24" alt="Avatar of nad21lc"> nad21lc
-			</a><br/>
-			Nadia Lucas
-		</td>
-		<td>Universidad Peruana De Ciencias<br/>Aplicadas<br/></td>
-		<td>No Twitter Username</td>
-		<td>Lima-Perú</td>
-		<td>31</td>
-	</tr>
-	<tr>
-		<td>501</td>
-		<td>
 			<a href="https://github.com/jmoralesv">
 				<img src="https://avatars.githubusercontent.com/u/2235876?s=72&u=708f0d799109d6766436daeb3bebbc31c9f9530b&v=4" width="24" alt="Avatar of jmoralesv"> jmoralesv
 			</a><br/>
@@ -6615,6 +6602,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Mgsc Software Engineer, Freelance<br/></td>
 		<td>No Twitter Username</td>
 		<td>Lima, Peru</td>
+		<td>31</td>
+	</tr>
+	<tr>
+		<td>501</td>
+		<td>
+			<a href="https://github.com/Emerson-Portugal">
+				<img src="https://avatars.githubusercontent.com/u/80434257?s=72&u=31aa2c75e81e345623ca34216b396646e368cf2f&v=4" width="24" alt="Avatar of Emerson-Portugal"> Emerson-Portugal
+			</a><br/>
+			emersoncrp
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Arequipa, Peru</td>
 		<td>31</td>
 	</tr>
 	<tr>
@@ -6750,13 +6750,13 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>512</td>
 		<td>
-			<a href="https://github.com/dalessandro07">
-				<img src="https://avatars.githubusercontent.com/u/89921531?s=72&u=056980d11ff3608462d815e40ec5a0c249ade6ba&v=4" width="24" alt="Avatar of dalessandro07"> dalessandro07
+			<a href="https://github.com/luismoriguerra">
+				<img src="https://avatars.githubusercontent.com/u/3759580?s=72&u=dcf0333a757908322d48b47491a4a5e5df329db4&v=4" width="24" alt="Avatar of luismoriguerra"> luismoriguerra
 			</a><br/>
-			Diego Alessandro Rios Villegas
+			Luis Mori Guerra
 		</td>
 		<td>No Company</td>
-		<td><a href="https://twitter.com/alessandro___r">alessandro___r</a></td>
+		<td><a href="https://twitter.com/luismoriguerra">luismoriguerra</a></td>
 		<td>Peru</td>
 		<td>30</td>
 	</tr>
@@ -6776,19 +6776,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>514</td>
 		<td>
-			<a href="https://github.com/derekcrosslu">
-				<img src="https://avatars.githubusercontent.com/u/3807652?s=72&u=78ffb55737dbbd5fad7856986b0b139cf070d215&v=4" width="24" alt="Avatar of derekcrosslu"> derekcrosslu
-			</a><br/>
-			Derek Cross
-		</td>
-		<td>Utec Ventures </td>
-		<td><a href="https://twitter.com/derek22cross">derek22cross</a></td>
-		<td>Lima, Peru</td>
-		<td>30</td>
-	</tr>
-	<tr>
-		<td>515</td>
-		<td>
 			<a href="https://github.com/marcomnrq">
 				<img src="https://avatars.githubusercontent.com/u/63822742?s=72&u=1828f9c1ba9d4015945d887005f74bf5f25b0e24&v=4" width="24" alt="Avatar of marcomnrq"> marcomnrq
 			</a><br/>
@@ -6797,6 +6784,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima, Peru.</td>
+		<td>30</td>
+	</tr>
+	<tr>
+		<td>515</td>
+		<td>
+			<a href="https://github.com/jesteban19">
+				<img src="https://avatars.githubusercontent.com/u/3093582?s=72&u=e68bbf153bc4f0aad08b922cfbd4f43eee708c11&v=4" width="24" alt="Avatar of jesteban19"> jesteban19
+			</a><br/>
+			Joseph Esteban
+		</td>
+		<td>Joseph Esteban </td>
+		<td>No Twitter Username</td>
+		<td>Perú-Lima</td>
 		<td>30</td>
 	</tr>
 	<tr>
@@ -6815,19 +6815,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>517</td>
 		<td>
-			<a href="https://github.com/jesteban19">
-				<img src="https://avatars.githubusercontent.com/u/3093582?s=72&u=e68bbf153bc4f0aad08b922cfbd4f43eee708c11&v=4" width="24" alt="Avatar of jesteban19"> jesteban19
-			</a><br/>
-			Joseph Esteban
-		</td>
-		<td>Joseph Esteban </td>
-		<td>No Twitter Username</td>
-		<td>Perú-Lima</td>
-		<td>30</td>
-	</tr>
-	<tr>
-		<td>518</td>
-		<td>
 			<a href="https://github.com/edeustua">
 				<img src="https://avatars.githubusercontent.com/u/5986108?s=72&u=f158a2fed6687b15853f1caf03c66c7feecfd71a&v=4" width="24" alt="Avatar of edeustua"> edeustua
 			</a><br/>
@@ -6839,7 +6826,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>519</td>
+		<td>518</td>
 		<td>
 			<a href="https://github.com/drmad">
 				<img src="https://avatars.githubusercontent.com/u/1307948?s=72&u=289b4fd25ba5902c08dbe040f2d820b2e739e4ea&v=4" width="24" alt="Avatar of drmad"> drmad
@@ -6852,7 +6839,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>520</td>
+		<td>519</td>
 		<td>
 			<a href="https://github.com/test0n3">
 				<img src="https://avatars.githubusercontent.com/u/47990946?s=72&u=fe815beca5eaa229ea789cf8dee5e8846d25cf29&v=4" width="24" alt="Avatar of test0n3"> test0n3
@@ -6865,33 +6852,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
+		<td>520</td>
+		<td>
+			<a href="https://github.com/nad21lc">
+				<img src="https://avatars.githubusercontent.com/u/91857416?s=72&u=d34cce11d8c77c8f5263739edcb1d4432dbf387a&v=4" width="24" alt="Avatar of nad21lc"> nad21lc
+			</a><br/>
+			Nadia Lucas
+		</td>
+		<td>Universidad Peruana De Ciencias<br/>Aplicadas<br/></td>
+		<td>No Twitter Username</td>
+		<td>Lima-Perú</td>
+		<td>30</td>
+	</tr>
+	<tr>
 		<td>521</td>
-		<td>
-			<a href="https://github.com/Emerson-Portugal">
-				<img src="https://avatars.githubusercontent.com/u/80434257?s=72&u=31aa2c75e81e345623ca34216b396646e368cf2f&v=4" width="24" alt="Avatar of Emerson-Portugal"> Emerson-Portugal
-			</a><br/>
-			emersoncrp
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Arequipa, Peru</td>
-		<td>30</td>
-	</tr>
-	<tr>
-		<td>522</td>
-		<td>
-			<a href="https://github.com/LuisDev2001">
-				<img src="https://avatars.githubusercontent.com/u/54551890?s=72&u=fa1526bb4b547dd49192b3a8eff07ba843126677&v=4" width="24" alt="Avatar of LuisDev2001"> LuisDev2001
-			</a><br/>
-			Aldair QR
-		</td>
-		<td>Talana </td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>30</td>
-	</tr>
-	<tr>
-		<td>523</td>
 		<td>
 			<a href="https://github.com/larc">
 				<img src="https://avatars.githubusercontent.com/u/4512378?s=72&u=ca2934a2932e448dedc70fa60371d5cc7b7716e9&v=4" width="24" alt="Avatar of larc"> larc
@@ -6904,7 +6878,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>524</td>
+		<td>522</td>
 		<td>
 			<a href="https://github.com/dianaclabel">
 				<img src="https://avatars.githubusercontent.com/u/67984989?s=72&u=36c5ee5dc57336395898b82fc1e63d117a3cf80b&v=4" width="24" alt="Avatar of dianaclabel"> dianaclabel
@@ -6917,7 +6891,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>525</td>
+		<td>523</td>
+		<td>
+			<a href="https://github.com/LuisDev2001">
+				<img src="https://avatars.githubusercontent.com/u/54551890?s=72&u=fa1526bb4b547dd49192b3a8eff07ba843126677&v=4" width="24" alt="Avatar of LuisDev2001"> LuisDev2001
+			</a><br/>
+			Aldair QR
+		</td>
+		<td>Talana </td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>30</td>
+	</tr>
+	<tr>
+		<td>524</td>
 		<td>
 			<a href="https://github.com/angelortiz-dev">
 				<img src="https://avatars.githubusercontent.com/u/1245314?s=72&u=f415e66f5ff74e9a26b537c74e57ef8f7a6192f0&v=4" width="24" alt="Avatar of angelortiz-dev"> angelortiz-dev
@@ -6930,7 +6917,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>526</td>
+		<td>525</td>
 		<td>
 			<a href="https://github.com/annaabsi">
 				<img src="https://avatars.githubusercontent.com/u/26047211?s=72&u=0072710287e4e839f9f78e4360cb4b4d5c5d7c19&v=4" width="24" alt="Avatar of annaabsi"> annaabsi
@@ -6943,7 +6930,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>527</td>
+		<td>526</td>
 		<td>
 			<a href="https://github.com/kaloslazo">
 				<img src="https://avatars.githubusercontent.com/u/118573214?s=72&u=6bb6302091a519df5da6d37c96f72160b0c740fc&v=4" width="24" alt="Avatar of kaloslazo"> kaloslazo
@@ -6956,7 +6943,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>528</td>
+		<td>527</td>
 		<td>
 			<a href="https://github.com/dwyazzo90">
 				<img src="https://avatars.githubusercontent.com/u/118952873?s=72&u=44f4860a28a6ef99a847427f41ed287b6830c147&v=4" width="24" alt="Avatar of dwyazzo90"> dwyazzo90
@@ -6969,7 +6956,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>529</td>
+		<td>528</td>
 		<td>
 			<a href="https://github.com/renzo-blockchain">
 				<img src="https://avatars.githubusercontent.com/u/2055407?s=72&u=013a1a4cee6a1375682e61b8a47683f230bd48ef&v=4" width="24" alt="Avatar of renzo-blockchain"> renzo-blockchain
@@ -6982,7 +6969,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>530</td>
+		<td>529</td>
 		<td>
 			<a href="https://github.com/davidcarrillo10288">
 				<img src="https://avatars.githubusercontent.com/u/104275645?s=72&u=c5cb2a9382f230eed856da8d6140074442e44e3c&v=4" width="24" alt="Avatar of davidcarrillo10288"> davidcarrillo10288
@@ -6995,7 +6982,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>531</td>
+		<td>530</td>
 		<td>
 			<a href="https://github.com/cslucano">
 				<img src="https://avatars.githubusercontent.com/u/107065?s=72&u=12e2ebf054d9b60568f0745931c7e0899dd9e748&v=4" width="24" alt="Avatar of cslucano"> cslucano
@@ -7008,7 +6995,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>532</td>
+		<td>531</td>
 		<td>
 			<a href="https://github.com/javiercrocco">
 				<img src="https://avatars.githubusercontent.com/u/774448?s=72&u=7c20b09828ac935b22e77cce393697293e532430&v=4" width="24" alt="Avatar of javiercrocco"> javiercrocco
@@ -7021,7 +7008,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>533</td>
+		<td>532</td>
 		<td>
 			<a href="https://github.com/yoelexe">
 				<img src="https://avatars.githubusercontent.com/u/100587478?s=72&u=bd41b68c2a8c8bbdf714f13c36b8c37026253e71&v=4" width="24" alt="Avatar of yoelexe"> yoelexe
@@ -7034,7 +7021,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>534</td>
+		<td>533</td>
 		<td>
 			<a href="https://github.com/sumaqkuyay">
 				<img src="https://avatars.githubusercontent.com/u/60890508?s=72&u=562e95f27f6e4a87e01374fdb4ee4ff692d695ec&v=4" width="24" alt="Avatar of sumaqkuyay"> sumaqkuyay
@@ -7047,7 +7034,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>535</td>
+		<td>534</td>
 		<td>
 			<a href="https://github.com/SoniaSayago">
 				<img src="https://avatars.githubusercontent.com/u/75644975?s=72&u=dfb122d986eabbd3d246411d54bc74b213135ce0&v=4" width="24" alt="Avatar of SoniaSayago"> SoniaSayago
@@ -7060,7 +7047,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>536</td>
+		<td>535</td>
 		<td>
 			<a href="https://github.com/JesusLeonChavez">
 				<img src="https://avatars.githubusercontent.com/u/52299185?s=72&u=ee0625d3d46bb4c5edb1f19ab3af69536ba2259b&v=4" width="24" alt="Avatar of JesusLeonChavez"> JesusLeonChavez
@@ -7073,20 +7060,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>30</td>
 	</tr>
 	<tr>
-		<td>537</td>
+		<td>536</td>
 		<td>
-			<a href="https://github.com/luismoriguerra">
-				<img src="https://avatars.githubusercontent.com/u/3759580?s=72&u=dcf0333a757908322d48b47491a4a5e5df329db4&v=4" width="24" alt="Avatar of luismoriguerra"> luismoriguerra
+			<a href="https://github.com/dalessandro07">
+				<img src="https://avatars.githubusercontent.com/u/89921531?s=72&u=056980d11ff3608462d815e40ec5a0c249ade6ba&v=4" width="24" alt="Avatar of dalessandro07"> dalessandro07
 			</a><br/>
-			Luis Mori Guerra
+			Diego Alessandro Rios Villegas
 		</td>
 		<td>No Company</td>
-		<td><a href="https://twitter.com/luismoriguerra">luismoriguerra</a></td>
+		<td><a href="https://twitter.com/alessandro___r">alessandro___r</a></td>
 		<td>Peru</td>
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>538</td>
+		<td>537</td>
 		<td>
 			<a href="https://github.com/JorgePasco1">
 				<img src="https://avatars.githubusercontent.com/u/25943796?s=72&u=2d06042d12b4c059bdfd191819a508f2d5d0403d&v=4" width="24" alt="Avatar of JorgePasco1"> JorgePasco1
@@ -7099,7 +7086,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>539</td>
+		<td>538</td>
 		<td>
 			<a href="https://github.com/latinojoel">
 				<img src="https://avatars.githubusercontent.com/u/2965215?s=72&u=f69773946116b8452a6d6ad20e9a6b8f25a4f094&v=4" width="24" alt="Avatar of latinojoel"> latinojoel
@@ -7112,7 +7099,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>540</td>
+		<td>539</td>
 		<td>
 			<a href="https://github.com/TheFabi8A">
 				<img src="https://avatars.githubusercontent.com/u/104035823?s=72&v=4" width="24" alt="Avatar of TheFabi8A"> TheFabi8A
@@ -7122,6 +7109,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td><a href="https://twitter.com/thefabi8a_tech">thefabi8a_tech</a></td>
 		<td>Chiclayo</td>
+		<td>29</td>
+	</tr>
+	<tr>
+		<td>540</td>
+		<td>
+			<a href="https://github.com/derekcrosslu">
+				<img src="https://avatars.githubusercontent.com/u/3807652?s=72&u=78ffb55737dbbd5fad7856986b0b139cf070d215&v=4" width="24" alt="Avatar of derekcrosslu"> derekcrosslu
+			</a><br/>
+			Derek Cross
+		</td>
+		<td>Utec Ventures </td>
+		<td><a href="https://twitter.com/derek22cross">derek22cross</a></td>
+		<td>Lima, Peru</td>
 		<td>29</td>
 	</tr>
 	<tr>
@@ -7179,32 +7179,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>545</td>
 		<td>
-			<a href="https://github.com/oliverTuesta">
-				<img src="https://avatars.githubusercontent.com/u/69388478?s=72&u=c962ab6ebeaa7b1bd01a3a7f6654cb28d9d48eba&v=4" width="24" alt="Avatar of oliverTuesta"> oliverTuesta
-			</a><br/>
-			Oliver Tuesta
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>29</td>
-	</tr>
-	<tr>
-		<td>546</td>
-		<td>
-			<a href="https://github.com/FranciscoAscue">
-				<img src="https://avatars.githubusercontent.com/u/57104899?s=72&u=0de7d20b17456c90f9a31683abf1dda0f70ee5ff&v=4" width="24" alt="Avatar of FranciscoAscue"> FranciscoAscue
-			</a><br/>
-			Francisco Ascue Orosco
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>29</td>
-	</tr>
-	<tr>
-		<td>547</td>
-		<td>
 			<a href="https://github.com/Vilduis">
 				<img src="https://avatars.githubusercontent.com/u/90408215?s=72&u=625a8d78f7c4d69dd20b08570c20c7797622e9fb&v=4" width="24" alt="Avatar of Vilduis"> Vilduis
 			</a><br/>
@@ -7216,7 +7190,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>548</td>
+		<td>546</td>
 		<td>
 			<a href="https://github.com/abrahamayquipa">
 				<img src="https://avatars.githubusercontent.com/u/103963261?s=72&u=ddbbefab8fe9d31a1b0ee6665b463901d2f6b19c&v=4" width="24" alt="Avatar of abrahamayquipa"> abrahamayquipa
@@ -7229,7 +7203,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>549</td>
+		<td>547</td>
 		<td>
 			<a href="https://github.com/Maycol-Knight">
 				<img src="https://avatars.githubusercontent.com/u/117923034?s=72&u=916dd89ceef662670f8fb82c2ab68f5223a1abaa&v=4" width="24" alt="Avatar of Maycol-Knight"> Maycol-Knight
@@ -7242,7 +7216,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>550</td>
+		<td>548</td>
 		<td>
 			<a href="https://github.com/lokcito">
 				<img src="https://avatars.githubusercontent.com/u/1102588?s=72&v=4" width="24" alt="Avatar of lokcito"> lokcito
@@ -7255,7 +7229,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>551</td>
+		<td>549</td>
 		<td>
 			<a href="https://github.com/chcordova">
 				<img src="https://avatars.githubusercontent.com/u/1271248?s=72&u=474d1f247c3b27f5ed818e2052adf67cf9757129&v=4" width="24" alt="Avatar of chcordova"> chcordova
@@ -7268,7 +7242,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>552</td>
+		<td>550</td>
 		<td>
 			<a href="https://github.com/cesarqb">
 				<img src="https://avatars.githubusercontent.com/u/59464323?s=72&u=53bbd1460bbe595df089316578fca430fbb8c128&v=4" width="24" alt="Avatar of cesarqb"> cesarqb
@@ -7281,7 +7255,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>553</td>
+		<td>551</td>
 		<td>
 			<a href="https://github.com/AngelDX">
 				<img src="https://avatars.githubusercontent.com/u/3914663?s=72&u=ff2c7bd58d7dd80fce9de910a665a60c63d6a27b&v=4" width="24" alt="Avatar of AngelDX"> AngelDX
@@ -7294,7 +7268,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>554</td>
+		<td>552</td>
 		<td>
 			<a href="https://github.com/jesusvilla">
 				<img src="https://avatars.githubusercontent.com/u/16493932?s=72&u=4244a4a03a054c89dba8f157fc77efb54b2df98a&v=4" width="24" alt="Avatar of jesusvilla"> jesusvilla
@@ -7307,7 +7281,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>555</td>
+		<td>553</td>
 		<td>
 			<a href="https://github.com/jeandelacruz">
 				<img src="https://avatars.githubusercontent.com/u/7109723?s=72&u=523b86e0310321f3fabfa8f162335468e9f1a805&v=4" width="24" alt="Avatar of jeandelacruz"> jeandelacruz
@@ -7320,7 +7294,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>556</td>
+		<td>554</td>
 		<td>
 			<a href="https://github.com/EduDev06">
 				<img src="https://avatars.githubusercontent.com/u/93110862?s=72&u=7d1bfa267f7f926c738be00733ef93da02358aab&v=4" width="24" alt="Avatar of EduDev06"> EduDev06
@@ -7333,7 +7307,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>557</td>
+		<td>555</td>
 		<td>
 			<a href="https://github.com/jcaramantin">
 				<img src="https://avatars.githubusercontent.com/u/49346366?s=72&u=1c549c9c85328bf2fab16529a60d36f6ee294e5c&v=4" width="24" alt="Avatar of jcaramantin"> jcaramantin
@@ -7346,7 +7320,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>558</td>
+		<td>556</td>
 		<td>
 			<a href="https://github.com/El-Palomo">
 				<img src="https://avatars.githubusercontent.com/u/2703872?s=72&v=4" width="24" alt="Avatar of El-Palomo"> El-Palomo
@@ -7359,7 +7333,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>559</td>
+		<td>557</td>
 		<td>
 			<a href="https://github.com/joseluis10101">
 				<img src="https://avatars.githubusercontent.com/u/300599?s=72&u=f6a710ecc1d12c2765306bdc9fa7cd278570032f&v=4" width="24" alt="Avatar of joseluis10101"> joseluis10101
@@ -7372,7 +7346,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>560</td>
+		<td>558</td>
 		<td>
 			<a href="https://github.com/minifemtovalen">
 				<img src="https://avatars.githubusercontent.com/u/98602227?s=72&u=a79f820f1804538d70b4bea50586fa03777e9639&v=4" width="24" alt="Avatar of minifemtovalen"> minifemtovalen
@@ -7385,7 +7359,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>561</td>
+		<td>559</td>
 		<td>
 			<a href="https://github.com/carlosCharz">
 				<img src="https://avatars.githubusercontent.com/u/4597063?s=72&u=14aeb662f97495478964233b6e55462676c568bd&v=4" width="24" alt="Avatar of carlosCharz"> carlosCharz
@@ -7398,7 +7372,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>562</td>
+		<td>560</td>
 		<td>
 			<a href="https://github.com/JessicaMP">
 				<img src="https://avatars.githubusercontent.com/u/32301688?s=72&u=b55204c8fbb3734283228ec5d1f92bc6928b8cce&v=4" width="24" alt="Avatar of JessicaMP"> JessicaMP
@@ -7411,7 +7385,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>563</td>
+		<td>561</td>
 		<td>
 			<a href="https://github.com/PibeDx">
 				<img src="https://avatars.githubusercontent.com/u/8062004?s=72&u=13ce6df9d299bdcb0e5b81a310b6e89b7c704c59&v=4" width="24" alt="Avatar of PibeDx"> PibeDx
@@ -7424,7 +7398,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>564</td>
+		<td>562</td>
 		<td>
 			<a href="https://github.com/eytoo">
 				<img src="https://avatars.githubusercontent.com/u/6219391?s=72&u=0fd766e3a49e50d5111d3f6e4b0250b4134b0bcd&v=4" width="24" alt="Avatar of eytoo"> eytoo
@@ -7437,7 +7411,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>565</td>
+		<td>563</td>
 		<td>
 			<a href="https://github.com/Alessandrito123">
 				<img src="https://avatars.githubusercontent.com/u/76448048?s=72&u=9bb2beb22f60c54d9c4764c44100a5a62adcae83&v=4" width="24" alt="Avatar of Alessandrito123"> Alessandrito123
@@ -7450,20 +7424,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>29</td>
 	</tr>
 	<tr>
-		<td>566</td>
-		<td>
-			<a href="https://github.com/sagoyanfisic">
-				<img src="https://avatars.githubusercontent.com/u/2530782?s=72&u=8f59b422c5eb314d83c528d809f5b1330e5c18f5&v=4" width="24" alt="Avatar of sagoyanfisic"> sagoyanfisic
-			</a><br/>
-			Yancel Moises
-		</td>
-		<td>Gdg Open </td>
-		<td>No Twitter Username</td>
-		<td>Lima-Perú</td>
-		<td>28</td>
-	</tr>
-	<tr>
-		<td>567</td>
+		<td>564</td>
 		<td>
 			<a href="https://github.com/jackby03">
 				<img src="https://avatars.githubusercontent.com/u/70082129?s=72&u=450225c2f8a04e6c07d736163db88e065075130e&v=4" width="24" alt="Avatar of jackby03"> jackby03
@@ -7476,7 +7437,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>568</td>
+		<td>565</td>
 		<td>
 			<a href="https://github.com/AlonsoCN">
 				<img src="https://avatars.githubusercontent.com/u/1224084?s=72&u=a5a6e6cccd7a18dc11a5f7aaa6b1d8a9cd3572b4&v=4" width="24" alt="Avatar of AlonsoCN"> AlonsoCN
@@ -7489,7 +7450,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>569</td>
+		<td>566</td>
 		<td>
 			<a href="https://github.com/ronnyfly2">
 				<img src="https://avatars.githubusercontent.com/u/742294?s=72&u=4e312a0dffb6b1a06ff2eb2d3f573b7da76bf040&v=4" width="24" alt="Avatar of ronnyfly2"> ronnyfly2
@@ -7502,7 +7463,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>570</td>
+		<td>567</td>
 		<td>
 			<a href="https://github.com/alonsobsd">
 				<img src="https://avatars.githubusercontent.com/u/11150989?s=72&u=c6ca2f77e2ecf612408a13acc8f41f9be90766d8&v=4" width="24" alt="Avatar of alonsobsd"> alonsobsd
@@ -7515,7 +7476,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>571</td>
+		<td>568</td>
 		<td>
 			<a href="https://github.com/TMedalith">
 				<img src="https://avatars.githubusercontent.com/u/107322613?s=72&u=2c7ab108280fcf8a380635d2a12aafffc90fb809&v=4" width="24" alt="Avatar of TMedalith"> TMedalith
@@ -7528,7 +7489,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>572</td>
+		<td>569</td>
 		<td>
 			<a href="https://github.com/paulvl">
 				<img src="https://avatars.githubusercontent.com/u/8441051?s=72&u=91702c579fc28b54fc1e641e10a0910876ed3f83&v=4" width="24" alt="Avatar of paulvl"> paulvl
@@ -7541,7 +7502,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>573</td>
+		<td>570</td>
 		<td>
 			<a href="https://github.com/Grubhart">
 				<img src="https://avatars.githubusercontent.com/u/1396519?s=72&u=f158c5e43efe035597407208dd4a261619999652&v=4" width="24" alt="Avatar of Grubhart"> Grubhart
@@ -7554,20 +7515,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>574</td>
-		<td>
-			<a href="https://github.com/gamunax">
-				<img src="https://avatars.githubusercontent.com/u/8071610?s=72&u=3ba340f1fbdc6e1919c088e19c4355d52f91428c&v=4" width="24" alt="Avatar of gamunax"> gamunax
-			</a><br/>
-			Jose Jan Pierre Sánchez Manosalva
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima - Peru</td>
-		<td>28</td>
-	</tr>
-	<tr>
-		<td>575</td>
+		<td>571</td>
 		<td>
 			<a href="https://github.com/ondoheer">
 				<img src="https://avatars.githubusercontent.com/u/3681300?s=72&v=4" width="24" alt="Avatar of ondoheer"> ondoheer
@@ -7580,33 +7528,33 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>576</td>
+		<td>572</td>
 		<td>
-			<a href="https://github.com/luischang">
-				<img src="https://avatars.githubusercontent.com/u/29695319?s=72&u=43263ba027b75b02b5a18ef6157954d9e077b344&v=4" width="24" alt="Avatar of luischang"> luischang
+			<a href="https://github.com/gamunax">
+				<img src="https://avatars.githubusercontent.com/u/8071610?s=72&u=3ba340f1fbdc6e1919c088e19c4355d52f91428c&v=4" width="24" alt="Avatar of gamunax"> gamunax
 			</a><br/>
-			Luis Chang
+			Jose Jan Pierre Sánchez Manosalva
 		</td>
 		<td>No Company</td>
 		<td>No Twitter Username</td>
-		<td>Lima</td>
+		<td>Lima - Peru</td>
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>577</td>
+		<td>573</td>
 		<td>
-			<a href="https://github.com/artmadeit">
-				<img src="https://avatars.githubusercontent.com/u/18428325?s=72&v=4" width="24" alt="Avatar of artmadeit"> artmadeit
+			<a href="https://github.com/oliverTuesta">
+				<img src="https://avatars.githubusercontent.com/u/69388478?s=72&u=c962ab6ebeaa7b1bd01a3a7f6654cb28d9d48eba&v=4" width="24" alt="Avatar of oliverTuesta"> oliverTuesta
 			</a><br/>
-			Arthur Mauricio Delgadillo
+			Oliver Tuesta
 		</td>
-		<td>@ouracademy  </td>
+		<td>No Company</td>
 		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
+		<td>Lima, Peru</td>
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>578</td>
+		<td>574</td>
 		<td>
 			<a href="https://github.com/sebastianterleira">
 				<img src="https://avatars.githubusercontent.com/u/108709097?s=72&u=e2fc8a641f6e91e1c21b7d09f2ea68be64db486c&v=4" width="24" alt="Avatar of sebastianterleira"> sebastianterleira
@@ -7619,7 +7567,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>579</td>
+		<td>575</td>
+		<td>
+			<a href="https://github.com/FranciscoAscue">
+				<img src="https://avatars.githubusercontent.com/u/57104899?s=72&u=0de7d20b17456c90f9a31683abf1dda0f70ee5ff&v=4" width="24" alt="Avatar of FranciscoAscue"> FranciscoAscue
+			</a><br/>
+			Francisco Ascue Orosco
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>28</td>
+	</tr>
+	<tr>
+		<td>576</td>
 		<td>
 			<a href="https://github.com/pholguinc">
 				<img src="https://avatars.githubusercontent.com/u/49991514?s=72&u=ca7ae229e4a2cc69f6475f81b473574fa1e4ec78&v=4" width="24" alt="Avatar of pholguinc"> pholguinc
@@ -7632,7 +7593,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>580</td>
+		<td>577</td>
 		<td>
 			<a href="https://github.com/gabrielromerod">
 				<img src="https://avatars.githubusercontent.com/u/101651659?s=72&v=4" width="24" alt="Avatar of gabrielromerod"> gabrielromerod
@@ -7645,7 +7606,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>581</td>
+		<td>578</td>
 		<td>
 			<a href="https://github.com/Scorpius86">
 				<img src="https://avatars.githubusercontent.com/u/13504293?s=72&u=f229410d8c38cdf92b48e6f703a4d91fdbd278da&v=4" width="24" alt="Avatar of Scorpius86"> Scorpius86
@@ -7658,7 +7619,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>582</td>
+		<td>579</td>
 		<td>
 			<a href="https://github.com/cgrojasr">
 				<img src="https://avatars.githubusercontent.com/u/4669853?s=72&u=4659e3dda1c9d9759203678dc93a017f83c0ebb0&v=4" width="24" alt="Avatar of cgrojasr"> cgrojasr
@@ -7671,7 +7632,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>583</td>
+		<td>580</td>
 		<td>
 			<a href="https://github.com/oshingc">
 				<img src="https://avatars.githubusercontent.com/u/3100819?s=72&u=6e3f5590470d4e8298a4ad7507f81bf26e104741&v=4" width="24" alt="Avatar of oshingc"> oshingc
@@ -7684,7 +7645,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>584</td>
+		<td>581</td>
 		<td>
 			<a href="https://github.com/Arelizoyarce">
 				<img src="https://avatars.githubusercontent.com/u/98667463?s=72&u=0944f13b976afd3cc9224733c0fab266731283af&v=4" width="24" alt="Avatar of Arelizoyarce"> Arelizoyarce
@@ -7697,7 +7658,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>585</td>
+		<td>582</td>
 		<td>
 			<a href="https://github.com/Darkas-Overgold">
 				<img src="https://avatars.githubusercontent.com/u/105468040?s=72&u=5adb980752b547edac4ec061ddf999097860c7cf&v=4" width="24" alt="Avatar of Darkas-Overgold"> Darkas-Overgold
@@ -7710,7 +7671,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>586</td>
+		<td>583</td>
 		<td>
 			<a href="https://github.com/HLena">
 				<img src="https://avatars.githubusercontent.com/u/20654016?s=72&u=644299335b4de194bf1743c398e169701a5a393b&v=4" width="24" alt="Avatar of HLena"> HLena
@@ -7723,7 +7684,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>587</td>
+		<td>584</td>
 		<td>
 			<a href="https://github.com/Joshua-Enrico">
 				<img src="https://avatars.githubusercontent.com/u/77980741?s=72&u=fa903488c14ec91c18e8e6bf957e78ee6814a944&v=4" width="24" alt="Avatar of Joshua-Enrico"> Joshua-Enrico
@@ -7736,7 +7697,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>588</td>
+		<td>585</td>
 		<td>
 			<a href="https://github.com/coloradomarin">
 				<img src="https://avatars.githubusercontent.com/u/4238226?s=72&u=c4b0308f194b384dc8440f15f24399d9eeaae246&v=4" width="24" alt="Avatar of coloradomarin"> coloradomarin
@@ -7749,7 +7710,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>589</td>
+		<td>586</td>
 		<td>
 			<a href="https://github.com/IntegracionesVisaNet">
 				<img src="https://avatars.githubusercontent.com/u/55891395?s=72&v=4" width="24" alt="Avatar of IntegracionesVisaNet"> IntegracionesVisaNet
@@ -7762,7 +7723,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>590</td>
+		<td>587</td>
 		<td>
 			<a href="https://github.com/lkashef">
 				<img src="https://avatars.githubusercontent.com/u/15927737?s=72&u=f5cc019f91c466761c1c174f407953362b911212&v=4" width="24" alt="Avatar of lkashef"> lkashef
@@ -7775,7 +7736,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>591</td>
+		<td>588</td>
 		<td>
 			<a href="https://github.com/CarolinaDCode">
 				<img src="https://avatars.githubusercontent.com/u/68792144?s=72&u=3cc1004894dd92169c6cdfadc1a1437b5a4acae7&v=4" width="24" alt="Avatar of CarolinaDCode"> CarolinaDCode
@@ -7788,7 +7749,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>592</td>
+		<td>589</td>
 		<td>
 			<a href="https://github.com/pixiepixeled">
 				<img src="https://avatars.githubusercontent.com/u/20424183?s=72&u=8b57873cf0408362753ce5aa1f003effa9519b65&v=4" width="24" alt="Avatar of pixiepixeled"> pixiepixeled
@@ -7801,7 +7762,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>593</td>
+		<td>590</td>
 		<td>
 			<a href="https://github.com/osobrevilla">
 				<img src="https://avatars.githubusercontent.com/u/929030?s=72&u=b2b93c93d0dec8dd91832ba8a67e9e384770d0b9&v=4" width="24" alt="Avatar of osobrevilla"> osobrevilla
@@ -7814,7 +7775,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>594</td>
+		<td>591</td>
 		<td>
 			<a href="https://github.com/merycardenas27">
 				<img src="https://avatars.githubusercontent.com/u/25912796?s=72&u=da31edee0dda11eff49fa2ed9a90e15034076071&v=4" width="24" alt="Avatar of merycardenas27"> merycardenas27
@@ -7827,7 +7788,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>28</td>
 	</tr>
 	<tr>
-		<td>595</td>
+		<td>592</td>
+		<td>
+			<a href="https://github.com/sagoyanfisic">
+				<img src="https://avatars.githubusercontent.com/u/2530782?s=72&u=8f59b422c5eb314d83c528d809f5b1330e5c18f5&v=4" width="24" alt="Avatar of sagoyanfisic"> sagoyanfisic
+			</a><br/>
+			Yancel Moises
+		</td>
+		<td>Gdg Open </td>
+		<td>No Twitter Username</td>
+		<td>Lima-Perú</td>
+		<td>27</td>
+	</tr>
+	<tr>
+		<td>593</td>
 		<td>
 			<a href="https://github.com/julionav">
 				<img src="https://avatars.githubusercontent.com/u/45607850?s=72&u=196e1d09f416a96ca449a8ac8dd8a55b12422acc&v=4" width="24" alt="Avatar of julionav"> julionav
@@ -7840,7 +7814,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>596</td>
+		<td>594</td>
 		<td>
 			<a href="https://github.com/CristianLazoQuispe">
 				<img src="https://avatars.githubusercontent.com/u/31221056?s=72&u=1aa120cd5712da49a5a9edcccac5d664dde695a0&v=4" width="24" alt="Avatar of CristianLazoQuispe"> CristianLazoQuispe
@@ -7853,7 +7827,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>597</td>
+		<td>595</td>
 		<td>
 			<a href="https://github.com/kucho">
 				<img src="https://avatars.githubusercontent.com/u/26698519?s=72&u=e1afb49bc601a5a0d861b86a0546fde0613e02c5&v=4" width="24" alt="Avatar of kucho"> kucho
@@ -7866,7 +7840,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>598</td>
+		<td>596</td>
 		<td>
 			<a href="https://github.com/elionavarretev">
 				<img src="https://avatars.githubusercontent.com/u/20001084?s=72&u=96953b7a1d2416d7b986d05dd4c5adbb8e9d3fad&v=4" width="24" alt="Avatar of elionavarretev"> elionavarretev
@@ -7879,7 +7853,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>599</td>
+		<td>597</td>
 		<td>
 			<a href="https://github.com/InsiderAnh">
 				<img src="https://avatars.githubusercontent.com/u/18253205?s=72&u=2e306bb28bbff80d24e3d55bd738579c4289c021&v=4" width="24" alt="Avatar of InsiderAnh"> InsiderAnh
@@ -7892,7 +7866,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>600</td>
+		<td>598</td>
 		<td>
 			<a href="https://github.com/victorgalvez56">
 				<img src="https://avatars.githubusercontent.com/u/31013960?s=72&u=f12063999bb34faac96d18a321d3e50d38fe898a&v=4" width="24" alt="Avatar of victorgalvez56"> victorgalvez56
@@ -7905,7 +7879,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>601</td>
+		<td>599</td>
 		<td>
 			<a href="https://github.com/ChrisChV">
 				<img src="https://avatars.githubusercontent.com/u/11827305?s=72&u=a083522bb52da3e237f36e46777d535a5b30af8c&v=4" width="24" alt="Avatar of ChrisChV"> ChrisChV
@@ -7918,7 +7892,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>602</td>
+		<td>600</td>
 		<td>
 			<a href="https://github.com/dev-lusaja">
 				<img src="https://avatars.githubusercontent.com/u/11140284?s=72&u=92762fce54b2242cf84beafbad0be507bb9b1ac2&v=4" width="24" alt="Avatar of dev-lusaja"> dev-lusaja
@@ -7931,7 +7905,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>603</td>
+		<td>601</td>
 		<td>
 			<a href="https://github.com/natalyrojas5">
 				<img src="https://avatars.githubusercontent.com/u/43424332?s=72&u=d38a45e28fdb8f5f09e91cda88bf15abae76e74e&v=4" width="24" alt="Avatar of natalyrojas5"> natalyrojas5
@@ -7944,7 +7918,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>27</td>
 	</tr>
 	<tr>
-		<td>604</td>
+		<td>602</td>
 		<td>
 			<a href="https://github.com/renzorosaz">
 				<img src="https://avatars.githubusercontent.com/u/43652358?s=72&u=78bfc71f7b96f2f491cf82a46e30514b835c23a4&v=4" width="24" alt="Avatar of renzorosaz"> renzorosaz
@@ -7954,6 +7928,32 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima</td>
+		<td>27</td>
+	</tr>
+	<tr>
+		<td>603</td>
+		<td>
+			<a href="https://github.com/luischang">
+				<img src="https://avatars.githubusercontent.com/u/29695319?s=72&u=43263ba027b75b02b5a18ef6157954d9e077b344&v=4" width="24" alt="Avatar of luischang"> luischang
+			</a><br/>
+			Luis Chang
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima</td>
+		<td>27</td>
+	</tr>
+	<tr>
+		<td>604</td>
+		<td>
+			<a href="https://github.com/artmadeit">
+				<img src="https://avatars.githubusercontent.com/u/18428325?s=72&v=4" width="24" alt="Avatar of artmadeit"> artmadeit
+			</a><br/>
+			Arthur Mauricio Delgadillo
+		</td>
+		<td>@ouracademy  </td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
 		<td>27</td>
 	</tr>
 	<tr>
@@ -8141,19 +8141,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>619</td>
 		<td>
-			<a href="https://github.com/harold18m">
-				<img src="https://avatars.githubusercontent.com/u/118697566?s=72&u=4621dd1e819b22717aa9f6a20ccc955c4bf39893&v=4" width="24" alt="Avatar of harold18m"> harold18m
-			</a><br/>
-			Harold Medrano
-		</td>
-		<td>@dropoutcapital  </td>
-		<td>No Twitter Username</td>
-		<td>Lima</td>
-		<td>26</td>
-	</tr>
-	<tr>
-		<td>620</td>
-		<td>
 			<a href="https://github.com/jamesnoria">
 				<img src="https://avatars.githubusercontent.com/u/63079321?s=72&u=cf108414f0d1aafff97d09d15f18305703c8b97d&v=4" width="24" alt="Avatar of jamesnoria"> jamesnoria
 			</a><br/>
@@ -8165,7 +8152,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>621</td>
+		<td>620</td>
 		<td>
 			<a href="https://github.com/wimarbueno">
 				<img src="https://avatars.githubusercontent.com/u/1665816?s=72&u=4f57b36344f6f3320c8df97b7ba8d59686ad31d6&v=4" width="24" alt="Avatar of wimarbueno"> wimarbueno
@@ -8178,7 +8165,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>622</td>
+		<td>621</td>
 		<td>
 			<a href="https://github.com/softalchemy">
 				<img src="https://avatars.githubusercontent.com/u/77398477?s=72&u=f599a868c1a24eb3de8ded034bc946ebbf7e23db&v=4" width="24" alt="Avatar of softalchemy"> softalchemy
@@ -8191,7 +8178,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>623</td>
+		<td>622</td>
 		<td>
 			<a href="https://github.com/antoniott15">
 				<img src="https://avatars.githubusercontent.com/u/28675637?s=72&u=aa7ddff6e3c84e708025d8a9247603ac709b65ff&v=4" width="24" alt="Avatar of antoniott15"> antoniott15
@@ -8204,7 +8191,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>624</td>
+		<td>623</td>
 		<td>
 			<a href="https://github.com/AngelRodRo">
 				<img src="https://avatars.githubusercontent.com/u/8053607?s=72&u=73fe6409356b617e6204f3380d39494d97142c4a&v=4" width="24" alt="Avatar of AngelRodRo"> AngelRodRo
@@ -8217,20 +8204,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>625</td>
-		<td>
-			<a href="https://github.com/characat0">
-				<img src="https://avatars.githubusercontent.com/u/36453977?s=72&u=1b23b8f3a04eed3301a7534a0cc10897c835d784&v=4" width="24" alt="Avatar of characat0"> characat0
-			</a><br/>
-			Marco Vela
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima</td>
-		<td>26</td>
-	</tr>
-	<tr>
-		<td>626</td>
+		<td>624</td>
 		<td>
 			<a href="https://github.com/diegocaminor">
 				<img src="https://avatars.githubusercontent.com/u/7649415?s=72&u=9da5fcc1a0f252c7d21ce516e440b4a7704d9736&v=4" width="24" alt="Avatar of diegocaminor"> diegocaminor
@@ -8243,33 +8217,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>627</td>
-		<td>
-			<a href="https://github.com/anthony-ricardox">
-				<img src="https://avatars.githubusercontent.com/u/147872743?s=72&u=255b44e2467106e15d93913acfeca4f7544775ee&v=4" width="24" alt="Avatar of anthony-ricardox"> anthony-ricardox
-			</a><br/>
-			Anthony Ricardo
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Abreu e Lima/PE</td>
-		<td>26</td>
-	</tr>
-	<tr>
-		<td>628</td>
-		<td>
-			<a href="https://github.com/Miguel080902">
-				<img src="https://avatars.githubusercontent.com/u/109547479?s=72&u=f03d77898b784e577d71a5a8a51fd7aa85f4cbb4&v=4" width="24" alt="Avatar of Miguel080902"> Miguel080902
-			</a><br/>
-			Miguel Angel Ybañez Esquerre
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima</td>
-		<td>26</td>
-	</tr>
-	<tr>
-		<td>629</td>
+		<td>625</td>
 		<td>
 			<a href="https://github.com/yummta">
 				<img src="https://avatars.githubusercontent.com/u/5809281?s=72&u=fb6ec2c13e7df3d919f40cf46c14b9360de6cd66&v=4" width="24" alt="Avatar of yummta"> yummta
@@ -8282,20 +8230,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>630</td>
+		<td>626</td>
 		<td>
-			<a href="https://github.com/JuanCali999">
-				<img src="https://avatars.githubusercontent.com/u/112789857?s=72&u=50dfa867ef53f9f9bf6711dbd6c01a1ecddcf2f5&v=4" width="24" alt="Avatar of JuanCali999"> JuanCali999
+			<a href="https://github.com/Miguel080902">
+				<img src="https://avatars.githubusercontent.com/u/109547479?s=72&u=f03d77898b784e577d71a5a8a51fd7aa85f4cbb4&v=4" width="24" alt="Avatar of Miguel080902"> Miguel080902
 			</a><br/>
-			Juan Jesús Calisaya Sánchez
+			Miguel Angel Ybañez Esquerre
 		</td>
-		<td>Universidad Peruana De Ciencias<br/>Aplicadas<br/></td>
+		<td>No Company</td>
 		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
+		<td>Lima</td>
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>631</td>
+		<td>627</td>
 		<td>
 			<a href="https://github.com/eincioch">
 				<img src="https://avatars.githubusercontent.com/u/12565944?s=72&u=d155be176eb784af3a21f4f8f1be8b3c98a08276&v=4" width="24" alt="Avatar of eincioch"> eincioch
@@ -8308,7 +8256,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>632</td>
+		<td>628</td>
 		<td>
 			<a href="https://github.com/danieibazgc">
 				<img src="https://avatars.githubusercontent.com/u/146491331?s=72&u=0a0c9119c4397a5825e778734f2c5e808d6df5b2&v=4" width="24" alt="Avatar of danieibazgc"> danieibazgc
@@ -8321,20 +8269,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>633</td>
-		<td>
-			<a href="https://github.com/abelmiraval">
-				<img src="https://avatars.githubusercontent.com/u/35229830?s=72&u=3cf6ca8ca2feb174f63bc814c57494b2fcd65ff2&v=4" width="24" alt="Avatar of abelmiraval"> abelmiraval
-			</a><br/>
-			Abel Miraval
-		</td>
-		<td>Experis </td>
-		<td><a href="https://twitter.com/abel_miraval">abel_miraval</a></td>
-		<td>Peru</td>
-		<td>26</td>
-	</tr>
-	<tr>
-		<td>634</td>
+		<td>629</td>
 		<td>
 			<a href="https://github.com/jersson">
 				<img src="https://avatars.githubusercontent.com/u/1452411?s=72&u=cea000858c7f43ff7cf8031836a04da4036e9618&v=4" width="24" alt="Avatar of jersson"> jersson
@@ -8347,7 +8282,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>635</td>
+		<td>630</td>
+		<td>
+			<a href="https://github.com/abelmiraval">
+				<img src="https://avatars.githubusercontent.com/u/35229830?s=72&u=3cf6ca8ca2feb174f63bc814c57494b2fcd65ff2&v=4" width="24" alt="Avatar of abelmiraval"> abelmiraval
+			</a><br/>
+			Abel Miraval
+		</td>
+		<td>Experis </td>
+		<td><a href="https://twitter.com/abel_miraval">abel_miraval</a></td>
+		<td>Peru</td>
+		<td>26</td>
+	</tr>
+	<tr>
+		<td>631</td>
 		<td>
 			<a href="https://github.com/MrMain2a">
 				<img src="https://avatars.githubusercontent.com/u/29640391?s=72&u=a075b3732ab4da35e627fd8939a5d939323c2f10&v=4" width="24" alt="Avatar of MrMain2a"> MrMain2a
@@ -8360,7 +8308,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>636</td>
+		<td>632</td>
 		<td>
 			<a href="https://github.com/Gilgammesh">
 				<img src="https://avatars.githubusercontent.com/u/46762694?s=72&u=721f3a786f2d7d74e1a6205a4f8eb03cd8efedb5&v=4" width="24" alt="Avatar of Gilgammesh"> Gilgammesh
@@ -8373,7 +8321,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>637</td>
+		<td>633</td>
 		<td>
 			<a href="https://github.com/MCss-18">
 				<img src="https://avatars.githubusercontent.com/u/80992832?s=72&u=d42314e5fde8ae00e2f7633f84dd236271f5f7b3&v=4" width="24" alt="Avatar of MCss-18"> MCss-18
@@ -8386,7 +8334,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>638</td>
+		<td>634</td>
 		<td>
 			<a href="https://github.com/neiserdeveloper">
 				<img src="https://avatars.githubusercontent.com/u/32179085?s=72&u=566d0308f2d3d03959f0e4076aa75eceaf934f36&v=4" width="24" alt="Avatar of neiserdeveloper"> neiserdeveloper
@@ -8399,7 +8347,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>639</td>
+		<td>635</td>
 		<td>
 			<a href="https://github.com/uzigula">
 				<img src="https://avatars.githubusercontent.com/u/1823959?s=72&v=4" width="24" alt="Avatar of uzigula"> uzigula
@@ -8412,7 +8360,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>640</td>
+		<td>636</td>
 		<td>
 			<a href="https://github.com/HiroForYou">
 				<img src="https://avatars.githubusercontent.com/u/40742491?s=72&u=f8c9c8c0566acab9d4cf4112b13c07cc12588a6a&v=4" width="24" alt="Avatar of HiroForYou"> HiroForYou
@@ -8425,7 +8373,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>641</td>
+		<td>637</td>
 		<td>
 			<a href="https://github.com/kellyfabiolafc">
 				<img src="https://avatars.githubusercontent.com/u/121985012?s=72&u=6dad096af1ad2b1e0158ed571f4a24578d2105ae&v=4" width="24" alt="Avatar of kellyfabiolafc"> kellyfabiolafc
@@ -8438,7 +8386,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>642</td>
+		<td>638</td>
 		<td>
 			<a href="https://github.com/Yesenia57">
 				<img src="https://avatars.githubusercontent.com/u/113145347?s=72&u=4504b4d47418ed21d4628014f8d76534b8c1e786&v=4" width="24" alt="Avatar of Yesenia57"> Yesenia57
@@ -8451,7 +8399,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>643</td>
+		<td>639</td>
 		<td>
 			<a href="https://github.com/karelvanoordt">
 				<img src="https://avatars.githubusercontent.com/u/63868555?s=72&u=4ec57bf331b85d96e7899eaf7b9f6b88d6695200&v=4" width="24" alt="Avatar of karelvanoordt"> karelvanoordt
@@ -8464,7 +8412,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>644</td>
+		<td>640</td>
 		<td>
 			<a href="https://github.com/ManuelFiestas">
 				<img src="https://avatars.githubusercontent.com/u/33989331?s=72&u=b38e2a67889ac83fb19708979befc9d80bb56c98&v=4" width="24" alt="Avatar of ManuelFiestas"> ManuelFiestas
@@ -8477,7 +8425,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>645</td>
+		<td>641</td>
 		<td>
 			<a href="https://github.com/Kamaqen">
 				<img src="https://avatars.githubusercontent.com/u/132601974?s=72&u=511a0e1061398e22bde232b452e588d8fdb9a1f8&v=4" width="24" alt="Avatar of Kamaqen"> Kamaqen
@@ -8490,7 +8438,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>646</td>
+		<td>642</td>
 		<td>
 			<a href="https://github.com/masonlabcc">
 				<img src="https://avatars.githubusercontent.com/u/1105156?s=72&u=f52d3666bbcbe273507e6c81254d0c6fff7810b6&v=4" width="24" alt="Avatar of masonlabcc"> masonlabcc
@@ -8503,7 +8451,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>647</td>
+		<td>643</td>
 		<td>
 			<a href="https://github.com/renzocastro">
 				<img src="https://avatars.githubusercontent.com/u/206445?s=72&v=4" width="24" alt="Avatar of renzocastro"> renzocastro
@@ -8516,20 +8464,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>26</td>
 	</tr>
 	<tr>
-		<td>648</td>
+		<td>644</td>
 		<td>
-			<a href="https://github.com/mateonoel2">
-				<img src="https://avatars.githubusercontent.com/u/39866695?s=72&u=08e7cb71f5cca9386c2a38838da7777caa5fdde6&v=4" width="24" alt="Avatar of mateonoel2"> mateonoel2
+			<a href="https://github.com/harold18m">
+				<img src="https://avatars.githubusercontent.com/u/118697566?s=72&u=4621dd1e819b22717aa9f6a20ccc955c4bf39893&v=4" width="24" alt="Avatar of harold18m"> harold18m
 			</a><br/>
-			Mateo Noel Rabines
+			Harold Medrano
 		</td>
-		<td>@getcometa </td>
+		<td>@dropoutcapital  </td>
 		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
+		<td>Lima</td>
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>649</td>
+		<td>645</td>
 		<td>
 			<a href="https://github.com/chrisllontop">
 				<img src="https://avatars.githubusercontent.com/u/30430879?s=72&u=d2a086061d29d63315d0a71633bedc29981d443c&v=4" width="24" alt="Avatar of chrisllontop"> chrisllontop
@@ -8542,7 +8490,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>650</td>
+		<td>646</td>
 		<td>
 			<a href="https://github.com/Gonzalogdlr">
 				<img src="https://avatars.githubusercontent.com/u/57047708?s=72&u=e712a7c8c6aec04060b6befa32344501d30267d7&v=4" width="24" alt="Avatar of Gonzalogdlr"> Gonzalogdlr
@@ -8555,7 +8503,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>651</td>
+		<td>647</td>
 		<td>
 			<a href="https://github.com/PercyTuncar">
 				<img src="https://avatars.githubusercontent.com/u/33427262?s=72&u=2f09ab8491b6b888af66cf4182659c85cbae220f&v=4" width="24" alt="Avatar of PercyTuncar"> PercyTuncar
@@ -8568,7 +8516,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>652</td>
+		<td>648</td>
 		<td>
 			<a href="https://github.com/henrychavez">
 				<img src="https://avatars.githubusercontent.com/u/6098329?s=72&u=8c8db4199d59f29099b6d34f374b2e938d9eaf8c&v=4" width="24" alt="Avatar of henrychavez"> henrychavez
@@ -8581,20 +8529,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>653</td>
-		<td>
-			<a href="https://github.com/Noodle96">
-				<img src="https://avatars.githubusercontent.com/u/21202542?s=72&u=7525387c2704f7adc8899f80c5b93799dfb963d0&v=4" width="24" alt="Avatar of Noodle96"> Noodle96
-			</a><br/>
-			Jorge Tito
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Arequipa, Perú</td>
-		<td>25</td>
-	</tr>
-	<tr>
-		<td>654</td>
+		<td>649</td>
 		<td>
 			<a href="https://github.com/drneox">
 				<img src="https://avatars.githubusercontent.com/u/1235287?s=72&u=5d0a02d7b41df7ec4af609669b4c8e8c58725c69&v=4" width="24" alt="Avatar of drneox"> drneox
@@ -8607,7 +8542,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>655</td>
+		<td>650</td>
+		<td>
+			<a href="https://github.com/Noodle96">
+				<img src="https://avatars.githubusercontent.com/u/21202542?s=72&u=7525387c2704f7adc8899f80c5b93799dfb963d0&v=4" width="24" alt="Avatar of Noodle96"> Noodle96
+			</a><br/>
+			Jorge Tito
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Arequipa, Perú</td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td>651</td>
 		<td>
 			<a href="https://github.com/FrancoRosa">
 				<img src="https://avatars.githubusercontent.com/u/5665734?s=72&u=29eecd7cded7462582e30dddd3a3ac1117859ff2&v=4" width="24" alt="Avatar of FrancoRosa"> FrancoRosa
@@ -8620,7 +8568,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>656</td>
+		<td>652</td>
 		<td>
 			<a href="https://github.com/Rotvie">
 				<img src="https://avatars.githubusercontent.com/u/76816272?s=72&u=1c21b6fe4612e91fdbfeed4466eb68d6aac69e83&v=4" width="24" alt="Avatar of Rotvie"> Rotvie
@@ -8633,7 +8581,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>657</td>
+		<td>653</td>
 		<td>
 			<a href="https://github.com/miaanaya">
 				<img src="https://avatars.githubusercontent.com/u/16482599?s=72&u=7960f441b1ad50b74b78c6b65a4303fc382345ee&v=4" width="24" alt="Avatar of miaanaya"> miaanaya
@@ -8646,7 +8594,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>658</td>
+		<td>654</td>
 		<td>
 			<a href="https://github.com/stiffis">
 				<img src="https://avatars.githubusercontent.com/u/172445563?s=72&u=332341a2bef72b2caf842e3687ea79cf2500e4f9&v=4" width="24" alt="Avatar of stiffis"> stiffis
@@ -8659,7 +8607,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>659</td>
+		<td>655</td>
 		<td>
 			<a href="https://github.com/ByeBye-Sama">
 				<img src="https://avatars.githubusercontent.com/u/19353687?s=72&u=fa5ba032e82bd858ce3c90e2c364aaf00d423621&v=4" width="24" alt="Avatar of ByeBye-Sama"> ByeBye-Sama
@@ -8672,46 +8620,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>660</td>
+		<td>656</td>
 		<td>
-			<a href="https://github.com/JcOnSoftware">
-				<img src="https://avatars.githubusercontent.com/u/333062?s=72&u=adfb8df3087b51df4e34d8756355adc67d5f6fa1&v=4" width="24" alt="Avatar of JcOnSoftware"> JcOnSoftware
+			<a href="https://github.com/anthony-ricardox">
+				<img src="https://avatars.githubusercontent.com/u/147872743?s=72&u=255b44e2467106e15d93913acfeca4f7544775ee&v=4" width="24" alt="Avatar of anthony-ricardox"> anthony-ricardox
 			</a><br/>
-			Juan Carlos
-		</td>
-		<td>Developer </td>
-		<td><a href="https://twitter.com/jconsoftware">jconsoftware</a></td>
-		<td>Lima - Peru</td>
-		<td>25</td>
-	</tr>
-	<tr>
-		<td>661</td>
-		<td>
-			<a href="https://github.com/bryanjhv">
-				<img src="https://avatars.githubusercontent.com/u/2767941?s=72&u=08f59707ce0e49b53013ade3a946cbf1a1c60c0d&v=4" width="24" alt="Avatar of bryanjhv"> bryanjhv
-			</a><br/>
-			Bryan Horna
+			Anthony Ricardo
 		</td>
 		<td>No Company</td>
 		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
+		<td>Abreu e Lima/PE</td>
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>662</td>
-		<td>
-			<a href="https://github.com/VictorFernandez1006">
-				<img src="https://avatars.githubusercontent.com/u/26204625?s=72&u=53b6465c6c22e2ff9e6b0b4a9b60fc872f1f1b36&v=4" width="24" alt="Avatar of VictorFernandez1006"> VictorFernandez1006
-			</a><br/>
-			Victor
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>25</td>
-	</tr>
-	<tr>
-		<td>663</td>
+		<td>657</td>
 		<td>
 			<a href="https://github.com/jorgektch">
 				<img src="https://avatars.githubusercontent.com/u/4952426?s=72&u=bc16d5620db1b238ffe89945e433a7c4b73b2920&v=4" width="24" alt="Avatar of jorgektch"> jorgektch
@@ -8724,20 +8646,59 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>664</td>
+		<td>658</td>
 		<td>
-			<a href="https://github.com/andres-melgar">
-				<img src="https://avatars.githubusercontent.com/u/36424160?s=72&u=88ed1219a78b25e4b19aa2bbfca044084e7ed83f&v=4" width="24" alt="Avatar of andres-melgar"> andres-melgar
+			<a href="https://github.com/JcOnSoftware">
+				<img src="https://avatars.githubusercontent.com/u/333062?s=72&u=adfb8df3087b51df4e34d8756355adc67d5f6fa1&v=4" width="24" alt="Avatar of JcOnSoftware"> JcOnSoftware
 			</a><br/>
-			Andrés Melgar
+			Juan Carlos
 		</td>
-		<td>Pontificia Universidad Católica Del<br/>Perú<br/></td>
-		<td><a href="https://twitter.com/andres_melgar">andres_melgar</a></td>
+		<td>Developer </td>
+		<td><a href="https://twitter.com/jconsoftware">jconsoftware</a></td>
+		<td>Lima - Peru</td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td>659</td>
+		<td>
+			<a href="https://github.com/bryanjhv">
+				<img src="https://avatars.githubusercontent.com/u/2767941?s=72&u=08f59707ce0e49b53013ade3a946cbf1a1c60c0d&v=4" width="24" alt="Avatar of bryanjhv"> bryanjhv
+			</a><br/>
+			Bryan Horna
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td>660</td>
+		<td>
+			<a href="https://github.com/VictorFernandez1006">
+				<img src="https://avatars.githubusercontent.com/u/26204625?s=72&u=53b6465c6c22e2ff9e6b0b4a9b60fc872f1f1b36&v=4" width="24" alt="Avatar of VictorFernandez1006"> VictorFernandez1006
+			</a><br/>
+			Victor
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
 		<td>Lima, Perú</td>
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>665</td>
+		<td>661</td>
+		<td>
+			<a href="https://github.com/JuanCali999">
+				<img src="https://avatars.githubusercontent.com/u/112789857?s=72&u=50dfa867ef53f9f9bf6711dbd6c01a1ecddcf2f5&v=4" width="24" alt="Avatar of JuanCali999"> JuanCali999
+			</a><br/>
+			Juan Jesús Calisaya Sánchez
+		</td>
+		<td>Universidad Peruana De Ciencias<br/>Aplicadas<br/></td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td>662</td>
 		<td>
 			<a href="https://github.com/Notflay">
 				<img src="https://avatars.githubusercontent.com/u/113739170?s=72&u=14e83231669bf8c30b87b6bad4b23fa48ec8df6d&v=4" width="24" alt="Avatar of Notflay"> Notflay
@@ -8750,20 +8711,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>666</td>
-		<td>
-			<a href="https://github.com/cristhian-apaza">
-				<img src="https://avatars.githubusercontent.com/u/45334790?s=72&u=ebc5d2eb8929a3b23678684c8be09b8dafa114f2&v=4" width="24" alt="Avatar of cristhian-apaza"> cristhian-apaza
-			</a><br/>
-			Cristhian Apaza
-		</td>
-		<td>@izipay-dev  </td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>25</td>
-	</tr>
-	<tr>
-		<td>667</td>
+		<td>663</td>
 		<td>
 			<a href="https://github.com/RaulitoGC">
 				<img src="https://avatars.githubusercontent.com/u/7445311?s=72&u=6efffdca9f3b07417a86d88767186ceb0ef16bba&v=4" width="24" alt="Avatar of RaulitoGC"> RaulitoGC
@@ -8776,20 +8724,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>668</td>
+		<td>664</td>
 		<td>
-			<a href="https://github.com/sashirestela">
-				<img src="https://avatars.githubusercontent.com/u/14045506?s=72&u=1195878641904c0327a5ab9f908735521396f5ed&v=4" width="24" alt="Avatar of sashirestela"> sashirestela
+			<a href="https://github.com/cristhian-apaza">
+				<img src="https://avatars.githubusercontent.com/u/45334790?s=72&u=ebc5d2eb8929a3b23678684c8be09b8dafa114f2&v=4" width="24" alt="Avatar of cristhian-apaza"> cristhian-apaza
 			</a><br/>
-			Sashir Estela
+			Cristhian Apaza
 		</td>
-		<td>No Company</td>
+		<td>@izipay-dev  </td>
 		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
+		<td>Peru</td>
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>669</td>
+		<td>665</td>
 		<td>
 			<a href="https://github.com/gabsss1">
 				<img src="https://avatars.githubusercontent.com/u/104277821?s=72&u=86372ec4ec3fddcb487a40629838f49620149f62&v=4" width="24" alt="Avatar of gabsss1"> gabsss1
@@ -8802,7 +8750,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>670</td>
+		<td>666</td>
+		<td>
+			<a href="https://github.com/sashirestela">
+				<img src="https://avatars.githubusercontent.com/u/14045506?s=72&u=1195878641904c0327a5ab9f908735521396f5ed&v=4" width="24" alt="Avatar of sashirestela"> sashirestela
+			</a><br/>
+			Sashir Estela
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td>667</td>
 		<td>
 			<a href="https://github.com/creadormu">
 				<img src="https://avatars.githubusercontent.com/u/215183092?s=72&u=4451250b68211ee9d3b6465cee478f13baa10b62&v=4" width="24" alt="Avatar of creadormu"> creadormu
@@ -8815,7 +8776,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>671</td>
+		<td>668</td>
 		<td>
 			<a href="https://github.com/Camilo-J">
 				<img src="https://avatars.githubusercontent.com/u/101940468?s=72&u=b0dc3917970bf5852f7f9300438ca1f4ce60afd8&v=4" width="24" alt="Avatar of Camilo-J"> Camilo-J
@@ -8828,7 +8789,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>672</td>
+		<td>669</td>
 		<td>
 			<a href="https://github.com/luisejv">
 				<img src="https://avatars.githubusercontent.com/u/38704851?s=72&u=8b74c1d4075f6375cf38b1f5609f78c376fec096&v=4" width="24" alt="Avatar of luisejv"> luisejv
@@ -8841,7 +8802,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>673</td>
+		<td>670</td>
 		<td>
 			<a href="https://github.com/Mr20DL">
 				<img src="https://avatars.githubusercontent.com/u/133035110?s=72&u=d59d917b4424756c8542f56a44a9d33d495590b8&v=4" width="24" alt="Avatar of Mr20DL"> Mr20DL
@@ -8854,20 +8815,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>674</td>
-		<td>
-			<a href="https://github.com/alfredopaz">
-				<img src="https://avatars.githubusercontent.com/u/9202761?s=72&v=4" width="24" alt="Avatar of alfredopaz"> alfredopaz
-			</a><br/>
-			Alfredo Paz Valderrama
-		</td>
-		<td>Universidad Nacional De San<br/>Agustín<br/>De<br/>Arequipa<br/></td>
-		<td>No Twitter Username</td>
-		<td>Arequipa, Perú</td>
-		<td>25</td>
-	</tr>
-	<tr>
-		<td>675</td>
+		<td>671</td>
 		<td>
 			<a href="https://github.com/aguilarpgc">
 				<img src="https://avatars.githubusercontent.com/u/3612180?s=72&u=6a3ace84fa8db024f08723fb81cc66d30db4f88e&v=4" width="24" alt="Avatar of aguilarpgc"> aguilarpgc
@@ -8880,7 +8828,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>676</td>
+		<td>672</td>
+		<td>
+			<a href="https://github.com/alfredopaz">
+				<img src="https://avatars.githubusercontent.com/u/9202761?s=72&v=4" width="24" alt="Avatar of alfredopaz"> alfredopaz
+			</a><br/>
+			Alfredo Paz Valderrama
+		</td>
+		<td>Universidad Nacional De San<br/>Agustín<br/>De<br/>Arequipa<br/></td>
+		<td>No Twitter Username</td>
+		<td>Arequipa, Perú</td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td>673</td>
 		<td>
 			<a href="https://github.com/mauricioalvaradoo">
 				<img src="https://avatars.githubusercontent.com/u/99780331?s=72&u=a2d74d693f3e895058973ea063f4709dc3ef0a78&v=4" width="24" alt="Avatar of mauricioalvaradoo"> mauricioalvaradoo
@@ -8893,7 +8854,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>677</td>
+		<td>674</td>
 		<td>
 			<a href="https://github.com/daneelsan">
 				<img src="https://avatars.githubusercontent.com/u/40190339?s=72&u=9a4ffe366e6422ebe6a92ad821e31ab45d60723e&v=4" width="24" alt="Avatar of daneelsan"> daneelsan
@@ -8906,7 +8867,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>678</td>
+		<td>675</td>
 		<td>
 			<a href="https://github.com/miguel-dalens">
 				<img src="https://avatars.githubusercontent.com/u/230043306?s=72&u=8a3a3711b4a165c1e3d09d06f63d2bb8b0b59f18&v=4" width="24" alt="Avatar of miguel-dalens"> miguel-dalens
@@ -8919,7 +8880,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>679</td>
+		<td>676</td>
 		<td>
 			<a href="https://github.com/aquevedos">
 				<img src="https://avatars.githubusercontent.com/u/9245600?s=72&u=7b8ceebf1d3f243f4934eeb9a5617c05a2aaf685&v=4" width="24" alt="Avatar of aquevedos"> aquevedos
@@ -8932,7 +8893,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>680</td>
+		<td>677</td>
 		<td>
 			<a href="https://github.com/ldiego73">
 				<img src="https://avatars.githubusercontent.com/u/394222?s=72&u=7ee97b498f674ab124e7f8cbece147f3d8253d2d&v=4" width="24" alt="Avatar of ldiego73"> ldiego73
@@ -8945,7 +8906,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>681</td>
+		<td>678</td>
 		<td>
 			<a href="https://github.com/Barbara24ar">
 				<img src="https://avatars.githubusercontent.com/u/169545465?s=72&u=c9613cc4b0e847321063db8fff1b76d980e22630&v=4" width="24" alt="Avatar of Barbara24ar"> Barbara24ar
@@ -8958,7 +8919,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>682</td>
+		<td>679</td>
 		<td>
 			<a href="https://github.com/Alejosor">
 				<img src="https://avatars.githubusercontent.com/u/103512715?s=72&u=21944984458c30cf804bab41470fc0126e5bb2d5&v=4" width="24" alt="Avatar of Alejosor"> Alejosor
@@ -8971,7 +8932,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>683</td>
+		<td>680</td>
 		<td>
 			<a href="https://github.com/MiguelMurrugarraTorres">
 				<img src="https://avatars.githubusercontent.com/u/20019777?s=72&u=0e2ce5ca997a23c265e5134f5c984565ae64bfa3&v=4" width="24" alt="Avatar of MiguelMurrugarraTorres"> MiguelMurrugarraTorres
@@ -8984,20 +8945,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>684</td>
-		<td>
-			<a href="https://github.com/roxsyVel910">
-				<img src="https://avatars.githubusercontent.com/u/67168150?s=72&u=f120da79af12fdbc19fb17f1e78debe1dabee146&v=4" width="24" alt="Avatar of roxsyVel910"> roxsyVel910
-			</a><br/>
-			Roxsana Velasquez
-		</td>
-		<td>Laboratoria </td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>25</td>
-	</tr>
-	<tr>
-		<td>685</td>
+		<td>681</td>
 		<td>
 			<a href="https://github.com/alison304">
 				<img src="https://avatars.githubusercontent.com/u/77820426?s=72&u=ca1e3a5a0de8df43c339d097848ac7f957ff6d07&v=4" width="24" alt="Avatar of alison304"> alison304
@@ -9010,7 +8958,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>686</td>
+		<td>682</td>
+		<td>
+			<a href="https://github.com/roxsyVel910">
+				<img src="https://avatars.githubusercontent.com/u/67168150?s=72&u=f120da79af12fdbc19fb17f1e78debe1dabee146&v=4" width="24" alt="Avatar of roxsyVel910"> roxsyVel910
+			</a><br/>
+			Roxsana Velasquez
+		</td>
+		<td>Laboratoria </td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>25</td>
+	</tr>
+	<tr>
+		<td>683</td>
 		<td>
 			<a href="https://github.com/hellhound">
 				<img src="https://avatars.githubusercontent.com/u/389892?s=72&v=4" width="24" alt="Avatar of hellhound"> hellhound
@@ -9023,7 +8984,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>687</td>
+		<td>684</td>
 		<td>
 			<a href="https://github.com/ClauOrtiiz">
 				<img src="https://avatars.githubusercontent.com/u/125047376?s=72&u=385a9b4b38ea6c3de53193ba9fbc9a117d593bd5&v=4" width="24" alt="Avatar of ClauOrtiiz"> ClauOrtiiz
@@ -9036,7 +8997,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>688</td>
+		<td>685</td>
 		<td>
 			<a href="https://github.com/antoniocachuan">
 				<img src="https://avatars.githubusercontent.com/u/4010332?s=72&u=0b04f6fe18b66ef6715beb17e34cecc233dd503d&v=4" width="24" alt="Avatar of antoniocachuan"> antoniocachuan
@@ -9049,7 +9010,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>689</td>
+		<td>686</td>
 		<td>
 			<a href="https://github.com/mastergis">
 				<img src="https://avatars.githubusercontent.com/u/60658810?s=72&u=21e9c81a1f05fd9a7e7945df9d1b50a49f95a1c7&v=4" width="24" alt="Avatar of mastergis"> mastergis
@@ -9062,7 +9023,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>690</td>
+		<td>687</td>
 		<td>
 			<a href="https://github.com/frecaze">
 				<img src="https://avatars.githubusercontent.com/u/385645?s=72&v=4" width="24" alt="Avatar of frecaze"> frecaze
@@ -9075,7 +9036,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>691</td>
+		<td>688</td>
 		<td>
 			<a href="https://github.com/gcancho">
 				<img src="https://avatars.githubusercontent.com/u/46111857?s=72&u=757e26a3ea1b7569813b3ef3357ad2947cd894ec&v=4" width="24" alt="Avatar of gcancho"> gcancho
@@ -9088,20 +9049,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>25</td>
 	</tr>
 	<tr>
-		<td>692</td>
+		<td>689</td>
 		<td>
-			<a href="https://github.com/JonathanRosasV">
-				<img src="https://avatars.githubusercontent.com/u/127298565?s=72&u=87a9e485690691cb218dd882b4c59f46da036d1f&v=4" width="24" alt="Avatar of JonathanRosasV"> JonathanRosasV
+			<a href="https://github.com/mateonoel2">
+				<img src="https://avatars.githubusercontent.com/u/39866695?s=72&u=08e7cb71f5cca9386c2a38838da7777caa5fdde6&v=4" width="24" alt="Avatar of mateonoel2"> mateonoel2
 			</a><br/>
-			Jonathan Rosas
+			Mateo Noel Rabines
 		</td>
-		<td>Central Reserve Bank Of<br/>Peru<br/></td>
+		<td>@getcometa </td>
 		<td>No Twitter Username</td>
-		<td>Trujillo, Perú</td>
+		<td>Lima, Perú</td>
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>693</td>
+		<td>690</td>
 		<td>
 			<a href="https://github.com/jsalinasvela">
 				<img src="https://avatars.githubusercontent.com/u/28662284?s=72&u=580c9cce04c80a09abc077661cd8581db32a7e02&v=4" width="24" alt="Avatar of jsalinasvela"> jsalinasvela
@@ -9114,7 +9075,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>694</td>
+		<td>691</td>
 		<td>
 			<a href="https://github.com/victorlunam">
 				<img src="https://avatars.githubusercontent.com/u/98234382?s=72&u=d19fcbd2f45d1d8af7aec8a9b03e2779bc9083d1&v=4" width="24" alt="Avatar of victorlunam"> victorlunam
@@ -9127,7 +9088,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>695</td>
+		<td>692</td>
 		<td>
 			<a href="https://github.com/AzucenaGrecia">
 				<img src="https://avatars.githubusercontent.com/u/58397882?s=72&u=511d9917a857bf94209e0718d23b09e3bb666dfe&v=4" width="24" alt="Avatar of AzucenaGrecia"> AzucenaGrecia
@@ -9140,7 +9101,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>696</td>
+		<td>693</td>
 		<td>
 			<a href="https://github.com/Jeremitc">
 				<img src="https://avatars.githubusercontent.com/u/115769418?s=72&u=5e445b2a8a9954f33349b0ec28d4e47472a79859&v=4" width="24" alt="Avatar of Jeremitc"> Jeremitc
@@ -9153,7 +9114,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>697</td>
+		<td>694</td>
 		<td>
 			<a href="https://github.com/javierdamiani">
 				<img src="https://avatars.githubusercontent.com/u/116226692?s=72&u=d3d3cb71779a9120c39caeaafc9859a481bb357c&v=4" width="24" alt="Avatar of javierdamiani"> javierdamiani
@@ -9166,7 +9127,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>698</td>
+		<td>695</td>
 		<td>
 			<a href="https://github.com/darkJCdark">
 				<img src="https://avatars.githubusercontent.com/u/132624009?s=72&u=4b31dc200bfd63677ad8ffed0baf18c625d5555d&v=4" width="24" alt="Avatar of darkJCdark"> darkJCdark
@@ -9179,20 +9140,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>699</td>
-		<td>
-			<a href="https://github.com/abengl">
-				<img src="https://avatars.githubusercontent.com/u/126703861?s=72&u=218e98b47d40d2b01e3f580bc2e077c989b38718&v=4" width="24" alt="Avatar of abengl"> abengl
-			</a><br/>
-			Alessandra Godoy
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>24</td>
-	</tr>
-	<tr>
-		<td>700</td>
+		<td>696</td>
 		<td>
 			<a href="https://github.com/luisBazanDev">
 				<img src="https://avatars.githubusercontent.com/u/99089018?s=72&u=27c2d513352182d96756455d5009ba3ea5a24715&v=4" width="24" alt="Avatar of luisBazanDev"> luisBazanDev
@@ -9205,7 +9153,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>701</td>
+		<td>697</td>
 		<td>
 			<a href="https://github.com/giancarlosisasi">
 				<img src="https://avatars.githubusercontent.com/u/17274950?s=72&u=8af896f2c2bb94b80ca87ee611d9e9f227d1b595&v=4" width="24" alt="Avatar of giancarlosisasi"> giancarlosisasi
@@ -9218,7 +9166,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>702</td>
+		<td>698</td>
+		<td>
+			<a href="https://github.com/characat0">
+				<img src="https://avatars.githubusercontent.com/u/36453977?s=72&u=1b23b8f3a04eed3301a7534a0cc10897c835d784&v=4" width="24" alt="Avatar of characat0"> characat0
+			</a><br/>
+			Marco Vela
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<td>699</td>
 		<td>
 			<a href="https://github.com/AllanSagastegui">
 				<img src="https://avatars.githubusercontent.com/u/136931515?s=72&u=c82d80e7170616ef5aee4024185969b8ccccbd78&v=4" width="24" alt="Avatar of AllanSagastegui"> AllanSagastegui
@@ -9231,7 +9192,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>703</td>
+		<td>700</td>
 		<td>
 			<a href="https://github.com/Alvaro-Neyra">
 				<img src="https://avatars.githubusercontent.com/u/114025719?s=72&u=7ca7de6a13ee3a094d7532c0011531a07a03736b&v=4" width="24" alt="Avatar of Alvaro-Neyra"> Alvaro-Neyra
@@ -9244,7 +9205,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>704</td>
+		<td>701</td>
 		<td>
 			<a href="https://github.com/LordMathi2741">
 				<img src="https://avatars.githubusercontent.com/u/129223783?s=72&u=fe6acb366c915dbeb2f3d0d2fd2e8e21c220dbd3&v=4" width="24" alt="Avatar of LordMathi2741"> LordMathi2741
@@ -9257,7 +9218,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>705</td>
+		<td>702</td>
 		<td>
 			<a href="https://github.com/Luiggi370z">
 				<img src="https://avatars.githubusercontent.com/u/20545331?s=72&u=d05defc11498f232dcc91327345b1b8f7da35652&v=4" width="24" alt="Avatar of Luiggi370z"> Luiggi370z
@@ -9270,33 +9231,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>706</td>
-		<td>
-			<a href="https://github.com/Ray-Alessandro">
-				<img src="https://avatars.githubusercontent.com/u/112559950?s=72&u=e6b2eebae61e984efda348d6c33175213392ba58&v=4" width="24" alt="Avatar of Ray-Alessandro"> Ray-Alessandro
-			</a><br/>
-			Ray Alessandro
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>24</td>
-	</tr>
-	<tr>
-		<td>707</td>
-		<td>
-			<a href="https://github.com/NellyCN">
-				<img src="https://avatars.githubusercontent.com/u/118828236?s=72&u=80c2945a49ed81db746289a1753bb1e5aae86f9b&v=4" width="24" alt="Avatar of NellyCN"> NellyCN
-			</a><br/>
-			Nelly Janet Cumpa Nomberto
-		</td>
-		<td>Laboratoria/ntt Data </td>
-		<td>No Twitter Username</td>
-		<td>Lima-Perú</td>
-		<td>24</td>
-	</tr>
-	<tr>
-		<td>708</td>
+		<td>703</td>
 		<td>
 			<a href="https://github.com/xtrmdarc">
 				<img src="https://avatars.githubusercontent.com/u/12993913?s=72&u=86b787ac7a05a4605133e52a92bfbac223028b38&v=4" width="24" alt="Avatar of xtrmdarc"> xtrmdarc
@@ -9309,7 +9244,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>709</td>
+		<td>704</td>
+		<td>
+			<a href="https://github.com/Ray-Alessandro">
+				<img src="https://avatars.githubusercontent.com/u/112559950?s=72&u=e6b2eebae61e984efda348d6c33175213392ba58&v=4" width="24" alt="Avatar of Ray-Alessandro"> Ray-Alessandro
+			</a><br/>
+			Ray Alessandro
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<td>705</td>
 		<td>
 			<a href="https://github.com/gabtio">
 				<img src="https://avatars.githubusercontent.com/u/1854716?s=72&u=68d618e8147b79a88697f71a61468f3214db84cf&v=4" width="24" alt="Avatar of gabtio"> gabtio
@@ -9322,7 +9270,46 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>710</td>
+		<td>706</td>
+		<td>
+			<a href="https://github.com/andres-melgar">
+				<img src="https://avatars.githubusercontent.com/u/36424160?s=72&u=88ed1219a78b25e4b19aa2bbfca044084e7ed83f&v=4" width="24" alt="Avatar of andres-melgar"> andres-melgar
+			</a><br/>
+			Andrés Melgar
+		</td>
+		<td>Pontificia Universidad Católica Del<br/>Perú<br/></td>
+		<td><a href="https://twitter.com/andres_melgar">andres_melgar</a></td>
+		<td>Lima, Perú</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<td>707</td>
+		<td>
+			<a href="https://github.com/danielgis">
+				<img src="https://avatars.githubusercontent.com/u/18519933?s=72&u=6121f0f2b9ece123901e9f3bb5cc69807efa2e8d&v=4" width="24" alt="Avatar of danielgis"> danielgis
+			</a><br/>
+			Daniel Aguado Huaccharaqui
+		</td>
+		<td>Geocodery </td>
+		<td>No Twitter Username</td>
+		<td>Lima -Perú</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<td>708</td>
+		<td>
+			<a href="https://github.com/NellyCN">
+				<img src="https://avatars.githubusercontent.com/u/118828236?s=72&u=80c2945a49ed81db746289a1753bb1e5aae86f9b&v=4" width="24" alt="Avatar of NellyCN"> NellyCN
+			</a><br/>
+			Nelly Janet Cumpa Nomberto
+		</td>
+		<td>Laboratoria/ntt Data </td>
+		<td>No Twitter Username</td>
+		<td>Lima-Perú</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<td>709</td>
 		<td>
 			<a href="https://github.com/devjoca">
 				<img src="https://avatars.githubusercontent.com/u/5117647?s=72&u=566aeace5637748e048f1aebd86bb66cdda8f68c&v=4" width="24" alt="Avatar of devjoca"> devjoca
@@ -9335,7 +9322,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>711</td>
+		<td>710</td>
 		<td>
 			<a href="https://github.com/frankalvarezdev">
 				<img src="https://avatars.githubusercontent.com/u/64846247?s=72&u=9a28219a12dfc7417fd8cf9a52350b09d2575489&v=4" width="24" alt="Avatar of frankalvarezdev"> frankalvarezdev
@@ -9348,7 +9335,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>712</td>
+		<td>711</td>
 		<td>
 			<a href="https://github.com/jardix22">
 				<img src="https://avatars.githubusercontent.com/u/1317294?s=72&u=d55a70d02e0557e92a74cca1280cae08ed0f3617&v=4" width="24" alt="Avatar of jardix22"> jardix22
@@ -9361,7 +9348,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>713</td>
+		<td>712</td>
 		<td>
 			<a href="https://github.com/JulioRuizdev">
 				<img src="https://avatars.githubusercontent.com/u/67079712?s=72&u=8d98db635b324e01930c6c7dae5eb972996ae431&v=4" width="24" alt="Avatar of JulioRuizdev"> JulioRuizdev
@@ -9374,7 +9361,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>714</td>
+		<td>713</td>
 		<td>
 			<a href="https://github.com/annygutierrez">
 				<img src="https://avatars.githubusercontent.com/u/32302890?s=72&u=67439eedbd7c32a4eb071da84430e3a080f0f815&v=4" width="24" alt="Avatar of annygutierrez"> annygutierrez
@@ -9387,7 +9374,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>715</td>
+		<td>714</td>
 		<td>
 			<a href="https://github.com/oscar-ramos">
 				<img src="https://avatars.githubusercontent.com/u/15218582?s=72&v=4" width="24" alt="Avatar of oscar-ramos"> oscar-ramos
@@ -9400,20 +9387,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>716</td>
-		<td>
-			<a href="https://github.com/loweffort-alt">
-				<img src="https://avatars.githubusercontent.com/u/75603219?s=72&u=c467700da8fc6e7ef3808cb004e257d1abe19287&v=4" width="24" alt="Avatar of loweffort-alt"> loweffort-alt
-			</a><br/>
-			Dario Alexander Farfan Navarro
-		</td>
-		<td>Fana </td>
-		<td>No Twitter Username</td>
-		<td>Lima - Peru</td>
-		<td>24</td>
-	</tr>
-	<tr>
-		<td>717</td>
+		<td>715</td>
 		<td>
 			<a href="https://github.com/GinoQuispe21">
 				<img src="https://avatars.githubusercontent.com/u/49618571?s=72&u=de56229449faa11d0b607ec86a0dace85a5bea0a&v=4" width="24" alt="Avatar of GinoQuispe21"> GinoQuispe21
@@ -9426,7 +9400,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>718</td>
+		<td>716</td>
 		<td>
 			<a href="https://github.com/deibytb">
 				<img src="https://avatars.githubusercontent.com/u/4389376?s=72&u=0e8765a27612295b438a80aeea227fe177b18192&v=4" width="24" alt="Avatar of deibytb"> deibytb
@@ -9439,7 +9413,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>719</td>
+		<td>717</td>
 		<td>
 			<a href="https://github.com/ChristianChiroqueR">
 				<img src="https://avatars.githubusercontent.com/u/15709747?s=72&u=d3645736361bcb32d386af066ec1e7907561d228&v=4" width="24" alt="Avatar of ChristianChiroqueR"> ChristianChiroqueR
@@ -9452,7 +9426,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>720</td>
+		<td>718</td>
+		<td>
+			<a href="https://github.com/loweffort-alt">
+				<img src="https://avatars.githubusercontent.com/u/75603219?s=72&u=c467700da8fc6e7ef3808cb004e257d1abe19287&v=4" width="24" alt="Avatar of loweffort-alt"> loweffort-alt
+			</a><br/>
+			Dario Alexander Farfan Navarro
+		</td>
+		<td>Fana </td>
+		<td>No Twitter Username</td>
+		<td>Lima - Peru</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<td>719</td>
 		<td>
 			<a href="https://github.com/fortepc">
 				<img src="https://avatars.githubusercontent.com/u/26149601?s=72&v=4" width="24" alt="Avatar of fortepc"> fortepc
@@ -9465,7 +9452,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>721</td>
+		<td>720</td>
 		<td>
 			<a href="https://github.com/CarlitosDroid">
 				<img src="https://avatars.githubusercontent.com/u/10377529?s=72&u=7d9b3695f69af869166298e1a0fa4b4cfb82c8a2&v=4" width="24" alt="Avatar of CarlitosDroid"> CarlitosDroid
@@ -9478,7 +9465,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>722</td>
+		<td>721</td>
 		<td>
 			<a href="https://github.com/JaquelineRocio">
 				<img src="https://avatars.githubusercontent.com/u/67769601?s=72&u=c700a796fb12e47c6ae44fbfcf4fd74c181cdd1a&v=4" width="24" alt="Avatar of JaquelineRocio"> JaquelineRocio
@@ -9491,7 +9478,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>723</td>
+		<td>722</td>
 		<td>
 			<a href="https://github.com/hackanonimous">
 				<img src="https://avatars.githubusercontent.com/u/34951894?s=72&u=1f7618d806db3e4072be05822bd687663444d771&v=4" width="24" alt="Avatar of hackanonimous"> hackanonimous
@@ -9504,7 +9491,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>24</td>
 	</tr>
 	<tr>
-		<td>724</td>
+		<td>723</td>
 		<td>
 			<a href="https://github.com/kevinmore26">
 				<img src="https://avatars.githubusercontent.com/u/74431425?s=72&u=1afd7bce31cb25d9999e6df3b171d14c0bd0b3b2&v=4" width="24" alt="Avatar of kevinmore26"> kevinmore26
@@ -9514,6 +9501,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Cloudmediapro </td>
 		<td>No Twitter Username</td>
 		<td>lima</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<td>724</td>
+		<td>
+			<a href="https://github.com/mishrole">
+				<img src="https://avatars.githubusercontent.com/u/25912465?s=72&u=f892a694ba48461c17dad64ccddd9a3758e45d24&v=4" width="24" alt="Avatar of mishrole"> mishrole
+			</a><br/>
+			Mitchell Rodríguez
+		</td>
+		<td>Experis - Manpowergroup |<br/>Real<br/>Plaza<br/></td>
+		<td><a href="https://twitter.com/mishrole">mishrole</a></td>
+		<td>Lima, Perú</td>
 		<td>24</td>
 	</tr>
 	<tr>
@@ -9701,6 +9701,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>739</td>
 		<td>
+			<a href="https://github.com/JonathanRosasV">
+				<img src="https://avatars.githubusercontent.com/u/127298565?s=72&u=87a9e485690691cb218dd882b4c59f46da036d1f&v=4" width="24" alt="Avatar of JonathanRosasV"> JonathanRosasV
+			</a><br/>
+			Jonathan Rosas
+		</td>
+		<td>Central Reserve Bank Of<br/>Peru<br/></td>
+		<td>No Twitter Username</td>
+		<td>Trujillo, Perú</td>
+		<td>23</td>
+	</tr>
+	<tr>
+		<td>740</td>
+		<td>
 			<a href="https://github.com/nestorlls">
 				<img src="https://avatars.githubusercontent.com/u/7662759?s=72&u=e0f80cda08a121a35fa31cd0b3013aff7df955a0&v=4" width="24" alt="Avatar of nestorlls"> nestorlls
 			</a><br/>
@@ -9712,7 +9725,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>740</td>
+		<td>741</td>
 		<td>
 			<a href="https://github.com/csalcedo001">
 				<img src="https://avatars.githubusercontent.com/u/27221651?s=72&u=6c389b706eeade346320ff9358eaf4d2f4e491d7&v=4" width="24" alt="Avatar of csalcedo001"> csalcedo001
@@ -9721,19 +9734,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		</td>
 		<td>@chofex </td>
 		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>23</td>
-	</tr>
-	<tr>
-		<td>741</td>
-		<td>
-			<a href="https://github.com/DavidCastilloAlvarado">
-				<img src="https://avatars.githubusercontent.com/u/25672642?s=72&u=29cad6e8e92406c96af0375b84532e3c377c43e9&v=4" width="24" alt="Avatar of DavidCastilloAlvarado"> DavidCastilloAlvarado
-			</a><br/>
-			David Castillo
-		</td>
-		<td>David Castillo </td>
-		<td><a href="https://twitter.com/David_CastiAlv">David_CastiAlv</a></td>
 		<td>Lima, Perú</td>
 		<td>23</td>
 	</tr>
@@ -9766,19 +9766,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>744</td>
 		<td>
-			<a href="https://github.com/albert1t0">
-				<img src="https://avatars.githubusercontent.com/u/445838?s=72&u=a8271ee8b55adeeceef30eb4c4396983b827c46f&v=4" width="24" alt="Avatar of albert1t0"> albert1t0
-			</a><br/>
-			Alberto Manuel Torreblanca VIllavicencio
-		</td>
-		<td>Torreblanca.pe </td>
-		<td><a href="https://twitter.com/AlbrTorreblanca">AlbrTorreblanca</a></td>
-		<td>Lima - Perú</td>
-		<td>23</td>
-	</tr>
-	<tr>
-		<td>745</td>
-		<td>
 			<a href="https://github.com/nesodev">
 				<img src="https://avatars.githubusercontent.com/u/125885880?s=72&u=ba1fbdf804cf1b69f4b465dd4aab8a6638212780&v=4" width="24" alt="Avatar of nesodev"> nesodev
 			</a><br/>
@@ -9787,6 +9774,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Unmsm - Fisi </td>
 		<td>No Twitter Username</td>
 		<td>Lima, Perú</td>
+		<td>23</td>
+	</tr>
+	<tr>
+		<td>745</td>
+		<td>
+			<a href="https://github.com/albert1t0">
+				<img src="https://avatars.githubusercontent.com/u/445838?s=72&u=a8271ee8b55adeeceef30eb4c4396983b827c46f&v=4" width="24" alt="Avatar of albert1t0"> albert1t0
+			</a><br/>
+			Alberto Manuel Torreblanca VIllavicencio
+		</td>
+		<td>Torreblanca.pe </td>
+		<td><a href="https://twitter.com/AlbrTorreblanca">AlbrTorreblanca</a></td>
+		<td>Lima - Perú</td>
 		<td>23</td>
 	</tr>
 	<tr>
@@ -9805,14 +9805,14 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>747</td>
 		<td>
-			<a href="https://github.com/Sublian">
-				<img src="https://avatars.githubusercontent.com/u/118958836?s=72&u=c6724f029d9d6b1691101a50afbd26ed6cd30ad8&v=4" width="24" alt="Avatar of Sublian"> Sublian
+			<a href="https://github.com/abengl">
+				<img src="https://avatars.githubusercontent.com/u/126703861?s=72&u=218e98b47d40d2b01e3f580bc2e077c989b38718&v=4" width="24" alt="Avatar of abengl"> abengl
 			</a><br/>
-			Luis Gonzalez
+			Alessandra Godoy
 		</td>
 		<td>No Company</td>
 		<td>No Twitter Username</td>
-		<td>Lima. Perù</td>
+		<td>Peru</td>
 		<td>23</td>
 	</tr>
 	<tr>
@@ -9844,6 +9844,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>750</td>
 		<td>
+			<a href="https://github.com/xwcamor">
+				<img src="https://avatars.githubusercontent.com/u/173717444?s=72&u=0478e00958848537d6469e2b6f52f7ba7ee26164&v=4" width="24" alt="Avatar of xwcamor"> xwcamor
+			</a><br/>
+			Carlos Morales
+		</td>
+		<td>Senati </td>
+		<td>No Twitter Username</td>
+		<td>Lima</td>
+		<td>23</td>
+	</tr>
+	<tr>
+		<td>751</td>
+		<td>
 			<a href="https://github.com/cenixeriadev">
 				<img src="https://avatars.githubusercontent.com/u/31229105?s=72&u=009934d13d983f4681c03d63c799891f5c51cb2d&v=4" width="24" alt="Avatar of cenixeriadev"> cenixeriadev
 			</a><br/>
@@ -9855,7 +9868,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>751</td>
+		<td>752</td>
 		<td>
 			<a href="https://github.com/CrhistianT7">
 				<img src="https://avatars.githubusercontent.com/u/65095486?s=72&u=2e3c9bebe9abd17b19efddc0852c0212ed1105c9&v=4" width="24" alt="Avatar of CrhistianT7"> CrhistianT7
@@ -9865,19 +9878,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Arequipa, Peru</td>
-		<td>23</td>
-	</tr>
-	<tr>
-		<td>752</td>
-		<td>
-			<a href="https://github.com/xwcamor">
-				<img src="https://avatars.githubusercontent.com/u/173717444?s=72&u=0478e00958848537d6469e2b6f52f7ba7ee26164&v=4" width="24" alt="Avatar of xwcamor"> xwcamor
-			</a><br/>
-			Carlos Morales
-		</td>
-		<td>Senati </td>
-		<td>No Twitter Username</td>
-		<td>Lima</td>
 		<td>23</td>
 	</tr>
 	<tr>
@@ -9896,19 +9896,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>754</td>
 		<td>
-			<a href="https://github.com/danielgis">
-				<img src="https://avatars.githubusercontent.com/u/18519933?s=72&u=6121f0f2b9ece123901e9f3bb5cc69807efa2e8d&v=4" width="24" alt="Avatar of danielgis"> danielgis
-			</a><br/>
-			Daniel Aguado Huaccharaqui
-		</td>
-		<td>Geocodery </td>
-		<td>No Twitter Username</td>
-		<td>Lima -Perú</td>
-		<td>23</td>
-	</tr>
-	<tr>
-		<td>755</td>
-		<td>
 			<a href="https://github.com/GAMM95">
 				<img src="https://avatars.githubusercontent.com/u/116129111?s=72&u=a545cc320edbf7c0653559e199aa2059f13363a9&v=4" width="24" alt="Avatar of GAMM95"> GAMM95
 			</a><br/>
@@ -9920,7 +9907,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>756</td>
+		<td>755</td>
 		<td>
 			<a href="https://github.com/NexusMTO">
 				<img src="https://avatars.githubusercontent.com/u/808352?s=72&u=4dc24e23f714f4ac567e2b1971edd1145e1b4657&v=4" width="24" alt="Avatar of NexusMTO"> NexusMTO
@@ -9933,7 +9920,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>757</td>
+		<td>756</td>
 		<td>
 			<a href="https://github.com/Edward-Alarco">
 				<img src="https://avatars.githubusercontent.com/u/56003818?s=72&u=2c72a7c6319353a829217331043906a3b054a480&v=4" width="24" alt="Avatar of Edward-Alarco"> Edward-Alarco
@@ -9946,7 +9933,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>758</td>
+		<td>757</td>
 		<td>
 			<a href="https://github.com/margaZM">
 				<img src="https://avatars.githubusercontent.com/u/78278982?s=72&u=6a726f276d5282f118d569b4fc14c2bca797129e&v=4" width="24" alt="Avatar of margaZM"> margaZM
@@ -9959,7 +9946,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>759</td>
+		<td>758</td>
 		<td>
 			<a href="https://github.com/MariCornelio">
 				<img src="https://avatars.githubusercontent.com/u/118775690?s=72&u=0a7c045456c715e0ac61f0202e127ac96cbac9f4&v=4" width="24" alt="Avatar of MariCornelio"> MariCornelio
@@ -9972,7 +9959,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>760</td>
+		<td>759</td>
 		<td>
 			<a href="https://github.com/cryohydromettools">
 				<img src="https://avatars.githubusercontent.com/u/61190871?s=72&u=0e05ed7a9da1e0a6ec9ff52f7a01b2103d04d6b5&v=4" width="24" alt="Avatar of cryohydromettools"> cryohydromettools
@@ -9985,7 +9972,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>761</td>
+		<td>760</td>
 		<td>
 			<a href="https://github.com/JafetRaul">
 				<img src="https://avatars.githubusercontent.com/u/67448522?s=72&u=8ac95881e82e56956c9eb6ef560a11cba3059946&v=4" width="24" alt="Avatar of JafetRaul"> JafetRaul
@@ -9995,6 +9982,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>National University Of San<br/>Marcos<br/></td>
 		<td>No Twitter Username</td>
 		<td>Lima, Peru</td>
+		<td>23</td>
+	</tr>
+	<tr>
+		<td>761</td>
+		<td>
+			<a href="https://github.com/kcotrinam">
+				<img src="https://avatars.githubusercontent.com/u/50785733?s=72&u=4cdaa0038714e2ccf213328d1b814be8f49f174e&v=4" width="24" alt="Avatar of kcotrinam"> kcotrinam
+			</a><br/>
+			kevin Cotrina
+		</td>
+		<td>Freelance Full-stack Developer </td>
+		<td><a href="https://twitter.com/KevinCot12">KevinCot12</a></td>
+		<td>Peru</td>
 		<td>23</td>
 	</tr>
 	<tr>
@@ -10013,32 +10013,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>763</td>
 		<td>
-			<a href="https://github.com/kcotrinam">
-				<img src="https://avatars.githubusercontent.com/u/50785733?s=72&u=4cdaa0038714e2ccf213328d1b814be8f49f174e&v=4" width="24" alt="Avatar of kcotrinam"> kcotrinam
-			</a><br/>
-			kevin Cotrina
-		</td>
-		<td>Freelance Full-stack Developer </td>
-		<td><a href="https://twitter.com/KevinCot12">KevinCot12</a></td>
-		<td>Peru</td>
-		<td>23</td>
-	</tr>
-	<tr>
-		<td>764</td>
-		<td>
-			<a href="https://github.com/mishrole">
-				<img src="https://avatars.githubusercontent.com/u/25912465?s=72&u=f892a694ba48461c17dad64ccddd9a3758e45d24&v=4" width="24" alt="Avatar of mishrole"> mishrole
-			</a><br/>
-			Mitchell Rodríguez
-		</td>
-		<td>Experis - Manpowergroup |<br/>Real<br/>Plaza<br/></td>
-		<td><a href="https://twitter.com/mishrole">mishrole</a></td>
-		<td>Lima, Perú</td>
-		<td>23</td>
-	</tr>
-	<tr>
-		<td>765</td>
-		<td>
 			<a href="https://github.com/DragShot">
 				<img src="https://avatars.githubusercontent.com/u/21327307?s=72&u=c0b9518caeda28a6b7dc9a8171be4dfc53477cd5&v=4" width="24" alt="Avatar of DragShot"> DragShot
 			</a><br/>
@@ -10050,7 +10024,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>766</td>
+		<td>764</td>
 		<td>
 			<a href="https://github.com/wchoque">
 				<img src="https://avatars.githubusercontent.com/u/32939641?s=72&v=4" width="24" alt="Avatar of wchoque"> wchoque
@@ -10063,7 +10037,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>767</td>
+		<td>765</td>
 		<td>
 			<a href="https://github.com/angelsystem">
 				<img src="https://avatars.githubusercontent.com/u/1112804?s=72&u=cdc0fe49d988e8b582d2e4e88c88a13bd91455f8&v=4" width="24" alt="Avatar of angelsystem"> angelsystem
@@ -10076,7 +10050,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>768</td>
+		<td>766</td>
 		<td>
 			<a href="https://github.com/DavidMontoya24">
 				<img src="https://avatars.githubusercontent.com/u/101736772?s=72&u=a2b4944c4426b5ffed0af00ff7c94e7c9be57cb8&v=4" width="24" alt="Avatar of DavidMontoya24"> DavidMontoya24
@@ -10089,7 +10063,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>769</td>
+		<td>767</td>
 		<td>
 			<a href="https://github.com/xtrator">
 				<img src="https://avatars.githubusercontent.com/u/65496317?s=72&u=b920acf1ef870b9c35f8e8a75883e14b95b4422a&v=4" width="24" alt="Avatar of xtrator"> xtrator
@@ -10102,7 +10076,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>770</td>
+		<td>768</td>
 		<td>
 			<a href="https://github.com/julissah">
 				<img src="https://avatars.githubusercontent.com/u/45825143?s=72&u=dc915cc0b97304700cfbf88cee4a0fbf2408bb38&v=4" width="24" alt="Avatar of julissah"> julissah
@@ -10115,7 +10089,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>771</td>
+		<td>769</td>
 		<td>
 			<a href="https://github.com/aljofloro">
 				<img src="https://avatars.githubusercontent.com/u/3805266?s=72&u=b59355abb661ac60b205c51973478f41431839f5&v=4" width="24" alt="Avatar of aljofloro"> aljofloro
@@ -10128,7 +10102,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>772</td>
+		<td>770</td>
 		<td>
 			<a href="https://github.com/alexander-ae">
 				<img src="https://avatars.githubusercontent.com/u/571745?s=72&u=5b2f728069d7c1cb418ac8f2ab2130eec73f4d99&v=4" width="24" alt="Avatar of alexander-ae"> alexander-ae
@@ -10141,7 +10115,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>773</td>
+		<td>771</td>
 		<td>
 			<a href="https://github.com/yurytello">
 				<img src="https://avatars.githubusercontent.com/u/7603065?s=72&u=ea43e462c89d179c49995001e6bb35691b46487a&v=4" width="24" alt="Avatar of yurytello"> yurytello
@@ -10154,7 +10128,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>774</td>
+		<td>772</td>
 		<td>
 			<a href="https://github.com/carmenluyo">
 				<img src="https://avatars.githubusercontent.com/u/11573837?s=72&u=e1ab4fce1d95865b4b62de22d18e3db5cdde1ecf&v=4" width="24" alt="Avatar of carmenluyo"> carmenluyo
@@ -10167,7 +10141,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>775</td>
+		<td>773</td>
 		<td>
 			<a href="https://github.com/SandyMarmolejo">
 				<img src="https://avatars.githubusercontent.com/u/60797900?s=72&u=cd26ff2788d26436b219be5436c2a4090a090ca9&v=4" width="24" alt="Avatar of SandyMarmolejo"> SandyMarmolejo
@@ -10180,7 +10154,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>776</td>
+		<td>774</td>
 		<td>
 			<a href="https://github.com/aldenso">
 				<img src="https://avatars.githubusercontent.com/u/10533173?s=72&u=e627e5de19fe597a0398960f8b218be6ef84ed89&v=4" width="24" alt="Avatar of aldenso"> aldenso
@@ -10193,7 +10167,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>777</td>
+		<td>775</td>
 		<td>
 			<a href="https://github.com/yg-apaza">
 				<img src="https://avatars.githubusercontent.com/u/5640041?s=72&u=f628cdc92d818c39b7dcc62695de7a237a0b60d6&v=4" width="24" alt="Avatar of yg-apaza"> yg-apaza
@@ -10206,7 +10180,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>778</td>
+		<td>776</td>
 		<td>
 			<a href="https://github.com/pynef">
 				<img src="https://avatars.githubusercontent.com/u/233664?s=72&u=b15f7f92c4d54656ae00d0c38c2f23a680df1a8e&v=4" width="24" alt="Avatar of pynef"> pynef
@@ -10219,7 +10193,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>779</td>
+		<td>777</td>
 		<td>
 			<a href="https://github.com/tudineroweb">
 				<img src="https://avatars.githubusercontent.com/u/84217968?s=72&u=fa83b9764adef781b203709664ee2f9e535bc2f9&v=4" width="24" alt="Avatar of tudineroweb"> tudineroweb
@@ -10232,7 +10206,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>780</td>
+		<td>778</td>
 		<td>
 			<a href="https://github.com/xapiens">
 				<img src="https://avatars.githubusercontent.com/u/1349879?s=72&u=414cbc6634782ce906e409e59d447fbfa31babad&v=4" width="24" alt="Avatar of xapiens"> xapiens
@@ -10245,7 +10219,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>781</td>
+		<td>779</td>
 		<td>
 			<a href="https://github.com/MalorySotomayor">
 				<img src="https://avatars.githubusercontent.com/u/11616923?s=72&u=dd8325e6e78ceca8e86fb86d6a8a3ad31e95e75f&v=4" width="24" alt="Avatar of MalorySotomayor"> MalorySotomayor
@@ -10258,7 +10232,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>782</td>
+		<td>780</td>
 		<td>
 			<a href="https://github.com/dsapaico">
 				<img src="https://avatars.githubusercontent.com/u/42618575?s=72&u=e9279fabc254e4cf3e309847a2cc35e21f593ede&v=4" width="24" alt="Avatar of dsapaico"> dsapaico
@@ -10271,7 +10245,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>23</td>
 	</tr>
 	<tr>
-		<td>783</td>
+		<td>781</td>
 		<td>
 			<a href="https://github.com/emmanuelbarturen">
 				<img src="https://avatars.githubusercontent.com/u/11076563?s=72&u=e8b94e54d6cd0be3adeb5ac5d21de6824ec00500&v=4" width="24" alt="Avatar of emmanuelbarturen"> emmanuelbarturen
@@ -10284,7 +10258,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>784</td>
+		<td>782</td>
+		<td>
+			<a href="https://github.com/DavidCastilloAlvarado">
+				<img src="https://avatars.githubusercontent.com/u/25672642?s=72&u=29cad6e8e92406c96af0375b84532e3c377c43e9&v=4" width="24" alt="Avatar of DavidCastilloAlvarado"> DavidCastilloAlvarado
+			</a><br/>
+			David Castillo
+		</td>
+		<td>David Castillo </td>
+		<td><a href="https://twitter.com/David_CastiAlv">David_CastiAlv</a></td>
+		<td>Lima, Perú</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>783</td>
 		<td>
 			<a href="https://github.com/jaxkodex">
 				<img src="https://avatars.githubusercontent.com/u/2271391?s=72&u=483071ea0049b2fe7ef66cf32f0cbadc6daad6f1&v=4" width="24" alt="Avatar of jaxkodex"> jaxkodex
@@ -10297,7 +10284,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>785</td>
+		<td>784</td>
 		<td>
 			<a href="https://github.com/user0608">
 				<img src="https://avatars.githubusercontent.com/u/37247825?s=72&u=960fc69b56e6c8939c21ad3e0085ea571d45fe0a&v=4" width="24" alt="Avatar of user0608"> user0608
@@ -10310,7 +10297,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>786</td>
+		<td>785</td>
 		<td>
 			<a href="https://github.com/Luis3Fernando">
 				<img src="https://avatars.githubusercontent.com/u/102707367?s=72&u=98475b26a466c7c09d59f910ee074175614ee67c&v=4" width="24" alt="Avatar of Luis3Fernando"> Luis3Fernando
@@ -10323,7 +10310,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>787</td>
+		<td>786</td>
 		<td>
 			<a href="https://github.com/TechAtlasDev">
 				<img src="https://avatars.githubusercontent.com/u/156117774?s=72&u=d7726f34eb39ac1c63b168c3eaeb072f624a1f1a&v=4" width="24" alt="Avatar of TechAtlasDev"> TechAtlasDev
@@ -10333,6 +10320,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Arequipa, Perú</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>787</td>
+		<td>
+			<a href="https://github.com/Sublian">
+				<img src="https://avatars.githubusercontent.com/u/118958836?s=72&u=c6724f029d9d6b1691101a50afbd26ed6cd30ad8&v=4" width="24" alt="Avatar of Sublian"> Sublian
+			</a><br/>
+			Luis Gonzalez
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima. Perù</td>
 		<td>22</td>
 	</tr>
 	<tr>
@@ -10351,45 +10351,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>789</td>
 		<td>
-			<a href="https://github.com/anderCM">
-				<img src="https://avatars.githubusercontent.com/u/77707836?s=72&u=81d3505b05346df986acc7328afca3ae4d8eb51f&v=4" width="24" alt="Avatar of anderCM"> anderCM
-			</a><br/>
-			Gino Anderson Canales Medina
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>790</td>
-		<td>
-			<a href="https://github.com/aomineDev">
-				<img src="https://avatars.githubusercontent.com/u/40266562?s=72&u=f6fb1cd896b2885a1e0ecde10db23a2b4efbdaf5&v=4" width="24" alt="Avatar of aomineDev"> aomineDev
-			</a><br/>
-			Ariel Omar Carrión Alcocer
-		</td>
-		<td>Pixeland </td>
-		<td><a href="https://twitter.com/aomineDev">aomineDev</a></td>
-		<td>Peru</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>791</td>
-		<td>
-			<a href="https://github.com/Rigo85">
-				<img src="https://avatars.githubusercontent.com/u/11844525?s=72&u=52debaae94e43a6afd8317e3983ec461e3873c32&v=4" width="24" alt="Avatar of Rigo85"> Rigo85
-			</a><br/>
-			Rigoberto L. Salgado Reyes
-		</td>
-		<td>Digevo </td>
-		<td>No Twitter Username</td>
-		<td>Trujillo - Perú</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>792</td>
-		<td>
 			<a href="https://github.com/juanRCoder">
 				<img src="https://avatars.githubusercontent.com/u/124215732?s=72&u=bcc7a38435e129d062a9ab7b958ced955d9c2f60&v=4" width="24" alt="Avatar of juanRCoder"> juanRCoder
 			</a><br/>
@@ -10401,33 +10362,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>793</td>
-		<td>
-			<a href="https://github.com/luiisca">
-				<img src="https://avatars.githubusercontent.com/u/74017836?s=72&u=caab3f72f32cf65e6f87b348cbafaea301ccd8af&v=4" width="24" alt="Avatar of luiisca"> luiisca
-			</a><br/>
-			Luis Cadillo
-		</td>
-		<td>No Company</td>
-		<td><a href="https://twitter.com/luiiis_ca">luiiis_ca</a></td>
-		<td>Peru</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>794</td>
-		<td>
-			<a href="https://github.com/androla10">
-				<img src="https://avatars.githubusercontent.com/u/11341598?s=72&u=8084adc4487b80022cc8eac70843e3b5c5dfd0d4&v=4" width="24" alt="Avatar of androla10"> androla10
-			</a><br/>
-			Zeler Benji Villarreal Marcelo
-		</td>
-		<td>@devinspirare, Banco De Crédito<br/>Del<br/>Perú<br/></td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>795</td>
+		<td>790</td>
 		<td>
 			<a href="https://github.com/BurningAl15">
 				<img src="https://avatars.githubusercontent.com/u/16431855?s=72&u=662bb60a77ef75c5e9a2a4c3b37839ab30cb50c0&v=4" width="24" alt="Avatar of BurningAl15"> BurningAl15
@@ -10440,7 +10375,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>796</td>
+		<td>791</td>
 		<td>
 			<a href="https://github.com/berzavlu">
 				<img src="https://avatars.githubusercontent.com/u/13424294?s=72&u=1360cc3c42c93ec6bcd454bdc19267d16fc5f88c&v=4" width="24" alt="Avatar of berzavlu"> berzavlu
@@ -10453,33 +10388,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>797</td>
-		<td>
-			<a href="https://github.com/DiegoCuevas">
-				<img src="https://avatars.githubusercontent.com/u/10309363?s=72&u=29cbeeaab5108ce273027077ee9e7327ea4811c7&v=4" width="24" alt="Avatar of DiegoCuevas"> DiegoCuevas
-			</a><br/>
-			Diego Cuevas
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>798</td>
-		<td>
-			<a href="https://github.com/krystalcode">
-				<img src="https://avatars.githubusercontent.com/u/301364?s=72&u=0bdc22e22e636d457480219c1de7b109ab29ccd3&v=4" width="24" alt="Avatar of krystalcode"> krystalcode
-			</a><br/>
-			Dimitris Bozelos
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Cuzco, Peru</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>799</td>
+		<td>792</td>
 		<td>
 			<a href="https://github.com/aleckrh">
 				<img src="https://avatars.githubusercontent.com/u/45319880?s=72&v=4" width="24" alt="Avatar of aleckrh"> aleckrh
@@ -10492,20 +10401,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>800</td>
+		<td>793</td>
 		<td>
-			<a href="https://github.com/EdwardR0507">
-				<img src="https://avatars.githubusercontent.com/u/57167533?s=72&u=c00a0bc0d6faf3c866b3bab88359ae34a79cb52e&v=4" width="24" alt="Avatar of EdwardR0507"> EdwardR0507
+			<a href="https://github.com/DiegoCuevas">
+				<img src="https://avatars.githubusercontent.com/u/10309363?s=72&u=29cbeeaab5108ce273027077ee9e7327ea4811c7&v=4" width="24" alt="Avatar of DiegoCuevas"> DiegoCuevas
 			</a><br/>
-			Edward Ramos Villarreal
+			Diego Cuevas
 		</td>
-		<td>Unmsm </td>
-		<td><a href="https://twitter.com/EdRamosV">EdRamosV</a></td>
-		<td>Lima, Perú</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>801</td>
+		<td>794</td>
 		<td>
 			<a href="https://github.com/DiegoDefSan">
 				<img src="https://avatars.githubusercontent.com/u/81923788?s=72&u=bd0a2514acdd36850c1c25443070b39fd5b13ee3&v=4" width="24" alt="Avatar of DiegoDefSan"> DiegoDefSan
@@ -10518,7 +10427,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>802</td>
+		<td>795</td>
 		<td>
 			<a href="https://github.com/mairelis-montilla">
 				<img src="https://avatars.githubusercontent.com/u/69887391?s=72&u=032ae1bae6a512a0e41cf77818fb1a4a033bf046&v=4" width="24" alt="Avatar of mairelis-montilla"> mairelis-montilla
@@ -10531,7 +10440,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>803</td>
+		<td>796</td>
 		<td>
 			<a href="https://github.com/mabmab159">
 				<img src="https://avatars.githubusercontent.com/u/53589014?s=72&u=24baff5731c0f4b4db30d897c3128cdba3ee316d&v=4" width="24" alt="Avatar of mabmab159"> mabmab159
@@ -10544,7 +10453,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>804</td>
+		<td>797</td>
 		<td>
 			<a href="https://github.com/DarkOverlord689">
 				<img src="https://avatars.githubusercontent.com/u/75710806?s=72&u=6bae66a7c446b3a5de5bf021e8af505d6d5a6ad9&v=4" width="24" alt="Avatar of DarkOverlord689"> DarkOverlord689
@@ -10557,59 +10466,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>805</td>
-		<td>
-			<a href="https://github.com/ifs99">
-				<img src="https://avatars.githubusercontent.com/u/89129453?s=72&u=bb3a33bc1fd19c017a3a837370f8c479dc882408&v=4" width="24" alt="Avatar of ifs99"> ifs99
-			</a><br/>
-			Italo Flores
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>806</td>
-		<td>
-			<a href="https://github.com/lbautistab">
-				<img src="https://avatars.githubusercontent.com/u/39736480?s=72&u=bb64afc57c18111e725b945f96121dc8c799a327&v=4" width="24" alt="Avatar of lbautistab"> lbautistab
-			</a><br/>
-			Luis Bautista
-		</td>
-		<td>Unmsm | Pucp </td>
-		<td>No Twitter Username</td>
-		<td>Lima-Perú</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>807</td>
-		<td>
-			<a href="https://github.com/Brother-Antony">
-				<img src="https://avatars.githubusercontent.com/u/65048311?s=72&u=0f825acd933f38d8f7f3552b86a1bbadd79587fe&v=4" width="24" alt="Avatar of Brother-Antony"> Brother-Antony
-			</a><br/>
-			Antony Espinoza
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>808</td>
-		<td>
-			<a href="https://github.com/rubensaid">
-				<img src="https://avatars.githubusercontent.com/u/13167719?s=72&u=2c8bdefdf5b3b330deca4069d598048056c50461&v=4" width="24" alt="Avatar of rubensaid"> rubensaid
-			</a><br/>
-			Ruben Felix
-		</td>
-		<td>Tukuy Club </td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>809</td>
+		<td>798</td>
 		<td>
 			<a href="https://github.com/moisesli">
 				<img src="https://avatars.githubusercontent.com/u/1782130?s=72&u=d88095cf2e7ac902faeb342f33c6d1d2d53c0317&v=4" width="24" alt="Avatar of moisesli"> moisesli
@@ -10622,7 +10479,59 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>810</td>
+		<td>799</td>
+		<td>
+			<a href="https://github.com/lbautistab">
+				<img src="https://avatars.githubusercontent.com/u/39736480?s=72&u=bb64afc57c18111e725b945f96121dc8c799a327&v=4" width="24" alt="Avatar of lbautistab"> lbautistab
+			</a><br/>
+			Luis Bautista
+		</td>
+		<td>Unmsm | Pucp </td>
+		<td>No Twitter Username</td>
+		<td>Lima-Perú</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>800</td>
+		<td>
+			<a href="https://github.com/Brother-Antony">
+				<img src="https://avatars.githubusercontent.com/u/65048311?s=72&u=0f825acd933f38d8f7f3552b86a1bbadd79587fe&v=4" width="24" alt="Avatar of Brother-Antony"> Brother-Antony
+			</a><br/>
+			Antony Espinoza
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>801</td>
+		<td>
+			<a href="https://github.com/ifs99">
+				<img src="https://avatars.githubusercontent.com/u/89129453?s=72&u=bb3a33bc1fd19c017a3a837370f8c479dc882408&v=4" width="24" alt="Avatar of ifs99"> ifs99
+			</a><br/>
+			Italo Flores
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>802</td>
+		<td>
+			<a href="https://github.com/rubensaid">
+				<img src="https://avatars.githubusercontent.com/u/13167719?s=72&u=2c8bdefdf5b3b330deca4069d598048056c50461&v=4" width="24" alt="Avatar of rubensaid"> rubensaid
+			</a><br/>
+			Ruben Felix
+		</td>
+		<td>Tukuy Club </td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>803</td>
 		<td>
 			<a href="https://github.com/GraceSevillano">
 				<img src="https://avatars.githubusercontent.com/u/52088906?s=72&u=ded139227780648652f1c9b0048fb97e76aa93f6&v=4" width="24" alt="Avatar of GraceSevillano"> GraceSevillano
@@ -10635,20 +10544,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>811</td>
-		<td>
-			<a href="https://github.com/pandadiestro">
-				<img src="https://avatars.githubusercontent.com/u/71461113?s=72&u=5ff77f6cb4aab01cb9f836854f4894bf5326700a&v=4" width="24" alt="Avatar of pandadiestro"> pandadiestro
-			</a><br/>
-			pandadiestro
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>22</td>
-	</tr>
-	<tr>
-		<td>812</td>
+		<td>804</td>
 		<td>
 			<a href="https://github.com/alexkander">
 				<img src="https://avatars.githubusercontent.com/u/6246297?s=72&u=16ff5a2a96a873354f3719ab7b8e7b67edbc5d72&v=4" width="24" alt="Avatar of alexkander"> alexkander
@@ -10661,7 +10557,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>813</td>
+		<td>805</td>
+		<td>
+			<a href="https://github.com/pandadiestro">
+				<img src="https://avatars.githubusercontent.com/u/71461113?s=72&u=5ff77f6cb4aab01cb9f836854f4894bf5326700a&v=4" width="24" alt="Avatar of pandadiestro"> pandadiestro
+			</a><br/>
+			pandadiestro
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>806</td>
 		<td>
 			<a href="https://github.com/carlacentenor">
 				<img src="https://avatars.githubusercontent.com/u/32285482?s=72&u=96b1f3648b1de4e6c8f50c466faf9f4c1ee48bfd&v=4" width="24" alt="Avatar of carlacentenor"> carlacentenor
@@ -10674,7 +10583,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>814</td>
+		<td>807</td>
 		<td>
 			<a href="https://github.com/diazgio">
 				<img src="https://avatars.githubusercontent.com/u/39890405?s=72&u=ea6a081354823c8cbd78b6546f8f8672c2f8b152&v=4" width="24" alt="Avatar of diazgio"> diazgio
@@ -10687,7 +10596,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>815</td>
+		<td>808</td>
 		<td>
 			<a href="https://github.com/Ferjapolis">
 				<img src="https://avatars.githubusercontent.com/u/9203208?s=72&u=0026a64d671ac1b1d3e7b5c1f9810475d6b0a3c2&v=4" width="24" alt="Avatar of Ferjapolis"> Ferjapolis
@@ -10700,7 +10609,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>816</td>
+		<td>809</td>
 		<td>
 			<a href="https://github.com/dcyar">
 				<img src="https://avatars.githubusercontent.com/u/7337141?s=72&u=4681208430979af9cd0637481b89d73fadc3c60f&v=4" width="24" alt="Avatar of dcyar"> dcyar
@@ -10713,7 +10622,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>817</td>
+		<td>810</td>
 		<td>
 			<a href="https://github.com/riverscode">
 				<img src="https://avatars.githubusercontent.com/u/92652351?s=72&u=ebf97312c084ad85b7dd25b3beaa83ea689258c2&v=4" width="24" alt="Avatar of riverscode"> riverscode
@@ -10726,7 +10635,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>818</td>
+		<td>811</td>
 		<td>
 			<a href="https://github.com/jjmiranda">
 				<img src="https://avatars.githubusercontent.com/u/415878?s=72&v=4" width="24" alt="Avatar of jjmiranda"> jjmiranda
@@ -10739,7 +10648,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>819</td>
+		<td>812</td>
 		<td>
 			<a href="https://github.com/GabrielHuaman8">
 				<img src="https://avatars.githubusercontent.com/u/245786487?s=72&u=b3a4ed2fb3a181d7fb145595da400e61623c2246&v=4" width="24" alt="Avatar of GabrielHuaman8"> GabrielHuaman8
@@ -10752,7 +10661,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>820</td>
+		<td>813</td>
 		<td>
 			<a href="https://github.com/cquipu">
 				<img src="https://avatars.githubusercontent.com/u/49457400?s=72&u=b31e5bbc5cec3cbcc19829f55242b71ff4145c44&v=4" width="24" alt="Avatar of cquipu"> cquipu
@@ -10765,7 +10674,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>821</td>
+		<td>814</td>
 		<td>
 			<a href="https://github.com/byrogr">
 				<img src="https://avatars.githubusercontent.com/u/1936096?s=72&u=f701cac5977616013c7bdab70cda8b77d40dc321&v=4" width="24" alt="Avatar of byrogr"> byrogr
@@ -10778,7 +10687,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>822</td>
+		<td>815</td>
 		<td>
 			<a href="https://github.com/joelengt">
 				<img src="https://avatars.githubusercontent.com/u/8263935?s=72&u=2051949ccf65cab9b2bc8171c503b46b1406eef5&v=4" width="24" alt="Avatar of joelengt"> joelengt
@@ -10791,7 +10700,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>823</td>
+		<td>816</td>
 		<td>
 			<a href="https://github.com/PamelaVillalobos">
 				<img src="https://avatars.githubusercontent.com/u/245785801?s=72&u=a953d36c6ffb372b6735cec0449c81a3122a3e65&v=4" width="24" alt="Avatar of PamelaVillalobos"> PamelaVillalobos
@@ -10804,7 +10713,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>824</td>
+		<td>817</td>
 		<td>
 			<a href="https://github.com/tinoreyna1984">
 				<img src="https://avatars.githubusercontent.com/u/33553107?s=72&u=d1f6d5e067f17649e50d4ab26472d188d373f80e&v=4" width="24" alt="Avatar of tinoreyna1984"> tinoreyna1984
@@ -10817,7 +10726,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>825</td>
+		<td>818</td>
 		<td>
 			<a href="https://github.com/luisrojass">
 				<img src="https://avatars.githubusercontent.com/u/109630425?s=72&u=f24d55482227ab25ef01ff2848726eabcc3184a6&v=4" width="24" alt="Avatar of luisrojass"> luisrojass
@@ -10830,7 +10739,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>826</td>
+		<td>819</td>
 		<td>
 			<a href="https://github.com/YotoCoder">
 				<img src="https://avatars.githubusercontent.com/u/23145206?s=72&u=7a0903f278705dc55bbfbd6455b60142fe221b30&v=4" width="24" alt="Avatar of YotoCoder"> YotoCoder
@@ -10843,7 +10752,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>827</td>
+		<td>820</td>
 		<td>
 			<a href="https://github.com/piggito">
 				<img src="https://avatars.githubusercontent.com/u/1173779?s=72&v=4" width="24" alt="Avatar of piggito"> piggito
@@ -10856,7 +10765,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>828</td>
+		<td>821</td>
 		<td>
 			<a href="https://github.com/juanpalominoh">
 				<img src="https://avatars.githubusercontent.com/u/101902320?s=72&u=78ab2ee848e915be336a4329dff726d7b84a535a&v=4" width="24" alt="Avatar of juanpalominoh"> juanpalominoh
@@ -10869,7 +10778,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>829</td>
+		<td>822</td>
 		<td>
 			<a href="https://github.com/macarenaoyague">
 				<img src="https://avatars.githubusercontent.com/u/48993328?s=72&u=93b40877e6ad34f570e42f32d85a5e7356376444&v=4" width="24" alt="Avatar of macarenaoyague"> macarenaoyague
@@ -10882,7 +10791,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>830</td>
+		<td>823</td>
 		<td>
 			<a href="https://github.com/emilyvivancocuba">
 				<img src="https://avatars.githubusercontent.com/u/16655519?s=72&u=8ac61a993fbaf2d15708f533704dcb5685b34e32&v=4" width="24" alt="Avatar of emilyvivancocuba"> emilyvivancocuba
@@ -10895,7 +10804,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>831</td>
+		<td>824</td>
 		<td>
 			<a href="https://github.com/JoaoVitor0206">
 				<img src="https://avatars.githubusercontent.com/u/100139725?s=72&u=d679344e037ea85d9a9f325c7a7636005ba8d9f4&v=4" width="24" alt="Avatar of JoaoVitor0206"> JoaoVitor0206
@@ -10908,7 +10817,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>832</td>
+		<td>825</td>
 		<td>
 			<a href="https://github.com/sherlockholmes">
 				<img src="https://avatars.githubusercontent.com/u/1232480?s=72&u=54de809c4240460c19a82bd79e0419f206250051&v=4" width="24" alt="Avatar of sherlockholmes"> sherlockholmes
@@ -10921,7 +10830,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>833</td>
+		<td>826</td>
 		<td>
 			<a href="https://github.com/JosethDev">
 				<img src="https://avatars.githubusercontent.com/u/163964330?s=72&u=452ed2f3a753835a08e077c86082ec3b84111b7c&v=4" width="24" alt="Avatar of JosethDev"> JosethDev
@@ -10934,7 +10843,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>834</td>
+		<td>827</td>
 		<td>
 			<a href="https://github.com/codekacode">
 				<img src="https://avatars.githubusercontent.com/u/58605593?s=72&u=4179aabc35198fe4e9afd4412456102c36b30e3a&v=4" width="24" alt="Avatar of codekacode"> codekacode
@@ -10947,7 +10856,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>835</td>
+		<td>828</td>
 		<td>
 			<a href="https://github.com/CaroRlQ">
 				<img src="https://avatars.githubusercontent.com/u/125221103?s=72&v=4" width="24" alt="Avatar of CaroRlQ"> CaroRlQ
@@ -10960,7 +10869,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>836</td>
+		<td>829</td>
 		<td>
 			<a href="https://github.com/bkerz">
 				<img src="https://avatars.githubusercontent.com/u/48168047?s=72&u=b963618cc35084d3b9661e581d12ae1be463d323&v=4" width="24" alt="Avatar of bkerz"> bkerz
@@ -10973,7 +10882,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>837</td>
+		<td>830</td>
 		<td>
 			<a href="https://github.com/LadyDi3103">
 				<img src="https://avatars.githubusercontent.com/u/124682323?s=72&u=a65bf4430183027a4757a2cf04ed44f843e3242d&v=4" width="24" alt="Avatar of LadyDi3103"> LadyDi3103
@@ -10986,7 +10895,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>22</td>
 	</tr>
 	<tr>
-		<td>838</td>
+		<td>831</td>
 		<td>
 			<a href="https://github.com/ikcam">
 				<img src="https://avatars.githubusercontent.com/u/1041823?s=72&v=4" width="24" alt="Avatar of ikcam"> ikcam
@@ -10999,7 +10908,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>839</td>
+		<td>832</td>
 		<td>
 			<a href="https://github.com/georgegiosue">
 				<img src="https://avatars.githubusercontent.com/u/71612750?s=72&u=022a8d0f37eaf979ef0bf520a33f40c405ed3227&v=4" width="24" alt="Avatar of georgegiosue"> georgegiosue
@@ -11012,7 +10921,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>840</td>
+		<td>833</td>
 		<td>
 			<a href="https://github.com/dfloresgonz">
 				<img src="https://avatars.githubusercontent.com/u/17581509?s=72&u=ef7b0697af1e319c776ee59b98ad82906db011db&v=4" width="24" alt="Avatar of dfloresgonz"> dfloresgonz
@@ -11025,7 +10934,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>841</td>
+		<td>834</td>
 		<td>
 			<a href="https://github.com/ArubikU">
 				<img src="https://avatars.githubusercontent.com/u/102335860?s=72&u=b631554cb3a70102f19b1b37a250f8907a7d1996&v=4" width="24" alt="Avatar of ArubikU"> ArubikU
@@ -11038,7 +10947,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>842</td>
+		<td>835</td>
 		<td>
 			<a href="https://github.com/danieljfar">
 				<img src="https://avatars.githubusercontent.com/u/68025736?s=72&u=3dfc7b9a9b2ad8320c677f0da91685bd7ba013fa&v=4" width="24" alt="Avatar of danieljfar"> danieljfar
@@ -11051,7 +10960,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>843</td>
+		<td>836</td>
 		<td>
 			<a href="https://github.com/wizardrevenge">
 				<img src="https://avatars.githubusercontent.com/u/74883427?s=72&u=044a547ddb5c22fab695c8b28c137b8a9b1d1023&v=4" width="24" alt="Avatar of wizardrevenge"> wizardrevenge
@@ -11064,7 +10973,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>844</td>
+		<td>837</td>
 		<td>
 			<a href="https://github.com/JudithCristina">
 				<img src="https://avatars.githubusercontent.com/u/47750969?s=72&u=b5ff1c288f4816eadbd1e09707cd7779be444370&v=4" width="24" alt="Avatar of JudithCristina"> JudithCristina
@@ -11077,7 +10986,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>845</td>
+		<td>838</td>
 		<td>
 			<a href="https://github.com/ynoacamino">
 				<img src="https://avatars.githubusercontent.com/u/97652778?s=72&u=b362b10b58ac3f5f33adf4d7d1fe528a127fce8e&v=4" width="24" alt="Avatar of ynoacamino"> ynoacamino
@@ -11090,20 +10999,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>846</td>
-		<td>
-			<a href="https://github.com/echovl">
-				<img src="https://avatars.githubusercontent.com/u/38471348?s=72&u=0551aea7626f39e8b547a5e4eaa93aade3c2c2f8&v=4" width="24" alt="Avatar of echovl"> echovl
-			</a><br/>
-			No Name
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>21</td>
-	</tr>
-	<tr>
-		<td>847</td>
+		<td>839</td>
 		<td>
 			<a href="https://github.com/rtelenta">
 				<img src="https://avatars.githubusercontent.com/u/13630376?s=72&u=25f87b88ea0783ec1c37a9e44504914c37deab6b&v=4" width="24" alt="Avatar of rtelenta"> rtelenta
@@ -11116,7 +11012,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>848</td>
+		<td>840</td>
 		<td>
 			<a href="https://github.com/Salchichon057">
 				<img src="https://avatars.githubusercontent.com/u/102430662?s=72&u=66898a69cc6dae2dd0dcde4a3c5288c411b547e6&v=4" width="24" alt="Avatar of Salchichon057"> Salchichon057
@@ -11129,7 +11025,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>849</td>
+		<td>841</td>
 		<td>
 			<a href="https://github.com/franciscovilchezv">
 				<img src="https://avatars.githubusercontent.com/u/9200906?s=72&u=03f78090186f56a04722dcea6167992d807cb865&v=4" width="24" alt="Avatar of franciscovilchezv"> franciscovilchezv
@@ -11142,7 +11038,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>850</td>
+		<td>842</td>
 		<td>
 			<a href="https://github.com/javierescobare">
 				<img src="https://avatars.githubusercontent.com/u/15280278?s=72&u=b858f255bb868dd64955e9ab5ea2d717b40a835b&v=4" width="24" alt="Avatar of javierescobare"> javierescobare
@@ -11155,7 +11051,46 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>851</td>
+		<td>843</td>
+		<td>
+			<a href="https://github.com/anderCM">
+				<img src="https://avatars.githubusercontent.com/u/77707836?s=72&u=81d3505b05346df986acc7328afca3ae4d8eb51f&v=4" width="24" alt="Avatar of anderCM"> anderCM
+			</a><br/>
+			Gino Anderson Canales Medina
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>844</td>
+		<td>
+			<a href="https://github.com/aomineDev">
+				<img src="https://avatars.githubusercontent.com/u/40266562?s=72&u=f6fb1cd896b2885a1e0ecde10db23a2b4efbdaf5&v=4" width="24" alt="Avatar of aomineDev"> aomineDev
+			</a><br/>
+			Ariel Omar Carrión Alcocer
+		</td>
+		<td>Pixeland </td>
+		<td><a href="https://twitter.com/aomineDev">aomineDev</a></td>
+		<td>Peru</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>845</td>
+		<td>
+			<a href="https://github.com/Rigo85">
+				<img src="https://avatars.githubusercontent.com/u/11844525?s=72&u=52debaae94e43a6afd8317e3983ec461e3873c32&v=4" width="24" alt="Avatar of Rigo85"> Rigo85
+			</a><br/>
+			Rigoberto L. Salgado Reyes
+		</td>
+		<td>Digevo </td>
+		<td>No Twitter Username</td>
+		<td>Trujillo - Perú</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>846</td>
 		<td>
 			<a href="https://github.com/Milumon">
 				<img src="https://avatars.githubusercontent.com/u/17993682?s=72&u=010577129f067aa88d5b8d854420535b54de159f&v=4" width="24" alt="Avatar of Milumon"> Milumon
@@ -11168,7 +11103,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>852</td>
+		<td>847</td>
 		<td>
 			<a href="https://github.com/akobashikawa">
 				<img src="https://avatars.githubusercontent.com/u/108734?s=72&u=1621150edb28bb4461bc2a755ebfab4e7717ac51&v=4" width="24" alt="Avatar of akobashikawa"> akobashikawa
@@ -11181,59 +11116,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>853</td>
+		<td>848</td>
 		<td>
-			<a href="https://github.com/x-name15">
-				<img src="https://avatars.githubusercontent.com/u/69986110?s=72&u=2df7177a4432a80c807069a288dcb2077e568980&v=4" width="24" alt="Avatar of x-name15"> x-name15
+			<a href="https://github.com/luiisca">
+				<img src="https://avatars.githubusercontent.com/u/74017836?s=72&u=caab3f72f32cf65e6f87b348cbafaea301ccd8af&v=4" width="24" alt="Avatar of luiisca"> luiisca
 			</a><br/>
-			Felix Manrique | Flez | Mr Jacket
-		</td>
-		<td>Nothing Here, Buddy -<br/>Yet<br/></td>
-		<td>No Twitter Username</td>
-		<td>Spain - Peru</td>
-		<td>21</td>
-	</tr>
-	<tr>
-		<td>854</td>
-		<td>
-			<a href="https://github.com/jofrantoba">
-				<img src="https://avatars.githubusercontent.com/u/3167019?s=72&u=ad48dbdb57db87ba2cb1c4c0b06963a8570263cc&v=4" width="24" alt="Avatar of jofrantoba"> jofrantoba
-			</a><br/>
-			Jonathan Franchesco Torres Baca
-		</td>
-		<td>Kiongo Technology </td>
-		<td><a href="https://twitter.com/jofrantoba">jofrantoba</a></td>
-		<td>Lima - Perú</td>
-		<td>21</td>
-	</tr>
-	<tr>
-		<td>855</td>
-		<td>
-			<a href="https://github.com/marc-dev0">
-				<img src="https://avatars.githubusercontent.com/u/9972954?s=72&v=4" width="24" alt="Avatar of marc-dev0"> marc-dev0
-			</a><br/>
-			Miguel Ángel Rojas Coraje
+			Luis Cadillo
 		</td>
 		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima - Perú</td>
+		<td><a href="https://twitter.com/luiiis_ca">luiiis_ca</a></td>
+		<td>Peru</td>
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>856</td>
-		<td>
-			<a href="https://github.com/FRACerqueira">
-				<img src="https://avatars.githubusercontent.com/u/45797410?s=72&u=a212080f561da55ddc9a6099e4b4f64007c8edec&v=4" width="24" alt="Avatar of FRACerqueira"> FRACerqueira
-			</a><br/>
-			Fernando Cerqueira
-		</td>
-		<td>Valid </td>
-		<td>No Twitter Username</td>
-		<td>Nova Lima - MG - Brazil</td>
-		<td>21</td>
-	</tr>
-	<tr>
-		<td>857</td>
+		<td>849</td>
 		<td>
 			<a href="https://github.com/edumar111">
 				<img src="https://avatars.githubusercontent.com/u/2495923?s=72&u=e5fff2fe8b42f0eb65d1f43fd293054c8cfb2f27&v=4" width="24" alt="Avatar of edumar111"> edumar111
@@ -11246,7 +11142,59 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>858</td>
+		<td>850</td>
+		<td>
+			<a href="https://github.com/androla10">
+				<img src="https://avatars.githubusercontent.com/u/11341598?s=72&u=8084adc4487b80022cc8eac70843e3b5c5dfd0d4&v=4" width="24" alt="Avatar of androla10"> androla10
+			</a><br/>
+			Zeler Benji Villarreal Marcelo
+		</td>
+		<td>@devinspirare, Banco De Crédito<br/>Del<br/>Perú<br/></td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>851</td>
+		<td>
+			<a href="https://github.com/jofrantoba">
+				<img src="https://avatars.githubusercontent.com/u/3167019?s=72&u=ad48dbdb57db87ba2cb1c4c0b06963a8570263cc&v=4" width="24" alt="Avatar of jofrantoba"> jofrantoba
+			</a><br/>
+			Jonathan Franchesco Torres Baca
+		</td>
+		<td>Kiongo Technology </td>
+		<td><a href="https://twitter.com/jofrantoba">jofrantoba</a></td>
+		<td>Lima - Perú</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>852</td>
+		<td>
+			<a href="https://github.com/marc-dev0">
+				<img src="https://avatars.githubusercontent.com/u/9972954?s=72&v=4" width="24" alt="Avatar of marc-dev0"> marc-dev0
+			</a><br/>
+			Miguel Ángel Rojas Coraje
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima - Perú</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>853</td>
+		<td>
+			<a href="https://github.com/FRACerqueira">
+				<img src="https://avatars.githubusercontent.com/u/45797410?s=72&u=a212080f561da55ddc9a6099e4b4f64007c8edec&v=4" width="24" alt="Avatar of FRACerqueira"> FRACerqueira
+			</a><br/>
+			Fernando Cerqueira
+		</td>
+		<td>Valid </td>
+		<td>No Twitter Username</td>
+		<td>Nova Lima - MG - Brazil</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>854</td>
 		<td>
 			<a href="https://github.com/LeoCodeDev">
 				<img src="https://avatars.githubusercontent.com/u/100180275?s=72&u=7764f1abbcc6443f6ab5da7b436068aabd9a76b6&v=4" width="24" alt="Avatar of LeoCodeDev"> LeoCodeDev
@@ -11259,7 +11207,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>859</td>
+		<td>855</td>
+		<td>
+			<a href="https://github.com/krystalcode">
+				<img src="https://avatars.githubusercontent.com/u/301364?s=72&u=0bdc22e22e636d457480219c1de7b109ab29ccd3&v=4" width="24" alt="Avatar of krystalcode"> krystalcode
+			</a><br/>
+			Dimitris Bozelos
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Cuzco, Peru</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>856</td>
 		<td>
 			<a href="https://github.com/luckymachi">
 				<img src="https://avatars.githubusercontent.com/u/77021922?s=72&u=369212ebce9d6eaef388ccb40ae431745d47b183&v=4" width="24" alt="Avatar of luckymachi"> luckymachi
@@ -11272,7 +11233,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>860</td>
+		<td>857</td>
+		<td>
+			<a href="https://github.com/EdwardR0507">
+				<img src="https://avatars.githubusercontent.com/u/57167533?s=72&u=c00a0bc0d6faf3c866b3bab88359ae34a79cb52e&v=4" width="24" alt="Avatar of EdwardR0507"> EdwardR0507
+			</a><br/>
+			Edward Ramos Villarreal
+		</td>
+		<td>Unmsm </td>
+		<td><a href="https://twitter.com/EdRamosV">EdRamosV</a></td>
+		<td>Lima, Perú</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>858</td>
 		<td>
 			<a href="https://github.com/enlacee">
 				<img src="https://avatars.githubusercontent.com/u/179639?s=72&u=7b1e2937c3d081b3cc5da68acc89a8a5d471331e&v=4" width="24" alt="Avatar of enlacee"> enlacee
@@ -11285,7 +11259,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>861</td>
+		<td>859</td>
 		<td>
 			<a href="https://github.com/JesusAtao96">
 				<img src="https://avatars.githubusercontent.com/u/9274549?s=72&u=1baf528cfd9675229cebcec01a254dabce8b018f&v=4" width="24" alt="Avatar of JesusAtao96"> JesusAtao96
@@ -11298,7 +11272,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>862</td>
+		<td>860</td>
 		<td>
 			<a href="https://github.com/HugoRoca">
 				<img src="https://avatars.githubusercontent.com/u/25799415?s=72&u=46877509dd0a5604f9e0f3fdd553b9d58f09af94&v=4" width="24" alt="Avatar of HugoRoca"> HugoRoca
@@ -11311,7 +11285,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>863</td>
+		<td>861</td>
 		<td>
 			<a href="https://github.com/abelthf">
 				<img src="https://avatars.githubusercontent.com/u/1950145?s=72&v=4" width="24" alt="Avatar of abelthf"> abelthf
@@ -11324,7 +11298,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>864</td>
+		<td>862</td>
 		<td>
 			<a href="https://github.com/edwinmacalopu">
 				<img src="https://avatars.githubusercontent.com/u/15043775?s=72&u=f92f0ca1200aa1854aaf1334048a7348a476e272&v=4" width="24" alt="Avatar of edwinmacalopu"> edwinmacalopu
@@ -11337,7 +11311,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>865</td>
+		<td>863</td>
 		<td>
 			<a href="https://github.com/jdamian">
 				<img src="https://avatars.githubusercontent.com/u/344510?s=72&v=4" width="24" alt="Avatar of jdamian"> jdamian
@@ -11350,7 +11324,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>866</td>
+		<td>864</td>
 		<td>
 			<a href="https://github.com/wlizama">
 				<img src="https://avatars.githubusercontent.com/u/10176577?s=72&u=f66b74ebc1f90b2c1e07cec90fa930c5babb957a&v=4" width="24" alt="Avatar of wlizama"> wlizama
@@ -11363,7 +11337,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>867</td>
+		<td>865</td>
 		<td>
 			<a href="https://github.com/MaxAntony">
 				<img src="https://avatars.githubusercontent.com/u/34728737?s=72&u=a4d6172166262354cb92c509daa4454510f7a947&v=4" width="24" alt="Avatar of MaxAntony"> MaxAntony
@@ -11376,7 +11350,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>868</td>
+		<td>866</td>
 		<td>
 			<a href="https://github.com/malexandersalazar">
 				<img src="https://avatars.githubusercontent.com/u/6909129?s=72&u=8cfa851c339fbdb98233c00da106190eca8c7b50&v=4" width="24" alt="Avatar of malexandersalazar"> malexandersalazar
@@ -11389,7 +11363,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>869</td>
+		<td>867</td>
 		<td>
 			<a href="https://github.com/linerlander">
 				<img src="https://avatars.githubusercontent.com/u/51091612?s=72&u=809891ebb5caca0a50d0088312864129a78c0769&v=4" width="24" alt="Avatar of linerlander"> linerlander
@@ -11402,7 +11376,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>870</td>
+		<td>868</td>
 		<td>
 			<a href="https://github.com/Nochest">
 				<img src="https://avatars.githubusercontent.com/u/55552879?s=72&v=4" width="24" alt="Avatar of Nochest"> Nochest
@@ -11415,7 +11389,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>871</td>
+		<td>869</td>
 		<td>
 			<a href="https://github.com/eliza8855">
 				<img src="https://avatars.githubusercontent.com/u/67521158?s=72&u=2f44c0e2abf6a215f52948c6cfbe5186f870ece0&v=4" width="24" alt="Avatar of eliza8855"> eliza8855
@@ -11428,7 +11402,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>872</td>
+		<td>870</td>
 		<td>
 			<a href="https://github.com/stefiMS">
 				<img src="https://avatars.githubusercontent.com/u/97743800?s=72&u=c3e64d08508bfc9bfb98d2db2379ea280715ad44&v=4" width="24" alt="Avatar of stefiMS"> stefiMS
@@ -11441,7 +11415,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>873</td>
+		<td>871</td>
 		<td>
 			<a href="https://github.com/freddycordovadd">
 				<img src="https://avatars.githubusercontent.com/u/26237798?s=72&u=932600496adf596ab1ff5f8a44fdcf3dbba24778&v=4" width="24" alt="Avatar of freddycordovadd"> freddycordovadd
@@ -11454,7 +11428,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>874</td>
+		<td>872</td>
 		<td>
 			<a href="https://github.com/hirammendiola">
 				<img src="https://avatars.githubusercontent.com/u/62221378?s=72&u=959cc407ac10cf129cfa2cd683b17def56414bcd&v=4" width="24" alt="Avatar of hirammendiola"> hirammendiola
@@ -11467,7 +11441,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>875</td>
+		<td>873</td>
 		<td>
 			<a href="https://github.com/PandArtist93">
 				<img src="https://avatars.githubusercontent.com/u/90357816?s=72&u=2e3291e6faa59b1332b37dd8a55f18fa020ab8b1&v=4" width="24" alt="Avatar of PandArtist93"> PandArtist93
@@ -11480,7 +11454,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>876</td>
+		<td>874</td>
 		<td>
 			<a href="https://github.com/germanmartinez">
 				<img src="https://avatars.githubusercontent.com/u/453656?s=72&v=4" width="24" alt="Avatar of germanmartinez"> germanmartinez
@@ -11493,7 +11467,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>877</td>
+		<td>875</td>
 		<td>
 			<a href="https://github.com/hezuo">
 				<img src="https://avatars.githubusercontent.com/u/709748?s=72&u=fb125eea6e4d3950975b65f08022bf358bb6a6db&v=4" width="24" alt="Avatar of hezuo"> hezuo
@@ -11506,7 +11480,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>878</td>
+		<td>876</td>
 		<td>
 			<a href="https://github.com/ediyes">
 				<img src="https://avatars.githubusercontent.com/u/5991158?s=72&u=10eeaaeca75282bf94da8aa86de486f19b1334e8&v=4" width="24" alt="Avatar of ediyes"> ediyes
@@ -11519,7 +11493,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>879</td>
+		<td>877</td>
 		<td>
 			<a href="https://github.com/devmasterperu">
 				<img src="https://avatars.githubusercontent.com/u/32893765?s=72&u=7aba7e05798938c7d781bf044154c11ef7e0c24f&v=4" width="24" alt="Avatar of devmasterperu"> devmasterperu
@@ -11532,7 +11506,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>21</td>
 	</tr>
 	<tr>
-		<td>880</td>
+		<td>878</td>
 		<td>
 			<a href="https://github.com/rtbustamantec">
 				<img src="https://avatars.githubusercontent.com/u/1591479?s=72&v=4" width="24" alt="Avatar of rtbustamantec"> rtbustamantec
@@ -11545,7 +11519,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>881</td>
+		<td>879</td>
 		<td>
 			<a href="https://github.com/ever864">
 				<img src="https://avatars.githubusercontent.com/u/69012376?s=72&u=b3f73c119074fe3b05ef9595fdc38258cf7d14ed&v=4" width="24" alt="Avatar of ever864"> ever864
@@ -11558,7 +11532,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>882</td>
+		<td>880</td>
 		<td>
 			<a href="https://github.com/Benjacho">
 				<img src="https://avatars.githubusercontent.com/u/11976865?s=72&u=20d53e6e1a061355bdc05655d8bfa9dc5ab857bf&v=4" width="24" alt="Avatar of Benjacho"> Benjacho
@@ -11571,7 +11545,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>883</td>
+		<td>881</td>
 		<td>
 			<a href="https://github.com/asumaran">
 				<img src="https://avatars.githubusercontent.com/u/1025173?s=72&u=4e79a7b7b927d86720910b4ea14371f5622a5ec3&v=4" width="24" alt="Avatar of asumaran"> asumaran
@@ -11584,7 +11558,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>884</td>
+		<td>882</td>
 		<td>
 			<a href="https://github.com/dennisbot">
 				<img src="https://avatars.githubusercontent.com/u/1541836?s=72&u=d3dbb15ba186d14da95b36bc82548811d0904e4d&v=4" width="24" alt="Avatar of dennisbot"> dennisbot
@@ -11597,20 +11571,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>885</td>
+		<td>883</td>
 		<td>
-			<a href="https://github.com/csdev19">
-				<img src="https://avatars.githubusercontent.com/u/32802631?s=72&u=b57450eba1264776b245dc4208bb6a5cc9313aa2&v=4" width="24" alt="Avatar of csdev19"> csdev19
+			<a href="https://github.com/echovl">
+				<img src="https://avatars.githubusercontent.com/u/38471348?s=72&u=0551aea7626f39e8b547a5e4eaa93aade3c2c2f8&v=4" width="24" alt="Avatar of echovl"> echovl
 			</a><br/>
-			Cristian Sotomayor ⚡
+			No Name
 		</td>
-		<td>Niway.dev </td>
+		<td>No Company</td>
 		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
+		<td>Peru</td>
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>886</td>
+		<td>884</td>
 		<td>
 			<a href="https://github.com/Nekolas777">
 				<img src="https://avatars.githubusercontent.com/u/120282675?s=72&u=829c2bc63f995513adbf47f4b5da16e6f07d916e&v=4" width="24" alt="Avatar of Nekolas777"> Nekolas777
@@ -11623,7 +11597,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>887</td>
+		<td>885</td>
 		<td>
 			<a href="https://github.com/alfredogama">
 				<img src="https://avatars.githubusercontent.com/u/3053133?s=72&v=4" width="24" alt="Avatar of alfredogama"> alfredogama
@@ -11636,20 +11610,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>888</td>
-		<td>
-			<a href="https://github.com/Enryuk3">
-				<img src="https://avatars.githubusercontent.com/u/58184133?s=72&u=68a356bd38793e0bb25473e90e26bd91b008cc03&v=4" width="24" alt="Avatar of Enryuk3"> Enryuk3
-			</a><br/>
-			Cristopher Guzmán
-		</td>
-		<td>No Company</td>
-		<td><a href="https://twitter.com/Enryuk3">Enryuk3</a></td>
-		<td>Ica, Perú</td>
-		<td>20</td>
-	</tr>
-	<tr>
-		<td>889</td>
+		<td>886</td>
 		<td>
 			<a href="https://github.com/ericktucto">
 				<img src="https://avatars.githubusercontent.com/u/22831024?s=72&u=863604013d3c3481137062074d10baf05e6fb484&v=4" width="24" alt="Avatar of ericktucto"> ericktucto
@@ -11662,7 +11623,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>890</td>
+		<td>887</td>
 		<td>
 			<a href="https://github.com/NicolasTicona">
 				<img src="https://avatars.githubusercontent.com/u/24449384?s=72&u=f2d65f47a9a21916f67875923e74d5b9990544fc&v=4" width="24" alt="Avatar of NicolasTicona"> NicolasTicona
@@ -11675,7 +11636,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>891</td>
+		<td>888</td>
 		<td>
 			<a href="https://github.com/Thirstypooch">
 				<img src="https://avatars.githubusercontent.com/u/36412057?s=72&u=7c6408d2b663e8e4e33afa98ffd0d18b9918a45d&v=4" width="24" alt="Avatar of Thirstypooch"> Thirstypooch
@@ -11688,7 +11649,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>892</td>
+		<td>889</td>
 		<td>
 			<a href="https://github.com/Elcrackje">
 				<img src="https://avatars.githubusercontent.com/u/112657079?s=72&u=72675dd2677f72b7bc916fb954d1811c889b40c6&v=4" width="24" alt="Avatar of Elcrackje"> Elcrackje
@@ -11701,7 +11662,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>893</td>
+		<td>890</td>
 		<td>
 			<a href="https://github.com/diego-moscaiza">
 				<img src="https://avatars.githubusercontent.com/u/51138014?s=72&u=67d79023731aed0ce50743b41b80ec549cd1eadf&v=4" width="24" alt="Avatar of diego-moscaiza"> diego-moscaiza
@@ -11714,7 +11675,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>894</td>
+		<td>891</td>
 		<td>
 			<a href="https://github.com/hcjessica">
 				<img src="https://avatars.githubusercontent.com/u/11927555?s=72&u=1f02b84553508b6317fb7e361e1485b716f47d90&v=4" width="24" alt="Avatar of hcjessica"> hcjessica
@@ -11727,7 +11688,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>895</td>
+		<td>892</td>
 		<td>
 			<a href="https://github.com/rodp63">
 				<img src="https://avatars.githubusercontent.com/u/42578792?s=72&u=a3d0a51bf6eaf30a092673fe31c7454001d2abc8&v=4" width="24" alt="Avatar of rodp63"> rodp63
@@ -11740,10 +11701,10 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>896</td>
+		<td>893</td>
 		<td>
 			<a href="https://github.com/ivangonzalez224">
-				<img src="https://avatars.githubusercontent.com/u/132683272?s=72&u=8fbc1d846f350ee9d4244e3ad1520c750ada5ca8&v=4" width="24" alt="Avatar of ivangonzalez224"> ivangonzalez224
+				<img src="https://avatars.githubusercontent.com/u/132683272?s=72&u=d30eba5a9dab7fd43bf40eb32b9e9a99d01c3396&v=4" width="24" alt="Avatar of ivangonzalez224"> ivangonzalez224
 			</a><br/>
 			Iván Gonzalez
 		</td>
@@ -11753,7 +11714,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>897</td>
+		<td>894</td>
+		<td>
+			<a href="https://github.com/x-name15">
+				<img src="https://avatars.githubusercontent.com/u/69986110?s=72&u=2df7177a4432a80c807069a288dcb2077e568980&v=4" width="24" alt="Avatar of x-name15"> x-name15
+			</a><br/>
+			Felix Manrique | Flez | Mr Jacket
+		</td>
+		<td>Nothing Here, Buddy -<br/>Yet<br/></td>
+		<td>No Twitter Username</td>
+		<td>Spain - Peru</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>895</td>
 		<td>
 			<a href="https://github.com/abnercasallo">
 				<img src="https://avatars.githubusercontent.com/u/68797376?s=72&u=b9e70bfffc2492f77a803592e1a207fb202dbdab&v=4" width="24" alt="Avatar of abnercasallo"> abnercasallo
@@ -11766,7 +11740,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>898</td>
+		<td>896</td>
 		<td>
 			<a href="https://github.com/yuruyuri16">
 				<img src="https://avatars.githubusercontent.com/u/36353498?s=72&u=8e204f141c04ccd00e40cdb8999a2f8fa23b113f&v=4" width="24" alt="Avatar of yuruyuri16"> yuruyuri16
@@ -11779,20 +11753,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>899</td>
-		<td>
-			<a href="https://github.com/Meowwuw">
-				<img src="https://avatars.githubusercontent.com/u/85425689?s=72&u=2dc51fdf103cef69e5456ec8630ff95114e0cd72&v=4" width="24" alt="Avatar of Meowwuw"> Meowwuw
-			</a><br/>
-			Magenta Paredes
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>20</td>
-	</tr>
-	<tr>
-		<td>900</td>
+		<td>897</td>
 		<td>
 			<a href="https://github.com/chafarleston">
 				<img src="https://avatars.githubusercontent.com/u/380774?s=72&u=e962e7e0b3ee838970f874d51c8f0f4ae38d981a&v=4" width="24" alt="Avatar of chafarleston"> chafarleston
@@ -11805,7 +11766,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>901</td>
+		<td>898</td>
 		<td>
 			<a href="https://github.com/rubencadur">
 				<img src="https://avatars.githubusercontent.com/u/2038098?s=72&u=94a7291a248a618e839d35d1836ba5758d83dd1c&v=4" width="24" alt="Avatar of rubencadur"> rubencadur
@@ -11818,20 +11779,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>902</td>
-		<td>
-			<a href="https://github.com/DanteVFX">
-				<img src="https://avatars.githubusercontent.com/u/156336362?s=72&u=734b506e3a3d5c6b15c9aaf87333ba5cb60f0832&v=4" width="24" alt="Avatar of DanteVFX"> DanteVFX
-			</a><br/>
-			Dante Rueda
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>20</td>
-	</tr>
-	<tr>
-		<td>903</td>
+		<td>899</td>
 		<td>
 			<a href="https://github.com/gianpaulbs">
 				<img src="https://avatars.githubusercontent.com/u/34666400?s=72&u=5f8fab20a3b1bf8630d3a59a092c16d06fd63bca&v=4" width="24" alt="Avatar of gianpaulbs"> gianpaulbs
@@ -11844,7 +11792,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>904</td>
+		<td>900</td>
+		<td>
+			<a href="https://github.com/DanteVFX">
+				<img src="https://avatars.githubusercontent.com/u/156336362?s=72&u=734b506e3a3d5c6b15c9aaf87333ba5cb60f0832&v=4" width="24" alt="Avatar of DanteVFX"> DanteVFX
+			</a><br/>
+			Dante Rueda
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>901</td>
 		<td>
 			<a href="https://github.com/lbenitesanchez">
 				<img src="https://avatars.githubusercontent.com/u/3286792?s=72&v=4" width="24" alt="Avatar of lbenitesanchez"> lbenitesanchez
@@ -11857,7 +11818,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>905</td>
+		<td>902</td>
 		<td>
 			<a href="https://github.com/accel33">
 				<img src="https://avatars.githubusercontent.com/u/23202004?s=72&u=088fc24331c524efeafb11287a7efa18f3f1106d&v=4" width="24" alt="Avatar of accel33"> accel33
@@ -11870,20 +11831,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>906</td>
-		<td>
-			<a href="https://github.com/arturop200">
-				<img src="https://avatars.githubusercontent.com/u/67555134?s=72&u=ba30583146a222b0670404977c723ab095dd1aae&v=4" width="24" alt="Avatar of arturop200"> arturop200
-			</a><br/>
-			Arturo Prado
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>20</td>
-	</tr>
-	<tr>
-		<td>907</td>
+		<td>903</td>
 		<td>
 			<a href="https://github.com/caguerra">
 				<img src="https://avatars.githubusercontent.com/u/13904546?s=72&u=c707be412fc6a135e3bbb35299603cf1fd98ba1c&v=4" width="24" alt="Avatar of caguerra"> caguerra
@@ -11896,20 +11844,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>908</td>
-		<td>
-			<a href="https://github.com/rmaceissoft">
-				<img src="https://avatars.githubusercontent.com/u/476427?s=72&u=b37fe1346491c19c13867176e68f628f0a33505a&v=4" width="24" alt="Avatar of rmaceissoft"> rmaceissoft
-			</a><br/>
-			Reiner Marquez
-		</td>
-		<td>No Company</td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
-		<td>20</td>
-	</tr>
-	<tr>
-		<td>909</td>
+		<td>904</td>
 		<td>
 			<a href="https://github.com/AsulconS">
 				<img src="https://avatars.githubusercontent.com/u/42551197?s=72&u=9df0a6a257a3638c3ec8d11c05e05c9d034fcdcf&v=4" width="24" alt="Avatar of AsulconS"> AsulconS
@@ -11922,7 +11857,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>910</td>
+		<td>905</td>
+		<td>
+			<a href="https://github.com/rmaceissoft">
+				<img src="https://avatars.githubusercontent.com/u/476427?s=72&u=b37fe1346491c19c13867176e68f628f0a33505a&v=4" width="24" alt="Avatar of rmaceissoft"> rmaceissoft
+			</a><br/>
+			Reiner Marquez
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>906</td>
 		<td>
 			<a href="https://github.com/lipeqalves">
 				<img src="https://avatars.githubusercontent.com/u/102266909?s=72&u=80f7256dd8b4ffb7eec4021a06a9a161ccb0b3ad&v=4" width="24" alt="Avatar of lipeqalves"> lipeqalves
@@ -11935,20 +11883,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>911</td>
+		<td>907</td>
 		<td>
-			<a href="https://github.com/Vjimenez-vasquez">
-				<img src="https://avatars.githubusercontent.com/u/89874227?s=72&u=605a0cec5a4395207865116e83711f0d269eb971&v=4" width="24" alt="Avatar of Vjimenez-vasquez"> Vjimenez-vasquez
+			<a href="https://github.com/victormc13">
+				<img src="https://avatars.githubusercontent.com/u/110580299?s=72&u=ef49ea51fb0324099b9e42186869a5012ba0a8e4&v=4" width="24" alt="Avatar of victormc13"> victormc13
 			</a><br/>
-			Victor Jimenez-Vasquez
+			Victor MC
 		</td>
-		<td>Instituto Nacional De Salud<br/></td>
-		<td>No Twitter Username</td>
-		<td>Lima, Peru</td>
+		<td>Full-stack Developer Student In<br/>@microverseinc<br/><br/></td>
+		<td><a href="https://twitter.com/VctorMC20">VctorMC20</a></td>
+		<td>Lima - Perú</td>
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>912</td>
+		<td>908</td>
 		<td>
 			<a href="https://github.com/TISparta">
 				<img src="https://avatars.githubusercontent.com/u/17154281?s=72&u=dd99b84bf32e4542c0559f322f1b1a49b8b52d94&v=4" width="24" alt="Avatar of TISparta"> TISparta
@@ -11961,7 +11909,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>913</td>
+		<td>909</td>
+		<td>
+			<a href="https://github.com/Vjimenez-vasquez">
+				<img src="https://avatars.githubusercontent.com/u/89874227?s=72&u=605a0cec5a4395207865116e83711f0d269eb971&v=4" width="24" alt="Avatar of Vjimenez-vasquez"> Vjimenez-vasquez
+			</a><br/>
+			Victor Jimenez-Vasquez
+		</td>
+		<td>Instituto Nacional De Salud<br/></td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>910</td>
 		<td>
 			<a href="https://github.com/juansalinasponce">
 				<img src="https://avatars.githubusercontent.com/u/24494778?s=72&u=fa7ab26eebfda5cffc15dfcd8170e5db7dea66dd&v=4" width="24" alt="Avatar of juansalinasponce"> juansalinasponce
@@ -11974,7 +11935,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>914</td>
+		<td>911</td>
 		<td>
 			<a href="https://github.com/NicoleDiaz2">
 				<img src="https://avatars.githubusercontent.com/u/245620591?s=72&u=125b225cbfc04eed431918023ad1efdff1eec233&v=4" width="24" alt="Avatar of NicoleDiaz2"> NicoleDiaz2
@@ -11987,7 +11948,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>915</td>
+		<td>912</td>
 		<td>
 			<a href="https://github.com/FreddyPinto">
 				<img src="https://avatars.githubusercontent.com/u/78459929?s=72&u=79191787dbfcf704d7cf9c22f6dbdd0725f54c18&v=4" width="24" alt="Avatar of FreddyPinto"> FreddyPinto
@@ -12000,7 +11961,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>916</td>
+		<td>913</td>
 		<td>
 			<a href="https://github.com/fiorella-yumi-diaz">
 				<img src="https://avatars.githubusercontent.com/u/120481207?s=72&u=8a2e2e61a69c18a079d961accc43a0726e3c8211&v=4" width="24" alt="Avatar of fiorella-yumi-diaz"> fiorella-yumi-diaz
@@ -12013,7 +11974,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>917</td>
+		<td>914</td>
 		<td>
 			<a href="https://github.com/cookblue">
 				<img src="https://avatars.githubusercontent.com/u/53793518?s=72&u=30726f5287215e717f72c2df442438bfd30a45b1&v=4" width="24" alt="Avatar of cookblue"> cookblue
@@ -12026,7 +11987,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>918</td>
+		<td>915</td>
 		<td>
 			<a href="https://github.com/jwilliamn">
 				<img src="https://avatars.githubusercontent.com/u/4219837?s=72&u=0b3f8df1eef9967245c4c9345b637bea4909651b&v=4" width="24" alt="Avatar of jwilliamn"> jwilliamn
@@ -12039,7 +12000,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>919</td>
+		<td>916</td>
 		<td>
 			<a href="https://github.com/carlosgl87">
 				<img src="https://avatars.githubusercontent.com/u/7867454?s=72&v=4" width="24" alt="Avatar of carlosgl87"> carlosgl87
@@ -12052,7 +12013,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>920</td>
+		<td>917</td>
 		<td>
 			<a href="https://github.com/JhoanaZF">
 				<img src="https://avatars.githubusercontent.com/u/111166215?s=72&u=beda2ea0345dcb040e39bb103b6e9f48da62f1d3&v=4" width="24" alt="Avatar of JhoanaZF"> JhoanaZF
@@ -12065,7 +12026,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>921</td>
+		<td>918</td>
 		<td>
 			<a href="https://github.com/maary17">
 				<img src="https://avatars.githubusercontent.com/u/126493029?s=72&u=eb601c72b6749baa3130ae20eea59a0b9478cad2&v=4" width="24" alt="Avatar of maary17"> maary17
@@ -12078,7 +12039,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>922</td>
+		<td>919</td>
 		<td>
 			<a href="https://github.com/naovillaj">
 				<img src="https://avatars.githubusercontent.com/u/25906325?s=72&u=b6ff5dd0f676a10b6010aba8427f4b486393fa91&v=4" width="24" alt="Avatar of naovillaj"> naovillaj
@@ -12091,7 +12052,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>923</td>
+		<td>920</td>
 		<td>
 			<a href="https://github.com/percyelbis">
 				<img src="https://avatars.githubusercontent.com/u/30003438?s=72&u=0dad89b4b38ba79fb96467898dcf8f77327f39ab&v=4" width="24" alt="Avatar of percyelbis"> percyelbis
@@ -12104,7 +12065,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>924</td>
+		<td>921</td>
 		<td>
 			<a href="https://github.com/FrankLopezFLB">
 				<img src="https://avatars.githubusercontent.com/u/87162626?s=72&u=0a9ac534d90cbd6ffdcd2cd984bc09e0e4216c95&v=4" width="24" alt="Avatar of FrankLopezFLB"> FrankLopezFLB
@@ -12117,7 +12078,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>925</td>
+		<td>922</td>
 		<td>
 			<a href="https://github.com/JhennyferZarate">
 				<img src="https://avatars.githubusercontent.com/u/68209645?s=72&u=cbeb0753244602937193a6988d050bafc585cad6&v=4" width="24" alt="Avatar of JhennyferZarate"> JhennyferZarate
@@ -12130,7 +12091,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>926</td>
+		<td>923</td>
 		<td>
 			<a href="https://github.com/rayd1893">
 				<img src="https://avatars.githubusercontent.com/u/17577777?s=72&u=d851bf8b3467fe5e521c9bbb16d91879698ec883&v=4" width="24" alt="Avatar of rayd1893"> rayd1893
@@ -12143,7 +12104,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>927</td>
+		<td>924</td>
 		<td>
 			<a href="https://github.com/marcosluis2186">
 				<img src="https://avatars.githubusercontent.com/u/331977?s=72&u=630d2710f80cd253a4c6aecddb8d57c9a21611c4&v=4" width="24" alt="Avatar of marcosluis2186"> marcosluis2186
@@ -12156,7 +12117,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>928</td>
+		<td>925</td>
 		<td>
 			<a href="https://github.com/chara0511">
 				<img src="https://avatars.githubusercontent.com/u/58007714?s=72&v=4" width="24" alt="Avatar of chara0511"> chara0511
@@ -12169,7 +12130,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>929</td>
+		<td>926</td>
 		<td>
 			<a href="https://github.com/devildeveloper">
 				<img src="https://avatars.githubusercontent.com/u/2333365?s=72&v=4" width="24" alt="Avatar of devildeveloper"> devildeveloper
@@ -12182,7 +12143,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>930</td>
+		<td>927</td>
 		<td>
 			<a href="https://github.com/sirghost">
 				<img src="https://avatars.githubusercontent.com/u/1412870?s=72&u=bf7543a90a7ebfaf69039b9d04516df0b18434a3&v=4" width="24" alt="Avatar of sirghost"> sirghost
@@ -12195,7 +12156,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>931</td>
+		<td>928</td>
 		<td>
 			<a href="https://github.com/alonsogodinez">
 				<img src="https://avatars.githubusercontent.com/u/3837472?s=72&u=e6699ef9b44a28bca46d7f157f767835cbe4b054&v=4" width="24" alt="Avatar of alonsogodinez"> alonsogodinez
@@ -12208,7 +12169,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>932</td>
+		<td>929</td>
 		<td>
 			<a href="https://github.com/JeanGonzalo">
 				<img src="https://avatars.githubusercontent.com/u/39430289?s=72&u=c63db031888cfb366b825ae5a460c6dd414b62ae&v=4" width="24" alt="Avatar of JeanGonzalo"> JeanGonzalo
@@ -12221,7 +12182,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>933</td>
+		<td>930</td>
 		<td>
 			<a href="https://github.com/RLCHuncp">
 				<img src="https://avatars.githubusercontent.com/u/57560755?s=72&u=6df0ab9a97ef4e3081e3f09a2fe541f8f6e1dfe3&v=4" width="24" alt="Avatar of RLCHuncp"> RLCHuncp
@@ -12234,7 +12195,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>934</td>
+		<td>931</td>
 		<td>
 			<a href="https://github.com/Danielfercj">
 				<img src="https://avatars.githubusercontent.com/u/65505096?s=72&u=ffea7ceaed84c9d189e11b0a47c780855d72bc6b&v=4" width="24" alt="Avatar of Danielfercj"> Danielfercj
@@ -12247,7 +12208,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>20</td>
 	</tr>
 	<tr>
-		<td>935</td>
+		<td>932</td>
 		<td>
 			<a href="https://github.com/ayranoliveira1">
 				<img src="https://avatars.githubusercontent.com/u/139072196?s=72&u=0df4ed727f2f02f422d6e910fb0905dd1111f218&v=4" width="24" alt="Avatar of ayranoliveira1"> ayranoliveira1
@@ -12260,7 +12221,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>936</td>
+		<td>933</td>
 		<td>
 			<a href="https://github.com/grossir">
 				<img src="https://avatars.githubusercontent.com/u/14970769?s=72&u=39883f2eabb35da85d125ee69d2bab6cc48d6a00&v=4" width="24" alt="Avatar of grossir"> grossir
@@ -12273,7 +12234,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>937</td>
+		<td>934</td>
+		<td>
+			<a href="https://github.com/csdev19">
+				<img src="https://avatars.githubusercontent.com/u/32802631?s=72&u=b57450eba1264776b245dc4208bb6a5cc9313aa2&v=4" width="24" alt="Avatar of csdev19"> csdev19
+			</a><br/>
+			Cristian Sotomayor ⚡
+		</td>
+		<td>Niway.dev </td>
+		<td>No Twitter Username</td>
+		<td>Lima, Peru</td>
+		<td>19</td>
+	</tr>
+	<tr>
+		<td>935</td>
 		<td>
 			<a href="https://github.com/soncco">
 				<img src="https://avatars.githubusercontent.com/u/1321736?s=72&v=4" width="24" alt="Avatar of soncco"> soncco
@@ -12286,7 +12260,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>938</td>
+		<td>936</td>
 		<td>
 			<a href="https://github.com/JairFrancesco">
 				<img src="https://avatars.githubusercontent.com/u/8814630?s=72&u=27df97649e4e0851a3423fba86178e7d993990f7&v=4" width="24" alt="Avatar of JairFrancesco"> JairFrancesco
@@ -12299,7 +12273,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>939</td>
+		<td>937</td>
 		<td>
 			<a href="https://github.com/joaquingx">
 				<img src="https://avatars.githubusercontent.com/u/7599855?s=72&u=36574a4dda5ff18d54ddd9109b0fc06f2a640dfd&v=4" width="24" alt="Avatar of joaquingx"> joaquingx
@@ -12312,7 +12286,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>940</td>
+		<td>938</td>
 		<td>
 			<a href="https://github.com/RogerHuauya">
 				<img src="https://avatars.githubusercontent.com/u/38589877?s=72&u=cdf8d6e322e0273546d58179644a3bcd22d8098f&v=4" width="24" alt="Avatar of RogerHuauya"> RogerHuauya
@@ -12325,7 +12299,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>941</td>
+		<td>939</td>
+		<td>
+			<a href="https://github.com/willianuk">
+				<img src="https://avatars.githubusercontent.com/u/52797421?s=72&u=33548af0732ce6b4d3cd94c58b1dfed7e725b894&v=4" width="24" alt="Avatar of willianuk"> willianuk
+			</a><br/>
+			Willian 
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>19</td>
+	</tr>
+	<tr>
+		<td>940</td>
 		<td>
 			<a href="https://github.com/duermes">
 				<img src="https://avatars.githubusercontent.com/u/129619083?s=72&u=4e4e72587ee64352327adde4daae6193b8755b78&v=4" width="24" alt="Avatar of duermes"> duermes
@@ -12338,7 +12325,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>942</td>
+		<td>941</td>
 		<td>
 			<a href="https://github.com/damarizz">
 				<img src="https://avatars.githubusercontent.com/u/138645520?s=72&u=4839227cb8254f6f5325c35ad8b33a3c0307671f&v=4" width="24" alt="Avatar of damarizz"> damarizz
@@ -12351,20 +12338,20 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>943</td>
+		<td>942</td>
 		<td>
-			<a href="https://github.com/raulingg">
-				<img src="https://avatars.githubusercontent.com/u/9435850?s=72&u=fdd582141fdedaff5792cc5bc5b5d2c6f97b558d&v=4" width="24" alt="Avatar of raulingg"> raulingg
+			<a href="https://github.com/Meowwuw">
+				<img src="https://avatars.githubusercontent.com/u/85425689?s=72&u=2dc51fdf103cef69e5456ec8630ff95114e0cd72&v=4" width="24" alt="Avatar of Meowwuw"> Meowwuw
 			</a><br/>
-			Raul Mendez
+			Magenta Paredes
 		</td>
 		<td>No Company</td>
-		<td><a href="https://twitter.com/rauling_g">rauling_g</a></td>
-		<td>Lima, Peru</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>944</td>
+		<td>943</td>
 		<td>
 			<a href="https://github.com/MrElmo3">
 				<img src="https://avatars.githubusercontent.com/u/89310317?s=72&u=0558ff8a07dfebc4ab112a16f39035d5c436f68f&v=4" width="24" alt="Avatar of MrElmo3"> MrElmo3
@@ -12377,7 +12364,33 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
+		<td>944</td>
+		<td>
+			<a href="https://github.com/raulingg">
+				<img src="https://avatars.githubusercontent.com/u/9435850?s=72&u=fdd582141fdedaff5792cc5bc5b5d2c6f97b558d&v=4" width="24" alt="Avatar of raulingg"> raulingg
+			</a><br/>
+			Raul Mendez
+		</td>
+		<td>No Company</td>
+		<td><a href="https://twitter.com/rauling_g">rauling_g</a></td>
+		<td>Lima, Peru</td>
+		<td>19</td>
+	</tr>
+	<tr>
 		<td>945</td>
+		<td>
+			<a href="https://github.com/arturop200">
+				<img src="https://avatars.githubusercontent.com/u/67555134?s=72&u=ba30583146a222b0670404977c723ab095dd1aae&v=4" width="24" alt="Avatar of arturop200"> arturop200
+			</a><br/>
+			Arturo Prado
+		</td>
+		<td>No Company</td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
+		<td>19</td>
+	</tr>
+	<tr>
+		<td>946</td>
 		<td>
 			<a href="https://github.com/jledesma25">
 				<img src="https://avatars.githubusercontent.com/u/8918303?s=72&u=ee7ad8e3b0e6c5053151ec443b815464be0fa4f5&v=4" width="24" alt="Avatar of jledesma25"> jledesma25
@@ -12387,19 +12400,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Lima, Perú</td>
-		<td>19</td>
-	</tr>
-	<tr>
-		<td>946</td>
-		<td>
-			<a href="https://github.com/victormc13">
-				<img src="https://avatars.githubusercontent.com/u/110580299?s=72&u=ef49ea51fb0324099b9e42186869a5012ba0a8e4&v=4" width="24" alt="Avatar of victormc13"> victormc13
-			</a><br/>
-			Victor MC
-		</td>
-		<td>Full-stack Developer Student In<br/>@microverseinc<br/><br/></td>
-		<td><a href="https://twitter.com/VctorMC20">VctorMC20</a></td>
-		<td>Lima - Perú</td>
 		<td>19</td>
 	</tr>
 	<tr>
@@ -12457,19 +12457,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>951</td>
 		<td>
-			<a href="https://github.com/ceodev18">
-				<img src="https://avatars.githubusercontent.com/u/20958764?s=72&u=18a790e9b9c50b75194d21452fad6d9dea0c5b0c&v=4" width="24" alt="Avatar of ceodev18"> ceodev18
-			</a><br/>
-			Christian Espinoza
-		</td>
-		<td>Fullstack Developer | Ex-pinterest<br/>Dev<br/></td>
-		<td>No Twitter Username</td>
-		<td>Lima, Perú</td>
-		<td>19</td>
-	</tr>
-	<tr>
-		<td>952</td>
-		<td>
 			<a href="https://github.com/FernandoLBA">
 				<img src="https://avatars.githubusercontent.com/u/52672886?s=72&u=f82e82149de05cd5d0595e53009716e1938c76fc&v=4" width="24" alt="Avatar of FernandoLBA"> FernandoLBA
 			</a><br/>
@@ -12478,6 +12465,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>Fernando Barrios </td>
 		<td>No Twitter Username</td>
 		<td>Lima-Perú.</td>
+		<td>19</td>
+	</tr>
+	<tr>
+		<td>952</td>
+		<td>
+			<a href="https://github.com/ceodev18">
+				<img src="https://avatars.githubusercontent.com/u/20958764?s=72&u=18a790e9b9c50b75194d21452fad6d9dea0c5b0c&v=4" width="24" alt="Avatar of ceodev18"> ceodev18
+			</a><br/>
+			Christian Espinoza
+		</td>
+		<td>Fullstack Developer | Ex-pinterest<br/>Dev<br/></td>
+		<td>No Twitter Username</td>
+		<td>Lima, Perú</td>
 		<td>19</td>
 	</tr>
 	<tr>
@@ -12496,19 +12496,6 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 	<tr>
 		<td>954</td>
 		<td>
-			<a href="https://github.com/syaker">
-				<img src="https://avatars.githubusercontent.com/u/60866313?s=72&u=74c4432249c02e2ca370b29f395c387997804986&v=4" width="24" alt="Avatar of syaker"> syaker
-			</a><br/>
-			Sheyla Yaker
-		</td>
-		<td>Enara Health </td>
-		<td>No Twitter Username</td>
-		<td>Peru</td>
-		<td>19</td>
-	</tr>
-	<tr>
-		<td>955</td>
-		<td>
 			<a href="https://github.com/arturoLucazzz">
 				<img src="https://avatars.githubusercontent.com/u/38844194?s=72&v=4" width="24" alt="Avatar of arturoLucazzz"> arturoLucazzz
 			</a><br/>
@@ -12520,7 +12507,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>956</td>
+		<td>955</td>
 		<td>
 			<a href="https://github.com/josemgu91">
 				<img src="https://avatars.githubusercontent.com/u/995029?s=72&v=4" width="24" alt="Avatar of josemgu91"> josemgu91
@@ -12533,7 +12520,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>957</td>
+		<td>956</td>
 		<td>
 			<a href="https://github.com/NeoKode">
 				<img src="https://avatars.githubusercontent.com/u/136985422?s=72&u=b3f002a3e63dc369d3d6bf694e92700ada60c32a&v=4" width="24" alt="Avatar of NeoKode"> NeoKode
@@ -12546,7 +12533,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>958</td>
+		<td>957</td>
 		<td>
 			<a href="https://github.com/Luciana-Matute">
 				<img src="https://avatars.githubusercontent.com/u/14999790?s=72&u=9b948216f63880eed9be5d1a620441e23c75407b&v=4" width="24" alt="Avatar of Luciana-Matute"> Luciana-Matute
@@ -12559,7 +12546,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>959</td>
+		<td>958</td>
 		<td>
 			<a href="https://github.com/MaryToribio">
 				<img src="https://avatars.githubusercontent.com/u/124533353?s=72&u=0fad0c33319cdc500c6465f161532e35b3ebceaf&v=4" width="24" alt="Avatar of MaryToribio"> MaryToribio
@@ -12572,7 +12559,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>960</td>
+		<td>959</td>
 		<td>
 			<a href="https://github.com/william-muro-culqi">
 				<img src="https://avatars.githubusercontent.com/u/13784950?s=72&u=c16f47bcbd16e4c2a6f3286a22636773d997c09d&v=4" width="24" alt="Avatar of william-muro-culqi"> william-muro-culqi
@@ -12585,7 +12572,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>961</td>
+		<td>960</td>
 		<td>
 			<a href="https://github.com/Onnichan">
 				<img src="https://avatars.githubusercontent.com/u/46494611?s=72&u=ab0891cb44655977730058babd8184ccfc19a763&v=4" width="24" alt="Avatar of Onnichan"> Onnichan
@@ -12598,7 +12585,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>962</td>
+		<td>961</td>
 		<td>
 			<a href="https://github.com/darwinv">
 				<img src="https://avatars.githubusercontent.com/u/10063069?s=72&u=47bdcfaaccf7ae96301d94a1ef271f97a6eef975&v=4" width="24" alt="Avatar of darwinv"> darwinv
@@ -12611,7 +12598,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>963</td>
+		<td>962</td>
 		<td>
 			<a href="https://github.com/bryamrr">
 				<img src="https://avatars.githubusercontent.com/u/7347327?s=72&u=7a0f73b40fbe789b22a5848ee781495eaae4d095&v=4" width="24" alt="Avatar of bryamrr"> bryamrr
@@ -12624,7 +12611,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>964</td>
+		<td>963</td>
 		<td>
 			<a href="https://github.com/LisetteFrank997">
 				<img src="https://avatars.githubusercontent.com/u/98716770?s=72&u=f6b26075a0d9b7ac5e339b2299410365ca433ba9&v=4" width="24" alt="Avatar of LisetteFrank997"> LisetteFrank997
@@ -12637,7 +12624,7 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>19</td>
 	</tr>
 	<tr>
-		<td>965</td>
+		<td>964</td>
 		<td>
 			<a href="https://github.com/giampieer">
 				<img src="https://avatars.githubusercontent.com/u/20916950?s=72&u=e6dc8c6a0f5da77c589093fd2299adbb6fd8b289&v=4" width="24" alt="Avatar of giampieer"> giampieer
@@ -12647,6 +12634,19 @@ There are `965 users`  in Peru. You need at least `19 followers` to be on this l
 		<td>No Company</td>
 		<td>No Twitter Username</td>
 		<td>Peru Lima</td>
+		<td>19</td>
+	</tr>
+	<tr>
+		<td>965</td>
+		<td>
+			<a href="https://github.com/syaker">
+				<img src="https://avatars.githubusercontent.com/u/60866313?s=72&u=74c4432249c02e2ca370b29f395c387997804986&v=4" width="24" alt="Avatar of syaker"> syaker
+			</a><br/>
+			Sheyla Yaker
+		</td>
+		<td>Enara Health </td>
+		<td>No Twitter Username</td>
+		<td>Peru</td>
 		<td>19</td>
 	</tr>
 </table>
