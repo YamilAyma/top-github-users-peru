@@ -13,8 +13,8 @@
     users: [],
     metric: "publicContributions",
     direction: -1,
-    page: 1,
-    size: 10,
+    visible: 25,
+    batch: 25,
     loaded: false,
   };
   const labels = {
@@ -107,7 +107,9 @@
     tr.append(last);
     return tr;
   }
-  function render() {
+  let rendered = 0;
+  let observer;
+  function render(reset = true) {
     if (!state.loaded) return;
     const ranked = [...state.users].sort(
       (a, b) =>
@@ -134,23 +136,25 @@
         (a, b) =>
           a[state.metric] - b[state.metric] || a.login.localeCompare(b.login),
       );
-    const pages = Math.max(1, Math.ceil(filtered.length / state.size));
-    state.page = Math.min(state.page, pages);
-    const start = (state.page - 1) * state.size;
+    const end = Math.min(state.visible, filtered.length);
     const fragment = document.createDocumentFragment();
     filtered
-      .slice(start, start + state.size)
+      .slice(reset ? 0 : rendered, end)
       .forEach((user) => fragment.append(row(user, ranks.get(user.login))));
-    $("rows").replaceChildren(fragment);
+    if (reset) $("rows").replaceChildren(fragment);
+    else $("rows").append(fragment);
+    rendered = end;
     $("status").textContent = filtered.length
       ? ""
       : "No encontramos perfiles con esos filtros. Prueba otro nombre o ciudad.";
     $("results").textContent = filtered.length
-      ? `Mostrando ${format.format(start + 1)}–${format.format(Math.min(start + state.size, filtered.length))} de ${format.format(filtered.length)} perfiles`
+      ? `Mostrando ${format.format(end)} de ${format.format(filtered.length)} perfiles${end === filtered.length ? " · Llegaste al final" : ""}`
       : "0 perfiles";
-    $("page-label").textContent = `${state.page} / ${pages}`;
-    $("previous").disabled = state.page === 1;
-    $("next").disabled = state.page === pages;
+    $("load-more").disabled = end >= filtered.length;
+    $("load-more").hidden = end >= filtered.length;
+    observer?.unobserve($("feed-sentinel"));
+    if (end < filtered.length && $("auto-load").checked)
+      observer?.observe($("feed-sentinel"));
     $("export").disabled = filtered.length === 0;
     $("metric-note").textContent =
       `Ordenado por ${labels[state.metric]} (${state.direction === -1 ? "de mayor a menor" : "de menor a mayor"}). Puesto nacional; los empates comparten posición.`;
@@ -210,23 +214,18 @@
     }
   }
   $("search").addEventListener("input", () => {
-    state.page = 1;
+    state.visible = state.batch;
     render();
   });
   $("city").addEventListener("change", () => {
-    state.page = 1;
-    render();
-  });
-  $("page-size").addEventListener("change", () => {
-    state.size = Number($("page-size").value);
-    state.page = 1;
+    state.visible = state.batch;
     render();
   });
   document.querySelectorAll("[data-metric]").forEach((button) =>
     button.addEventListener("click", () => {
       state.metric = button.dataset.metric;
       state.direction = -1;
-      state.page = 1;
+      state.visible = state.batch;
       render();
     }),
   );
@@ -237,18 +236,36 @@
         state.metric = button.dataset.sort;
         state.direction = -1;
       }
-      state.page = 1;
+      state.visible = state.batch;
       render();
     }),
   );
-  $("previous").addEventListener("click", () => {
-    state.page--;
-    render();
+  function loadMore() {
+    if (!state.loaded || state.visible >= filtered.length) return;
+    state.visible += state.batch;
+    render(false);
+  }
+  $("load-more").addEventListener("click", loadMore);
+  $("auto-load").addEventListener("change", () => {
+    observer?.unobserve($("feed-sentinel"));
+    if ($("auto-load").checked && rendered < filtered.length)
+      observer?.observe($("feed-sentinel"));
   });
-  $("next").addEventListener("click", () => {
-    state.page++;
-    render();
-  });
+  if ("IntersectionObserver" in window) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        if (
+          entries.some((entry) => entry.isIntersecting) &&
+          $("auto-load").checked
+        )
+          loadMore();
+      },
+      { rootMargin: "0px 0px 240px 0px" },
+    );
+  } else {
+    $("auto-load").checked = false;
+    $("auto-load").disabled = true;
+  }
   $("retry").addEventListener("click", load);
   $("export").addEventListener("click", () => {
     // Prevent spreadsheet formula execution in user-supplied profile fields.

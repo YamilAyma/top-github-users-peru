@@ -11,6 +11,7 @@
     <title>GitHub Perú · Una comunidad que construye</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./javascript/ranking.js" defer></script>
+    <script src="./javascript/footer-flag.js" defer></script>
   </head>
   <body>
     <div class="masthead">
@@ -105,7 +106,12 @@
           Cargando la comunidad…
         </div>
         <button id="retry" class="button" hidden>Reintentar</button>
-        <div class="table-scroll" tabindex="0" role="region" aria-label="Ranking: desplázate horizontalmente para ver todas las columnas">
+        <div
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Ranking: desplázate horizontalmente para ver todas las columnas"
+        >
           <table>
             <caption class="sr-only">
               Ranking de perfiles de GitHub en Perú
@@ -153,19 +159,18 @@
             <tbody id="rows"></tbody>
           </table>
         </div>
-        <div class="pagination">
-          <div id="results" aria-live="polite">Esperando datos</div>
-          <div class="page-controls">
-            <label class="page-size"
-              >Por página
-              <select id="page-size">
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-              </select></label
-            ><button id="previous" class="button" disabled>Anterior</button
-            ><span id="page-label">1 / 1</span
-            ><button id="next" class="button" disabled>Siguiente</button>
+        <div class="feed-controls" id="feed-sentinel">
+          <div id="results" role="status" aria-live="polite">
+            Esperando datos
+          </div>
+          <div class="feed-actions">
+            <label
+              ><input id="auto-load" type="checkbox" checked /> Carga
+              automática</label
+            >
+            <button id="load-more" class="button" disabled>
+              Cargar más perfiles
+            </button>
           </div>
         </div>
       </section>
@@ -187,10 +192,23 @@
       </aside>
     </main>
     <footer>
-      <span
-        >GitHub Perú <span class="footer-separator">/</span> Costa, sierra,
-        selva y código.</span
-      ><span>Un proyecto de la comunidad · Sin afiliación con GitHub</span>
+      <div class="footer-flag">
+        <div
+          role="img"
+          aria-label="Bandera peruana en ASCII, roja, blanca y roja"
+        >
+          <pre id="peru-flag" aria-hidden="true"></pre>
+        </div>
+        <button id="flag-toggle" class="button" aria-pressed="false">
+          Pausar bandera
+        </button>
+      </div>
+      <div class="footer-copy">
+        <span
+          >GitHub Perú <span class="footer-separator">/</span> Costa, sierra,
+          selva y código.</span
+        ><span>Un proyecto de la comunidad · Sin afiliación con GitHub</span>
+      </div>
     </footer>
   </body>
 </html>

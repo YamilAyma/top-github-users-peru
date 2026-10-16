@@ -24,7 +24,19 @@ comparten puesto en caso de empate, incluso al filtrar. Totales = públicas +
 privadas reportadas; seguidores acumulados no son seguidores únicos. Las cifras
 de las tarjetas representan toda la caché; búsqueda y filtros afectan la tabla
 y el CSV. El CSV exporta todos los resultados filtrados en el orden visible,
-no únicamente la página actual.
+incluso los que todavía no se han mostrado.
+
+La tabla muestra 25 perfiles iniciales y añade otros 25 al acercarse al final.
+El botón «Cargar más perfiles» permite hacerlo manualmente; se puede desactivar
+«Carga automática» para llegar al footer sin cargar el resto del ranking.
+Buscar, cambiar de métrica, ciudad u orden reinicia el bloque visible. Todos
+los datos se descargan una sola vez desde el JSON local del sitio; el scroll
+añade filas al documento, sin consultas a GitHub.
+
+La bandera ASCII se dibuja únicamente en el footer, en rojo y blanco. Su loop
+silencioso dura cuatro segundos y se suspende fuera de pantalla o cuando la
+pestaña está oculta. Tiene un botón para pausar/reanudar y empieza estática si
+el sistema solicita movimiento reducido.
 
 La acción diaria externa vuelve a crear el mapa original. Por eso el workflow
 ejecuta el generador después y guarda la vista y sus datos con el mismo acceso
@@ -33,9 +45,11 @@ nuevo secreto. La ejecución remota del workflow debe verificarse tras fusionar.
 
 El collage decorativo `docs/assets/peru-collage.webp` fue generado con IA para
 este proyecto; no es una colección de fotografías de stock. Se sirve localmente
-y se muestra con opacidad baja, sin transmitir información esencial.
+y se muestra sobre una base oscura para que el texto claro tenga contraste,
+sin transmitir información esencial.
 
-Validación local: `node --check docs/javascript/ranking.js` y
+Validación local: `node --check docs/javascript/ranking.js`,
+`node --check docs/javascript/footer-flag.js` y
 `python3 scripts/test-site.py` (requiere Python Playwright y Chromium; se puede
 seleccionar otro ejecutable con `CHROMIUM_PATH`). El test inicia su propio
 servidor temporal y verifica la versión servida bajo una subruta de Pages.

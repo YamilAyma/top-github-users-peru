@@ -397,34 +397,6 @@ tbody tr:hover {
   padding: 10px 12px;
   font-size: 15px;
 }
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 20px 0;
-  color: var(--muted);
-  font-size: 10px;
-}
-.page-controls {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.page-size {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-right: 5px;
-}
-.page-size select {
-  padding: 6px;
-  font-size: 10px;
-}
-#page-label {
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
 #status {
   font-size: 13px;
   color: var(--muted);
@@ -541,18 +513,6 @@ footer {
   .ranking-panel {
     padding: 20px 16px 0;
   }
-  .pagination {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .page-controls {
-    width: 100%;
-    justify-content: flex-end;
-  }
-  .page-size {
-    margin-right: auto;
-  }
   .about {
     grid-template-columns: 1fr;
   }
@@ -626,16 +586,6 @@ footer {
   .brand {
     font-size: 17px;
   }
-  .page-controls {
-    gap: 8px;
-  }
-  .page-controls .button {
-    padding: 9px;
-    font-size: 10px;
-  }
-  .page-size {
-    font-size: 9px;
-  }
   .desktop-break {
     display: none;
   }
@@ -657,4 +607,259 @@ footer {
 .profile-link .external-icon {
   width: 13px;
   height: 13px;
+}
+
+/* Higher contrast masthead and more readable type across the dashboard. */
+body {
+  font-size: 16px;
+}
+.masthead {
+  background: #101b24;
+  color: #fff;
+}
+.masthead::before {
+  opacity: 0.4;
+}
+.masthead .topbar {
+  border-color: #ffffff35;
+}
+.masthead a:hover {
+  color: #ffd2c8;
+}
+.masthead .external-icon {
+  filter: brightness(0) invert(1);
+}
+.masthead .eyebrow {
+  color: #ffd2c8;
+  font-size: 12px;
+}
+.hero h1 {
+  font-size: clamp(44px, 5.3vw, 76px);
+  line-height: 1.1;
+}
+.hero h1 em {
+  color: #ffd2c8;
+}
+.hero > p {
+  font-size: 18px;
+  color: #f0f3f5;
+  line-height: 1.7;
+}
+.hero-meta {
+  font-size: 13px;
+  color: #e4e9ed;
+  flex-wrap: wrap;
+}
+.masthead .badge {
+  background: #14232c;
+  color: #fff;
+  border-color: #ffffff60;
+}
+.brand {
+  font-size: 22px;
+}
+.repository {
+  font-size: 14px;
+}
+.stat-label {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.stat-value {
+  font-size: 40px;
+}
+.stat p {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.panel-heading .eyebrow {
+  font-size: 11px;
+}
+h2 {
+  font-size: 30px;
+}
+.button,
+.tab,
+.filters input,
+.filters select {
+  font-size: 13px;
+}
+.filters input {
+  width: 260px;
+}
+.metric-note {
+  font-size: 12px;
+}
+table {
+  font-size: 13px;
+}
+th,
+th button {
+  font-size: 12px;
+}
+.profile-name {
+  font-size: 14px;
+}
+.handle {
+  font-size: 12px;
+}
+.position {
+  font-size: 13px;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+}
+.about {
+  grid-template-columns: 190px 1fr;
+}
+.about strong {
+  font-size: 16px;
+}
+.about p,
+.about > a {
+  font-size: 13px;
+}
+.feed-controls {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.feed-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.feed-actions label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.feed-actions input {
+  accent-color: var(--red);
+  width: 16px;
+  height: 16px;
+}
+#load-more[hidden] {
+  display: none;
+}
+footer {
+  align-items: center;
+  gap: 28px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.footer-copy {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.footer-flag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  background: #15232d;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #a9b7c2;
+}
+#peru-flag {
+  font:
+    10px/1.1 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  white-space: pre;
+  margin: 0;
+  user-select: none;
+}
+.flag-red {
+  color: #ff626a;
+}
+.flag-white {
+  color: #fff;
+}
+#flag-toggle {
+  background: transparent;
+  border-color: #ffffff40;
+  color: #e8edf1;
+  font-size: 11px;
+  padding: 5px 9px;
+}
+#flag-toggle:hover {
+  background: #ffffff15;
+}
+@media (max-width: 800px) {
+  .toolbar {
+    align-items: stretch;
+  }
+  .filters input {
+    width: 100%;
+  }
+  .feed-controls,
+  .feed-actions {
+    flex-wrap: wrap;
+  }
+  .about {
+    grid-template-columns: 1fr;
+  }
+  footer {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+  .hero > p {
+    font-size: 17px;
+  }
+  .hero-meta {
+    font-size: 12px;
+  }
+  .brand {
+    font-size: 19px;
+  }
+  .repository {
+    font-size: 12px;
+  }
+  .stat-label {
+    font-size: 13px;
+  }
+  .stat-value {
+    font-size: 32px;
+  }
+  .stat p {
+    font-size: 11px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .panel-heading {
+    flex-wrap: wrap;
+  }
+  .panel-heading .button {
+    font-size: 12px;
+  }
+  .metric-note {
+    font-size: 11px;
+  }
+  .tab {
+    padding: 10px 12px;
+  }
+  .feed-actions {
+    gap: 12px;
+  }
 }

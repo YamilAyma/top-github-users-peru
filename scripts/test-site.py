@@ -30,16 +30,28 @@ try:
         page.route('https://avatars.githubusercontent.com/**', lambda route: route.abort())
         page.goto(base, wait_until='networkidle')
         page.wait_for_selector('#rows tr')
-        assert page.locator('#rows tr').count() == 10
+        assert page.locator('#rows tr').count() == 25
         assert page.locator('#rows tr').first.locator('.handle').inner_text() == '@' + max(users, key=lambda u:u['publicContributions'])['login']
         assert page.locator('#stat-users').inner_text().replace(',', '') == str(len(users))
         page.locator('[data-metric="followers"]').click()
         assert page.locator('#rows tr').first.locator('.handle').inner_text() == '@' + max(users, key=lambda u:u['followers'])['login']
-        page.locator('#next').click()
-        assert page.locator('#page-label').inner_text().startswith('2 /')
-        page.locator('#page-size').select_option('25')
-        assert page.locator('#rows tr').count() == 25
-        assert page.locator('#page-label').inner_text().startswith('1 /')
+        # Near-end scrolling appends a batch without replacing existing rows.
+        page.evaluate("window.firstRow = document.querySelector('#rows tr')")
+        page.locator('#feed-sentinel').scroll_into_view_if_needed()
+        page.wait_for_function("document.querySelectorAll('#rows tr').length >= 50")
+        assert page.evaluate("window.firstRow === document.querySelector('#rows tr')")
+        page.locator('#auto-load').uncheck()
+        before = page.locator('#rows tr').count()
+        page.locator('footer').scroll_into_view_if_needed()
+        page.wait_for_timeout(200)
+        assert page.locator('#rows tr').count() == before
+        # Manual fallback reaches the exact end, with no duplicated profiles.
+        while page.locator('#load-more').is_visible():
+            page.locator('#load-more').click()
+        assert page.locator('#rows tr').count() == len(users)
+        assert 'Llegaste al final' in page.locator('#results').inner_text()
+        handles = page.locator('#rows .handle').all_inner_texts()
+        assert len(set(handles)) == len(users)
         page.locator('#search').fill('@sergiodxa')
         assert page.locator('#rows tr').count() == 1
         assert page.locator('#rows .profile').get_attribute('href') == 'https://github.com/sergiodxa'
@@ -65,7 +77,8 @@ try:
         assert page.locator('th[data-sort="total"]').get_attribute('aria-sort') == 'ascending'
         assert int(page.locator('#rows tr').first.locator('td').nth(4).inner_text().replace(',', '')) == min(u['publicContributions']+u['privateContributions'] for u in users)
         page.locator('[data-metric="publicContributions"]').click()
-        page.locator('#page-size').select_option('10')
+        assert page.locator('#rows tr').count() == 25
+        page.evaluate('window.scrollTo(0, 0)')
         artifacts = Path('/tmp/peru-dashboard-review'); artifacts.mkdir(exist_ok=True)
         page.screenshot(path=str(artifacts / 'desktop.png'), full_page=True)
         for width in (320,390,768):
@@ -76,6 +89,26 @@ try:
             page.locator('#search').fill('')
         page.set_viewport_size({'width':390,'height':844})
         page.screenshot(path=str(artifacts / 'mobile.png'), full_page=True)
+        # Footer-only ASCII motion, user pause, and reduced-motion preference.
+        assert page.locator('footer #peru-flag').count() == 1
+        page.locator('footer').scroll_into_view_if_needed()
+        flag = page.locator('#peru-flag')
+        initial = flag.text_content()
+        page.wait_for_function("document.getElementById('peru-flag').textContent !== " + json.dumps(initial))
+        page.locator('#flag-toggle').click()
+        assert page.locator('#flag-toggle').get_attribute('aria-pressed') == 'true'
+        paused = flag.text_content()
+        page.wait_for_timeout(250)
+        assert flag.text_content() == paused
+        page.locator('footer').screenshot(path=str(artifacts / 'footer.png'))
+        page.emulate_media(reduced_motion='reduce')
+        page.reload(wait_until='networkidle')
+        page.locator('footer').scroll_into_view_if_needed()
+        assert page.locator('#flag-toggle').inner_text() == 'Animar bandera'
+        paused = flag.text_content()
+        page.wait_for_timeout(200)
+        assert flag.text_content() == paused
+        page.emulate_media(reduced_motion='no-preference')
         # A failed local data request exposes a working retry state.
         page.route('**/data/peru.json', lambda route: route.fulfill(status=503, body='Unavailable'))
         page.reload(wait_until='networkidle')
@@ -98,7 +131,7 @@ try:
         assert rows[1][1] == "'=1+1"
         assert not errors, errors
         browser.close()
-        print('PASS: data, metrics, ties, sorting, search, cities, pagination, CSV, profile links, mobile layouts, data failure/retry, safe text; no JavaScript errors.')
+        print('PASS: data, metrics, ties, sorting, search, cities, infinite scrolling, manual loading, end of feed, CSV, profile links, mobile layouts, ASCII animation/pause/reduced motion, data failure/retry, safe text; no JavaScript errors.')
 finally:
     server.shutdown()
     server.server_close()
