@@ -98,18 +98,23 @@ main {
   margin: auto;
   padding: 0 32px;
 }
-.hero {
+.masthead {
   position: relative;
-  padding: 48px 0 41px;
   isolation: isolate;
+  background: #fbfaf8;
 }
-.hero:before {
+.masthead::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 0 -32px;
+  inset: 0;
   background: url("../assets/peru-collage.webp") center 48% / cover;
-  opacity: 0.12;
+  opacity: 0.38;
+}
+.hero {
+  max-width: 1240px;
+  margin: auto;
+  padding: 48px 32px 41px;
 }
 .eyebrow {
   font-size: 10px;
@@ -500,12 +505,8 @@ footer {
     padding: 0 20px;
     height: 72px;
   }
-  .hero:before {
-    inset: 0 -20px;
-    opacity: 0.1;
-  }
   .hero {
-    padding: 36px 0;
+    padding: 36px 20px;
   }
   h1 {
     font-size: 46px;
