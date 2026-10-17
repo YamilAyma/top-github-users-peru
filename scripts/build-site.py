@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Rebuild the static Pages entry point and its data from the repository cache."""
 import json
+import hashlib
 from pathlib import Path
 import re
 from html import escape
@@ -112,6 +113,15 @@ def head_html(path, title, description):
             '<meta name="twitter:card" content="summary_large_image">')
 
 
+def version_assets(html):
+    # Browsers must not reuse older CSS/JS after generated HTML changes.
+    def reference(match):
+        asset = ROOT / 'docs' / match.group(2)
+        version = hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
+        return match.group(1) + match.group(2) + '?v=' + version + match.group(3)
+    return re.sub(r'((?:href|src)="\./)(css/styles\.css|javascript/(?:ranking|footer-flag)\.js)(")', reference, html)
+
+
 def build_pages(data):
     docs = ROOT / 'docs'
     template = (ROOT / 'web/index.html').read_text()
@@ -174,7 +184,7 @@ def build_pages(data):
                     context = (f'<section class="city-context"><h2>Perfiles que mencionan {place}</h2><p>{city_copy[city][1]}</p>'
                         f'<p>Se encontraron <strong>{number(len(scoped))} perfiles</strong> entre los {number(len(users))} incluidos en la caché. '
                         'Las tarjetas resumen esta selección. La tabla conserva el puesto nacional y puede incluir perfiles presentes en más de una ciudad.</p>'
-                        '<p><a href="./metodologia/">Cómo se reconocen las ubicaciones y cuáles son los límites de estos datos</a> · <a href="./">Ver todo Perú</a></p></section>')
+                        '<nav class="city-actions" aria-label="Más información de la ciudad"><a href="./metodologia/">Ver metodología y criterios</a><a href="./">Ver todo Perú</a></nav></section>')
                 values = common | {'SEO_HEAD': head_html(path, title, description) + structured_data(path, title, entries, start, crumbs), 'PAGE_TITLE': escape(title),
                     'METRIC': metric, 'CITY': city or '', 'START': str(start), 'RANKING_TITLE': escape(label + (f' · {place}' if city else '') + (f' · Página {page}' if page > 1 else '')),
                     'HERO_TITLE': f'Ranking de GitHub<br><em>en {place}.</em>', 'BREADCRUMBS': breadcrumbs_html(crumbs), 'CITY_CONTEXT': context, 'CITY_DISCOVERY': city_links if not city else '',
@@ -191,7 +201,7 @@ def build_pages(data):
                 html = re.sub(r'(?m)^[ \t]+$', '', html)
                 destination = docs / path / 'index.html'
                 destination.parent.mkdir(parents=True, exist_ok=True)
-                destination.write_text(html)
+                destination.write_text(version_assets(html))
                 generated.append(destination.relative_to(docs).as_posix())
                 urls.append(BASE_URL + path)
     methodology = ROOT / 'web/metodologia.html'
@@ -199,7 +209,7 @@ def build_pages(data):
     html = methodology.read_text().replace('<!--MIN_FOLLOWERS-->', str(data['minimumFollowers'])).replace('<!--SEO_HEAD-->', head_html('metodologia/', title, 'Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú.') + structured_data('metodologia/', title, None, 0, [('Ranking de Perú', ''), ('Metodología', 'metodologia/')]))
     destination = docs / 'metodologia/index.html'
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(html)
+    destination.write_text(version_assets(html))
     generated.append('metodologia/index.html')
     urls.append(BASE_URL + 'metodologia/')
     # Only remove files previously registered by this generator, never whole directories.

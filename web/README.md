@@ -117,3 +117,8 @@ Las mediciones Lighthouse son de laboratorio local, con red/CPU móvil simulada
 y avatares externos bloqueados de forma idéntica antes y después. No sustituyen
 los datos de campo ni verifican indexación. El fondo sigue requiriendo medir su
 carga en la publicación real.
+
+Los enlaces a CSS y JavaScript llevan un parámetro de versión calculado con el
+hash de su contenido. El generador lo renueva al cambiar esos archivos, para
+que HTML recién publicado no se combine con recursos anteriores de la caché.
+Los hashes son estables si los archivos no cambian.

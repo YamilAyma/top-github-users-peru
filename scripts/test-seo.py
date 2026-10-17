@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check every static SEO route, plus navigation without JS and nested feed behavior."""
 import functools
+import hashlib
 from html.parser import HTMLParser
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -78,6 +79,8 @@ for file in manifest:
             local=DOCS/unquote(resolved[len(PUBLIC):].split('?')[0].split('#')[0])
             if local.is_dir(): local=local/'index.html'
             assert local.is_file(),(file,ref,local)
+            if ref.startswith(('./css/', './javascript/')):
+                assert ref.endswith('?v='+hashlib.sha256(local.read_bytes()).hexdigest()[:12]),(file,ref)
 assert not (DOCS/'robots.txt').exists(), 'Do not create a robots.txt scoped to the project'
 
 if '--static-only' in sys.argv:
@@ -173,6 +176,8 @@ with tempfile.TemporaryDirectory() as temp:
     sandbox=Path(temp)
     shutil.copytree(ROOT/'web',sandbox/'web')
     (sandbox/'docs').mkdir()
+    shutil.copytree(DOCS/'css', sandbox/'docs/css')
+    shutil.copytree(DOCS/'javascript', sandbox/'docs/javascript')
     note=sandbox/'docs/owner-file.html'; note.write_text('preserve me')
     module=runpy.run_path(str(ROOT/'scripts/build-site.py'))
     generate=module['build_pages']; generate.__globals__['ROOT']=sandbox

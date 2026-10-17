@@ -932,7 +932,9 @@ footer {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding-top: 22px;
+  margin: 0;
+  padding: 24px 0 0;
+  line-height: 1.5;
   font-size: 13px;
   color: var(--muted);
 }
@@ -942,9 +944,45 @@ footer {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.city-discovery,
-.city-context {
+.city-discovery {
   margin: 24px 0;
+}
+.city-context {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 28px;
+  padding: 26px 28px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.city-context h2 {
+  margin: 0;
+  line-height: 1.3;
+}
+.city-context p {
+  margin: 0;
+  max-width: 86ch;
+}
+.city-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-top: 2px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.city-actions a {
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+}
+.city-context a:hover,
+.breadcrumbs a:hover {
+  text-decoration-thickness: 2px;
+}
+.city-discovery a strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .city-discovery h2,
 .city-context h2 {
@@ -955,7 +993,7 @@ footer {
   font-size: 14px;
   line-height: 1.8;
   color: #555963;
-  max-width: 850px;
+  max-width: 86ch;
 }
 .city-discovery > div {
   display: flex;
@@ -975,4 +1013,21 @@ footer {
 .city-discovery a span {
   color: var(--muted);
   font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .breadcrumbs {
+    padding-top: 20px;
+  }
+  .city-context {
+    padding: 20px;
+    margin: 16px 0 24px;
+  }
+  .city-context h2 {
+    font-size: 22px;
+  }
+  .city-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
