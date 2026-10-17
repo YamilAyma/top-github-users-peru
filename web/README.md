@@ -53,3 +53,38 @@ Validación local: `node --check docs/javascript/ranking.js`,
 `python3 scripts/test-site.py` (requiere Python Playwright y Chromium; se puede
 seleccionar otro ejecutable con `CHROMIUM_PATH`). El test inicia su propio
 servidor temporal y verifica la versión servida bajo una subruta de Pages.
+
+## Indexación y navegación estática
+
+El generador construye HTML con los datos incluidos, sin depender de JavaScript.
+La portada contiene el ranking público; `/seguidores/` y `/totales/` ofrecen
+las otras métricas. Cada bloque de 25 tiene una URL real y enlaces anterior/
+siguiente, con canonical propio. La primera página pública es únicamente la
+portada; las siguientes están en `/publicas/pagina/2/`, etc. Las rutas abren
+directamente en GitHub Pages, sin fallback SPA. JavaScript conserva el bloque
+inicial de una página interna y añade los siguientes; buscar, filtrar o cambiar
+métrica reinicia el feed. No se generan URLs para combinaciones de filtros.
+
+`web/metodologia.html` documenta el alcance de los datos. Los archivos de
+`docs/publicas/`, `docs/totales/`, `docs/seguidores/`, `docs/metodologia/`,
+`docs/index.html`, `docs/sitemap.xml` y `docs/.generated-pages.json` se generan;
+no los edites a mano. El manifiesto permite retirar solo páginas antiguas del
+generador cuando disminuye el número de perfiles. `.nojekyll` mantiene la
+publicación como archivos estáticos.
+
+El sitemap contiene solo URLs de
+`https://yamilayma.github.io/top-github-users-peru/`. No se genera robots.txt ni
+se cambia el sitemap o la configuración del blog de la raíz del dominio.
+Se omite lastmod para no sustituir una fecha real por una fecha de compilación.
+Para indexación, el propietario puede verificar la propiedad de prefijo URL
+anterior en Search Console y enviar `sitemap.xml` dentro de esa propiedad. La
+verificación debe guardarse en la plantilla (si usa meta) o en un archivo propio
+de docs (si usa archivo), sin incluir secretos. El generador conserva archivos
+ajenos a su manifiesto. En Bing Webmaster Tools se puede registrar la misma
+web según los métodos admitidos por ese servicio. Esto solicita descubrimiento;
+no garantiza indexación ni posiciones.
+
+Validación adicional: `python3 scripts/test-seo.py`. Revisa todas las páginas,
+el sitemap, canonical, títulos, datos, enlaces y recursos; navega sin JavaScript
+y comprueba el feed interactivo desde una URL interna. Las pruebas son locales;
+la comprobación de producción, robots raíz y Search Console es independiente.

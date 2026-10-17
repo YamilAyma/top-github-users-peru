@@ -863,3 +863,67 @@ footer {
     gap: 12px;
   }
 }
+
+/* Static content and real navigation remain usable before JS or if data loading fails. */
+.js-only {
+  display: none;
+}
+.ranking-ready .toolbar,
+.ranking-ready .feed-actions {
+  display: flex;
+}
+.ranking-ready #export {
+  display: inline-block;
+}
+.flag-ready #flag-toggle {
+  display: block;
+}
+.static-pagination,
+.ranking-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 22px 0;
+  font-size: 14px;
+}
+.static-pagination a,
+.ranking-links a {
+  color: #96322f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.static-pagination {
+  justify-content: flex-end;
+}
+.static-pagination[hidden] {
+  display: none;
+}
+.ranking-links {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.hero > .hero-tagline {
+  font-weight: 650;
+  font-size: 21px;
+  margin: 0 0 10px;
+}
+.methodology {
+  max-width: 900px;
+  padding-top: 36px;
+  padding-bottom: 40px;
+  line-height: 1.8;
+}
+.methodology h1 {
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+.methodology h2 {
+  margin-top: 32px;
+  font-size: 25px;
+}
+.methodology a {
+  color: #96322f;
+  text-decoration: underline;
+}

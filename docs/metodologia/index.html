@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="../"><link rel="canonical" href="https://yamilayma.github.io/top-github-users-peru/metodologia/"><meta property="og:type" content="website"><meta property="og:locale" content="es_PE"><meta property="og:title" content="Metodología del ranking de GitHub en Perú"><meta property="og:description" content="Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú."><meta property="og:url" content="https://yamilayma.github.io/top-github-users-peru/metodologia/"><meta property="og:image" content="https://yamilayma.github.io/top-github-users-peru/assets/peru-collage.webp"><meta property="og:image:alt" content="Collage ilustrativo del Perú generado con IA"><meta name="twitter:card" content="summary_large_image">
+    <title>Metodología del ranking de GitHub en Perú</title>
+    <meta
+      name="description"
+      content="Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú."
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./"
+        ><span class="brand-mark">PE</span> GitHub <strong>Perú</strong></a
+      ><a href="./">Volver al ranking</a>
+    </header>
+    <main class="methodology">
+      <nav aria-label="Ubicación"><a href="./">Ranking</a> / Metodología</nav>
+      <h1>Cómo se construye el ranking de GitHub en Perú</h1>
+      <p>
+        Este proyecto ayuda a explorar perfiles de GitHub vinculados a Perú
+        mediante su ubicación declarada. Es una iniciativa de la comunidad y no
+        está afiliada con GitHub.
+      </p>
+      <h2>Fuente y actualización</h2>
+      <p>
+        La acción de código abierto
+        <a href="https://github.com/gayanvoice/top-github-users-action"
+          >top-github-users-action de Gayan Kuruppu</a
+        >
+        consulta GitHub y guarda una caché en el repositorio. La web se genera a
+        partir de esa caché; no consulta la API de GitHub cuando navegas.
+      </p>
+      <p>
+        El workflow tiene una actualización diaria programada, pero puede fallar
+        o conservar datos anteriores. La fecha mostrada en el ranking es la del
+        último commit del archivo de caché, expresada en hora de Perú; no
+        garantiza que todos los perfiles se hayan consultado a esa hora.
+      </p>
+      <h2>Criterios de inclusión</h2>
+      <p>
+        La búsqueda utiliza “Peru” y las ciudades definidas en
+        <a
+          href="https://github.com/YamilAyma/top-github-users-peru/blob/main/config.json"
+          >la configuración pública</a
+        >. El umbral actual es de
+        5
+        seguidores. La caché puede contener personas y organizaciones, y no
+        representa a todas las personas que programan en Perú.
+      </p>
+      <p>
+        Las ubicaciones son texto escrito por cada perfil: no verificamos
+        residencia, identidad ni nacionalidad. Un texto puede mencionar varios
+        lugares o contener información imprecisa. Los filtros de ciudad
+        reconocen nombres completos sin distinguir mayúsculas ni tildes; no
+        realizan geocodificación.
+      </p>
+      <h2>Qué significa cada métrica</h2>
+      <ul>
+        <li>
+          <strong>Públicas:</strong> contribuciones públicas reportadas por la
+          consulta del generador.
+        </li>
+        <li>
+          <strong>Totales:</strong> suma de contribuciones públicas y privadas
+          reportadas. No se exponen detalles de repositorios privados.
+        </li>
+        <li>
+          <strong>Seguidores:</strong> número de seguidores del perfil en la
+          última información almacenada.
+        </li>
+      </ul>
+      <p>
+        La
+        <a
+          href="https://github.com/gayanvoice/top-github-users-action/blob/master/src/core/octokit.js"
+          >consulta del generador</a
+        >
+        utiliza contributionsCollection sin indicar fechas explícitas: se aplica
+        el periodo predeterminado de GitHub. Las cifras no se presentan como un
+        histórico completo de la cuenta. El ranking mide estas cifras, no la
+        calidad del código ni la capacidad profesional.
+      </p>
+      <p>
+        Las posiciones se calculan sobre todos los perfiles incluidos, de mayor
+        a menor por la métrica elegida. Los empates comparten posición y dejan
+        un salto posterior (1, 1, 3). Filtrar no cambia la posición nacional.
+        Los seguidores acumulados suman las cuentas de cada perfil y no son
+        personas únicas.
+      </p>
+      <h2>Navegación y descarga</h2>
+      <p>
+        Las páginas estáticas muestran bloques de 25 perfiles, con enlaces para
+        recorrer todo el ranking sin JavaScript. Con JavaScript puedes usar
+        scroll infinito, filtros y búsqueda. La descarga CSV incluye todos los
+        resultados filtrados, aunque todavía no se hayan mostrado en el feed.
+      </p>
+      <p>
+        El archivo fuente está disponible en
+        <a
+          href="https://github.com/YamilAyma/top-github-users-peru/blob/main/cache/peru.json"
+          >la caché pública</a
+        >. La web también ofrece una
+        <a href="./data/peru.json">selección de campos en JSON</a>.
+      </p>
+      <h2>Atribución y licencia</h2>
+      <p>
+        El proyecto deriva del trabajo de
+        <a href="https://github.com/gayanvoice/top-github-users"
+          >Gayan Kuruppu</a
+        >. Los datos de caché se identifican en el repositorio bajo
+        <a href="https://opendatacommons.org/licenses/odbl/1-0/"
+          >Open Database License (ODbL)</a
+        >. Al reutilizar datos, conserva la atribución y revisa las obligaciones
+        de esa licencia. Las licencias del código y los recursos de terceros son
+        independientes de la licencia de datos.
+      </p>
+      <p>
+        El fondo decorativo es una imagen generada con IA y no aporta evidencia
+        sobre los perfiles.
+      </p>
+      <h2>Errores y contacto</h2>
+      <p>
+        Proyecto mantenido por
+        <a href="https://github.com/YamilAyma">YamilAyma</a>. Puedes
+        <a href="https://github.com/YamilAyma/top-github-users-peru/issues"
+          >abrir una incidencia en el repositorio</a
+        >
+        para informar errores o proponer mejoras. No publiques datos privados.
+        Para corregir la ubicación de origen, actualiza tu perfil de GitHub.
+      </p>
+      <p>
+        <a href="./">Ver contribuciones públicas</a> ·
+        <a href="./totales/">Ver contribuciones totales</a> ·
+        <a href="./seguidores/">Ver seguidores</a>
+      </p>
+    </main>
+    <footer><a href="./">GitHub Perú · Volver al ranking</a></footer>
+  </body>
+</html>

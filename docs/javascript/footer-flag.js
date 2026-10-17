@@ -3,6 +3,7 @@
   const flag = document.getElementById("peru-flag");
   const toggle = document.getElementById("flag-toggle");
   const footer = flag.closest("footer");
+  document.documentElement.classList.add("flag-ready");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const width = 30,
     height = 14,

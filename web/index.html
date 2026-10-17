@@ -2,18 +2,19 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
+    <!--SEO_HEAD-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
       content="Explora la comunidad de GitHub en Perú: rankings por contribuciones y seguidores, búsqueda de perfiles y filtros por ciudad."
     />
     <meta name="theme-color" content="#b63735" />
-    <title>GitHub Perú · Una comunidad que construye</title>
+    <title><!--PAGE_TITLE--></title>
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./javascript/ranking.js" defer></script>
     <script src="./javascript/footer-flag.js" defer></script>
   </head>
-  <body>
+  <body data-initial-metric="<!--METRIC-->" data-start="<!--START-->">
     <div class="masthead">
       <header class="topbar">
         <a class="brand" href="./"
@@ -29,7 +30,8 @@
       </header>
       <section class="hero" aria-labelledby="title">
         <div class="eyebrow">TALENTO LOCAL. IMPACTO GLOBAL.</div>
-        <h1 id="title">Una comunidad<br />que <em>construye.</em></h1>
+        <h1 id="title">Ranking de GitHub<br /><em>en Perú.</em></h1>
+        <p class="hero-tagline">Una comunidad que construye.</p>
         <p>
           Descubre a quienes hacen crecer el ecosistema<br
             class="desktop-break"
@@ -38,7 +40,7 @@
         </p>
         <div class="hero-meta">
           <span class="badge">Hecho de comunidad</span
-          ><span id="updated">Cargando datos…</span>
+          ><span id="updated"><!--UPDATED--></span>
         </div>
       </section>
     </div>
@@ -46,17 +48,19 @@
       <section class="stats" aria-label="Resumen de los perfiles incluidos">
         <article class="stat">
           <div class="stat-label">Perfiles en el ranking <span>01</span></div>
-          <div class="stat-value" id="stat-users">—</div>
+          <div class="stat-value" id="stat-users"><!--USERS--></div>
           <p>Personas y organizaciones de Perú</p>
         </article>
         <article class="stat">
           <div class="stat-label">Contribuciones públicas <span>02</span></div>
-          <div class="stat-value" id="stat-contributions">—</div>
+          <div class="stat-value" id="stat-contributions">
+            <!--CONTRIBUTIONS-->
+          </div>
           <p>Suma de los perfiles incluidos</p>
         </article>
         <article class="stat">
           <div class="stat-label">Seguidores acumulados <span>03</span></div>
-          <div class="stat-value" id="stat-followers">—</div>
+          <div class="stat-value" id="stat-followers"><!--FOLLOWERS--></div>
           <p>Suma por perfil; no son personas únicas</p>
         </article>
       </section>
@@ -64,11 +68,13 @@
         <div class="panel-heading">
           <div>
             <div class="eyebrow">EXPLORA LA COMUNIDAD</div>
-            <h2 id="ranking-title">El talento está aquí<span>.</span></h2>
+            <h2 id="ranking-title"><!--RANKING_TITLE--></h2>
           </div>
-          <button id="export" class="button" disabled>Descargar CSV</button>
+          <button id="export" class="button js-only" disabled>
+            Descargar CSV
+          </button>
         </div>
-        <div class="toolbar">
+        <div class="toolbar js-only">
           <div class="tabs" role="group" aria-label="Métrica del ranking">
             <button
               class="tab active"
@@ -102,9 +108,7 @@
           Ordenado por contribuciones públicas. La posición corresponde al
           ranking nacional de la métrica elegida.
         </p>
-        <div id="status" role="status" aria-live="polite">
-          Cargando la comunidad…
-        </div>
+        <div id="status" role="status" aria-live="polite"></div>
         <button id="retry" class="button" hidden>Reintentar</button>
         <div
           class="table-scroll"
@@ -127,7 +131,7 @@
                   data-sort="publicContributions"
                   aria-sort="descending"
                 >
-                  <button data-sort="publicContributions">
+                  <button disabled data-sort="publicContributions">
                     Públicas <span aria-hidden="true">↓</span>
                   </button>
                 </th>
@@ -137,7 +141,7 @@
                   data-sort="total"
                   aria-sort="none"
                 >
-                  <button data-sort="total">
+                  <button disabled data-sort="total">
                     Totales <span aria-hidden="true">↕</span>
                   </button>
                 </th>
@@ -147,7 +151,7 @@
                   data-sort="followers"
                   aria-sort="none"
                 >
-                  <button data-sort="followers">
+                  <button disabled data-sort="followers">
                     Seguidores <span aria-hidden="true">↕</span>
                   </button>
                 </th>
@@ -156,14 +160,16 @@
                 </th>
               </tr>
             </thead>
-            <tbody id="rows"></tbody>
+            <tbody id="rows">
+              <!--ROWS-->
+            </tbody>
           </table>
         </div>
         <div class="feed-controls" id="feed-sentinel">
           <div id="results" role="status" aria-live="polite">
-            Esperando datos
+            <!--RESULTS-->
           </div>
-          <div class="feed-actions">
+          <div class="feed-actions js-only">
             <label
               ><input id="auto-load" type="checkbox" checked /> Carga
               automática</label
@@ -174,6 +180,7 @@
           </div>
         </div>
       </section>
+      <!--PAGE_NAV-->
       <aside class="about">
         <strong>Cada aporte cuenta.</strong>
         <p>
@@ -182,11 +189,8 @@
           privadas reportadas por GitHub. Las ubicaciones son declaradas por
           cada perfil.
         </p>
-        <a
-          href="https://github.com/YamilAyma/top-github-users-peru/blob/main/config.json"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Conoce los criterios de inclusión
+        <a href="./metodologia/" target="_blank" rel="noopener noreferrer"
+          >Metodología y criterios de inclusión
           <img class="external-icon" src="./assets/arrow-up-right.svg" alt=""
         /></a>
       </aside>
@@ -199,7 +203,7 @@
         >
           <pre id="peru-flag" aria-hidden="true"></pre>
         </div>
-        <button id="flag-toggle" class="button" aria-pressed="false">
+        <button id="flag-toggle" class="button js-only" aria-pressed="false">
           Pausar bandera
         </button>
       </div>

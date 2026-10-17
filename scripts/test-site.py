@@ -113,7 +113,8 @@ try:
         page.route('**/data/peru.json', lambda route: route.fulfill(status=503, body='Unavailable'))
         page.reload(wait_until='networkidle')
         assert page.locator('#retry').is_visible()
-        assert page.locator('#rows tr').count() == 0
+        assert page.locator('#rows tr').count() == min(25, len(users))
+        assert page.locator('#static-pagination a[rel=next]').is_visible()
         page.unroute('**/data/peru.json')
         page.locator('#retry').click()
         page.wait_for_selector('#rows tr')

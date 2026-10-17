@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <base href="../../../"><link rel="canonical" href="https://yamilayma.github.io/top-github-users-peru/seguidores/pagina/3/"><meta property="og:type" content="website"><meta property="og:locale" content="es_PE"><meta property="og:title" content="Ranking de GitHub en Perú: seguidores | Página 3"><meta property="og:description" content="Explora perfiles de GitHub vinculados a Perú, ordenados por seguidores. Consulta la fuente, los criterios y la fecha de los datos. Página 3."><meta property="og:url" content="https://yamilayma.github.io/top-github-users-peru/seguidores/pagina/3/"><meta property="og:image" content="https://yamilayma.github.io/top-github-users-peru/assets/peru-collage.webp"><meta property="og:image:alt" content="Collage ilustrativo del Perú generado con IA"><meta name="twitter:card" content="summary_large_image">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explora perfiles de GitHub vinculados a Perú, ordenados por seguidores. Consulta la fuente, los criterios y la fecha de los datos. Página 3."
+    />
+    <meta name="theme-color" content="#b63735" />
+    <title>Ranking de GitHub en Perú: seguidores | Página 3</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./javascript/ranking.js" defer></script>
+    <script src="./javascript/footer-flag.js" defer></script>
+  </head>
+  <body data-initial-metric="followers" data-start="50">
+    <div class="masthead">
+      <header class="topbar">
+        <a class="brand" href="./"
+          ><span class="brand-mark">PE</span> GitHub <strong>Perú</strong></a
+        ><a
+          class="repository"
+          href="https://github.com/YamilAyma/top-github-users-peru"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ver repositorio
+          <img class="external-icon" src="./assets/arrow-up-right.svg" alt=""
+        /></a>
+      </header>
+      <section class="hero" aria-labelledby="title">
+        <div class="eyebrow">TALENTO LOCAL. IMPACTO GLOBAL.</div>
+        <h1 id="title">Ranking de GitHub<br /><em>en Perú.</em></h1>
+        <p class="hero-tagline">Una comunidad que construye.</p>
+        <p>
+          Descubre a quienes hacen crecer el ecosistema<br
+            class="desktop-break"
+          />
+          de GitHub en Perú, una contribución a la vez.
+        </p>
+        <div class="hero-meta">
+          <span class="badge">Hecho de comunidad</span
+          ><span id="updated">Datos al 15/10/2026 21:21 · hora de Perú</span>
+        </div>
+      </section>
+    </div>
+    <main>
+      <section class="stats" aria-label="Resumen de los perfiles incluidos">
+        <article class="stat">
+          <div class="stat-label">Perfiles en el ranking <span>01</span></div>
+          <div class="stat-value" id="stat-users">964</div>
+          <p>Personas y organizaciones de Perú</p>
+        </article>
+        <article class="stat">
+          <div class="stat-label">Contribuciones públicas <span>02</span></div>
+          <div class="stat-value" id="stat-contributions">
+            203,729
+          </div>
+          <p>Suma de los perfiles incluidos</p>
+        </article>
+        <article class="stat">
+          <div class="stat-label">Seguidores acumulados <span>03</span></div>
+          <div class="stat-value" id="stat-followers">69,041</div>
+          <p>Suma por perfil; no son personas únicas</p>
+        </article>
+      </section>
+      <section class="ranking-panel" aria-labelledby="ranking-title">
+        <div class="panel-heading">
+          <div>
+            <div class="eyebrow">EXPLORA LA COMUNIDAD</div>
+            <h2 id="ranking-title">Seguidores · Página 3</h2>
+          </div>
+          <button id="export" class="button js-only" disabled>
+            Descargar CSV
+          </button>
+        </div>
+        <div class="toolbar js-only">
+          <div class="tabs" role="group" aria-label="Métrica del ranking">
+            <button
+              class="tab active"
+              data-metric="publicContributions"
+              aria-pressed="true"
+            >
+              Públicas</button
+            ><button class="tab" data-metric="total" aria-pressed="false">
+              Totales</button
+            ><button class="tab" data-metric="followers" aria-pressed="false">
+              Seguidores
+            </button>
+          </div>
+          <div class="filters">
+            <label class="search"
+              ><span class="sr-only">Buscar por nombre o usuario</span
+              ><input
+                id="search"
+                type="search"
+                placeholder="Buscar nombre o @usuario"
+                autocomplete="off" /></label
+            ><label
+              ><span class="sr-only">Filtrar por ciudad</span
+              ><select id="city">
+                <option value="">Todas las ciudades</option>
+              </select></label
+            >
+          </div>
+        </div>
+        <p class="metric-note" id="metric-note">Ordenado por seguidores, de mayor a menor. Puesto nacional; los empates comparten posición.</p>
+        <div id="status" role="status" aria-live="polite"></div>
+        <button id="retry" class="button" hidden>Reintentar</button>
+        <div
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Ranking: desplázate horizontalmente para ver todas las columnas"
+        >
+          <table>
+            <caption class="sr-only">
+              Ranking de perfiles de GitHub en Perú
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" class="rank-column">Puesto</th>
+                <th scope="col">Perfil</th>
+                <th scope="col">Ubicación declarada</th>
+                <th
+                  scope="col"
+                  class="numeric"
+                  data-sort="publicContributions"
+                  aria-sort="none"
+                >
+                  <button disabled data-sort="publicContributions">
+                    Públicas <span aria-hidden="true">↓</span>
+                  </button>
+                </th>
+                <th
+                  scope="col"
+                  class="numeric"
+                  data-sort="total"
+                  aria-sort="none"
+                >
+                  <button disabled data-sort="total">
+                    Totales <span aria-hidden="true">↕</span>
+                  </button>
+                </th>
+                <th
+                  scope="col"
+                  class="numeric"
+                  data-sort="followers"
+                  aria-sort="descending"
+                >
+                  <button disabled data-sort="followers">
+                    Seguidores <span aria-hidden="true">↕</span>
+                  </button>
+                </th>
+                <th scope="col">
+                  <span class="sr-only">Perfil en GitHub</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="rows">
+              <tr><td><span class="position">51</span></td><td><a class="profile" href="https://github.com/jhonatanseminario" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/146497717?s=72&amp;u=ba28f29170ff1b6ba842ca685930b7ee25834246&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Jhonatan Seminario">Jhonatan Seminario</span><span class="handle">@jhonatanseminario</span></span></a></td><td class="location" title="Barranca, Lima">Barranca, Lima</td><td class="numeric">148</td><td class="numeric">148</td><td class="numeric"><span class="metric-pill">222</span></td><td><a class="profile-link" href="https://github.com/jhonatanseminario" aria-label="Ver perfil de jhonatanseminario en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">52</span></td><td><a class="profile" href="https://github.com/LaMalditaProgramadora" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/26855595?s=72&amp;u=5c09f789ca5ac0cf37f26aa24f9636d6b7984152&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Jimena Alexandra Ruiz Cerna">Jimena Alexandra Ruiz Cerna</span><span class="handle">@LaMalditaProgramadora</span></span></a></td><td class="location" title="Lima, Perú">Lima, Perú</td><td class="numeric">10</td><td class="numeric">25</td><td class="numeric"><span class="metric-pill">221</span></td><td><a class="profile-link" href="https://github.com/LaMalditaProgramadora" aria-label="Ver perfil de LaMalditaProgramadora en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">53</span></td><td><a class="profile" href="https://github.com/brian-emarquez" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/11839204?s=72&amp;u=2c3214750f013a61da0a3680a57579869f648f6d&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Brian Marquez Inca Roca">Brian Marquez Inca Roca</span><span class="handle">@brian-emarquez</span></span></a></td><td class="location" title="Peru">Peru</td><td class="numeric">29</td><td class="numeric">45</td><td class="numeric"><span class="metric-pill">220</span></td><td><a class="profile-link" href="https://github.com/brian-emarquez" aria-label="Ver perfil de brian-emarquez en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">54</span></td><td><a class="profile" href="https://github.com/PieroCastillo" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/39932324?s=72&amp;u=fb22fa156ab47f2e03141cb4ebfee93357294f74&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Piero Castillo">Piero Castillo</span><span class="handle">@PieroCastillo</span></span></a></td><td class="location" title="Lima, Perú">Lima, Perú</td><td class="numeric">357</td><td class="numeric">357</td><td class="numeric"><span class="metric-pill">214</span></td><td><a class="profile-link" href="https://github.com/PieroCastillo" aria-label="Ver perfil de PieroCastillo en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">55</span></td><td><a class="profile" href="https://github.com/marsam" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/65531?s=72&amp;u=285cc3b415134c20cf7b70718f844eadac448482&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Mario Rodas">Mario Rodas</span><span class="handle">@marsam</span></span></a></td><td class="location" title="Peru">Peru</td><td class="numeric">34</td><td class="numeric">34</td><td class="numeric"><span class="metric-pill">211</span></td><td><a class="profile-link" href="https://github.com/marsam" aria-label="Ver perfil de marsam en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">56</span></td><td><a class="profile" href="https://github.com/wajahat-ali-mir-dev" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/156110102?s=72&amp;u=c407c0684339b08ac2d9c5bc14cd4bc8658c1ec6&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Wajahat Ali Mir">Wajahat Ali Mir</span><span class="handle">@wajahat-ali-mir-dev</span></span></a></td><td class="location" title="uk mx ksa drc cog togo cuba peru  pk mali oman usa rsa rok uae mk cod macau laos iraq qatar gabon kosovo haiti benin syria chile niger yemen ghana nepal sudan kenya japan china india egypt italy spain france russia ukraine germany norway sweden finland">uk mx ksa drc cog togo cuba peru  pk mali oman usa rsa rok uae mk cod macau laos iraq qatar gabon kosovo haiti benin syria chile niger yemen ghana nepal sudan kenya japan china india egypt italy spain france russia ukraine germany norway sweden finland</td><td class="numeric">5,582</td><td class="numeric">5,690</td><td class="numeric"><span class="metric-pill">206</span></td><td><a class="profile-link" href="https://github.com/wajahat-ali-mir-dev" aria-label="Ver perfil de wajahat-ali-mir-dev en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">57</span></td><td><a class="profile" href="https://github.com/mateusfreira" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/234049?s=72&amp;u=c85e61f23d48ba4fef5b25952d1a7be5c7bd2b9b&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Mateus Freira dos Santos">Mateus Freira dos Santos</span><span class="handle">@mateusfreira</span></span></a></td><td class="location" title="Nova Lima, MG, brazil">Nova Lima, MG, brazil</td><td class="numeric">14</td><td class="numeric">2,468</td><td class="numeric"><span class="metric-pill">204</span></td><td><a class="profile-link" href="https://github.com/mateusfreira" aria-label="Ver perfil de mateusfreira en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">58</span></td><td><a class="profile" href="https://github.com/KattyaCuevas" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/4174791?s=72&amp;u=1fc9974fb38d42553035bff4f2d596027cddb2d5&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Kattya Cuevas">Kattya Cuevas</span><span class="handle">@KattyaCuevas</span></span></a></td><td class="location" title="Peru">Peru</td><td class="numeric">3</td><td class="numeric">189</td><td class="numeric"><span class="metric-pill">201</span></td><td><a class="profile-link" href="https://github.com/KattyaCuevas" aria-label="Ver perfil de KattyaCuevas en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">59</span></td><td><a class="profile" href="https://github.com/csswoman" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/50956366?s=72&amp;u=02cedb437fcc4fe8ea5bc7a0caab686257ba4d4f&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Karla Agraz">Karla Agraz</span><span class="handle">@csswoman</span></span></a></td><td class="location" title="Lima, Perú">Lima, Perú</td><td class="numeric">402</td><td class="numeric">3,027</td><td class="numeric"><span class="metric-pill">196</span></td><td><a class="profile-link" href="https://github.com/csswoman" aria-label="Ver perfil de csswoman en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">60</span></td><td><a class="profile" href="https://github.com/avelasquezn" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/154942?s=72&amp;u=3389e31e5e695ec690a0fe40096ca5b6db1be2c3&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Angel Velasquez">Angel Velasquez</span><span class="handle">@avelasquezn</span></span></a></td><td class="location" title="Lima, Peru">Lima, Peru</td><td class="numeric">4,168</td><td class="numeric">5,783</td><td class="numeric"><span class="metric-pill">194</span></td><td><a class="profile-link" href="https://github.com/avelasquezn" aria-label="Ver perfil de avelasquezn en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">61</span></td><td><a class="profile" href="https://github.com/soymichaeldaniel" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/85034795?s=72&amp;u=a11803641b1383fd1e80a3dbdf6914dc4879bad9&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Michael Daniel">Michael Daniel</span><span class="handle">@soymichaeldaniel</span></span></a></td><td class="location" title="Lima">Lima</td><td class="numeric">117</td><td class="numeric">117</td><td class="numeric"><span class="metric-pill">182</span></td><td><a class="profile-link" href="https://github.com/soymichaeldaniel" aria-label="Ver perfil de soymichaeldaniel en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">62</span></td><td><a class="profile" href="https://github.com/SaulMontoya" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/12788039?s=72&amp;u=677cb1203360156e2b1bdb977e5c83a2fc7d7877&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Saul Montoya">Saul Montoya</span><span class="handle">@SaulMontoya</span></span></a></td><td class="location" title="Lima">Lima</td><td class="numeric">0</td><td class="numeric">0</td><td class="numeric"><span class="metric-pill">181</span></td><td><a class="profile-link" href="https://github.com/SaulMontoya" aria-label="Ver perfil de SaulMontoya en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">63</span></td><td><a class="profile" href="https://github.com/jmcastagnetto" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/364668?s=72&amp;u=8a911d5b1159405872e41d65350ee7f8d4f3159a&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Jesus M. Castagnetto">Jesus M. Castagnetto</span><span class="handle">@jmcastagnetto</span></span></a></td><td class="location" title="Peru">Peru</td><td class="numeric">124</td><td class="numeric">129</td><td class="numeric"><span class="metric-pill">176</span></td><td><a class="profile-link" href="https://github.com/jmcastagnetto" aria-label="Ver perfil de jmcastagnetto en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">64</span></td><td><a class="profile" href="https://github.com/alexmarinmendez" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/77815088?s=72&amp;u=861d2c130f439644e589bfffa901c10d8545b8b7&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Alex Marin Mendez">Alex Marin Mendez</span><span class="handle">@alexmarinmendez</span></span></a></td><td class="location" title="Peru">Peru</td><td class="numeric">12</td><td class="numeric">19</td><td class="numeric"><span class="metric-pill">174</span></td><td><a class="profile-link" href="https://github.com/alexmarinmendez" aria-label="Ver perfil de alexmarinmendez en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">64</span></td><td><a class="profile" href="https://github.com/lmcanavals" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/43156214?s=72&amp;u=0ade1a5a088182b725f264277f43d1611362ac96&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Luis M Canaval S">Luis M Canaval S</span><span class="handle">@lmcanavals</span></span></a></td><td class="location" title="Lima, Perú">Lima, Perú</td><td class="numeric">372</td><td class="numeric">733</td><td class="numeric"><span class="metric-pill">174</span></td><td><a class="profile-link" href="https://github.com/lmcanavals" aria-label="Ver perfil de lmcanavals en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">64</span></td><td><a class="profile" href="https://github.com/marcelo-earth" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/47821093?s=72&amp;u=1422dd71f331acc1f1872d6b52f89e2c026bd113&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Marcelo">Marcelo</span><span class="handle">@marcelo-earth</span></span></a></td><td class="location" title="Peru">Peru</td><td class="numeric">1,202</td><td class="numeric">12,177</td><td class="numeric"><span class="metric-pill">174</span></td><td><a class="profile-link" href="https://github.com/marcelo-earth" aria-label="Ver perfil de marcelo-earth en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">67</span></td><td><a class="profile" href="https://github.com/andru255" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/729789?s=72&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Andrés Muñoz">Andrés Muñoz</span><span class="handle">@andru255</span></span></a></td><td class="location" title="Lima, Perú">Lima, Perú</td><td class="numeric">0</td><td class="numeric">0</td><td class="numeric"><span class="metric-pill">173</span></td><td><a class="profile-link" href="https://github.com/andru255" aria-label="Ver perfil de andru255 en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">67</span></td><td><a class="profile" href="https://github.com/WelsTheory" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/3254896?s=72&amp;u=b4b70d79159cc5ba14acad1d38d33e44e31f7e3a&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Wels Theory">Wels Theory</span><span class="handle">@WelsTheory</span></span></a></td><td class="location" title="Lima Peru">Lima Peru</td><td class="numeric">20</td><td class="numeric">20</td><td class="numeric"><span class="metric-pill">173</span></td><td><a class="profile-link" href="https://github.com/WelsTheory" aria-label="Ver perfil de WelsTheory en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">69</span></td><td><a class="profile" href="https://github.com/JCarlosR" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/3101238?s=72&amp;u=16efc144774e4a6e1488886582420c2486f01ae6&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Juan Ramos">Juan Ramos</span><span class="handle">@JCarlosR</span></span></a></td><td class="location" title="Trujillo">Trujillo</td><td class="numeric">11</td><td class="numeric">11</td><td class="numeric"><span class="metric-pill">170</span></td><td><a class="profile-link" href="https://github.com/JCarlosR" aria-label="Ver perfil de JCarlosR en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">69</span></td><td><a class="profile" href="https://github.com/LuiggiVela" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/131617006?s=72&amp;u=c8a2a5a35e6795d66b7e0943e7281c54b1c5ee68&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Luiggi Vela">Luiggi Vela</span><span class="handle">@LuiggiVela</span></span></a></td><td class="location" title="Lima Perú">Lima Perú</td><td class="numeric">25</td><td class="numeric">25</td><td class="numeric"><span class="metric-pill">170</span></td><td><a class="profile-link" href="https://github.com/LuiggiVela" aria-label="Ver perfil de LuiggiVela en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">71</span></td><td><a class="profile" href="https://github.com/leotrs" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/1096704?s=72&amp;u=30a437e6914167828431bf8026967b2f823b85dd&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Leo Torres">Leo Torres</span><span class="handle">@leotrs</span></span></a></td><td class="location" title="Leipzig, Lima, Boston">Leipzig, Lima, Boston</td><td class="numeric">2,883</td><td class="numeric">2,883</td><td class="numeric"><span class="metric-pill">166</span></td><td><a class="profile-link" href="https://github.com/leotrs" aria-label="Ver perfil de leotrs en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">72</span></td><td><a class="profile" href="https://github.com/jerson" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/325780?s=72&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Gerson Alexander Pardo Gamez">Gerson Alexander Pardo Gamez</span><span class="handle">@jerson</span></span></a></td><td class="location" title="Lima, Perú">Lima, Perú</td><td class="numeric">9</td><td class="numeric">9</td><td class="numeric"><span class="metric-pill">162</span></td><td><a class="profile-link" href="https://github.com/jerson" aria-label="Ver perfil de jerson en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">73</span></td><td><a class="profile" href="https://github.com/jansanchez" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/2623671?s=72&amp;u=260b2aabcbae24f550efe9db0b4458185c3754bb&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Jan Sanchez">Jan Sanchez</span><span class="handle">@jansanchez</span></span></a></td><td class="location" title="Lima, Peru">Lima, Peru</td><td class="numeric">16</td><td class="numeric">184</td><td class="numeric"><span class="metric-pill">160</span></td><td><a class="profile-link" href="https://github.com/jansanchez" aria-label="Ver perfil de jansanchez en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">74</span></td><td><a class="profile" href="https://github.com/CraterMaik" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/33011158?s=72&amp;u=b92ad254490893a68dfa6c4a7d1c0e0590fd65f8&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="Crater">Crater</span><span class="handle">@CraterMaik</span></span></a></td><td class="location" title="Lima, Perú">Lima, Perú</td><td class="numeric">2</td><td class="numeric">304</td><td class="numeric"><span class="metric-pill">158</span></td><td><a class="profile-link" href="https://github.com/CraterMaik" aria-label="Ver perfil de CraterMaik en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr><tr><td><span class="position">75</span></td><td><a class="profile" href="https://github.com/bjrmatos" target="_blank" rel="noopener noreferrer"><img class="avatar" src="https://avatars.githubusercontent.com/u/4262050?s=72&amp;v=4" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer"><span class="profile-info"><span class="profile-name" title="BJR Matos">BJR Matos</span><span class="handle">@bjrmatos</span></span></a></td><td class="location" title="Lima, Peru">Lima, Peru</td><td class="numeric">226</td><td class="numeric">284</td><td class="numeric"><span class="metric-pill">155</span></td><td><a class="profile-link" href="https://github.com/bjrmatos" aria-label="Ver perfil de bjrmatos en GitHub" target="_blank" rel="noopener noreferrer"><img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="feed-controls" id="feed-sentinel">
+          <div id="results" role="status" aria-live="polite">
+            Mostrando 51–75 de 964 perfiles
+          </div>
+          <div class="feed-actions js-only">
+            <label
+              ><input id="auto-load" type="checkbox" checked /> Carga
+              automática</label
+            >
+            <button id="load-more" class="button" disabled>
+              Cargar más perfiles
+            </button>
+          </div>
+        </div>
+      </section>
+      <nav id="static-pagination" class="static-pagination" aria-label="Páginas del ranking"><span>Página 3 de 39</span><a rel="prev" href="./seguidores/pagina/2/">Página anterior</a><a rel="next" href="./seguidores/pagina/4/">Página siguiente</a></nav><nav class="ranking-links" aria-label="Rankings por métrica"><a href="./">Públicas</a><a href="./totales/">Totales</a><a href="./seguidores/">Seguidores</a><a href="./metodologia/">Metodología</a></nav>
+      <aside class="about">
+        <strong>Cada aporte cuenta.</strong>
+        <p>
+          Este ranking refleja los perfiles encontrados por el proyecto, no a
+          toda la comunidad. Las contribuciones totales suman públicas y
+          privadas reportadas por GitHub. Las ubicaciones son declaradas por
+          cada perfil.
+        </p>
+        <a href="./metodologia/" target="_blank" rel="noopener noreferrer"
+          >Metodología y criterios de inclusión
+          <img class="external-icon" src="./assets/arrow-up-right.svg" alt=""
+        /></a>
+      </aside>
+    </main>
+    <footer>
+      <div class="footer-flag">
+        <div
+          role="img"
+          aria-label="Bandera peruana en ASCII, roja, blanca y roja"
+        >
+          <pre id="peru-flag" aria-hidden="true"></pre>
+        </div>
+        <button id="flag-toggle" class="button js-only" aria-pressed="false">
+          Pausar bandera
+        </button>
+      </div>
+      <div class="footer-copy">
+        <span
+          >GitHub Perú <span class="footer-separator">/</span> Costa, sierra,
+          selva y código.</span
+        ><span>Un proyecto de la comunidad · Sin afiliación con GitHub</span>
+      </div>
+    </footer>
+  </body>
+</html>

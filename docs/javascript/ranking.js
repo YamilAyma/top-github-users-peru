@@ -11,9 +11,10 @@
     !value || value === "undefined value" ? "" : String(value);
   const state = {
     users: [],
-    metric: "publicContributions",
+    metric: document.body.dataset.initialMetric || "publicContributions",
     direction: -1,
-    visible: 25,
+    start: Number(document.body.dataset.start || 0),
+    visible: Number(document.body.dataset.start || 0) + 25,
     batch: 25,
     loaded: false,
   };
@@ -113,7 +114,8 @@
     if (!state.loaded) return;
     const ranked = [...state.users].sort(
       (a, b) =>
-        b[state.metric] - a[state.metric] || a.login.localeCompare(b.login),
+        b[state.metric] - a[state.metric] ||
+        (a.login.toLowerCase() < b.login.toLowerCase() ? -1 : 1),
     );
     // Competition ranks: tied values share a national position, regardless of filters or sort direction.
     const ranks = new Map();
@@ -134,12 +136,13 @@
     if (state.direction === 1)
       filtered.sort(
         (a, b) =>
-          a[state.metric] - b[state.metric] || a.login.localeCompare(b.login),
+          a[state.metric] - b[state.metric] ||
+          (a.login.toLowerCase() < b.login.toLowerCase() ? -1 : 1),
       );
     const end = Math.min(state.visible, filtered.length);
     const fragment = document.createDocumentFragment();
     filtered
-      .slice(reset ? 0 : rendered, end)
+      .slice(reset ? state.start : rendered, end)
       .forEach((user) => fragment.append(row(user, ranks.get(user.login))));
     if (reset) $("rows").replaceChildren(fragment);
     else $("rows").append(fragment);
@@ -148,7 +151,7 @@
       ? ""
       : "No encontramos perfiles con esos filtros. Prueba otro nombre o ciudad.";
     $("results").textContent = filtered.length
-      ? `Mostrando ${format.format(end)} de ${format.format(filtered.length)} perfiles${end === filtered.length ? " · Llegaste al final" : ""}`
+      ? `Mostrando ${format.format(state.start + 1)}–${format.format(end)} de ${format.format(filtered.length)} perfiles${end === filtered.length ? " · Llegaste al final" : ""}`
       : "0 perfiles";
     $("load-more").disabled = end >= filtered.length;
     $("load-more").hidden = end >= filtered.length;
@@ -156,6 +159,12 @@
     if (end < filtered.length && $("auto-load").checked)
       observer?.observe($("feed-sentinel"));
     $("export").disabled = filtered.length === 0;
+    $("static-pagination").hidden = Boolean(
+      query ||
+        city ||
+        state.direction === 1 ||
+        state.metric !== document.body.dataset.initialMetric,
+    );
     $("metric-note").textContent =
       `Ordenado por ${labels[state.metric]} (${state.direction === -1 ? "de mayor a menor" : "de menor a mayor"}). Puesto nacional; los empates comparten posición.`;
     document.querySelectorAll("[data-metric]").forEach((button) => {
@@ -190,6 +199,10 @@
         total: user.publicContributions + user.privateContributions,
       }));
       state.loaded = true;
+      document.documentElement.classList.add("ranking-ready");
+      document.querySelectorAll("button[data-sort]").forEach((button) => {
+        button.disabled = false;
+      });
       $("stat-users").textContent = format.format(state.users.length);
       $("stat-contributions").textContent = format.format(
         state.users.reduce((sum, user) => sum + user.publicContributions, 0),
@@ -208,16 +221,18 @@
       render();
     } catch (error) {
       $("status").textContent =
-        "No pudimos cargar el ranking. Revisa tu conexión e inténtalo de nuevo.";
-      $("updated").textContent = "Datos no disponibles";
+        "No pudimos cargar las funciones interactivas. Puedes consultar los perfiles y las páginas estáticas o reintentar.";
+
       $("retry").hidden = false;
     }
   }
   $("search").addEventListener("input", () => {
+    state.start = 0;
     state.visible = state.batch;
     render();
   });
   $("city").addEventListener("change", () => {
+    state.start = 0;
     state.visible = state.batch;
     render();
   });
@@ -225,6 +240,7 @@
     button.addEventListener("click", () => {
       state.metric = button.dataset.metric;
       state.direction = -1;
+      state.start = 0;
       state.visible = state.batch;
       render();
     }),
@@ -236,6 +252,7 @@
         state.metric = button.dataset.sort;
         state.direction = -1;
       }
+      state.start = 0;
       state.visible = state.batch;
       render();
     }),
