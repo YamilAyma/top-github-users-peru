@@ -122,3 +122,27 @@ Los enlaces a CSS y JavaScript llevan un parámetro de versión calculado con el
 hash de su contenido. El generador lo renueva al cambiar esos archivos, para
 que HTML recién publicado no se combine con recursos anteriores de la caché.
 Los hashes son estables si los archivos no cambian.
+
+## Entrega del fondo y carga inicial
+
+El hero usa picture con AVIF y alternativa WebP. Móvil (hasta 800 px) recibe una
+versión de 960 × 540; escritorio conserva 1672 × 941. Se mantiene el encuadre,
+la opacidad y el collage original. El original `peru-collage.webp` queda como
+fuente y para compartir enlaces; la página no lo descarga como fondo.
+
+Las precargas AVIF tienen media queries y se declaran después de la etiqueta
+viewport para no descargar ambas variantes en móvil. Las imágenes, CSS y scripts
+se enlazan con hash de contenido. El ranking estático ya es utilizable; la carga
+del JSON interactivo espera a que se decodifique/pinte el hero, con un límite de
+un segundo para no bloquear las funciones si la imagen se demora o falla.
+
+Los derivados están versionados en Git y no requieren procesamiento en CI ni en
+el navegador. Para regenerarlos al editar el original, ejecutar
+`python3 scripts/optimize-images.py` con Pillow y soporte AVIF, y después
+`python3 scripts/build-site.py`. Esta herramienta de autoría es opcional; el
+build habitual sigue usando solo la biblioteca estándar de Python.
+
+El build mantiene un enlace destacado al sitio de Perú y su metodología en el
+README principal, y hace que el enlace del banner apunte a esta web. El bloque
+es idempotente y se repone después de la regeneración del README por la acción
+externa, conservando las atribuciones. El workflow guarda también ese archivo.

@@ -119,7 +119,7 @@ def version_assets(html):
         asset = ROOT / 'docs' / match.group(2)
         version = hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
         return match.group(1) + match.group(2) + '?v=' + version + match.group(3)
-    return re.sub(r'((?:href|src)="\./)(css/styles\.css|javascript/(?:ranking|footer-flag)\.js)(")', reference, html)
+    return re.sub(r'((?:href|src|srcset)="\./)(css/styles\.css|javascript/(?:ranking|footer-flag)\.js|assets/peru-(?:mobile|desktop)\.(?:avif|webp))(")', reference, html)
 
 
 def build_pages(data):
@@ -231,6 +231,21 @@ def build_pages(data):
     print(f'Generated {len(urls)} indexable pages and project-scoped sitemap')
 
 
+def refresh_readme():
+    path = ROOT / 'README.md'
+    if not path.exists():
+        return
+    text = path.read_text()
+    marker = '<!--peru-site-link-->'
+    text = text.replace('https://gayanvoice.github.io/top-github-users/index.html', BASE_URL)
+    if marker not in text:
+        first_line, separator, remainder = text.partition('\n')
+        link = (f'{marker}\n[Ver ranking interactivo de GitHub en Perú]({BASE_URL})'
+                f' · [Metodología y criterios]({BASE_URL}metodologia/)\n<!--/peru-site-link-->\n')
+        text = first_line + '\n\n' + link + '\n' + remainder
+    path.write_text(text)
+
+
 def build():
     users = json.loads((ROOT / 'cache/peru.json').read_text())
     config = json.loads((ROOT / 'config.json').read_text())
@@ -261,6 +276,7 @@ def build():
     (ROOT / 'docs/data').mkdir(parents=True, exist_ok=True)
     (ROOT / 'docs/data/peru.json').write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n')
     build_pages(data)
+    refresh_readme()
     print(f'Built GitHub Pages site: {len(output)} profiles; data commit {updated_at}')
 
 if __name__ == '__main__':

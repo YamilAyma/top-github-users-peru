@@ -33,6 +33,7 @@ class Page(HTMLParser):
         if tag=='script' and a.get('type')=='application/ld+json': self.in_json=True
         if tag in ('script','img') and a.get('src'): self.assets.append(a['src'])
         if tag=='link' and a.get('rel') in ('stylesheet','preload'): self.assets.append(a['href'])
+        if tag=='source' and a.get('srcset'): self.assets.append(a['srcset'])
     def handle_endtag(self, tag):
         if tag=='title': self.in_title=False
         if tag=='script': self.in_json=False
@@ -79,7 +80,7 @@ for file in manifest:
             local=DOCS/unquote(resolved[len(PUBLIC):].split('?')[0].split('#')[0])
             if local.is_dir(): local=local/'index.html'
             assert local.is_file(),(file,ref,local)
-            if ref.startswith(('./css/', './javascript/')):
+            if ref.startswith(('./css/', './javascript/', './assets/peru-')):
                 assert ref.endswith('?v='+hashlib.sha256(local.read_bytes()).hexdigest()[:12]),(file,ref)
 assert not (DOCS/'robots.txt').exists(), 'Do not create a robots.txt scoped to the project'
 
@@ -156,6 +157,40 @@ try:
             exported=list(csv.reader(io.StringIO(Path(info.value.path()).read_text(encoding='utf-8-sig'))))
             assert len(exported)==len(scoped)+1
             assert exported[1][0]==by_followers[0]['login']
+        # Each viewport downloads one matching hero, with a WebP fallback.
+        for width, variant in [(390,'mobile'),(1360,'desktop')]:
+            delivery=browser.new_context(viewport={'width':width,'height':900})
+            view=delivery.new_page(); requests=[]
+            view.route('https://avatars.githubusercontent.com/**',lambda r:r.abort())
+            view.on('request',lambda r:requests.append(r.url) if '/assets/peru-' in r.url else None)
+            view.goto(base,wait_until='networkidle')
+            view.wait_for_function("document.documentElement.classList.contains('ranking-ready')")
+            assert f'peru-{variant}.avif?' in view.locator('.masthead-image img').evaluate('(img)=>img.currentSrc')
+            assert len(set(requests))==1,requests
+            assert view.locator('.masthead-image img').evaluate('(img)=>img.complete && img.naturalWidth>0')
+            assert not view.evaluate('document.documentElement.scrollWidth > innerWidth')
+            delivery.close()
+        fallback=browser.new_context(viewport={'width':390,'height':844})
+        view=fallback.new_page()
+        view.route('https://avatars.githubusercontent.com/**',lambda r:r.abort())
+        def without_avif(route):
+            import re
+            response=route.fetch()
+            html=re.sub(r'<(?:source|link)\b(?=[^>]*type="image/avif")[^>]*>', '', response.text(), flags=re.S)
+            route.fulfill(response=response,body=html)
+        view.route(base,without_avif)
+        view.goto(base,wait_until='networkidle')
+        view.wait_for_function("document.documentElement.classList.contains('ranking-ready')")
+        assert 'peru-mobile.webp?' in view.locator('.masthead-image img').evaluate('(img)=>img.currentSrc')
+        assert view.locator('.masthead-image img').evaluate('(img)=>img.naturalWidth>0')
+        fallback.close()
+        broken=browser.new_context(viewport={'width':390,'height':844})
+        view=broken.new_page(); view.route('**/assets/peru-*',lambda r:r.abort())
+        view.route('https://avatars.githubusercontent.com/**',lambda r:r.abort())
+        view.goto(base,wait_until='networkidle')
+        view.wait_for_function("document.documentElement.classList.contains('ranking-ready')")
+        assert view.locator('#rows tr').count()==25
+        broken.close()
         # Initial HTML and interactive hydration must use the same date to avoid shifting the hero.
         plain=browser.new_context(java_script_enabled=False)
         static=plain.new_page(); static.goto(base)
@@ -178,9 +213,15 @@ with tempfile.TemporaryDirectory() as temp:
     (sandbox/'docs').mkdir()
     shutil.copytree(DOCS/'css', sandbox/'docs/css')
     shutil.copytree(DOCS/'javascript', sandbox/'docs/javascript')
+    shutil.copytree(DOCS/'assets', sandbox/'docs/assets')
     note=sandbox/'docs/owner-file.html'; note.write_text('preserve me')
+    (sandbox/'README.md').write_text('# Original title\n\nAttribution: Gayan Kuruppu\n<a href="https://gayanvoice.github.io/top-github-users/index.html">Site</a>\n')
     module=runpy.run_path(str(ROOT/'scripts/build-site.py'))
     generate=module['build_pages']; generate.__globals__['ROOT']=sandbox
+    refresh=module['refresh_readme']; refresh(); first=(sandbox/'README.md').read_text(); refresh()
+    assert (sandbox/'README.md').read_text()==first
+    assert first.count('<!--peru-site-link-->')==1 and 'Attribution: Gayan Kuruppu' in first
+    assert PUBLIC in first and 'gayanvoice.github.io' not in first
     data=json.loads((DOCS/'data/peru.json').read_text())
     data['users']=users[:60]; generate(data)
     stale=sandbox/'docs/publicas/pagina/3/index.html'; assert stale.exists()

@@ -338,5 +338,20 @@
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
-  load();
+  // The HTML ranking is already usable: let its hero paint before downloading
+  // the full interactive dataset, which would compete for bandwidth on mobile.
+  const hero = document.querySelector(".masthead-image img");
+  const ready = hero?.decode
+    ? hero.decode().catch(() => {})
+    : Promise.resolve();
+  let timer;
+  Promise.race([
+    ready,
+    new Promise((resolve) => {
+      timer = setTimeout(resolve, 1000);
+    }),
+  ]).then(() => {
+    clearTimeout(timer);
+    requestAnimationFrame(() => requestAnimationFrame(load));
+  });
 })();
