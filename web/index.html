@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <!--SEO_HEAD-->
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/peru-collage.webp"
+      fetchpriority="high"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
@@ -14,7 +20,11 @@
     <script src="./javascript/ranking.js" defer></script>
     <script src="./javascript/footer-flag.js" defer></script>
   </head>
-  <body data-initial-metric="<!--METRIC-->" data-start="<!--START-->">
+  <body
+    data-initial-metric="<!--METRIC-->"
+    data-start="<!--START-->"
+    data-city="<!--CITY-->"
+  >
     <div class="masthead">
       <header class="topbar">
         <a class="brand" href="./"
@@ -30,7 +40,7 @@
       </header>
       <section class="hero" aria-labelledby="title">
         <div class="eyebrow">TALENTO LOCAL. IMPACTO GLOBAL.</div>
-        <h1 id="title">Ranking de GitHub<br /><em>en Perú.</em></h1>
+        <h1 id="title"><!--HERO_TITLE--></h1>
         <p class="hero-tagline">Una comunidad que construye.</p>
         <p>
           Descubre a quienes hacen crecer el ecosistema<br
@@ -45,11 +55,13 @@
       </section>
     </div>
     <main>
+      <!--BREADCRUMBS-->
+      <!--CITY_CONTEXT-->
       <section class="stats" aria-label="Resumen de los perfiles incluidos">
         <article class="stat">
           <div class="stat-label">Perfiles en el ranking <span>01</span></div>
           <div class="stat-value" id="stat-users"><!--USERS--></div>
-          <p>Personas y organizaciones de Perú</p>
+          <p><!--STAT_SCOPE--></p>
         </article>
         <article class="stat">
           <div class="stat-label">Contribuciones públicas <span>02</span></div>
@@ -64,6 +76,7 @@
           <p>Suma por perfil; no son personas únicas</p>
         </article>
       </section>
+      <!--CITY_DISCOVERY-->
       <section class="ranking-panel" aria-labelledby="ranking-title">
         <div class="panel-heading">
           <div>

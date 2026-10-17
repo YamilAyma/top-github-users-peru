@@ -126,7 +126,7 @@
       previous = user[state.metric];
     });
     const query = normalize($("search").value.trim().replace(/^@/, ""));
-    const city = $("city").value;
+    const city = document.body.dataset.city || $("city").value;
     filtered = ranked.filter(
       (user) =>
         (!query ||
@@ -161,7 +161,7 @@
     $("export").disabled = filtered.length === 0;
     $("static-pagination").hidden = Boolean(
       query ||
-        city ||
+        city !== (document.body.dataset.city || "") ||
         state.direction === 1 ||
         state.metric !== document.body.dataset.initialMetric,
     );
@@ -189,7 +189,7 @@
     $("retry").hidden = true;
     $("status").textContent = "Cargando la comunidad…";
     try {
-      const response = await fetch("./data/peru.json");
+      const response = await fetch("./data/peru.json", { priority: "low" });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
       if (!Array.isArray(data.users) || !Array.isArray(data.cities))
@@ -203,21 +203,43 @@
       document.querySelectorAll("button[data-sort]").forEach((button) => {
         button.disabled = false;
       });
-      $("stat-users").textContent = format.format(state.users.length);
+      const summaryUsers = document.body.dataset.city
+        ? state.users.filter((user) =>
+            user.cities.includes(document.body.dataset.city),
+          )
+        : state.users;
+      $("stat-users").textContent = format.format(summaryUsers.length);
       $("stat-contributions").textContent = format.format(
-        state.users.reduce((sum, user) => sum + user.publicContributions, 0),
+        summaryUsers.reduce((sum, user) => sum + user.publicContributions, 0),
       );
       $("stat-followers").textContent = format.format(
-        state.users.reduce((sum, user) => sum + user.followers, 0),
+        summaryUsers.reduce((sum, user) => sum + user.followers, 0),
       );
-      $("updated").textContent = data.updatedAt
-        ? `Datos al ${new Intl.DateTimeFormat("es-PE", { dateStyle: "medium", timeStyle: "short", timeZone: "America/Lima" }).format(new Date(data.updatedAt))} · hora de Perú`
-        : "Fuente: caché del repositorio";
+      if (data.updatedAt) {
+        const parts = new Intl.DateTimeFormat("es-PE", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          hourCycle: "h23",
+          timeZone: "America/Lima",
+        }).formatToParts(new Date(data.updatedAt));
+        const part = (key) => parts.find((p) => p.type === key).value;
+        $("updated").textContent =
+          `Datos al ${part("day")}/${part("month")}/${part("year")} ${part("hour")}:${part("minute")} · hora de Perú`;
+      } else $("updated").textContent = "Fuente: caché del repositorio";
       data.cities.forEach((city) => {
         const option = element("option", "", city.label);
         option.value = city.id;
         $("city").append(option);
       });
+      if (document.body.dataset.city) {
+        $("city").value = document.body.dataset.city;
+        $("city").disabled = true;
+        $("city").title =
+          "Esta página muestra una selección de ciudad. Usa los enlaces para explorar otras vistas.";
+      }
       render();
     } catch (error) {
       $("status").textContent =

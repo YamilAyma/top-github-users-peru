@@ -36,7 +36,9 @@ def metric_value(user, metric):
     return user['publicContributions'] + user['privateContributions'] if metric == 'total' else user[metric]
 
 
-def page_path(metric, page):
+def page_path(metric, page, city=None):
+    if city:
+        return f"ciudades/{city}/" + (f"pagina/{page}/" if page > 1 else "")
     slug = METRICS[metric][0]
     if page == 1:
         return '' if metric == 'publicContributions' else slug + '/'
@@ -67,6 +69,35 @@ def row_html(user, rank, metric):
             '<img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr>')
 
 
+def json_ld(value):
+    # HTML script data must escape '<', including profile names containing '</script>'.
+    return '<script type="application/ld+json">' + json.dumps(value, ensure_ascii=False, separators=(',', ':')).replace('<', r'\u003c').replace('>', r'\u003e').replace('&', r'\u0026') + '</script>'
+
+
+def breadcrumbs_html(items):
+    return '<nav class="breadcrumbs" aria-label="Ubicación">' + ' / '.join(
+        f'<a href="./{path}">{escape(name)}</a>' if i < len(items) - 1 else f'<span aria-current="page">{escape(name)}</span>'
+        for i, (name, path) in enumerate(items)) + '</nav>'
+
+
+def structured_data(path, title, entries, start, breadcrumbs):
+    canonical = BASE_URL + path
+    page = {'@type': 'CollectionPage' if entries is not None else 'WebPage', '@id': canonical + '#page',
+            'url': canonical, 'name': title, 'inLanguage': 'es-PE', 'isPartOf': {'@id': BASE_URL + '#website'},
+            'breadcrumb': {'@id': canonical + '#breadcrumbs'}}
+    if entries is not None:
+        page['mainEntity'] = {'@type': 'ItemList', 'numberOfItems': len(entries),
+            'itemListElement': [{'@type': 'ListItem', 'position': start + i + 1,
+                'item': {'@type': 'Thing', 'name': clean(u['name']) or u['login'], 'url': 'https://github.com/' + u['login']}}
+                for i, u in enumerate(entries)]}
+    return json_ld({'@context': 'https://schema.org', '@graph': [
+        {'@type': 'WebSite', '@id': BASE_URL + '#website', 'url': BASE_URL, 'name': 'GitHub Perú', 'inLanguage': 'es-PE'},
+        page,
+        {'@type': 'BreadcrumbList', '@id': canonical + '#breadcrumbs', 'itemListElement': [
+            {'@type': 'ListItem', 'position': i + 1, 'name': name, 'item': BASE_URL + item_path}
+            for i, (name, item_path) in enumerate(breadcrumbs)]}]})
+
+
 def head_html(path, title, description):
     base = '../' * len(path.strip('/').split('/')) if path else './'
     canonical = BASE_URL + path
@@ -92,6 +123,14 @@ def build_pages(data):
     generated = []
     urls = []
     links = '<nav class="ranking-links" aria-label="Rankings por métrica"><a href="./">Públicas</a><a href="./totales/">Totales</a><a href="./seguidores/">Seguidores</a><a href="./metodologia/">Metodología</a></nav>'
+    city_copy = {
+        'lima': ('Lima', 'Esta vista reúne perfiles cuya ubicación declarada menciona Lima como nombre completo. También puede incluir textos como “Lima, Perú” o “Perú/Lima”, e incluso menciones de varios lugares; no verifica que el perfil resida actualmente en la ciudad.'),
+        'arequipa': ('Arequipa', 'Esta vista permite explorar perfiles que escribieron Arequipa en su ubicación de GitHub. Reconoce el nombre sin distinguir mayúsculas ni tildes, pero no deduce la ciudad desde coordenadas, empresas o menciones genéricas de Perú.'),
+    }
+    city_sets = {key: [u for u in users if key in u['cities']] for key in city_copy}
+    city_sets = {key: group for key, group in city_sets.items() if len(group) >= 10}
+    city_links = '<section class="city-discovery" aria-labelledby="city-heading"><h2 id="city-heading">Explora por ciudad</h2><p>Según la ubicación declarada en GitHub, sin verificación de residencia.</p><div>' + ''.join(
+        f'<a href="./ciudades/{key}/"><strong>{city_copy[key][0]}</strong><span>{number(len(group))} perfiles</span></a>' for key, group in city_sets.items()) + '</div></section>' if city_sets else ''
     for metric, (_, label) in METRICS.items():
         ranked = sorted(users, key=lambda u: (-metric_value(u, metric), u['login'].lower()))
         ranks = {}
@@ -102,39 +141,62 @@ def build_pages(data):
                 rank = i + 1
             ranks[user['login']] = rank
             previous = value
-        count = max(1, math.ceil(len(ranked) / PAGE_SIZE))
-        for page in range(1, count + 1):
-            start = (page - 1) * PAGE_SIZE
-            path = page_path(metric, page)
-            suffix = f' | Página {page}' if page > 1 else ''
-            title = f'Ranking de GitHub en Perú: {label.lower()}{suffix}'
-            description = f'Explora perfiles de GitHub vinculados a Perú, ordenados por {label.lower()}. Consulta la fuente, los criterios y la fecha de los datos.'
-            if page > 1:
-                description += f' Página {page}.'
-            nav = f'<nav id="static-pagination" class="static-pagination" aria-label="Páginas del ranking"><span>Página {page} de {count}</span>'
-            if page > 1:
-                nav += f'<a rel="prev" href="./{page_path(metric, page - 1)}">Página anterior</a>'
-            if page < count:
-                nav += f'<a rel="next" href="./{page_path(metric, page + 1)}">Página siguiente</a>'
-            nav += '</nav>' + links
-            values = common | {'SEO_HEAD': head_html(path, title, description), 'PAGE_TITLE': escape(title),
-                'METRIC': metric, 'START': str(start), 'RANKING_TITLE': escape(label + (f' · Página {page}' if page > 1 else '')),
-                'ROWS': ''.join(row_html(u, ranks[u['login']], metric) for u in ranked[start:start + PAGE_SIZE]),
-                'RESULTS': f'Mostrando {start + 1 if ranked else 0}–{min(start + PAGE_SIZE, len(ranked))} de {number(len(ranked))} perfiles', 'PAGE_NAV': nav}
-            html = template
-            for key, value in values.items():
-                html = html.replace('<!--' + key + '-->', value)
-            html = re.sub(r'(name="description"\s+content=")[^"]*', lambda m: m.group(1) + escape(description, quote=True), html)
-            html = re.sub(r'(id="metric-note"[^>]*>).*?(</p>)', lambda m: m.group(1) + escape(f'Ordenado por {label.lower()}, de mayor a menor. Puesto nacional; los empates comparten posición.') + m.group(2), html, flags=re.S)
-            html = re.sub(r'(<th\b[^>]*data-sort="([^"]+)"[^>]*aria-sort=")[^"]+', lambda m: m.group(1) + ('descending' if m.group(2) == metric else 'none'), html)
-            destination = docs / path / 'index.html'
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            destination.write_text(html)
-            generated.append(destination.relative_to(docs).as_posix())
-            urls.append(BASE_URL + path)
+        scopes = [(None, ranked)]
+        if metric == 'publicContributions':
+            scopes += [(key, [u for u in ranked if key in u['cities']]) for key in city_sets]
+        for city, scoped in scopes:
+            place = city_copy[city][0] if city else 'Perú'
+            count = max(1, math.ceil(len(scoped) / PAGE_SIZE))
+            for page in range(1, count + 1):
+                start = (page - 1) * PAGE_SIZE
+                path = page_path(metric, page, city)
+                suffix = f' | Página {page}' if page > 1 else ''
+                title = f'Ranking de GitHub en {place}: {label.lower()}{suffix}'
+                description = f'Explora perfiles de GitHub vinculados a {place}, ordenados por {label.lower()}. Consulta la fuente, los criterios y la fecha de los datos.'
+                if page > 1:
+                    description += f' Página {page}.'
+                nav = f'<nav id="static-pagination" class="static-pagination" aria-label="Páginas del ranking"><span>Página {page} de {count}</span>'
+                if page > 1:
+                    nav += f'<a rel="prev" href="./{page_path(metric, page - 1, city)}">Página anterior</a>'
+                if page < count:
+                    nav += f'<a rel="next" href="./{page_path(metric, page + 1, city)}">Página siguiente</a>'
+                nav += '</nav>' + links
+                crumbs = [('Ranking de Perú', '')]
+                if city:
+                    crumbs.append((place, page_path(metric, 1, city)))
+                elif metric != 'publicContributions':
+                    crumbs.append((label, page_path(metric, 1)))
+                if page > 1:
+                    crumbs.append((f'Página {page}', path))
+                entries = scoped[start:start + PAGE_SIZE]
+                context = ""
+                if city:
+                    context = (f'<section class="city-context"><h2>Perfiles que mencionan {place}</h2><p>{city_copy[city][1]}</p>'
+                        f'<p>Se encontraron <strong>{number(len(scoped))} perfiles</strong> entre los {number(len(users))} incluidos en la caché. '
+                        'Las tarjetas resumen esta selección. La tabla conserva el puesto nacional y puede incluir perfiles presentes en más de una ciudad.</p>'
+                        '<p><a href="./metodologia/">Cómo se reconocen las ubicaciones y cuáles son los límites de estos datos</a> · <a href="./">Ver todo Perú</a></p></section>')
+                values = common | {'SEO_HEAD': head_html(path, title, description) + structured_data(path, title, entries, start, crumbs), 'PAGE_TITLE': escape(title),
+                    'METRIC': metric, 'CITY': city or '', 'START': str(start), 'RANKING_TITLE': escape(label + (f' · {place}' if city else '') + (f' · Página {page}' if page > 1 else '')),
+                    'HERO_TITLE': f'Ranking de GitHub<br><em>en {place}.</em>', 'BREADCRUMBS': breadcrumbs_html(crumbs), 'CITY_CONTEXT': context, 'CITY_DISCOVERY': city_links if not city else '',
+                    'STAT_SCOPE': f'Perfiles que mencionan {place}' if city else 'Personas y organizaciones de Perú',
+                    'USERS': number(len(scoped)), 'CONTRIBUTIONS': number(sum(u['publicContributions'] for u in scoped)), 'FOLLOWERS': number(sum(u['followers'] for u in scoped)),
+                    'ROWS': ''.join(row_html(u, ranks[u['login']], metric) for u in entries),
+                    'RESULTS': f'Mostrando {start + 1 if scoped else 0}–{min(start + PAGE_SIZE, len(scoped))} de {number(len(scoped))} perfiles', 'PAGE_NAV': nav}
+                html = template
+                for key, value in values.items():
+                    html = html.replace('<!--' + key + '-->', value)
+                html = re.sub(r'(name="description"\s+content=")[^"]*', lambda m: m.group(1) + escape(description, quote=True), html)
+                html = re.sub(r'(id="metric-note"[^>]*>).*?(</p>)', lambda m: m.group(1) + escape(f'Ordenado por {label.lower()}, de mayor a menor. Puesto nacional; los empates comparten posición.') + m.group(2), html, flags=re.S)
+                html = re.sub(r'(<th\b[^>]*data-sort="([^"]+)"[^>]*aria-sort=")[^"]+', lambda m: m.group(1) + ('descending' if m.group(2) == metric else 'none'), html)
+                html = re.sub(r'(?m)^[ \t]+$', '', html)
+                destination = docs / path / 'index.html'
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_text(html)
+                generated.append(destination.relative_to(docs).as_posix())
+                urls.append(BASE_URL + path)
     methodology = ROOT / 'web/metodologia.html'
     title = 'Metodología del ranking de GitHub en Perú'
-    html = methodology.read_text().replace('<!--MIN_FOLLOWERS-->', str(data['minimumFollowers'])).replace('<!--SEO_HEAD-->', head_html('metodologia/', title, 'Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú.'))
+    html = methodology.read_text().replace('<!--MIN_FOLLOWERS-->', str(data['minimumFollowers'])).replace('<!--SEO_HEAD-->', head_html('metodologia/', title, 'Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú.') + structured_data('metodologia/', title, None, 0, [('Ranking de Perú', ''), ('Metodología', 'metodologia/')]))
     destination = docs / 'metodologia/index.html'
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(html)
@@ -142,7 +204,7 @@ def build_pages(data):
     urls.append(BASE_URL + 'metodologia/')
     # Only remove files previously registered by this generator, never whole directories.
     manifest = docs / '.generated-pages.json'
-    valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|metodologia/index\.html)'
+    valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|metodologia/index\.html|ciudades/(?:lima|arequipa)/(?:pagina/[0-9]+/)?index\.html)'
     previous = json.loads(manifest.read_text()) if manifest.exists() else []
     for old in set(previous) - set(generated):
         if not re.fullmatch(valid, old):

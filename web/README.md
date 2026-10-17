@@ -88,3 +88,32 @@ Validación adicional: `python3 scripts/test-seo.py`. Revisa todas las páginas,
 el sitemap, canonical, títulos, datos, enlaces y recursos; navega sin JavaScript
 y comprueba el feed interactivo desde una URL interna. Las pruebas son locales;
 la comprobación de producción, robots raíz y Search Console es independiente.
+
+## Ciudades y datos estructurados
+
+Se publican selecciones iniciales de Lima y Arequipa en `/ciudades/lima/` y
+`/ciudades/arequipa/`, con páginas de 25 perfiles y canonical propio. Solo se
+genera una selección si cuenta con al menos diez perfiles; el manifiesto retira
+las páginas antiguas si deja de alcanzar ese mínimo. El contenido explica la
+coincidencia de ubicación y sus límites. Las tarjetas muestran cifras de esa
+selección, mientras la columna de puestos mantiene el ranking nacional.
+
+En las páginas de ciudad, el selector queda fijado a la ubicación de la ruta.
+La búsqueda, el cambio de métrica, el CSV y el scroll siguen funcionando dentro
+de esa selección. Los enlaces permiten regresar al ranking nacional. No se
+crean páginas para todas las combinaciones de filtros.
+
+El JSON-LD describe WebSite, CollectionPage e ItemList, además de las rutas
+BreadcrumbList visibles. La metodología usa WebPage. Las listas describen los
+perfiles efectivamente incluidos en el HTML de esa página, con posiciones de
+lista consecutivas; el puesto nacional de la tabla es un dato diferente.
+Se utiliza Thing para los perfiles, sin deducir identidad personal ni añadir
+valoraciones, premios o afiliaciones. El marcado no garantiza rich results.
+
+Para reducir cambios de diseño, HTML y JavaScript utilizan exactamente el mismo
+formato de fecha. El fondo del hero se precarga con prioridad alta y el JSON
+interactivo se solicita con prioridad baja; el ranking estático ya está visible.
+Las mediciones Lighthouse son de laboratorio local, con red/CPU móvil simulada
+y avatares externos bloqueados de forma idéntica antes y después. No sustituyen
+los datos de campo ni verifican indexación. El fondo sigue requiriendo medir su
+carga en la publicación real.

@@ -17,24 +17,27 @@ DOCS = ROOT / 'docs'
 PUBLIC = 'https://yamilayma.github.io/top-github-users-peru/'
 class Page(HTMLParser):
     def __init__(self, html):
-        super().__init__(); self.base='./'; self.canonical=[]; self.profiles=[]; self.links=[]; self.assets=[]; self.metric=None; self.start=0; self.title=''; self.in_title=False; self.description=''
+        super().__init__(); self.base='./'; self.canonical=[]; self.profiles=[]; self.links=[]; self.assets=[]; self.metric=None; self.start=0; self.title=''; self.in_title=False; self.description=''; self.city=''; self.structured=''; self.in_json=False
         self.feed(html)
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if tag=='base': self.base=a['href']
-        if tag=='body': self.metric=a.get('data-initial-metric'); self.start=int(a.get('data-start',0))
+        if tag=='body': self.metric=a.get('data-initial-metric'); self.start=int(a.get('data-start',0)); self.city=a.get('data-city','')
         if tag=='link' and a.get('rel')=='canonical': self.canonical.append(a['href'])
         if tag=='a':
             self.links.append(a['href'])
             if a.get('class')=='profile': self.profiles.append(a['href'].split('/')[-1])
         if tag=='meta' and a.get('name')=='description': self.description=a['content']
         if tag=='title': self.in_title=True
+        if tag=='script' and a.get('type')=='application/ld+json': self.in_json=True
         if tag in ('script','img') and a.get('src'): self.assets.append(a['src'])
-        if tag=='link' and a.get('rel')=='stylesheet': self.assets.append(a['href'])
+        if tag=='link' and a.get('rel') in ('stylesheet','preload'): self.assets.append(a['href'])
     def handle_endtag(self, tag):
         if tag=='title': self.in_title=False
+        if tag=='script': self.in_json=False
     def handle_data(self, text):
         if self.in_title: self.title += text
+        if self.in_json: self.structured += text
 
 users=json.loads((DOCS/'data/peru.json').read_text())['users']
 manifest=json.loads((DOCS/'.generated-pages.json').read_text())
@@ -55,7 +58,20 @@ for file in manifest:
     if parsed.metric:
         def value(u): return u['publicContributions']+u['privateContributions'] if parsed.metric=='total' else u[parsed.metric]
         ranked=sorted(users,key=lambda u:(-value(u),u['login'].lower()))
+        if parsed.city: ranked=[u for u in ranked if parsed.city in u['cities']]
         assert parsed.profiles==[u['login'] for u in ranked[parsed.start:parsed.start+25]],file
+    graph=json.loads(parsed.structured)['@graph']
+    document=next(item for item in graph if item['@type'] in ('CollectionPage','WebPage'))
+    assert document['url']==expected and document['inLanguage']=='es-PE'
+    breadcrumbs=next(item for item in graph if item['@type']=='BreadcrumbList')['itemListElement']
+    assert breadcrumbs[-1]['item']==expected
+    assert [item['position'] for item in breadcrumbs]==list(range(1,len(breadcrumbs)+1))
+    if parsed.metric:
+        listing=document['mainEntity']
+        assert listing['numberOfItems']==len(parsed.profiles)
+        assert [item['item']['url'].split('/')[-1] for item in listing['itemListElement']]==parsed.profiles
+        assert [item['position'] for item in listing['itemListElement']]==list(range(parsed.start+1, parsed.start+1+len(parsed.profiles)))
+    assert 'aggregateRating' not in parsed.structured
     for ref in parsed.links+parsed.assets:
         resolved=urljoin(urljoin(expected,parsed.base),ref)
         if resolved.startswith(PUBLIC):
@@ -113,9 +129,39 @@ try:
         assert page.locator('#static-pagination').is_hidden()
         page.set_viewport_size({'width':320,'height':844})
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+        for city in ('lima','arequipa'):
+            page.goto(base+f'ciudades/{city}/',wait_until='networkidle')
+            scoped=[u for u in sorted(users,key=lambda u:(-u['publicContributions'],u['login'].lower())) if city in u['cities']]
+            assert page.locator('#city').input_value()==city
+            assert page.locator('#city').is_disabled()
+            assert int(page.locator('#stat-users').inner_text().replace(',',''))==len(scoped)
+            assert page.locator('#rows .handle').all_inner_texts()==['@'+u['login'] for u in scoped[:25]]
+            assert not page.locator('#static-pagination').is_hidden()
+            page.locator('#search').fill('no-such-profile-xyz')
+            assert page.locator('#rows tr').count()==0
+            page.locator('#search').fill('')
+            assert page.locator('#rows .handle').first.inner_text()=='@'+scoped[0]['login']
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            page.goto(base+f'ciudades/{city}/pagina/2/',wait_until='networkidle')
+            assert page.locator('#rows .handle').all_inner_texts()==['@'+u['login'] for u in scoped[25:50]]
+            page.locator('[data-metric="followers"]').click()
+            by_followers=sorted(scoped,key=lambda u:(-u['followers'],u['login'].lower()))
+            assert page.locator('#rows .handle').all_inner_texts()==['@'+u['login'] for u in by_followers[:25]]
+            with page.expect_download() as info:
+                page.locator('#export').click()
+            import csv, io
+            exported=list(csv.reader(io.StringIO(Path(info.value.path()).read_text(encoding='utf-8-sig'))))
+            assert len(exported)==len(scoped)+1
+            assert exported[1][0]==by_followers[0]['login']
+        # Initial HTML and interactive hydration must use the same date to avoid shifting the hero.
+        plain=browser.new_context(java_script_enabled=False)
+        static=plain.new_page(); static.goto(base)
+        page.goto(base,wait_until='networkidle')
+        assert static.locator('#updated').inner_text()==page.locator('#updated').inner_text()
+        plain.close()
         assert not errors,errors
         browser.close()
-    print(f'PASS: {len(urls)} scoped sitemap URLs, unique titles, self-canonicals, static profile ordering, all local links/assets, HTTP 200, no-JS navigation, nested JS feed/search, mobile; blog robots unchanged.')
+    print(f'PASS: {len(urls)} scoped sitemap URLs, matching structured data, city lists, unique titles, self-canonicals, static profile ordering, all local links/assets, HTTP 200, no-JS navigation, nested JS feed/search, mobile; blog robots unchanged.')
 finally:
     server.shutdown(); server.server_close()
 
@@ -140,4 +186,7 @@ with tempfile.TemporaryDirectory() as temp:
     html=module['row_html'](malicious,1,'publicContributions')
     assert '<script>' not in html and '&lt;script&gt;' in html
     assert '&quot; onmouseover=&quot;' in html
+    schema=module['structured_data']('', 'Example', [malicious],0,[('Ranking de Perú','')])
+    assert schema.count('</script>')==1
+    assert json.loads(schema.removeprefix('<script type="application/ld+json">').removesuffix('</script>'))['@graph'][1]['mainEntity']['itemListElement'][0]['item']['name']==malicious['name']
 print('PASS: stale generated pages removed safely; owner files preserved; server-rendered profile text escaped')
