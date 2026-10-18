@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exercise real single-capture UI, plus isolated multi-date fixtures (never published)."""
+"""Exercise available historical UI, plus isolated multi-date fixtures (never published)."""
 from datetime import date, timedelta
 import functools
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -64,8 +64,11 @@ try:
         page.goto(base,wait_until='networkidle')
         page.locator('.table-scroll').scroll_into_view_if_needed()
         page.wait_for_selector('#rows .trend-cell svg')
-        assert page.locator('#rows .trend-cell svg').first.locator('circle').count()==1
-        assert 'Primera captura' in page.locator('#rows .trend-cell').first.inner_text()
+        trends=json.loads((ROOT/'docs/data/trends-publicContributions.json').read_text())
+        first_login=page.locator('#rows tr').first.get_attribute('data-login').lower()
+        expected=sum(v is not None for v in trends['ranks'][first_login])
+        assert page.locator('#rows .trend-cell svg').first.locator('circle').count()==expected
+        if expected==1: assert 'Primera captura' in page.locator('#rows .trend-cell').first.inner_text()
         login=page.locator('#rows tr').first.get_attribute('data-login')
         page.locator('#rows [data-favorite]').first.click()
         assert page.locator('#rows [data-favorite]').first.get_attribute('aria-pressed')=='true'
@@ -78,19 +81,19 @@ try:
         page.locator('#rows .trend-detail').click()
         page.wait_for_selector('#evolution-app:not([hidden])')
         assert page.locator('#compare-chips button').count()==1
-        assert 'Primera captura' in page.locator('#e-coverage').inner_text()
-        assert page.locator('#profile-chart svg circle').count()==1
+        if expected==1: assert 'Primera captura' in page.locator('#e-coverage').inner_text()
+        assert page.locator('#profile-chart svg circle').count()==expected
         with page.expect_download() as download:
             page.locator('#download-card').click()
         card=Path(download.value.path()).read_text()
         assert login.lower() in card and 'svg' in card
         page.screenshot(path=str(artifacts/'evolution-initial.png'),full_page=True)
         page.locator('#e-city').select_option('lima')
-        assert 'Sin cobertura' in page.locator('#community-charts').inner_text()
-        assert page.locator('#past-rows tr').count()==0
+        # The legacy first observation has no location metadata; never infer it.
+        assert 'No hay cobertura local comparable' in page.locator('#matched-summary').inner_text()
         page.goto(base+'ciudades/lima/',wait_until='networkidle')
         assert page.locator('#rows .local-rank').first.inner_text().startswith('Puesto local:')
-        assert 'próximas capturas' in page.locator('#history-preview').inner_text() or 'Sin cobertura' in page.locator('#history-preview').inner_text()
+        assert 'Primera captura' in page.locator('#history-preview').inner_text() or 'Sin cobertura' in page.locator('#history-preview').inner_text()
         for width in (320,390,768,1440):
             page.set_viewport_size({'width':width,'height':900})
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), ('city',width)
@@ -128,6 +131,8 @@ try:
         page.locator('#e-tier').select_option('yearly')
         page.wait_for_function("document.querySelector('#evolution-app').getAttribute('aria-busy')!== 'true'")
         assert page.locator('#e-from option').count()==1
+        assert 'Primera captura' in page.locator('#e-coverage').inner_text()
+        assert page.locator('#profile-chart svg').first.locator('circle').count()==1
         page.locator('#e-tier').select_option('daily')
         page.wait_for_function("document.querySelector('#evolution-app').getAttribute('aria-busy')!== 'true'")
         page.locator('#e-city').select_option('lima')

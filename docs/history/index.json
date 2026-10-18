@@ -16,14 +16,20 @@
     "daily": [
       {
         "path": "daily/2026-10.json",
-        "bytes": 23717,
-        "snapshots": 1,
+        "bytes": 50894,
+        "snapshots": 2,
         "periods": [
           {
             "period": "2026-10-16",
             "date": "2026-10-16",
             "profiles": 964,
             "closed": true
+          },
+          {
+            "period": "2026-10-17",
+            "date": "2026-10-17",
+            "profiles": 964,
+            "closed": false
           }
         ]
       }
@@ -31,12 +37,12 @@
     "monthly": [
       {
         "path": "monthly/2026.json",
-        "bytes": 23717,
+        "bytes": 27283,
         "snapshots": 1,
         "periods": [
           {
             "period": "2026-10",
-            "date": "2026-10-16",
+            "date": "2026-10-17",
             "profiles": 964,
             "closed": false
           }
@@ -46,12 +52,12 @@
     "yearly": [
       {
         "path": "yearly/2026.json",
-        "bytes": 23717,
+        "bytes": 27283,
         "snapshots": 1,
         "periods": [
           {
             "period": "2026",
-            "date": "2026-10-16",
+            "date": "2026-10-17",
             "profiles": 964,
             "closed": false
           }
@@ -60,9 +66,9 @@
     ]
   },
   "latest": {
-    "date": "2026-10-16",
-    "source_commit": "ca669ff2629fdb3f9b4025956456b7391472d0cf",
-    "source_updated_at": "2026-10-17T02:14:47Z",
+    "date": "2026-10-17",
+    "source_commit": "5e8ce95a793a05f85b7fbc4e76bb22f86a33fdab",
+    "source_updated_at": "2026-10-18T02:14:34Z",
     "profiles": 964
   }
 }
