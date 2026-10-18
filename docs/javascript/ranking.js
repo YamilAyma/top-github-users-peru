@@ -14,6 +14,7 @@
     !value || value === "undefined value" ? "" : String(value);
   const state = {
     users: [],
+    cities: [],
     metric: document.body.dataset.initialMetric || "publicContributions",
     direction: -1,
     start: Number(document.body.dataset.start || 0),
@@ -179,7 +180,7 @@
       observer?.observe($("feed-sentinel"));
     $("export").disabled = filtered.length === 0;
     $("static-pagination").hidden = Boolean(
-      query ||
+      query || $("only-favorites").checked ||
         city !== (document.body.dataset.city || "") ||
         state.direction === 1 ||
         state.metric !== document.body.dataset.initialMetric,
@@ -212,6 +213,8 @@
       if (tableVisible && !data) loadTrends(metric);
       return;
     }
+    $('trend-period').textContent=`Puesto nacional · ${data.dates.length} capturas`;
+    $('trend-coverage').textContent=data.dates.length ? `${data.dates.length} capturas: ${history.dateLabel(data.dates[0])} – ${history.dateLabel(data.dates.at(-1))}. Se muestran las fechas registradas dentro de los últimos 90 días.${data.dates.length<90?' Aún no hay 90 días completos de historial.':''}` : 'Todavía no hay capturas históricas.';
     document.querySelectorAll('#rows tr').forEach(tr=>{
       const cell=tr.querySelector('.trend-cell');
       if (!cell) return;
@@ -219,9 +222,11 @@
       cell.replaceChildren();
       if (!values) { cell.append(element('span','history-empty','Sin capturas')); return; }
       const detail=element('a','trend-detail');
-      detail.href=`./evolucion/?users=${encodeURIComponent(tr.dataset.login)}&metric=${metric}${document.body.dataset.city?`&city=${document.body.dataset.city}`:''}`;
+      detail.href=`./evolucion/?users=${encodeURIComponent(tr.dataset.login)}&metric=${metric}${$('city').value?`&city=${encodeURIComponent($('city').value)}`:''}`;
       detail.setAttribute('aria-label', `Explorar evolución de ${tr.dataset.login}`);
-      detail.append(history.chart(data.dates, values, {rank:true, window:data.window, label:`Puesto nacional de ${tr.dataset.login}: ${labels[metric]}`}));
+      const finite=values.filter(v=>v!==null);
+      const change=finite.length>1 ? finite[0]-finite.at(-1) : 0;
+      detail.append(history.chart(data.dates, values, {rank:true, minSpan:Math.max(10,(finite[0] || 1)*.1), color:change>0?'#176b55':change<0?'#b63735':'#737b87', label:`Puesto nacional de ${tr.dataset.login}: ${labels[metric]}`}));
       cell.append(detail);
       const valid=values.map((value,i)=>value===null ? -1 : i).filter(i=>i>=0);
       if (valid.length < 2) {
@@ -289,18 +294,6 @@
       document.querySelectorAll("button[data-sort]").forEach((button) => {
         button.disabled = false;
       });
-      const summaryUsers = document.body.dataset.city
-        ? state.users.filter((user) =>
-            user.cities.includes(document.body.dataset.city),
-          )
-        : state.users;
-      $("stat-users").textContent = format.format(summaryUsers.length);
-      $("stat-contributions").textContent = format.format(
-        summaryUsers.reduce((sum, user) => sum + user.publicContributions, 0),
-      );
-      $("stat-followers").textContent = format.format(
-        summaryUsers.reduce((sum, user) => sum + user.followers, 0),
-      );
       if (data.updatedAt) {
         const parts = new Intl.DateTimeFormat("es-PE", {
           year: "numeric",
@@ -315,17 +308,19 @@
         $("updated").textContent =
           `Datos al ${part("day")}/${part("month")}/${part("year")} ${part("hour")}:${part("minute")} · hora de Perú`;
       } else $("updated").textContent = "Fuente: caché del repositorio";
-      data.cities.forEach((city) => {
-        const option = element("option", "", city.label);
-        option.value = city.id;
-        $("city").append(option);
+      state.cities=data.cities;
+      $('city').replaceChildren();
+      const all=element('option','',`Todo Perú · ${format.format(state.users.length)} perfiles`);all.value='';$('city').append(all);
+      data.cities.forEach(city=>{
+        const count=state.users.filter(user=>user.cities.includes(city.id)).length;
+        const option=element('option','',`${city.label} · ${format.format(count)} perfiles`);option.value=city.id;$('city').append(option);
       });
-      if (document.body.dataset.city) {
-        $("city").value = document.body.dataset.city;
-        $("city").disabled = true;
-        $("city").title =
-          "Esta página muestra una selección de ciudad. Usa los enlaces para explorar otras vistas.";
-      }
+      const requested=new URLSearchParams(location.search).get('city');
+      $('city').value=document.body.dataset.city || (data.cities.some(city=>city.id===requested) ? requested : '');
+      if ($('city').value && !document.body.dataset.city) { state.start=0;state.visible=state.batch; }
+      $('city').disabled=Boolean(document.body.dataset.city);
+      if (document.body.dataset.city) $('city').title='Usa Ver todo Perú para cambiar libremente de ciudad.';
+      updateScope();
       render();
     } catch (error) {
       $("status").textContent =
@@ -339,10 +334,24 @@
     state.visible = state.batch;
     render();
   });
-  $("city").addEventListener("change", () => {
-    state.start = 0;
-    state.visible = state.batch;
-    render();
+  function updateScope() {
+    const city=document.body.dataset.city || $('city').value;
+    const group=city ? state.users.filter(u=>u.cities.includes(city)) : state.users;
+    $('stat-users').textContent=format.format(group.length);
+    $('stat-contributions').textContent=format.format(group.reduce((n,u)=>n+u.publicContributions,0));
+    $('stat-followers').textContent=format.format(group.reduce((n,u)=>n+u.followers,0));
+    const label=state.cities.find(c=>c.id===city)?.label;
+    $('stat-scope').textContent=label ? `Perfiles que mencionan ${label}` : 'Personas y organizaciones de Perú';
+    const link=document.querySelector('#history-preview .text-link');
+    if(link) link.href=`./evolucion/${city?`?city=${encodeURIComponent(city)}`:''}`;
+    window.dispatchEvent(new CustomEvent('ranking-scope-changed',{detail:{city}}));
+  }
+  $('city').addEventListener('change',()=>{
+    state.start=0;state.visible=state.batch;
+    const url=new URL(location.href);
+    if($('city').value) url.searchParams.set('city',$('city').value);else url.searchParams.delete('city');
+    window.history.replaceState(null,'',url);
+    updateScope();render();
   });
   document.querySelectorAll("[data-metric]").forEach((button) =>
     button.addEventListener("click", () => {

@@ -93,10 +93,7 @@
     $('community-charts').replaceChildren();
     for (const [key,label,field] of [['profiles','Perfiles registrados',null],['publicContributions','Contador público agregado',1],['followers','Seguidores acumulados',3]]) {
       const values=selected.map(s=>{const rows=cityRows(s);return rows===null?null:field===null?rows.length:rows.reduce((n,r)=>n+r[field],0);});
-      const valid=values.filter(v=>v!==null), card=H.node('article','history-card');
-      card.append(H.node('h3','',label),H.node('strong','history-value',valid.length?fmt.format(valid.at(-1)):'Sin cobertura'));
-      card.append(H.chart(dates,values,{width:420,height:100,daily:tier==='daily', interval:tier,label}));
-      card.append(H.node('p','',valid.length===1?'Una captura; aún no hay una tendencia.':valid.length===0?'Estas capturas no incluyen ubicaciones históricas para la ciudad.':`${valid.length} capturas con cobertura. Último dato: ${H.dateLabel(selected[values.findLastIndex(v=>v!==null)].date)}.`));
+      const card=H.metricCard(dates,values,label,{interval:tier});
       $('community-charts').append(card);
     }
     const a=cityRows(selected[0]), b=cityRows(selected.at(-1));

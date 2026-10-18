@@ -62,6 +62,32 @@ try:
         page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
         page.route('https://avatars.githubusercontent.com/**',lambda r:r.abort())
         page.goto(base,wait_until='networkidle')
+        page.locator('#history-preview').scroll_into_view_if_needed()
+        page.wait_for_selector('#preview-charts svg')
+        assert page.locator('.city-discovery').count()==0
+        assert page.locator('#city option').count()==35
+        assert page.locator('#city').evaluate("el=>Boolean(el.closest('.scope-selector'))")
+        assert page.locator('#preview-charts h3').all_inner_texts()==['Contribuciones públicas','Seguidores acumulados']
+        assert 'capturas disponibles' in page.locator('#preview-coverage').inner_text()
+        assert 'sin cambios' in page.locator('#preview-population').inner_text()
+        # Scope updates the entire overview, including URL and future explorer navigation.
+        source=json.loads((ROOT/'docs/data/peru.json').read_text())
+        for city in ['trujillo','chiclayo','cusco','iquitos']:
+            count=sum(city in user['cities'] for user in source['users'])
+            page.locator('#city').select_option(city)
+            assert int(page.locator('#stat-users').inner_text().replace(',',''))==count
+            assert page.locator('#rows tr').count()==min(count,25)
+            assert f'city={city}' in page.url
+            assert f'city={city}' in page.locator('#history-preview .text-link').get_attribute('href')
+        page.locator('#city').select_option('trujillo')
+        page.reload(wait_until='networkidle')
+        assert page.locator('#city').input_value()=='trujillo'
+        assert int(page.locator('#stat-users').inner_text())==sum('trujillo' in user['cities'] for user in source['users'])
+        page.goto(base+'publicas/pagina/2/?city=trujillo',wait_until='networkidle')
+        assert page.locator('#rows tr').count()==sum('trujillo' in user['cities'] for user in source['users'])
+        assert 'Mostrando 1' in page.locator('#results').inner_text()
+        page.goto(base,wait_until='networkidle')
+        page.locator('#city').select_option('')
         page.locator('.table-scroll').scroll_into_view_if_needed()
         page.wait_for_selector('#rows .trend-cell svg')
         trends=json.loads((ROOT/'docs/data/trends-publicContributions.json').read_text())
@@ -69,6 +95,16 @@ try:
         expected=sum(v is not None for v in trends['ranks'][first_login])
         assert page.locator('#rows .trend-cell svg').first.locator('circle').count()==expected
         if expected==1: assert 'Primera captura' in page.locator('#rows .trend-cell').first.inner_text()
+        first_x=page.locator('#rows .trend-cell svg').first.locator('circle').first.get_attribute('cx')
+        last_x=page.locator('#rows .trend-cell svg').first.locator('circle').last.get_attribute('cx')
+        if expected>1: assert float(last_x)-float(first_x)>100, 'Observed days should use the sparkline width'
+        # A one-position change should not consume the full graph height.
+        small=next((key for key,values in trends['ranks'].items() if len(values)==2 and all(v is not None for v in values) and abs(values[0]-values[1])==1),None)
+        if small:
+            page.locator('#search').fill(small)
+            points=page.locator('#rows .trend-cell svg').first.locator('circle').evaluate_all("dots=>dots.map(d=>Number(d.getAttribute('cy')))")
+            assert abs(points[0]-points[1])<6
+            page.locator('#search').fill('')
         login=page.locator('#rows tr').first.get_attribute('data-login')
         page.locator('#rows [data-favorite]').first.click()
         assert page.locator('#rows [data-favorite]').first.get_attribute('aria-pressed')=='true'

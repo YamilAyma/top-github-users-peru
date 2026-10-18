@@ -135,7 +135,7 @@ def build_pages(data):
         scope = history_summary['scopes'].get(city or 'peru', {})
         points = [p for p in scope.get('series', {}).get('daily', []) if p['profiles'] is not None]
         cards = ''
-        for metric, label in [('profiles', 'Perfiles registrados'), ('publicContributions', 'Contador público agregado')]:
+        for metric, label in [('publicContributions', 'Contribuciones públicas'), ('followers', 'Seguidores acumulados')]:
             value = number(points[-1][metric]) if points else 'Sin cobertura histórica'
             detail = ('Primera captura: ' + points[0]['date'] + '. Aún no hay una tendencia.') if len(points) == 1 else (f"{len(points)} capturas · {points[0]['date']} – {points[-1]['date']}" if points else 'Las capturas locales comienzan cuando se registra la ciudad; no se reconstruyen con ubicaciones actuales.')
             cards += f'<article class="history-card"><h3>{label}</h3><strong class="history-value">{value}</strong><div class="history-chart" aria-hidden="true"></div><p>{escape(detail)}</p></article>'
@@ -148,8 +148,8 @@ def build_pages(data):
                 weekly += f'<a class="mover-link" href="./evolucion/?users={login}">@{login} ↑ {mover["change"]}</a>'
         return ('<section id="history-preview" class="history-preview" aria-labelledby="history-preview-title"><div class="panel-heading"><div><div class="eyebrow">LA COMUNIDAD, EN EL TIEMPO</div>'
                 '<h2 id="history-preview-title">Así evoluciona la comunidad.</h2></div><a class="text-link" href="./evolucion/' + ('?city=' + city if city else '') + '">Explorar la evolución →</a></div>'
-                '<label class="preview-window">Período <select id="preview-days" hidden><option value="7">7 días</option><option value="30">30 días</option><option value="90" selected>90 días</option></select></label>'
-                '<div id="preview-charts" class="history-grid">' + cards + '</div><div id="preview-movers">' + weekly + '</div>'
+                '<label class="preview-window">Ventana máxima <select id="preview-days" hidden><option value="7">7 días</option><option value="30">30 días</option><option value="90" selected>90 días</option></select></label>'
+                '<p id="preview-coverage" class="history-coverage">' + (f"{len(points)} capturas disponibles en la ventana de 90 días." if points else 'Sin capturas locales disponibles.') + '</p><p id="preview-population" class="history-notice">' + (f"{number(points[-1]['profiles'])} perfiles registrados" + (' · sin cambios entre las capturas.' if len(points) > 1 and len({p['profiles'] for p in points}) == 1 else '.') if points else '') + '</p><div id="preview-charts" class="history-grid">' + cards + '</div><div id="preview-movers">' + weekly + '</div>'
                 '<p class="history-notice">Cambios de contadores registrados; no equivalen a actividad diaria. La cobertura puede variar.</p></section>')
     generated = []
     urls = []
@@ -158,10 +158,21 @@ def build_pages(data):
         'lima': ('Lima', 'Esta vista reúne perfiles cuya ubicación declarada menciona Lima como nombre completo. También puede incluir textos como “Lima, Perú” o “Perú/Lima”, e incluso menciones de varios lugares; no verifica que el perfil resida actualmente en la ciudad.'),
         'arequipa': ('Arequipa', 'Esta vista permite explorar perfiles que escribieron Arequipa en su ubicación de GitHub. Reconoce el nombre sin distinguir mayúsculas ni tildes, pero no deduce la ciudad desde coordenadas, empresas o menciones genéricas de Perú.'),
     }
+    for item in data['cities']:
+        city_copy.setdefault(item['id'], (item['label'], f"Esta vista reúne perfiles cuya ubicación declarada menciona {item['label']} como nombre completo. No verifica residencia y un perfil puede mencionar varias ciudades."))
     city_sets = {key: [u for u in users if key in u['cities']] for key in city_copy}
     city_sets = {key: group for key, group in city_sets.items() if len(group) >= 10}
-    city_links = '<section class="city-discovery" aria-labelledby="city-heading"><h2 id="city-heading">Explora por ciudad</h2><p>Según la ubicación declarada en GitHub, sin verificación de residencia.</p><div>' + ''.join(
-        f'<a href="./ciudades/{key}/"><strong>{city_copy[key][0]}</strong><span>{number(len(group))} perfiles</span></a>' for key, group in city_sets.items()) + '</div></section>' if city_sets else ''
+    def city_selector(city):
+        options = '<option value="">Todo Perú · ' + number(len(users)) + ' perfiles</option>'
+        for item in data['cities']:
+            count = sum(item['id'] in user['cities'] for user in users)
+            options += f'<option value="{escape(item["id"], quote=True)}"' + (' selected' if item['id'] == city else '') + f'>{escape(item["label"])} · {number(count)} perfiles</option>'
+        fallback = ' · '.join(f'<a href="./ciudades/{key}/">{escape(city_copy[key][0])}</a>' for key in city_sets)
+        return ('<section class="scope-selector" aria-label="Ámbito de la comunidad"><div><label for="city">Explora la comunidad por ciudad</label>'
+                '<p>Ubicación declarada en GitHub; no verifica residencia.</p></div><select id="city" disabled>' + options + '</select>'
+                '<noscript><p>Vistas disponibles: ' + fallback + '. Activa JavaScript para filtrar las demás ciudades.</p></noscript></section>')
+    daily_dates = [p['date'] for p in history_summary['scopes']['peru']['series']['daily']]
+    trend_coverage = (f"{len(daily_dates)} capturas disponibles: {daily_dates[0]} – {daily_dates[-1]}. La minigráfica muestra las fechas registradas dentro de una ventana máxima de 90 días." + (' Aún no hay 90 días completos de historial.' if len(daily_dates) < 90 else '') if daily_dates else 'Todavía no hay capturas históricas disponibles.')
     for metric, (_, label) in METRICS.items():
         ranked = sorted(users, key=lambda u: (-metric_value(u, metric), u['login'].lower()))
         ranks = {}
@@ -208,7 +219,7 @@ def build_pages(data):
                         '<nav class="city-actions" aria-label="Más información de la ciudad"><a href="./metodologia/">Ver metodología y criterios</a><a href="./">Ver todo Perú</a></nav></section>')
                 values = common | {'SEO_HEAD': head_html(path, title, description) + structured_data(path, title, entries, start, crumbs), 'PAGE_TITLE': escape(title),
                     'METRIC': metric, 'CITY': city or '', 'START': str(start), 'RANKING_TITLE': escape(label + (f' · {place}' if city else '') + (f' · Página {page}' if page > 1 else '')),
-                    'HERO_TITLE': f'Ranking de GitHub<br><em>en {place}.</em>', 'BREADCRUMBS': breadcrumbs_html(crumbs), 'CITY_CONTEXT': context, 'CITY_DISCOVERY': city_links if not city else '',
+                    'HERO_TITLE': f'Ranking de GitHub<br><em>en {place}.</em>', 'BREADCRUMBS': breadcrumbs_html(crumbs), 'CITY_CONTEXT': context, 'CITY_SELECTOR': city_selector(city), 'TREND_COVERAGE': escape(trend_coverage),
                     'HISTORY_PREVIEW': preview(city), 'STAT_SCOPE': f'Perfiles que mencionan {place}' if city else 'Personas y organizaciones de Perú',
                     'USERS': number(len(scoped)), 'CONTRIBUTIONS': number(sum(u['publicContributions'] for u in scoped)), 'FOLLOWERS': number(sum(u['followers'] for u in scoped)),
                     'ROWS': ''.join(row_html(u, ranks[u['login']], metric) for u in entries),
@@ -256,7 +267,7 @@ def build_pages(data):
     urls.append(BASE_URL + 'evolucion/')
     # Only remove files previously registered by this generator, never whole directories.
     manifest = docs / '.generated-pages.json'
-    valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|(?:metodologia|evolucion)/index\.html|ciudades/(?:lima|arequipa)/(?:pagina/[0-9]+/)?index\.html)'
+    valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|(?:metodologia|evolucion)/index\.html|ciudades/[a-z]+(?:-[a-z]+)*/(?:pagina/[0-9]+/)?index\.html)'
     previous = json.loads(manifest.read_text()) if manifest.exists() else []
     for old in set(previous) - set(generated):
         if not re.fullmatch(valid, old):

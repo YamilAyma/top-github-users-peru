@@ -91,8 +91,7 @@ la comprobación de producción, robots raíz y Search Console es independiente.
 
 ## Ciudades y datos estructurados
 
-Se publican selecciones iniciales de Lima y Arequipa en `/ciudades/lima/` y
-`/ciudades/arequipa/`, con páginas de 25 perfiles y canonical propio. Solo se
+Se publican selecciones de las ciudades configuradas con al menos diez perfiles (actualmente Lima, Arequipa, Trujillo, Chiclayo y Cusco) en `/ciudades/<ciudad>/`, con páginas de 25 perfiles y canonical propio. Solo se
 genera una selección si cuenta con al menos diez perfiles; el manifiesto retira
 las páginas antiguas si deja de alcanzar ese mínimo. El contenido explica la
 coincidencia de ubicación y sus límites. Las tarjetas muestran cifras de esa
@@ -186,3 +185,24 @@ Pruebas de datos: `python3 scripts/test-history.py` y
 Prueba del explorador: `python3 scripts/test-evolution-browser.py` (Playwright +
 Chromium, igual que las pruebas existentes de navegación). Incluye escenarios
 sintéticos aislados de 90 días que nunca se escriben en los datos publicados.
+
+## Selector general y lectura de gráficas
+
+El selector al inicio de la página reúne las 34 ciudades configuradas y el
+número de perfiles de cada una, incluso cuando es cero. En la vista nacional
+actualiza las tres tarjetas, el resumen histórico y la tabla; la selección
+se conserva en `?city=...`. En una ruta estática de ciudad queda fijado a esa
+ciudad. Sin JavaScript se conservan enlaces a las ciudades con páginas propias.
+
+Las minigráficas distribuyen las capturas disponibles a lo largo de su ancho
+y muestran las fechas y el número de observaciones; 90 días es la retención
+máxima, no una afirmación de cobertura. Una amplitud mínima de diez posiciones
+(o el 10 % del puesto inicial si es mayor) evita exagerar movimientos pequeños.
+No se unen días ausentes. El color gris indica ausencia de cambio entre extremos.
+
+El resumen destaca contribuciones públicas y seguidores. Su línea representa
+la variación del contador respecto a la primera captura disponible, con valores
+en el eje, fechas de inicio/fin, diferencia y porcentaje; no actividad diaria.
+La cantidad de perfiles permanece como indicador de cobertura y declara cuando
+no cambia. La página de evolución mantiene además la gráfica de perfiles,
+con la misma indicación explícita de estabilidad.

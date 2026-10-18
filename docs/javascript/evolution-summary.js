@@ -5,24 +5,23 @@
   const H=window.PeruHistory, fmt=new Intl.NumberFormat('es-PE');
   const select=document.getElementById('preview-days');
   let summary;
-  const metricNames={profiles:'Perfiles registrados', publicContributions:'Contador público agregado'};
+  const metricNames={publicContributions:'Contribuciones públicas', followers:'Seguidores acumulados'};
   function render() {
-    const city=document.body.dataset.city || '', scope=summary.scopes[city || 'peru'];
+    const city=document.body.dataset.city || document.getElementById('city')?.value || '', scope=summary.scopes[city || 'peru'];
     const all=scope?.series.daily || [];
     const end=summary.window?.through;
     const points=all.filter(p=>!end || H.day(end)-H.day(p.date)<Number(select.value));
     const wrap=document.getElementById('preview-charts');
     wrap.replaceChildren();
-    for (const metric of ['profiles','publicContributions']) {
-      const card=H.node('article','history-card');
-      card.append(H.node('h3','',metricNames[metric]));
-      const valid=points.filter(p=>p[metric]!==null);
-      card.append(H.node('strong','history-value',valid.length?fmt.format(valid.at(-1)[metric]):'Sin cobertura histórica'));
-      if (valid.length) {
-        card.append(H.chart(points.map(p=>p.date), points.map(p=>p[metric]), {width:420,height:80,label:metricNames[metric]}));
-        card.append(H.node('p','',valid.length===1 ? `Primera captura: ${H.dateLabel(valid[0].date)}. Aún no hay una tendencia.` : `${valid.length} capturas · ${H.dateLabel(valid[0].date)} – ${H.dateLabel(valid.at(-1).date)}`));
-      } else card.append(H.node('p','','Las capturas locales comienzan cuando se registra la ciudad; no se reconstruyen con ubicaciones actuales.'));
-      wrap.append(card);
+    const dates=points.map(p=>p.date);
+    const valid=points.filter(p=>p.profiles!==null);
+    const days=valid.length ? H.day(valid.at(-1).date)-H.day(valid[0].date)+1 : 0;
+    const coverage=document.getElementById('preview-coverage');
+    coverage.textContent=valid.length ? `${valid.length} ${valid.length===1?'captura disponible':'capturas disponibles'} · ${days} ${days===1?'día registrado':'días de período'} de una ventana máxima de ${select.value} días. ${valid.length<Number(select.value)?'El historial todavía no cubre toda la ventana seleccionada.':''}` : 'No hay capturas con cobertura local en esta ventana.';
+    const population=document.getElementById('preview-population');
+    population.textContent=valid.length ? `Perfiles registrados: ${fmt.format(valid.at(-1).profiles)}${valid.length>1 && valid.every(p=>p.profiles===valid[0].profiles)?` · sin cambios en la cantidad (${valid.length} capturas).`:valid.length>1?` · ${valid[0].profiles} → ${valid.at(-1).profiles} entre las fechas disponibles.`:' · primera captura.'}` : '';
+    for (const metric of ['publicContributions','followers']) {
+      wrap.append(H.metricCard(dates,points.map(p=>p[metric]),metricNames[metric]));
     }
     const weekly=document.getElementById('preview-movers');
     weekly.replaceChildren();
@@ -47,6 +46,7 @@
       select.addEventListener('change',render);
     } catch { document.getElementById('preview-movers').textContent='El explorador conserva las capturas disponibles. Abre Evolución para consultar o reintentar su carga.'; }
   }
+  window.addEventListener('ranking-scope-changed',()=>{if(summary)render();});
   if ('IntersectionObserver' in window) {
     const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();load();}}, {rootMargin:'160px'});
     observer.observe(section);

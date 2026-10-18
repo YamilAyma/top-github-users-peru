@@ -1131,3 +1131,30 @@ footer {
 .history-preview .history-card p { min-height: 42px; }
 #preview-movers { min-height: 52px; font-size: 13px; line-height: 1.8; }
 .trend-cell { height: 84px; }
+
+/* One scope selector controls the whole overview. */
+.scope-selector { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin: 22px 0; padding: 18px 22px; border: 1px solid var(--line); background: #fff; border-radius: 12px; }
+.scope-selector label { font-size: 15px; font-weight: 650; }
+.scope-selector p { margin: 5px 0 0; font-size: 12px; color: var(--muted); }
+.scope-selector select { min-width: 250px; max-width: 100%; font: inherit; font-size: 14px; background: #fff; color: var(--ink); border: 1px solid #dddcd9; border-radius: 7px; padding: 11px 14px; }
+.scope-selector noscript { flex-basis: 100%; }
+.scope-selector a { text-decoration: underline; color: #96322f; }
+.history-coverage { margin: 12px 0 5px; padding: 12px 14px; border-radius: 7px; background: #f5f3ef; color: #555963; font-size: 13px; line-height: 1.7; }
+.counter-change { font-weight: 600; min-height: 36px; }
+.history-card .counter-change.up { color: #176b55; }
+.history-card .counter-change.down { color: #a22f38; }
+.delta-plot { display: grid; grid-template-columns: 48px minmax(0,1fr); gap: 8px; margin: 14px 0 10px; }
+.delta-axis { display: flex; flex-direction: column; justify-content: space-between; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; padding: 2px 0; }
+.history-card .chart-endpoints { margin-left: 56px; font-size: 11px; }
+.history-card .history-card-caption { min-height: 40px; }
+.history-preview .history-card { min-height: 312px; }
+.history-card .history-value { margin-bottom: 6px; }
+#trend-coverage { max-width: 100ch; margin: 8px 0 16px; }
+.trend-column { min-width: 158px; }
+.trend-cell { width: 158px; min-width: 158px; padding-left: 10px; padding-right: 10px; }
+.trend-cell .history-chart { height: 30px; }
+@media(max-width: 600px) {
+  .scope-selector { padding: 18px; }
+  .scope-selector select { width: 100%; min-width: 0; }
+  .history-coverage { font-size: 12px; }
+}
