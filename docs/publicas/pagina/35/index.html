@@ -26,9 +26,10 @@
     />
     <meta name="theme-color" content="#b63735" />
     <title>Ranking de GitHub en Perú: contribuciones públicas | Página 35</title>
-    <link rel="stylesheet" href="./css/styles.css?v=a3d585b39e23" />
-    <script src="./javascript/history-ui.js?v=f9c71adcc34f" defer></script>
-    <script src="./javascript/ranking.js?v=3d48badede9b" defer></script>
+    <link rel="stylesheet" href="./css/styles.css?v=c8cf791997a8" />
+    <script src="./javascript/history-ui.js?v=0fdb935602fa" defer></script>
+    <script src="./javascript/ranking.js?v=cbd9719a9a11" defer></script>
+    <script src="./javascript/evolution-summary.js?v=bcfbfd7c5880" defer></script>
     <script src="./javascript/footer-flag.js?v=a9ec2ce2ddaf" defer></script>
   </head>
   <body
@@ -61,14 +62,14 @@
       <header class="topbar">
         <a class="brand" href="./"
           ><span class="brand-mark">PE</span> GitHub <strong>Perú</strong></a
-        ><a
+        ><nav class="site-nav" aria-label="Principal"><a href="./evolucion/">Evolución</a><a
           class="repository"
           href="https://github.com/YamilAyma/top-github-users-peru"
           target="_blank"
           rel="noopener noreferrer"
           >Ver repositorio
           <img class="external-icon" src="./assets/arrow-up-right.svg" alt=""
-        /></a>
+        /></a></nav>
       </header>
       <section class="hero" aria-labelledby="title">
         <div class="eyebrow">TALENTO LOCAL. IMPACTO GLOBAL.</div>
@@ -108,6 +109,7 @@
           <p>Suma por perfil; no son personas únicas</p>
         </article>
       </section>
+      <section id="history-preview" class="history-preview" aria-labelledby="history-preview-title"><div class="panel-heading"><div><div class="eyebrow">LA COMUNIDAD, EN EL TIEMPO</div><h2 id="history-preview-title">Así evoluciona la comunidad.</h2></div><a class="text-link" href="./evolucion/">Explorar la evolución →</a></div><label class="preview-window">Período <select id="preview-days" hidden><option value="7">7 días</option><option value="30">30 días</option><option value="90" selected>90 días</option></select></label><div id="preview-charts" class="history-grid"><p>1 captura disponible. Estamos construyendo el historial.</p></div><div id="preview-movers"></div><p class="history-notice">Cambios de contadores registrados; no equivalen a actividad diaria. La cobertura puede variar.</p></section>
       <section class="city-discovery" aria-labelledby="city-heading"><h2 id="city-heading">Explora por ciudad</h2><p>Según la ubicación declarada en GitHub, sin verificación de residencia.</p><div><a href="./ciudades/lima/"><strong>Lima</strong><span>662 perfiles</span></a><a href="./ciudades/arequipa/"><strong>Arequipa</strong><span>31 perfiles</span></a></div></section>
       <section class="ranking-panel" aria-labelledby="ranking-title">
         <div class="panel-heading">
@@ -224,7 +226,7 @@
           </div>
         </div>
       </section>
-      <nav id="static-pagination" class="static-pagination" aria-label="Páginas del ranking"><span>Página 35 de 39</span><a rel="prev" href="./publicas/pagina/34/">Página anterior</a><a rel="next" href="./publicas/pagina/36/">Página siguiente</a></nav><nav class="ranking-links" aria-label="Rankings por métrica"><a href="./">Públicas</a><a href="./totales/">Totales</a><a href="./seguidores/">Seguidores</a><a href="./metodologia/">Metodología</a></nav>
+      <nav id="static-pagination" class="static-pagination" aria-label="Páginas del ranking"><span>Página 35 de 39</span><a rel="prev" href="./publicas/pagina/34/">Página anterior</a><a rel="next" href="./publicas/pagina/36/">Página siguiente</a></nav><nav class="ranking-links" aria-label="Rankings por métrica"><a href="./">Públicas</a><a href="./totales/">Totales</a><a href="./seguidores/">Seguidores</a><a href="./evolucion/">Evolución</a><a href="./metodologia/">Metodología</a></nav>
       <aside class="about">
         <strong>Cada aporte cuenta.</strong>
         <p>

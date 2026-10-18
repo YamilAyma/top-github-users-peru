@@ -155,4 +155,34 @@ El workflow verifica un cambio de caché registrado en Git después de su checkp
 antes de crear una observación; una ejecución sin cambio confirmado solo aplica
 retención. No requiere nuevas dependencias ni secretos. Consulta el formato,
 las fechas y sus límites en [docs/history/README.md](../docs/history/README.md).
-La gráfica y la búsqueda histórica todavía no forman parte de esta etapa.
+El build deriva resúmenes y posiciones compactas para la interfaz. Las tablas
+muestran minigráficas SVG de posición nacional de la métrica seleccionada,
+con una petición diferida y compartida por métrica, solo al acercarse a la tabla.
+Se dibujan únicamente las filas visibles del feed; no se descarga el archivo
+histórico completo para mostrar estas minigráficas. No hay dependencias de charts.
+
+## Explorador de evolución
+
+`/evolucion/` ofrece selección de ciudad y fechas reales, detalle diario de 7/30/90
+días y archivos mensuales/anuales. Compara hasta tres usuarios con una escala
+compartida; permite alternar posición nacional y contador, consultar el ranking
+en una fecha, compartir el estado por URL y descargar una tarjeta SVG del primer
+perfil. Los archivos de capturas se solicitan por mes/año según la vista y se
+reutilizan en memoria; nunca se consulta GitHub desde el navegador.
+
+La principal y las ciudades enlazan un resumen con gráficas y pulso semanal.
+Este último compara la captura más reciente con una real entre 7 y 14 días antes,
+indicando ambas fechas y separando perfiles comparables, entradas y salidas.
+Las vistas locales no asignan ubicaciones actuales a capturas anteriores.
+Sin cobertura local se indica desconocido; no se representa como cero.
+
+Los favoritos persisten solo en `localStorage` bajo `github-peru:favorites:v1`.
+No requieren cuenta ni envían información a otro servidor. La tabla conserva
+su puesto nacional y añade el local en páginas de ciudad. Las minigráficas abren
+el explorador con el perfil y métrica seleccionados.
+
+Pruebas de datos: `python3 scripts/test-history.py` y
+`python3 scripts/test-evolution.py` (stdlib, incluidas en CI).
+Prueba del explorador: `python3 scripts/test-evolution-browser.py` (Playwright +
+Chromium, igual que las pruebas existentes de navegación). Incluye escenarios
+sintéticos aislados de 90 días que nunca se escriben en los datos publicados.

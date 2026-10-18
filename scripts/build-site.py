@@ -129,9 +129,21 @@ def build_pages(data):
     common = {'UPDATED': escape(updated), 'USERS': number(len(users)),
               'CONTRIBUTIONS': number(sum(u['publicContributions'] for u in users)),
               'FOLLOWERS': number(sum(u['followers'] for u in users)), 'METRIC_LINKS': ''}
+    summary_path = docs / 'data/evolution-summary.json'
+    history_summary = json.loads(summary_path.read_text()) if summary_path.exists() else {'scopes': {'peru': {'series': {'daily': []}}}}
+    def preview(city):
+        scope = history_summary['scopes'].get(city or 'peru', {})
+        points = [p for p in scope.get('series', {}).get('daily', []) if p['profiles'] is not None]
+        status = (f"{len(points)} captura{'s' if len(points) != 1 else ''} disponible{'s' if len(points) != 1 else ''}. "
+                  + ('Estamos construyendo el historial.' if len(points) < 2 else 'Consulta los cambios entre fechas.')) if points else 'Las próximas capturas registrarán también la evolución de esta ciudad.'
+        return ('<section id="history-preview" class="history-preview" aria-labelledby="history-preview-title"><div class="panel-heading"><div><div class="eyebrow">LA COMUNIDAD, EN EL TIEMPO</div>'
+                '<h2 id="history-preview-title">Así evoluciona la comunidad.</h2></div><a class="text-link" href="./evolucion/' + ('?city=' + city if city else '') + '">Explorar la evolución →</a></div>'
+                '<label class="preview-window">Período <select id="preview-days" hidden><option value="7">7 días</option><option value="30">30 días</option><option value="90" selected>90 días</option></select></label>'
+                '<div id="preview-charts" class="history-grid"><p>' + status + '</p></div><div id="preview-movers"></div>'
+                '<p class="history-notice">Cambios de contadores registrados; no equivalen a actividad diaria. La cobertura puede variar.</p></section>')
     generated = []
     urls = []
-    links = '<nav class="ranking-links" aria-label="Rankings por métrica"><a href="./">Públicas</a><a href="./totales/">Totales</a><a href="./seguidores/">Seguidores</a><a href="./metodologia/">Metodología</a></nav>'
+    links = '<nav class="ranking-links" aria-label="Rankings por métrica"><a href="./">Públicas</a><a href="./totales/">Totales</a><a href="./seguidores/">Seguidores</a><a href="./evolucion/">Evolución</a><a href="./metodologia/">Metodología</a></nav>'
     city_copy = {
         'lima': ('Lima', 'Esta vista reúne perfiles cuya ubicación declarada menciona Lima como nombre completo. También puede incluir textos como “Lima, Perú” o “Perú/Lima”, e incluso menciones de varios lugares; no verifica que el perfil resida actualmente en la ciudad.'),
         'arequipa': ('Arequipa', 'Esta vista permite explorar perfiles que escribieron Arequipa en su ubicación de GitHub. Reconoce el nombre sin distinguir mayúsculas ni tildes, pero no deduce la ciudad desde coordenadas, empresas o menciones genéricas de Perú.'),
@@ -187,7 +199,7 @@ def build_pages(data):
                 values = common | {'SEO_HEAD': head_html(path, title, description) + structured_data(path, title, entries, start, crumbs), 'PAGE_TITLE': escape(title),
                     'METRIC': metric, 'CITY': city or '', 'START': str(start), 'RANKING_TITLE': escape(label + (f' · {place}' if city else '') + (f' · Página {page}' if page > 1 else '')),
                     'HERO_TITLE': f'Ranking de GitHub<br><em>en {place}.</em>', 'BREADCRUMBS': breadcrumbs_html(crumbs), 'CITY_CONTEXT': context, 'CITY_DISCOVERY': city_links if not city else '',
-                    'STAT_SCOPE': f'Perfiles que mencionan {place}' if city else 'Personas y organizaciones de Perú',
+                    'HISTORY_PREVIEW': preview(city), 'STAT_SCOPE': f'Perfiles que mencionan {place}' if city else 'Personas y organizaciones de Perú',
                     'USERS': number(len(scoped)), 'CONTRIBUTIONS': number(sum(u['publicContributions'] for u in scoped)), 'FOLLOWERS': number(sum(u['followers'] for u in scoped)),
                     'ROWS': ''.join(row_html(u, ranks[u['login']], metric) for u in entries),
                     'RESULTS': f'Mostrando {start + 1 if scoped else 0}–{min(start + PAGE_SIZE, len(scoped))} de {number(len(scoped))} perfiles', 'PAGE_NAV': nav}
@@ -211,9 +223,30 @@ def build_pages(data):
     destination.write_text(version_assets(html))
     generated.append('metodologia/index.html')
     urls.append(BASE_URL + 'metodologia/')
+    title = 'Evolución del ranking de GitHub en Perú'
+    crumbs = [('Ranking de Perú', ''), ('Evolución', 'evolucion/')]
+    html = (ROOT / 'web/evolucion.html').read_text()
+    daily = history_summary['scopes']['peru']['series']['daily']
+    coverage = (f"{len(daily)} captura{'s' if len(daily) != 1 else ''} diaria{'s' if len(daily) != 1 else ''} · desde {daily[0]['date']}" if daily else 'Estamos construyendo el historial')
+    static = '<section class="history-static"><h2>El archivo hasta hoy</h2><p>' + escape(coverage) + '. '
+    if daily:
+        last = daily[-1]
+        static += f"Última captura: {last['date']}, con {number(last['profiles'])} perfiles y {number(last['publicContributions'])} contribuciones públicas registradas. "
+    static += 'Las capturas mensuales y anuales conservan el último dato disponible del período.</p></section>'
+    values = {'SEO_HEAD': head_html('evolucion/', title, 'Histórico del ranking de GitHub Perú: compara perfiles, posiciones y contadores en capturas diarias, mensuales y anuales.') + structured_data('evolucion/', title, None, 0, crumbs),
+              'BREADCRUMBS': breadcrumbs_html(crumbs), 'HISTORY_COVERAGE': escape(coverage), 'HISTORY_STATIC': static,
+              'CITY_OPTIONS': ''.join(f'<option value="{escape(c["id"], quote=True)}">{escape(c["label"])}</option>' for c in data['cities']),
+              'FOOTER': template[template.index('    <footer>'):template.index('  </body>')]}
+    for key, value in values.items():
+        html = html.replace('<!--' + key + '-->', value)
+    destination = docs / 'evolucion/index.html'
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(version_assets(html))
+    generated.append('evolucion/index.html')
+    urls.append(BASE_URL + 'evolucion/')
     # Only remove files previously registered by this generator, never whole directories.
     manifest = docs / '.generated-pages.json'
-    valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|metodologia/index\.html|ciudades/(?:lima|arequipa)/(?:pagina/[0-9]+/)?index\.html)'
+    valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|(?:metodologia|evolucion)/index\.html|ciudades/(?:lima|arequipa)/(?:pagina/[0-9]+/)?index\.html)'
     previous = json.loads(manifest.read_text()) if manifest.exists() else []
     for old in set(previous) - set(generated):
         if not re.fullmatch(valid, old):

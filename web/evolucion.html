@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<!--SEO_HEAD-->
+<title>Evolución del ranking de GitHub en Perú</title>
+<meta name="description" content="Explora el histórico de GitHub Perú: evolución de posiciones, contribuciones y seguidores, comparaciones de perfiles y capturas por fecha.">
+<meta name="theme-color" content="#b63735">
+<link rel="stylesheet" href="./css/styles.css">
+<script src="./javascript/history-ui.js" defer></script>
+<script src="./javascript/evolution.js" defer></script>
+<script src="./javascript/footer-flag.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark">PE</span> GitHub <strong>Perú</strong></a><nav class="site-nav" aria-label="Principal"><a href="./">Ranking</a><a href="./evolucion/" aria-current="page">Evolución</a></nav></header>
+<main class="evolution-page">
+<!--BREADCRUMBS-->
+<section class="evolution-intro"><div class="eyebrow">LA COMUNIDAD, EN EL TIEMPO</div><h1>Cada posición<br>tiene una <em>historia.</em></h1><p>Explora cómo cambia el ranking, encuentra tu perfil y compara capturas reales de GitHub Perú.</p><span class="badge"><!--HISTORY_COVERAGE--></span></section>
+<!--HISTORY_STATIC-->
+<p class="history-notice">Las variaciones de los contadores no equivalen a contribuciones realizadas durante el período. La selección de perfiles puede cambiar. <a href="./metodologia/#historico">Cómo leer estos datos</a>.</p>
+<noscript><p>Activa JavaScript para comparar perfiles y fechas. También puedes consultar las <a href="./history/index.json">capturas disponibles en JSON</a> y el <a href="./">ranking actual</a>.</p></noscript>
+<div id="evolution-status" role="status" aria-live="polite">Cargando el explorador…</div><button id="evolution-retry" class="button" hidden>Reintentar histórico</button>
+<div id="evolution-app" hidden>
+<section class="evolution-controls" aria-label="Seleccionar período y ámbito">
+<label>Ámbito<select id="e-city"><option value="">Todo Perú</option><!--CITY_OPTIONS--></select></label>
+<label>Archivo<select id="e-tier"><option value="daily">Diario · últimos 90 días</option><option value="monthly">Capturas mensuales</option><option value="yearly">Capturas anuales</option></select></label>
+<label id="e-days-label">Ventana<select id="e-days"><option value="7">7 días</option><option value="30">30 días</option><option value="90" selected>90 días</option></select></label>
+<label>Métrica<select id="e-metric"><option value="publicContributions">Contribuciones públicas</option><option value="total">Contribuciones totales</option><option value="followers">Seguidores</option></select></label>
+<label>Desde<select id="e-from"></select></label><label>Hasta<select id="e-to"></select></label>
+</section>
+<p id="e-coverage" class="history-notice"></p>
+<section aria-labelledby="community-heading"><div class="panel-heading"><div><div class="eyebrow">UNA MIRADA A LA COMUNIDAD</div><h2 id="community-heading">Cómo cambia la selección</h2></div></div><div id="community-charts" class="history-grid"></div><p id="matched-summary" class="history-notice"></p></section>
+<section class="comparison-panel" aria-labelledby="comparison-heading">
+<div class="panel-heading"><div><div class="eyebrow">ENCUENTRA TU RECORRIDO</div><h2 id="comparison-heading">Tu evolución, en perspectiva.</h2></div><label>Mostrar<select id="e-view"><option value="rank">Puesto nacional</option><option value="value">Valor del contador</option></select></label></div>
+<form id="compare-form" class="compare-form"><label for="e-profile" class="sr-only">Usuario de GitHub para comparar</label><input id="e-profile" type="search" placeholder="Escribe tu @usuario" list="profile-suggestions" autocomplete="off" maxlength="39"><datalist id="profile-suggestions"></datalist><button class="button" type="submit">Añadir perfil</button><span>Hasta 3 perfiles</span></form>
+<p id="compare-status" role="status"></p><div id="compare-chips" class="compare-chips"></div>
+<div id="profile-chart"></div><div id="profile-details"></div>
+<div class="share-actions"><button id="share-view" class="button">Copiar enlace de esta vista</button><button id="download-card" class="button" disabled>Descargar tarjeta SVG</button><label class="sr-only" for="share-url">Enlace de la vista</label><input id="share-url" readonly hidden></div><p id="share-status" role="status"></p>
+</section>
+<section class="history-ranking" aria-labelledby="past-ranking-heading"><div class="panel-heading"><div><div class="eyebrow">VUELVE A UNA CAPTURA</div><h2 id="past-ranking-heading">El ranking en esa fecha</h2></div><label>Buscar usuario<input id="past-search" type="search" placeholder="@usuario" autocomplete="off"></label></div><p id="past-caption" class="history-notice"></p><div class="table-scroll" tabindex="0" role="region" aria-label="Ranking histórico, desplazamiento horizontal"><table><thead><tr><th scope="col">Puesto nacional</th><th scope="col">Perfil</th><th scope="col">Valor</th><th scope="col">Cambio de puesto</th></tr></thead><tbody id="past-rows"></tbody></table></div><button id="past-more" class="button">Mostrar más perfiles</button></section>
+<section class="weekly-panel" aria-labelledby="weekly-heading"><h2 id="weekly-heading">El pulso de la semana</h2><div id="weekly-summary"></div></section>
+</div>
+<aside class="about"><strong>Un archivo de lo que observamos.</strong><p>Detalle diario durante 90 días y última captura disponible de cada mes y año. Puede haber huecos; los períodos actuales son provisionales. Las ubicaciones son declaradas y los cambios de usuario pueden interrumpir una serie.</p><a href="./history/index.json">Índice de capturas JSON</a> · <a href="./metodologia/#historico">Metodología del histórico</a></aside>
+</main>
+<!--FOOTER-->
+</body></html>

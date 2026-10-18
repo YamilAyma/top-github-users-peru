@@ -218,7 +218,11 @@
       const values=data.ranks[tr.dataset.login.toLowerCase()];
       cell.replaceChildren();
       if (!values) { cell.append(element('span','history-empty','Sin capturas')); return; }
-      cell.append(history.chart(data.dates, values, {rank:true, window:data.window, label:`Puesto nacional de ${tr.dataset.login}: ${labels[metric]}`}));
+      const detail=element('a','trend-detail');
+      detail.href=`./evolucion/?users=${encodeURIComponent(tr.dataset.login)}&metric=${metric}${document.body.dataset.city?`&city=${document.body.dataset.city}`:''}`;
+      detail.setAttribute('aria-label', `Explorar evolución de ${tr.dataset.login}`);
+      detail.append(history.chart(data.dates, values, {rank:true, window:data.window, label:`Puesto nacional de ${tr.dataset.login}: ${labels[metric]}`}));
+      cell.append(detail);
       const valid=values.map((value,i)=>value===null ? -1 : i).filter(i=>i>=0);
       if (valid.length < 2) {
         cell.append(element('small','history-empty', valid.length ? 'Primera captura' : 'Sin capturas'));

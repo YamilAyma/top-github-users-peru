@@ -1061,3 +1061,68 @@ footer {
 .ranking-ready .favorite-controls { display: flex; }
 .profile-cell { position: relative; padding-right: 36px; }
 .profile-cell .favorite-button { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); float: none; }
+
+.site-nav { display: flex; align-items: center; gap: 26px; font-size: 14px; }
+.site-nav a, .text-link { text-decoration: underline; text-underline-offset: 4px; }
+.history-preview, .comparison-panel, .history-ranking, .weekly-panel { margin: 28px 0; padding: 28px; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.history-preview .panel-heading, .evolution-page .panel-heading { gap: 16px; flex-wrap: wrap; }
+.history-preview h2, .evolution-page h2 { font-size: 26px; line-height: 1.25; letter-spacing: -.6px; }
+.history-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin: 18px 0; }
+.history-card { padding: 20px; background: #faf9f7; border: 1px solid var(--line); border-radius: 10px; min-width: 0; }
+.history-card h3 { font-size: 14px; font-weight: 500; margin: 0 0 12px; }
+.history-value { display: block; font-size: 30px; letter-spacing: -1px; margin-bottom: 18px; }
+.history-card .history-chart { height: 80px; }
+.history-card p { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 0; }
+.history-notice { font-size: 13px; color: #5f6169; line-height: 1.8; }
+.history-notice a, .evolution-page a { text-decoration: underline; text-underline-offset: 3px; }
+.mover-link { display: inline-block; margin: 6px 16px 6px 0; color: #176b55; text-decoration: underline; font-size: 13px; }
+.preview-window { display: flex; align-items: center; gap: 12px; font-size: 13px; }
+.evolution-page { padding-bottom: 40px; }
+.evolution-intro { padding: 48px 0 32px; max-width: 780px; }
+.evolution-intro h1 { margin: 20px 0; font-size: clamp(40px,6vw,66px); line-height: 1.07; letter-spacing: -2px; }
+.evolution-intro em { color: var(--red); font-style: normal; }
+.evolution-intro p { font-size: 18px; line-height: 1.8; max-width: 600px; color: #5f6169; }
+.history-static { padding: 22px 26px; border-left: 3px solid var(--red); background: #f5efea; border-radius: 0 10px 10px 0; }
+.history-static h2 { font-size: 20px; margin: 0 0 8px; }
+.history-static p { margin: 0; font-size: 14px; line-height: 1.8; }
+.evolution-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; padding: 24px; margin: 28px 0 18px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.evolution-controls label, .evolution-page .panel-heading label { display: grid; gap: 8px; font-size: 12px; font-weight: 600; color: #62656e; }
+.evolution-controls select, .evolution-page input, .evolution-page select { width: 100%; min-width: 0; max-width: 100%; font: inherit; font-size: 14px; border: 1px solid #dddcd9; background: #fff; border-radius: 7px; padding: 10px 12px; color: #292b31; }
+#community-charts { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.compare-form { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0 12px; align-items: center; }
+.compare-form input { flex: 1 1 200px; }
+.compare-form span { font-size: 12px; color: var(--muted); }
+.compare-chips { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0; }
+.compare-chip { border: 1px solid; border-radius: 20px; background: #fff; padding: 8px 14px; font: inherit; font-size: 13px; cursor: pointer; }
+.comparison-plot { position: relative; height: 220px; margin: 20px 0 12px; border-bottom: 1px solid var(--line); background: repeating-linear-gradient(to bottom,#fff 0,#fff 54px,#f0efed 55px); }
+.comparison-plot .history-chart { position: absolute; inset: 0; width: 100%; height: 100%; }
+.chart-scale { font-size: 12px; color: var(--muted); }
+.chart-endpoints { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--muted); }
+.comparison-detail { padding-left: 12px; border-left: 3px solid; font-size: 13px; line-height: 1.9; }
+.share-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+.share-actions input { flex-basis: 100%; }
+.history-profile-button { display: inline-block; border: 0; background: transparent; text-decoration: underline; color: #96322f; padding: 8px 10px 8px 0; font: inherit; cursor: pointer; }
+.history-ranking th, .history-ranking td { padding-left: 10px; padding-right: 18px; }
+#past-more { margin-top: 18px; }
+#evolution-status, #compare-status, #share-status { font-size: 13px; line-height: 1.7; }
+[hidden] { display: none !important; }
+@media(max-width: 800px) {
+  #community-charts { grid-template-columns: 1fr; }
+  .evolution-controls { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .history-preview, .comparison-panel, .history-ranking, .weekly-panel { padding: 22px; }
+}
+@media(max-width: 520px) {
+  .site-nav { gap: 12px; font-size: 12px; }
+  .topbar { flex-wrap: wrap; gap: 14px; }
+  .history-grid, .evolution-controls { grid-template-columns: 1fr; }
+  .history-preview, .comparison-panel, .history-ranking, .weekly-panel { padding: 18px; }
+  .evolution-intro { padding-top: 30px; }
+  .history-preview h2, .evolution-page h2 { font-size: 23px; }
+  .evolution-intro p { font-size: 16px; }
+}
+
+#evolution-status { display: none; }
+.history-js #evolution-status { display: block; }
+.trend-detail { display: block; color: inherit; border-radius: 4px; }
+.trend-detail:hover { background: #f7f1ec; }
+.trend-detail:focus-visible { outline: 2px solid #96322f; outline-offset: 2px; }
