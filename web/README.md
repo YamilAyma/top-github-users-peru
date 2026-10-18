@@ -22,7 +22,7 @@ completos en la ubicación declarada (sin geocodificación); una ubicación pued
 coincidir con varias ciudades. Las posiciones son nacionales por métrica y
 comparten puesto en caso de empate, incluso al filtrar. Totales = públicas +
 privadas reportadas; seguidores acumulados no son seguidores únicos. Las cifras
-de las tarjetas representan toda la caché; búsqueda y filtros afectan la tabla
+de las tarjetas representan el ámbito de ciudad elegido; la búsqueda afecta la tabla
 y el CSV. El CSV exporta todos los resultados filtrados en el orden visible,
 incluso los que todavía no se han mostrado.
 
@@ -154,8 +154,8 @@ El workflow verifica un cambio de caché registrado en Git después de su checkp
 antes de crear una observación; una ejecución sin cambio confirmado solo aplica
 retención. No requiere nuevas dependencias ni secretos. Consulta el formato,
 las fechas y sus límites en [docs/history/README.md](../docs/history/README.md).
-El build deriva resúmenes y posiciones compactas para la interfaz. Las tablas
-muestran minigráficas SVG de posición nacional de la métrica seleccionada,
+El build deriva resúmenes, valores y posiciones compactas para la interfaz. Las tablas
+muestran minigráficas SVG del valor de la métrica seleccionada,
 con una petición diferida y compartida por métrica, solo al acercarse a la tabla.
 Se dibujan únicamente las filas visibles del feed; no se descarga el archivo
 histórico completo para mostrar estas minigráficas. No hay dependencias de charts.
@@ -164,7 +164,7 @@ histórico completo para mostrar estas minigráficas. No hay dependencias de cha
 
 `/evolucion/` ofrece selección de ciudad y fechas reales, detalle diario de 7/30/90
 días y archivos mensuales/anuales. Compara hasta tres usuarios con una escala
-compartida; permite alternar posición nacional y contador, consultar el ranking
+compartida; permite alternar métricas (vista inicial con líneas) y movimientos nacionales (tarjetas sin líneas), consultar el ranking
 en una fecha, compartir el estado por URL y descargar una tarjeta SVG del primer
 perfil. Los archivos de capturas se solicitan por mes/año según la vista y se
 reutilizan en memoria; nunca se consulta GitHub desde el navegador.
@@ -196,8 +196,7 @@ ciudad. Sin JavaScript se conservan enlaces a las ciudades con páginas propias.
 
 Las minigráficas distribuyen las capturas disponibles a lo largo de su ancho
 y muestran las fechas y el número de observaciones; 90 días es la retención
-máxima, no una afirmación de cobertura. Una amplitud mínima de diez posiciones
-(o el 10 % del puesto inicial si es mayor) evita exagerar movimientos pequeños.
+máxima, no una afirmación de cobertura. Una amplitud mínima del 10 % del valor inicial (como mínimo una unidad) evita exagerar variaciones pequeñas.
 No se unen días ausentes. El color gris indica ausencia de cambio entre extremos.
 
 El resumen destaca contribuciones públicas y seguidores. Su línea representa
@@ -206,3 +205,12 @@ en el eje, fechas de inicio/fin, diferencia y porcentaje; no actividad diaria.
 La cantidad de perfiles permanece como indicador de cobertura y declara cuando
 no cambia. La página de evolución mantiene además la gráfica de perfiles,
 con la misma indicación explícita de estabilidad.
+
+Las líneas de la tabla y la vista inicial del explorador representan valores
+reales de públicas, totales (públicas + privadas) o seguidores. La columna
+«Puestos» es independiente: fichas antes/ahora con flecha de ascenso/descenso,
+igualdad o primera captura. Su enlace abre `view=rank`, que muestra tarjetas
+y una lista desplegable de cambios fechados. `view=value` abre las líneas.
+La tarjeta SVG descargable respeta la vista elegida. Los archivos derivados
+`trends-*.json` usan versión 2 e incluyen `values` y `ranks`; no se cambia el
+formato ni el contenido de las capturas originales.

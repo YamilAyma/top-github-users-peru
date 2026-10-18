@@ -65,6 +65,7 @@ def row_html(user, rank, metric):
             f'<span class="handle">@{login}</span></span></a></td>'
             f'<td class="location" title="{location}">{location}</td>' + ''.join(cells) +
             f'<td class="trend-cell"><span class="history-chart" aria-hidden="true"></span><small class="history-empty">Historial con JavaScript</small></td>'
+            f'<td class="movement-cell"><small class="history-empty">Historial con JavaScript</small></td>'
             f'<td><a class="profile-link" href="{url}" aria-label="Ver perfil de {login} en GitHub" target="_blank" rel="noopener noreferrer">'
             '<img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr>')
 

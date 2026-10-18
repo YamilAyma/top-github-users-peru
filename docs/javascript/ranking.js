@@ -114,7 +114,7 @@
       else td.textContent = value;
       tr.append(td);
     }
-    tr.append(element('td', 'trend-cell'));
+    tr.append(element('td', 'trend-cell'),element('td','movement-cell'));
     const last = element("td");
     const open = externalLink(profileURL(user.login), "profile-link");
     const icon = element("img", "external-icon");
@@ -213,27 +213,36 @@
       if (tableVisible && !data) loadTrends(metric);
       return;
     }
-    $('trend-period').textContent=`Puesto nacional · ${data.dates.length} capturas`;
+    $('trend-period').textContent=`${labels[metric]} · ${data.dates.length} capturas`;
     $('trend-coverage').textContent=data.dates.length ? `${data.dates.length} capturas: ${history.dateLabel(data.dates[0])} – ${history.dateLabel(data.dates.at(-1))}. Se muestran las fechas registradas dentro de los últimos 90 días.${data.dates.length<90?' Aún no hay 90 días completos de historial.':''}` : 'Todavía no hay capturas históricas.';
     document.querySelectorAll('#rows tr').forEach(tr=>{
       const cell=tr.querySelector('.trend-cell');
       if (!cell) return;
-      const values=data.ranks[tr.dataset.login.toLowerCase()];
+      const key=tr.dataset.login.toLowerCase();
+      const values=data.values[key];
+      const positions=data.ranks[key];
+      const movement=tr.querySelector('.movement-cell');
+      movement.replaceChildren();
+      const rankLink=element('a','rank-detail');
+      rankLink.href=`./evolucion/?users=${encodeURIComponent(tr.dataset.login)}&metric=${metric}&view=rank${$('city').value?`&city=${encodeURIComponent($('city').value)}`:''}`;
+      rankLink.setAttribute('aria-label',`Ver movimientos de puestos de ${tr.dataset.login}`);
+      rankLink.append(history.rankMovement(data.dates,positions || [],{compact:true}));
+      movement.append(rankLink);
       cell.replaceChildren();
       if (!values) { cell.append(element('span','history-empty','Sin capturas')); return; }
       const detail=element('a','trend-detail');
-      detail.href=`./evolucion/?users=${encodeURIComponent(tr.dataset.login)}&metric=${metric}${$('city').value?`&city=${encodeURIComponent($('city').value)}`:''}`;
+      detail.href=`./evolucion/?users=${encodeURIComponent(tr.dataset.login)}&metric=${metric}&view=value${$('city').value?`&city=${encodeURIComponent($('city').value)}`:''}`;
       detail.setAttribute('aria-label', `Explorar evolución de ${tr.dataset.login}`);
       const finite=values.filter(v=>v!==null);
-      const change=finite.length>1 ? finite[0]-finite.at(-1) : 0;
-      detail.append(history.chart(data.dates, values, {rank:true, minSpan:Math.max(10,(finite[0] || 1)*.1), color:change>0?'#176b55':change<0?'#b63735':'#737b87', label:`Puesto nacional de ${tr.dataset.login}: ${labels[metric]}`}));
+      const change=finite.length>1 ? finite.at(-1)-finite[0] : 0;
+      detail.append(history.chart(data.dates, values, {minSpan:Math.max(1,(finite[0] || 0)*.1), color:change>0?'#176b55':change<0?'#b63735':'#737b87', label:`${labels[metric]} de ${tr.dataset.login}`}));
       cell.append(detail);
       const valid=values.map((value,i)=>value===null ? -1 : i).filter(i=>i>=0);
       if (valid.length < 2) {
         cell.append(element('small','history-empty', valid.length ? 'Primera captura' : 'Sin capturas'));
       } else {
-        const first=valid[0], last=valid.at(-1), change=values[first]-values[last];
-        const badge=element('small',`rank-change ${change>0?'up':change<0?'down':'stable'}`,`${change>0?'↑':change<0?'↓':'—'} ${change ? Math.abs(change) : 'Sin cambio'}`);
+        const first=valid[0], last=valid.at(-1), change=values[last]-values[first];
+        const badge=element('small',`rank-change ${change>0?'up':change<0?'down':'stable'}`,`${change>0?'+':''}${change ? format.format(change) : 'Sin cambio'}`);
         badge.title=`Entre ${history.dateLabel(data.dates[first])} y ${history.dateLabel(data.dates[last])}; no mide actividad diaria.`;
         cell.append(badge);
       }
@@ -241,10 +250,10 @@
     });
   }
   async function loadTrends(metric) {
-    const pending=fetch(`./data/trends-${metric}.json`, {priority:'low'}).then(async response=>{
+    const pending=fetch(`./data/trends-${metric}.json?schema=2`, {priority:'low'}).then(async response=>{
       if (!response.ok) throw new Error('History unavailable');
       const data=await response.json();
-      if (data.metric!==metric || !Array.isArray(data.dates) || !data.ranks) throw new Error('Invalid history');
+      if (data.version!==2 || data.metric!==metric || !Array.isArray(data.dates) || !data.values || !data.ranks) throw new Error('Invalid history');
       return data;
     });
     trendCache.set(metric,pending);

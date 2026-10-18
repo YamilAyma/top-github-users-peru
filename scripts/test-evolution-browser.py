@@ -98,13 +98,21 @@ try:
         first_x=page.locator('#rows .trend-cell svg').first.locator('circle').first.get_attribute('cx')
         last_x=page.locator('#rows .trend-cell svg').first.locator('circle').last.get_attribute('cx')
         if expected>1: assert float(last_x)-float(first_x)>100, 'Observed days should use the sparkline width'
-        # A one-position change should not consume the full graph height.
-        small=next((key for key,values in trends['ranks'].items() if len(values)==2 and all(v is not None for v in values) and abs(values[0]-values[1])==1),None)
-        if small:
-            page.locator('#search').fill(small)
-            points=page.locator('#rows .trend-cell svg').first.locator('circle').evaluate_all("dots=>dots.map(d=>Number(d.getAttribute('cy')))")
-            assert abs(points[0]-points[1])<6
-            page.locator('#search').fill('')
+        # Lines must encode each selected counter; rank movements are separate and never SVG.
+        for metric,label in [('publicContributions','contribuciones públicas'),('total','contribuciones totales'),('followers','seguidores')]:
+            page.locator(f'[data-metric="{metric}"]').click()
+            page.wait_for_function("label=>document.getElementById('trend-period').textContent.includes(label)",arg=label)
+            data=json.loads((ROOT/f'docs/data/trends-{metric}.json').read_text())
+            key=page.locator('#rows tr').first.get_attribute('data-login').lower()
+            actual=[v for v in data['values'][key] if v is not None]
+            title=page.locator('#rows .trend-cell svg').first.locator(':scope > title').text_content()
+            assert f': {actual[0]};' in title and f': {actual[-1]}.' in title
+            assert label in title
+            assert page.locator('#rows .movement-cell svg').count()==0
+            assert page.locator('#rows .movement-cell .rank-token').first.inner_text()=='#'+str(next(v for v in data['ranks'][key] if v is not None))
+            assert 'view=value' in page.locator('#rows .trend-detail').first.get_attribute('href')
+            assert 'view=rank' in page.locator('#rows .rank-detail').first.get_attribute('href')
+        page.locator('[data-metric="publicContributions"]').click()
         login=page.locator('#rows tr').first.get_attribute('data-login')
         page.locator('#rows [data-favorite]').first.click()
         assert page.locator('#rows [data-favorite]').first.get_attribute('aria-pressed')=='true'
@@ -139,14 +147,27 @@ try:
         page.goto(base+'evolucion/?users=alice,bob&from=2026-07-20&to=2026-10-17',wait_until='networkidle')
         assert page.locator('#evolution-app').is_visible()
         assert page.locator('#compare-chips button').count()==2
+        assert page.locator('#e-view').input_value()=='value'
         assert page.locator('#profile-chart svg').count()==2
         path=page.locator('#profile-chart svg path').first.get_attribute('d')
         assert path.count('M')>1, 'Missing days must break the line'
         assert 'escala compartida' in page.locator('#profile-chart').inner_text()
-        # Shared scale must place equal ranks at equal Y coordinates across profiles.
+        # Shared scale must place equal metric values at equal Y coordinates across profiles.
         ys=page.locator('#profile-chart svg').evaluate_all("svgs=>svgs.map(s=>[...s.querySelectorAll('circle')].map(c=>[c.getAttribute('cx'),c.getAttribute('cy')]))")
         same_x=set(x for x,y in ys[0]) & set(x for x,y in ys[1])
         assert all(dict(ys[0])[x]==dict(ys[1])[x] for x in same_x)
+        assert 'Contribuciones públicas' in page.locator('#profile-chart svg').first.get_attribute('aria-label')
+        page.locator('#e-view').select_option('rank')
+        assert page.locator('#profile-chart svg').count()==0
+        assert page.locator('.rank-journey').count()==2
+        assert page.locator('.rank-journey').first.locator('.rank-endpoints .rank-token').all_inner_texts()==['#1','#2']
+        assert '↓ 1 puesto' in page.locator('.rank-journey').first.inner_text()
+        page.locator('.rank-events summary').first.click()
+        assert page.locator('.rank-events').first.locator('time').count()>1
+        with page.expect_download() as rank_download:
+            page.locator('#download-card').click()
+        assert 'Puesto nacional' in Path(rank_download.value.path()).read_text()
+        page.locator('#e-view').select_option('value')
         page.locator('#e-profile').fill('carol');page.locator('#compare-form button').click()
         assert page.locator('#compare-chips button').count()==3
         page.locator('#e-profile').fill('fourth');page.locator('#compare-form button').click()

@@ -85,7 +85,9 @@ def build_history_views(docs, cities):
     logins = sorted({r[0].lower() for s in daily for r in s['users']})
     for metric in METRICS:
         daily_ranks = [ranked(s, metric) for s in daily]
-        payload = {'version': 1, 'metric': metric, 'window': catalog['daily_window'], 'dates': dates,
+        daily_values = [{row[0].lower(): metric_value(row, metric) for row in s['users']} for s in daily]
+        payload = {'version': 2, 'metric': metric, 'window': catalog['daily_window'], 'dates': dates,
+                   'values': {login: [values.get(login) for values in daily_values] for login in logins},
                    'ranks': {login: [ranks.get(login) for ranks in daily_ranks] for login in logins}}
         (out / f'trends-{metric}.json').write_text(storage.compact(payload) + '\n')
     return summary

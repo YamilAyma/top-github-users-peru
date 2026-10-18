@@ -47,6 +47,20 @@
     }
     return svg;
   }
+  function rankMovement(dates, ranks, {compact=false}={}) {
+    const indices=ranks.map((v,i)=>v!==null && Number.isFinite(v)?i:-1).filter(i=>i>=0);
+    const wrap=node('div',compact?'rank-movement compact':'rank-movement');
+    if(!indices.length) {wrap.append(node('span','history-empty','Sin capturas'));return wrap;}
+    const first=indices[0], last=indices.at(-1), change=ranks[first]-ranks[last];
+    const badge=node('span',`movement-badge ${change>0?'up':change<0?'down':'stable'}`,indices.length===1?'Primera captura':change>0?`↑ ${change} ${change===1?'puesto':'puestos'}`:change<0?`↓ ${-change} ${change===-1?'puesto':'puestos'}`:'= Sin cambio');
+    const journey=node('div','rank-endpoints');
+    journey.append(node('span','rank-token',`#${ranks[first]}`));
+    if(indices.length>1) {journey.append(node('span','rank-arrow','→'),node('span','rank-token current',`#${ranks[last]}`));}
+    wrap.append(journey,badge);
+    wrap.title=`Puesto nacional: ${dateLabel(dates[first])} – ${dateLabel(dates[last])}. ${indices.length} capturas disponibles.`;
+    wrap.setAttribute('aria-label',`Puesto nacional: ${ranks[first]}${indices.length>1?` a ${ranks[last]}`:''}. ${badge.textContent}. ${dateLabel(dates[first])} – ${dateLabel(dates[last])}`);
+    return wrap;
+  }
   function metricCard(dates, values, label, {interval='daily'}={}) {
     const fmt=new Intl.NumberFormat('es-PE');
     const valid=values.map((v,i)=>v!==null && Number.isFinite(v)?i:-1).filter(i=>i>=0);
@@ -88,5 +102,5 @@
     window.dispatchEvent(new Event('favorites-changed'));
     return true;
   }
-  window.PeruHistory = {chart, metricCard, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
+  window.PeruHistory = {chart, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
 })();

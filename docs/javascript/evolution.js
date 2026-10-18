@@ -108,6 +108,8 @@
     $('download-card').disabled=true;
     if (!profileKeys.length) { $('profile-chart').append(H.node('p','history-notice','Busca tu usuario para descubrir su recorrido. Puedes comparar hasta tres perfiles.'));return; }
     const metric=$('e-metric').value, rankView=$('e-view').value==='rank';
+    $('profile-chart').dataset.view=rankView?'rank':'value';
+    $('comparison-heading').textContent=rankView?'Movimientos en el ranking.':`Evolución de ${labels[metric].toLowerCase()}.`;
     const maps=selected.map(s=>new Map((cityRows(s)||[]).map(r=>[r[0].toLowerCase(),r]))), positions=selected.map(ranks);
     const series=profileKeys.map(key=>maps.map((rows,i)=>rows.has(key)?rankView?positions[i].get(key):value(rows.get(key),metric):null));
     const all=series.flat().filter(v=>v!==null);
@@ -116,6 +118,33 @@
       chip.addEventListener('click',()=>{profileKeys=profileKeys.filter(k=>k!==key);render();});$('compare-chips').append(chip);
     });
     if (!all.length) { $('profile-chart').append(H.node('p','history-notice','No hay capturas de esos perfiles en el ámbito y las fechas seleccionados.'));return; }
+    if (rankView) {
+      const grid=H.node('div','rank-journeys');
+      profileKeys.forEach((key,i)=>{
+        const card=H.node('article','rank-journey');card.style.borderTopColor=colors[i];
+        const link=H.node('a','rank-profile',`@${key}`);link.href=`https://github.com/${encodeURIComponent(key)}`;link.target='_blank';link.rel='noopener noreferrer';
+        card.append(link,H.node('p','history-notice',`${labels[metric]} · puesto nacional`));
+        card.append(H.rankMovement(selected.map(s=>s.date),series[i]));
+        const valid=series[i].map((v,j)=>v===null?-1:j).filter(j=>j>=0);
+        if(valid.length) {
+          const first=valid[0],last=valid.at(-1);
+          card.append(H.node('p','rank-dates',`${H.dateLabel(selected[first].date)} → ${H.dateLabel(selected[last].date)} · ${valid.length} capturas`));
+          const details=H.node('details','rank-events');details.append(H.node('summary','','Ver cambios registrados'));
+          const list=H.node('ol','rank-event-list');
+          valid.forEach((j,k)=>{
+            if(k>0 && k<valid.length-1 && series[i][j]===series[i][valid[k-1]]) return;
+            const item=H.node('li');
+            const time=H.node('time','',H.dateLabel(selected[j].date));time.dateTime=selected[j].date;
+            item.append(time,H.node('span','rank-token',`#${series[i][j]}`));list.append(item);
+          });
+          details.append(list);card.append(details);
+        }
+        grid.append(card);
+      });
+      $('profile-chart').append(H.node('p','history-notice','Compara el puesto inicial y final de cada perfil. Un número menor es una mejor posición. Las ausencias no se interpolan.'),grid);
+      $('download-card').disabled=false;
+      return;
+    }
     const min=Math.min(...all), max=Math.max(...all), plot=H.node('div','comparison-plot');
     profileKeys.forEach((key,i)=>{
       const svg=H.chart(selected.map(s=>s.date),series[i],{rank:rankView,width:900,height:220,daily:$('e-tier').value==='daily',interval:$('e-tier').value,domain:[min,max],label:`@${key}: ${rankView?'puesto nacional':labels[metric]}`,color:colors[i]});
@@ -217,9 +246,10 @@
     const rows=selected.map(s=>(cityRows(s)||[]).find(r=>r[0].toLowerCase()===key));
     const indices=rows.map((r,i)=>r?i:-1).filter(i=>i>=0);if(!indices.length)return;
     const first=indices[0],last=indices.at(-1),metric=$('e-metric').value;
-    const a=ranks(selected[first]).get(key), b=ranks(selected[last]).get(key);
+    const rankView=$('e-view').value==='rank';
+    const a=rankView?ranks(selected[first]).get(key):value(rows[first],metric), b=rankView?ranks(selected[last]).get(key):value(rows[last],metric);
     const xml=v=>String(v).replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));
-    const lines=[`@${key}`,`Puesto nacional: ${a} → ${b}`,indices.length<2?'Primera captura':movement(a-b),`${selected[first].date} — ${selected[last].date}`,labels[metric], 'Capturas del ranking; no mide actividad diaria.', 'yamilayma.github.io/top-github-users-peru/'];
+    const lines=[`@${key}`,`${rankView?'Puesto nacional':'Valor registrado'}: ${a} → ${b}`,indices.length<2?'Primera captura':rankView?movement(a-b):signed(b-a),`${selected[first].date} — ${selected[last].date}`,labels[metric], 'Capturas del ranking; no mide actividad diaria.', 'yamilayma.github.io/top-github-users-peru/'];
     const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560"><rect width="1000" height="560" rx="24" fill="#fcfaf7"/><rect x="0" y="0" width="14" height="560" fill="#b63735"/><text x="60" y="65" font-family="sans-serif" font-size="22" fill="#b63735">GitHub Perú · Evolución</text>${lines.map((line,i)=>`<text x="60" y="${135+i*58}" font-family="sans-serif" font-size="${i===0?40:i===1?32:22}" fill="#24262b">${xml(line)}</text>`).join('')}</svg>`;
     const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml;charset=utf-8'})), aTag=H.node('a');aTag.href=url;aTag.download=`github-peru-${key}.svg`;aTag.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
     $('share-status').textContent=`Tarjeta descargada de @${key}, el primer perfil de la comparación.`;

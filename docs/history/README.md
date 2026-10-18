@@ -149,7 +149,7 @@ conservan sin atribuirles la ubicación actual de los perfiles. La versión 1
 sigue siendo compatible con capturas sin este campo opcional.
 
 El build genera `docs/data/evolution-summary.json` y tres archivos
-`trends-*.json` con posiciones nacionales para las métricas de la tabla. Son
+`trends-*.json` con valores registrados y posiciones nacionales separados para las métricas de la tabla. Son
 productos derivados regenerables, no capturas adicionales. Conservan fechas
 reales, ausencias y empates (1, 1, 3). Los resúmenes separan cambios de contadores
 en perfiles presentes en ambas fechas de entradas/salidas de la selección.

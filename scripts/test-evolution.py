@@ -41,8 +41,8 @@ class EvolutionTests(unittest.TestCase):
     def test_derived_series_preserve_gaps_and_never_invent_city_history(self):
         with tempfile.TemporaryDirectory() as tmp:
             docs = Path(tmp)
-            a = snap('2026-10-01', [['alice', 20, 0, 1]])
-            b = snap('2026-10-09', [['alice', 15, 0, 2], ['bob', 30, 0, 3]], {'lima': [1]})
+            a = snap('2026-10-01', [['alice', 20, 4, 1]])
+            b = snap('2026-10-09', [['alice', 15, 3, 2], ['bob', 30, 0, 3]], {'lima': [1]})
             records = {tier: {} for tier in ('daily', 'monthly', 'yearly')}
             for s in (a, b):
                 for tier in records:
@@ -56,6 +56,12 @@ class EvolutionTests(unittest.TestCase):
             self.assertEqual(trends['dates'], ['2026-10-01', '2026-10-09'])
             self.assertEqual(trends['ranks']['bob'], [None, 1])
             self.assertEqual(trends['ranks']['alice'], [1, 2])
+            self.assertEqual(trends['values']['alice'], [20, 15])
+            self.assertEqual(trends['values']['bob'], [None, 30])
+            totals = json.loads((docs / 'data/trends-total.json').read_text())
+            followers = json.loads((docs / 'data/trends-followers.json').read_text())
+            self.assertEqual(totals['values']['alice'], [24, 18])
+            self.assertEqual(followers['values']['alice'], [1, 2])
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
