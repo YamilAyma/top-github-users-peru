@@ -64,7 +64,7 @@ def row_html(user, rank, metric):
             f'<span class="profile-info"><span class="profile-name" title="{name}">{name}</span>'
             f'<span class="handle">@{login}</span></span></a></td>'
             f'<td class="location" title="{location}">{location}</td>' + ''.join(cells) +
-            f'<td class="trend-cell"><span class="history-empty">Historial disponible con JavaScript</span></td>'
+            f'<td class="trend-cell"><span class="history-chart" aria-hidden="true"></span><small class="history-empty">Historial con JavaScript</small></td>'
             f'<td><a class="profile-link" href="{url}" aria-label="Ver perfil de {login} en GitHub" target="_blank" rel="noopener noreferrer">'
             '<img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr>')
 
@@ -134,12 +134,22 @@ def build_pages(data):
     def preview(city):
         scope = history_summary['scopes'].get(city or 'peru', {})
         points = [p for p in scope.get('series', {}).get('daily', []) if p['profiles'] is not None]
-        status = (f"{len(points)} captura{'s' if len(points) != 1 else ''} disponible{'s' if len(points) != 1 else ''}. "
-                  + ('Estamos construyendo el historial.' if len(points) < 2 else 'Consulta los cambios entre fechas.')) if points else 'Las próximas capturas registrarán también la evolución de esta ciudad.'
+        cards = ''
+        for metric, label in [('profiles', 'Perfiles registrados'), ('publicContributions', 'Contador público agregado')]:
+            value = number(points[-1][metric]) if points else 'Sin cobertura histórica'
+            detail = ('Primera captura: ' + points[0]['date'] + '. Aún no hay una tendencia.') if len(points) == 1 else (f"{len(points)} capturas · {points[0]['date']} – {points[-1]['date']}" if points else 'Las capturas locales comienzan cuando se registra la ciudad; no se reconstruyen con ubicaciones actuales.')
+            cards += f'<article class="history-card"><h3>{label}</h3><strong class="history-value">{value}</strong><div class="history-chart" aria-hidden="true"></div><p>{escape(detail)}</p></article>'
+        weekly = '<p class="history-notice">El resumen semanal aparecerá cuando haya capturas comparables separadas por al menos 7 días.</p>'
+        if scope.get('weekly'):
+            w = scope['weekly']
+            weekly = f"<p>Pulso semanal · {w['from']} – {w['through']}. {w['matched']} perfiles comparables, {w['entered']} entradas y {w['left']} salidas.</p>"
+            for mover in w['movers'][:3]:
+                login = escape(mover['login'], quote=True)
+                weekly += f'<a class="mover-link" href="./evolucion/?users={login}">@{login} ↑ {mover["change"]}</a>'
         return ('<section id="history-preview" class="history-preview" aria-labelledby="history-preview-title"><div class="panel-heading"><div><div class="eyebrow">LA COMUNIDAD, EN EL TIEMPO</div>'
                 '<h2 id="history-preview-title">Así evoluciona la comunidad.</h2></div><a class="text-link" href="./evolucion/' + ('?city=' + city if city else '') + '">Explorar la evolución →</a></div>'
                 '<label class="preview-window">Período <select id="preview-days" hidden><option value="7">7 días</option><option value="30">30 días</option><option value="90" selected>90 días</option></select></label>'
-                '<div id="preview-charts" class="history-grid"><p>' + status + '</p></div><div id="preview-movers"></div>'
+                '<div id="preview-charts" class="history-grid">' + cards + '</div><div id="preview-movers">' + weekly + '</div>'
                 '<p class="history-notice">Cambios de contadores registrados; no equivalen a actividad diaria. La cobertura puede variar.</p></section>')
     generated = []
     urls = []

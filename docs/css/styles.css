@@ -1126,3 +1126,8 @@ footer {
 .trend-detail { display: block; color: inherit; border-radius: 4px; }
 .trend-detail:hover { background: #f7f1ec; }
 .trend-detail:focus-visible { outline: 2px solid #96322f; outline-offset: 2px; }
+.preview-window { min-height: 42px; }
+.history-preview .history-card { min-height: 254px; }
+.history-preview .history-card p { min-height: 42px; }
+#preview-movers { min-height: 52px; font-size: 13px; line-height: 1.8; }
+.trend-cell { height: 84px; }
