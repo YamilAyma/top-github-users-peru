@@ -1,6 +1,9 @@
 "use strict";
 (() => {
   const $ = (id) => document.getElementById(id);
+  const history = window.PeruHistory;
+  const trendCache = new Map();
+  let tableVisible = false;
   const format = new Intl.NumberFormat("es-PE");
   const normalize = (value) =>
     String(value ?? "")
@@ -43,6 +46,8 @@
   }
   function row(user, rank) {
     const tr = element("tr");
+    tr.dataset.login = user.login;
+    tr.classList.toggle("is-favorite", history.favorites.has(user.login));
     const position = element("td");
     position.append(
       element(
@@ -51,7 +56,7 @@
         format.format(rank),
       ),
     );
-    const profile = element("td");
+    const profile = element("td", "profile-cell");
     const link = externalLink(profileURL(user.login), "profile");
     const fallback = element(
       "span",
@@ -82,6 +87,17 @@
     info.append(name, element("span", "handle", `@${user.login}`));
     link.append(info);
     profile.append(link);
+    const favorite = element('button', 'favorite-button', history.favorites.has(user.login) ? '★' : '☆');
+    favorite.type = 'button';
+    favorite.dataset.favorite = user.login;
+    favorite.setAttribute('aria-pressed', String(history.favorites.has(user.login)));
+    favorite.setAttribute('aria-label', `Favorito: ${user.login}`);
+    profile.append(favorite);
+    if (document.body.dataset.city) {
+      const local = [...state.users].filter(u=>u.cities.includes(document.body.dataset.city));
+      const localRank = 1 + local.filter(u=>u[state.metric] > user[state.metric]).length;
+      profile.append(element('small', 'local-rank', `Puesto local: ${format.format(localRank)}`));
+    }
     const location = element(
       "td",
       "location",
@@ -97,6 +113,7 @@
       else td.textContent = value;
       tr.append(td);
     }
+    tr.append(element('td', 'trend-cell'));
     const last = element("td");
     const open = externalLink(profileURL(user.login), "profile-link");
     const icon = element("img", "external-icon");
@@ -131,7 +148,8 @@
       (user) =>
         (!query ||
           normalize(`${user.login} ${clean(user.name)}`).includes(query)) &&
-        (!city || user.cities.includes(city)),
+        (!city || user.cities.includes(city)) &&
+        (!$("only-favorites").checked || history.favorites.has(user.login)),
     );
     if (state.direction === 1)
       filtered.sort(
@@ -147,6 +165,7 @@
     if (reset) $("rows").replaceChildren(fragment);
     else $("rows").append(fragment);
     rendered = end;
+    decorateTrends();
     $("status").textContent = filtered.length
       ? ""
       : "No encontramos perfiles con esos filtros. Prueba otro nombre o ciudad.";
@@ -185,6 +204,69 @@
         : "↕";
     });
   }
+  function decorateTrends() {
+    const metric = state.metric;
+    const data = trendCache.get(metric);
+    if (!data || typeof data.then === 'function') {
+      document.querySelectorAll('#rows .trend-cell').forEach(cell=>cell.replaceChildren(element('span','history-empty', tableVisible ? 'Cargando historial…' : 'Historial de 90 días')));
+      if (tableVisible && !data) loadTrends(metric);
+      return;
+    }
+    document.querySelectorAll('#rows tr').forEach(tr=>{
+      const cell=tr.querySelector('.trend-cell');
+      if (!cell) return;
+      const values=data.ranks[tr.dataset.login.toLowerCase()];
+      cell.replaceChildren();
+      if (!values) { cell.append(element('span','history-empty','Sin capturas')); return; }
+      cell.append(history.chart(data.dates, values, {rank:true, window:data.window, label:`Puesto nacional de ${tr.dataset.login}: ${labels[metric]}`}));
+      const valid=values.map((value,i)=>value===null ? -1 : i).filter(i=>i>=0);
+      if (valid.length < 2) {
+        cell.append(element('small','history-empty', valid.length ? 'Primera captura' : 'Sin capturas'));
+      } else {
+        const first=valid[0], last=valid.at(-1), change=values[first]-values[last];
+        const badge=element('small',`rank-change ${change>0?'up':change<0?'down':'stable'}`,`${change>0?'↑':change<0?'↓':'—'} ${change ? Math.abs(change) : 'Sin cambio'}`);
+        badge.title=`Entre ${history.dateLabel(data.dates[first])} y ${history.dateLabel(data.dates[last])}; no mide actividad diaria.`;
+        cell.append(badge);
+      }
+      if (valid.length && values[0]===null) cell.append(element('small','history-empty','Nuevo en el registro'));
+    });
+  }
+  async function loadTrends(metric) {
+    const pending=fetch(`./data/trends-${metric}.json`, {priority:'low'}).then(async response=>{
+      if (!response.ok) throw new Error('History unavailable');
+      const data=await response.json();
+      if (data.metric!==metric || !Array.isArray(data.dates) || !data.ranks) throw new Error('Invalid history');
+      return data;
+    });
+    trendCache.set(metric,pending);
+    try {
+      trendCache.set(metric,await pending);
+      if (metric===state.metric) decorateTrends();
+    } catch {
+      trendCache.delete(metric);
+      if (metric===state.metric) document.querySelectorAll('#rows .trend-cell').forEach(cell=>{
+        const retry=element('button','history-retry','Reintentar historial');
+        retry.addEventListener('click',()=>loadTrends(metric));
+        cell.replaceChildren(retry);
+      });
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    const lazy = new IntersectionObserver(entries=>{
+      if (!entries.some(entry=>entry.isIntersecting)) return;
+      tableVisible=true;
+      decorateTrends();
+      lazy.disconnect();
+    }, {rootMargin:'200px'});
+    lazy.observe(document.querySelector('.table-scroll'));
+  } else tableVisible=true;
+  $('rows').addEventListener('click', event=>{
+    const button=event.target.closest('[data-favorite]');
+    if (!button) return;
+    if (!history.favorites.toggle(button.dataset.favorite)) $('favorites-status').textContent='El navegador no permite guardar favoritos. Revisa sus ajustes de almacenamiento.';
+  });
+  window.addEventListener('favorites-changed', ()=>render());
+  $('only-favorites').addEventListener('change', ()=>{ state.start=0; state.visible=state.batch; render(); });
   async function load() {
     $("retry").hidden = true;
     $("status").textContent = "Cargando la comunidad…";

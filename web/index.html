@@ -27,6 +27,7 @@
     <meta name="theme-color" content="#b63735" />
     <title><!--PAGE_TITLE--></title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./javascript/history-ui.js" defer></script>
     <script src="./javascript/ranking.js" defer></script>
     <script src="./javascript/footer-flag.js" defer></script>
   </head>
@@ -148,6 +149,7 @@
             >
           </div>
         </div>
+        <div class="favorite-controls js-only"><label><input id="only-favorites" type="checkbox" /> Solo mis favoritos</label><span id="favorites-status" role="status">Se guardan en este navegador.</span></div>
         <p class="metric-note" id="metric-note">
           Ordenado por contribuciones públicas. La posición corresponde al
           ranking nacional de la métrica elegida.
@@ -199,6 +201,7 @@
                     Seguidores <span aria-hidden="true">↕</span>
                   </button>
                 </th>
+                <th scope="col" class="trend-column">Evolución · 90 días<small>Puesto nacional</small></th>
                 <th scope="col">
                   <span class="sr-only">Perfil en GitHub</span>
                 </th>

@@ -59,11 +59,12 @@ def row_html(user, rank, metric):
         if key == metric:
             value = f'<span class="metric-pill">{value}</span>'
         cells.append(f'<td class="numeric">{value}</td>')
-    return (f'<tr><td><span class="position{ " top" if rank <= 3 else "" }">{rank}</span></td>'
+    return (f'<tr data-login="{login}"><td><span class="position{ " top" if rank <= 3 else "" }">{rank}</span></td>'
             f'<td><a class="profile" href="{url}" target="_blank" rel="noopener noreferrer">{avatar}'
             f'<span class="profile-info"><span class="profile-name" title="{name}">{name}</span>'
             f'<span class="handle">@{login}</span></span></a></td>'
             f'<td class="location" title="{location}">{location}</td>' + ''.join(cells) +
+            f'<td class="trend-cell"><span class="history-empty">Historial disponible con JavaScript</span></td>'
             f'<td><a class="profile-link" href="{url}" aria-label="Ver perfil de {login} en GitHub" target="_blank" rel="noopener noreferrer">'
             '<img class="external-icon" src="./assets/arrow-up-right.svg" alt=""></a></td></tr>')
 
@@ -117,7 +118,7 @@ def version_assets(html):
         asset = ROOT / 'docs' / match.group(2)
         version = hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
         return match.group(1) + match.group(2) + '?v=' + version + match.group(3)
-    return re.sub(r'((?:href|src|srcset)="\./)(css/styles\.css|javascript/(?:ranking|footer-flag)\.js|assets/peru-(?:mobile|desktop)\.(?:avif|webp))(")', reference, html)
+    return re.sub(r'((?:href|src|srcset)="\./)(css/styles\.css|javascript/(?:ranking|footer-flag|history-ui|evolution|evolution-summary)\.js|assets/peru-(?:mobile|desktop)\.(?:avif|webp))(")', reference, html)
 
 
 def build_pages(data):
