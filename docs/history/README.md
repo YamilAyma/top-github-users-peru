@@ -137,3 +137,20 @@ en Git. El repositorio ya contiene un historial considerable; esta función no
 lo reescribe. Los datos históricos mantienen la atribución y licencia ODbL de
 la caché original: consulta la [metodología](../metodologia/) y el repositorio
 original de [Gayan Kuruppu](https://github.com/gayanvoice/top-github-users).
+
+## Ubicaciones históricas y vistas derivadas
+
+Las nuevas capturas pueden incluir `city_membership`: un diccionario de código
+de ciudad a índices (base cero) en `users`, ordenados y sin duplicados. Se
+reconocen con las mismas reglas del ranking y la configuración del commit
+fuente. Un arreglo vacío significa ninguna coincidencia; un campo/ciudad
+ausente significa cobertura desconocida. Las observaciones anteriores se
+conservan sin atribuirles la ubicación actual de los perfiles. La versión 1
+sigue siendo compatible con capturas sin este campo opcional.
+
+El build genera `docs/data/evolution-summary.json` y tres archivos
+`trends-*.json` con posiciones nacionales para las métricas de la tabla. Son
+productos derivados regenerables, no capturas adicionales. Conservan fechas
+reales, ausencias y empates (1, 1, 3). Los resúmenes separan cambios de contadores
+en perfiles presentes en ambas fechas de entradas/salidas de la selección.
+Una comparación de contadores no mide actividad diaria: puede ser negativa.

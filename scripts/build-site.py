@@ -9,12 +9,10 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import math
 import subprocess
-import unicodedata
+from location_rules import normalize, recognized_cities
+from evolution import build_history_views
 
 ROOT = Path(__file__).resolve().parents[1]
-
-def normalize(value):
-    return ''.join(c for c in unicodedata.normalize('NFD', value.lower()) if not unicodedata.combining(c))
 
 BASE_URL = 'https://yamilayma.github.io/top-github-users-peru/'
 PAGE_SIZE = 25
@@ -267,14 +265,14 @@ def build():
             if isinstance(value, bool) or not isinstance(value, int) or value < 0:
                 raise ValueError(f'Invalid {key} for {login}')
             record[key] = value
-        declared = normalize(user.get('location') or '').replace('-', ' ')
-        record['cities'] = [city['id'] for city in cities if re.search(r'(?<!\w)' + re.escape(normalize(city['id']).replace('-', ' ')) + r'(?!\w)', declared)]
+        record['cities'] = recognized_cities(user.get('location'), [city['id'] for city in cities])
         output.append(record)
     # Use the cache commit time, not the build time, to avoid claiming stale data is fresh.
     updated_at = subprocess.check_output(['git', 'log', '-1', '--format=%cI', '--', 'cache/peru.json'], cwd=ROOT, text=True).strip() or None
     data = {'updatedAt': updated_at, 'minimumFollowers': location['followers'], 'cities': cities, 'users': output}
     (ROOT / 'docs/data').mkdir(parents=True, exist_ok=True)
     (ROOT / 'docs/data/peru.json').write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n')
+    build_history_views(ROOT / 'docs', [city['id'] for city in cities])
     build_pages(data)
     refresh_readme()
     print(f'Built GitHub Pages site: {len(output)} profiles; data commit {updated_at}')

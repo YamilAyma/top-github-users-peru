@@ -30,7 +30,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Verify history storage
-        run: python3 scripts/test-history.py
+        run: |
+          python3 scripts/test-history.py
+          python3 scripts/test-evolution.py
       - name: Capture ranking history
         env:
           HISTORY_REFRESH_BASE: ${{ steps.history_checkpoint.outputs.base }}

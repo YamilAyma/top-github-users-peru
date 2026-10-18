@@ -9,6 +9,7 @@ import re
 import subprocess
 import tempfile
 from zoneinfo import ZoneInfo
+from location_rules import recognized_cities
 
 ROOT = Path(__file__).resolve().parents[1]
 ZONE = ZoneInfo('America/Lima')
@@ -36,7 +37,7 @@ def validate_snapshot(snapshot):
     if not isinstance(snapshot, dict):
         raise ValueError('Invalid snapshot')
     required = {'date', 'source_updated_at', 'source_commit', 'cache_sha256', 'users'}
-    if set(snapshot) != required:
+    if not required <= set(snapshot) or set(snapshot) - required - {'city_membership'}:
         raise ValueError('Unexpected snapshot fields')
     observed = timestamp(snapshot['source_updated_at'])
     if snapshot['date'] != observed.astimezone(ZONE).date().isoformat():
@@ -60,6 +61,15 @@ def validate_snapshot(snapshot):
         logins.add(login.lower())
         if any(type(value) is not int or value < 0 for value in row[1:]):
             raise ValueError('Counts must be nonnegative integers')
+    membership = snapshot.get('city_membership')
+    if membership is not None:
+        if not isinstance(membership, dict):
+            raise ValueError('Invalid city membership')
+        for city, indices in membership.items():
+            if not isinstance(city, str) or not re.fullmatch(r'[a-z]+(?:-[a-z]+)*', city):
+                raise ValueError('Invalid city code')
+            if not isinstance(indices, list) or any(type(i) is not int or not 0 <= i < len(rows) for i in indices) or indices != sorted(set(indices)):
+                raise ValueError('Invalid city profile indices')
     if rows != sorted(rows, key=lambda row: row[0].lower()):
         raise ValueError('Snapshot profiles must be sorted by login')
 
@@ -111,6 +121,21 @@ def source_snapshot(repo, now, refresh_base=None, seed=False):
     snapshot = {'date': observed.astimezone(ZONE).date().isoformat(),
                 'source_updated_at': observed.isoformat().replace('+00:00', 'Z'),
                 'source_commit': source, 'cache_sha256': hashlib.sha256(raw).hexdigest(), 'users': rows}
+    # Preserve old observations without location metadata. New captures use the
+    # configuration committed with their source, never today's locations for past dates.
+    try:
+        config_raw = git(repo, 'show', f'{source}:config.json')
+    except subprocess.CalledProcessError:
+        config_raw = None
+    if config_raw is not None:
+        config = json.loads(config_raw)
+        cities = next(item['cities'] for item in config['locations'] if item['country'] == 'peru')
+        by_login = {user['login'].lower(): user for user in data}
+        membership = {city: [] for city in cities}
+        for i, row in enumerate(rows):
+            for city in recognized_cities(by_login[row[0].lower()].get('location'), cities):
+                membership[city].append(i)
+        snapshot['city_membership'] = membership
     validate_snapshot(snapshot)
     return snapshot, 'seed from committed cache' if seed else 'new committed cache'
 

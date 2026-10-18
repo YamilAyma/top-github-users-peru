@@ -115,6 +115,16 @@ class StorageTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             history.plan_history(records, observation('2026-10-16', 2), date(2026, 10, 16))
 
+    def test_optional_city_indices_and_legacy_compatibility(self):
+        snapshot = observation('2026-10-16')
+        history.validate_snapshot(snapshot)
+        snapshot['city_membership'] = {'lima': [0, 1], 'arequipa': []}
+        history.validate_snapshot(snapshot)
+        for indices in [[True], [2], [1, 0], [0, 0], [-1]]:
+            snapshot['city_membership'] = {'lima': indices}
+            with self.assertRaises(ValueError):
+                history.validate_snapshot(snapshot)
+
     def test_damaged_history_is_not_overwritten(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); (root / 'daily').mkdir()
@@ -158,6 +168,17 @@ class ProvenanceTests(unittest.TestCase):
         self.assertEqual(snapshot['users'], [['alice', 10, 2, 5]])
         self.assertEqual(snapshot['cache_sha256'], hashlib.sha256((self.repo / 'cache/peru.json').read_bytes()).hexdigest())
 
+    def test_city_capture_uses_committed_source_configuration(self):
+        (self.repo / 'config.json').write_text(json.dumps({'locations': [{'country': 'peru', 'cities': ['lima', 'arequipa']}]}))
+        cache = json.loads((self.repo / 'cache/peru.json').read_text())
+        cache[0]['location'] = 'Líma, Perú / Arequipa'
+        (self.repo / 'cache/peru.json').write_text(json.dumps(cache))
+        self.commit('2026-10-17T02:00:00Z')
+        snapshot, _ = history.source_snapshot(self.repo, self.now, self.first)
+        self.assertEqual(snapshot['city_membership'], {'lima': [0], 'arequipa': [0]})
+        (self.repo / 'config.json').write_text('{broken')
+        self.assertEqual(history.source_snapshot(self.repo, self.now, self.first)[0], snapshot)
+
     def test_readme_only_commit_is_not_a_new_capture(self):
         (self.repo / 'README.md').write_text('Changed today')
         self.commit('2026-10-17T02:00:00Z')
@@ -187,6 +208,7 @@ class ProvenanceTests(unittest.TestCase):
         scripts = self.repo / 'scripts'; scripts.mkdir()
         source = Path(__file__).with_name('capture-history.py')
         script = scripts / source.name; shutil.copyfile(source, script)
+        shutil.copyfile(source.with_name('location_rules.py'), scripts / 'location_rules.py')
         self.write_cache(6)
         self.commit((datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat())
         command = [sys.executable, str(script), '--refresh-base', self.first]
