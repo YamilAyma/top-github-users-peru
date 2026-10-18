@@ -3,6 +3,9 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+concurrency:
+  group: peru-ranking-refresh
+  cancel-in-progress: false
 jobs:
   release:
     name: GitHub Active Users
@@ -15,6 +18,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Record history refresh checkpoint
+        id: history_checkpoint
+        run: printf 'base=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: gayanvoice/top-github-users-action@master
         env:
           CUSTOM_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
@@ -23,6 +29,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Verify history storage
+        run: python3 scripts/test-history.py
+      - name: Capture ranking history
+        env:
+          HISTORY_REFRESH_BASE: ${{ steps.history_checkpoint.outputs.base }}
+        run: python3 scripts/capture-history.py --refresh-base "$HISTORY_REFRESH_BASE"
       - name: Build Peru dashboard
         run: |
           python3 scripts/build-site.py
@@ -31,6 +43,6 @@ jobs:
         run: |
           git add -A -- docs README.md
           if ! git diff --cached --quiet; then
-            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Update Peru dashboard data'
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Update Peru dashboard and ranking history'
             git push
           fi

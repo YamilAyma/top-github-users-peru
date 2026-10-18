@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "timezone": "America/Lima",
+  "columns": [
+    "login",
+    "publicContributions",
+    "privateContributions",
+    "followers"
+  ],
+  "daily_window": {
+    "from": "2026-07-20",
+    "through": "2026-10-17",
+    "days": 90
+  },
+  "series": {
+    "daily": [
+      {
+        "path": "daily/2026-10.json",
+        "bytes": 23717,
+        "snapshots": 1,
+        "periods": [
+          {
+            "period": "2026-10-16",
+            "date": "2026-10-16",
+            "profiles": 964,
+            "closed": true
+          }
+        ]
+      }
+    ],
+    "monthly": [
+      {
+        "path": "monthly/2026.json",
+        "bytes": 23717,
+        "snapshots": 1,
+        "periods": [
+          {
+            "period": "2026-10",
+            "date": "2026-10-16",
+            "profiles": 964,
+            "closed": false
+          }
+        ]
+      }
+    ],
+    "yearly": [
+      {
+        "path": "yearly/2026.json",
+        "bytes": 23717,
+        "snapshots": 1,
+        "periods": [
+          {
+            "period": "2026",
+            "date": "2026-10-16",
+            "profiles": 964,
+            "closed": false
+          }
+        ]
+      }
+    ]
+  },
+  "latest": {
+    "date": "2026-10-16",
+    "source_commit": "ca669ff2629fdb3f9b4025956456b7391472d0cf",
+    "source_updated_at": "2026-10-17T02:14:47Z",
+    "profiles": 964
+  }
+}

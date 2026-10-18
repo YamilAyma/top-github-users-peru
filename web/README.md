@@ -146,3 +146,13 @@ El build mantiene un enlace destacado al sitio de Perú y su metodología en el
 README principal, y hace que el enlace del banner apunte a esta web. El bloque
 es idempotente y se repone después de la regeneración del README por la acción
 externa, conservando las atribuciones. El workflow guarda también ese archivo.
+
+## Histórico (almacenamiento)
+
+El histórico compacto vive en `docs/history/`, listo para consumo posterior
+por la web: detalle diario móvil de 90 días y últimas capturas mensuales/anuales.
+El workflow verifica un cambio de caché registrado en Git después de su checkpoint
+antes de crear una observación; una ejecución sin cambio confirmado solo aplica
+retención. No requiere nuevas dependencias ni secretos. Consulta el formato,
+las fechas y sus límites en [docs/history/README.md](../docs/history/README.md).
+La gráfica y la búsqueda histórica todavía no forman parte de esta etapa.
