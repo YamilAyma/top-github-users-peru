@@ -8,16 +8,16 @@
     "followers"
   ],
   "daily_window": {
-    "from": "2026-07-24",
-    "through": "2026-10-21",
+    "from": "2026-07-25",
+    "through": "2026-10-22",
     "days": 90
   },
   "series": {
     "daily": [
       {
         "path": "daily/2026-10.json",
-        "bytes": 159611,
-        "snapshots": 6,
+        "bytes": 186806,
+        "snapshots": 7,
         "periods": [
           {
             "period": "2026-10-16",
@@ -53,6 +53,12 @@
             "period": "2026-10-21",
             "date": "2026-10-21",
             "profiles": 964,
+            "closed": true
+          },
+          {
+            "period": "2026-10-22",
+            "date": "2026-10-22",
+            "profiles": 964,
             "closed": false
           }
         ]
@@ -61,12 +67,12 @@
     "monthly": [
       {
         "path": "monthly/2026.json",
-        "bytes": 27298,
+        "bytes": 27301,
         "snapshots": 1,
         "periods": [
           {
             "period": "2026-10",
-            "date": "2026-10-21",
+            "date": "2026-10-22",
             "profiles": 964,
             "closed": false
           }
@@ -76,12 +82,12 @@
     "yearly": [
       {
         "path": "yearly/2026.json",
-        "bytes": 27298,
+        "bytes": 27301,
         "snapshots": 1,
         "periods": [
           {
             "period": "2026",
-            "date": "2026-10-21",
+            "date": "2026-10-22",
             "profiles": 964,
             "closed": false
           }
@@ -90,9 +96,9 @@
     ]
   },
   "latest": {
-    "date": "2026-10-21",
-    "source_commit": "a6fd354df37cf8cd974fc2d278a147f1cdbcecbb",
-    "source_updated_at": "2026-10-22T02:34:49Z",
+    "date": "2026-10-22",
+    "source_commit": "ff335b021c373e0949b4f1603792722e046fc53b",
+    "source_updated_at": "2026-10-23T02:41:25Z",
     "profiles": 964
   }
 }
