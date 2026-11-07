@@ -283,7 +283,18 @@
     if (!history.favorites.toggle(button.dataset.favorite)) $('favorites-status').textContent='El navegador no permite guardar favoritos. Revisa sus ajustes de almacenamiento.';
   });
   window.addEventListener('favorites-changed', ()=>render());
-  $('only-favorites').addEventListener('change', ()=>{ state.start=0; state.visible=state.batch; render(); });
+  const ONLY_FAVORITES_KEY = 'github-peru:only-favorites:v1';
+  const onlyFavorites = $('only-favorites');
+  try { onlyFavorites.checked = localStorage.getItem(ONLY_FAVORITES_KEY) === '1'; } catch { /* storage unavailable: start unchecked */ }
+  onlyFavorites.addEventListener('change', ()=>{
+    try { localStorage.setItem(ONLY_FAVORITES_KEY, onlyFavorites.checked ? '1' : '0'); } catch { /* the filter still works for this visit */ }
+    state.start=0; state.visible=state.batch; render();
+  });
+  window.addEventListener('storage', (event)=>{
+    if (event.key !== ONLY_FAVORITES_KEY) return;
+    onlyFavorites.checked = event.newValue === '1';
+    state.start=0; state.visible=state.batch; render();
+  });
   async function load() {
     $("retry").hidden = true;
     $("status").textContent = "Cargando la comunidad…";
