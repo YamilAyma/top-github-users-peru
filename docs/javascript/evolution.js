@@ -103,6 +103,27 @@
     const delta=common.reduce((n,k)=>n+value(last.get(k),$('e-metric').value)-value(first.get(k),$('e-metric').value),0);
     $('matched-summary').textContent=selected.length<2?'Hace falta otra captura para comparar cambios.':`${common.length} perfiles presentes en ambos extremos: ${signed(delta)} en ${labels[$('e-metric').value].toLowerCase()}. Entradas: ${[...last.keys()].filter(k=>!first.has(k)).length}; salidas: ${[...first.keys()].filter(k=>!last.has(k)).length}. Las variaciones no equivalen a actividad del período.`;
   }
+  function statsGrid(key,values,valid,metric,color,positions) {
+    const first=valid[0],last=valid.at(-1),delta=values[last]-values[first],days=H.day(selected[last].date)-H.day(selected[first].date);
+    let jump={gain:-Infinity,at:first},high=first,low=first;
+    valid.forEach((j,k)=>{
+      if(k>0 && values[j]-values[valid[k-1]]>jump.gain) jump={gain:values[j]-values[valid[k-1]],at:j};
+      if(values[j]>values[high]) high=j; if(values[j]<values[low]) low=j;
+    });
+    const pct=values[first]?`${signed(Math.round(delta/values[first]*1000)/10)} %`:'—';
+    const ranked=valid.map(j=>positions[j].get(key)).filter(v=>v!==undefined), best=ranked.length?Math.min(...ranked):null;
+    const stats=[
+      ['Crecimiento',`${signed(delta)} (${pct})`],
+      ['Promedio por día',days>0?signed(Math.round(delta/days*10)/10):'—'],
+      ['Mayor salto',jump.gain>0?`${signed(jump.gain)} · ${H.dateLabel(selected[jump.at].date)}`:'Sin subidas'],
+      ['Máximo',`${fmt.format(values[high])} · ${H.dateLabel(selected[high].date)}`],
+      ['Mínimo',`${fmt.format(values[low])} · ${H.dateLabel(selected[low].date)}`],
+      ['Puesto nacional',ranked.length?`#${ranked[0]} → #${ranked.at(-1)} · mejor #${best}`:'Sin puesto']
+    ];
+    const dl=H.node('dl','comparison-stats');dl.style.borderColor=color;dl.setAttribute('aria-label',`Estadísticas de @${key} · ${labels[metric]}`);
+    for(const [term,text] of stats){const item=H.node('div');item.append(H.node('dt','',term),H.node('dd','',text));dl.append(item);}
+    return dl;
+  }
   function renderProfiles() {
     $('compare-chips').replaceChildren(); $('profile-chart').replaceChildren(); $('profile-details').replaceChildren();
     $('download-card').disabled=true;
@@ -159,6 +180,7 @@
         detail.append(document.createTextNode(` · ${rankView?'Puesto nacional':'Contador'}: ${fmt.format(series[i][first])} → ${fmt.format(series[i][last])} · ${valid.length===1?'Primera captura':rankView?movement(-delta):signed(delta)} · ${H.dateLabel(selected[first].date)} – ${H.dateLabel(selected[last].date)}`));
       }
       $('profile-details').append(detail);
+      if (valid.length>1) $('profile-details').append(statsGrid(key,series[i],valid,metric,colors[i],positions));
     });
     const dates=selected.map(s=>s.date), format=v=>fmt.format(v);
     H.attachCursor(plot,{dates,series,colors,names:profileKeys.map(k=>`@${k}`),ranks:profileKeys.map(k=>positions.map(m=>m.get(k)??null)),domain:[min,max],format,rank:rankView});
