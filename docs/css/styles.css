@@ -1245,3 +1245,57 @@ th.trend-column { padding-right: 14px; }
   .rank-journey .rank-endpoints { gap: 8px; flex-wrap: wrap; }
   .rank-journey .rank-token { font-size: 20px; padding: 8px 10px; }
 }
+
+/* ---- Theme layer: tokens, form controls and primary actions ---- */
+:root {
+  --peru-red: #c8102e;
+  --peru-red-dark: #a30d26;
+  --peru-red-tint: #fdecee;
+  --control-border: #d8d3cb;
+  --control-border-hover: #bdb6ac;
+  --ring: 0 0 0 3px rgba(200, 16, 46, .18);
+}
+:focus-visible { outline: 3px solid rgba(200, 16, 46, .5); }
+input:not([type="checkbox"]):not([type="radio"]), select { border-color: var(--control-border); border-radius: 9px; transition: border-color .15s, box-shadow .15s; }
+input:not([type="checkbox"]):not([type="radio"])::placeholder { color: #7b7e87; }
+input:not([type="checkbox"]):not([type="radio"]):hover, select:hover { border-color: var(--control-border-hover); }
+input:not([type="checkbox"]):not([type="radio"]):focus-visible, select:focus-visible { outline: none; border-color: var(--peru-red); box-shadow: var(--ring); }
+select:not([multiple]) {
+  appearance: none; -webkit-appearance: none;
+  padding-right: 36px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c8102e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+select option { color: #23252c; background: #fff; }
+input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none;
+  display: inline-grid; place-content: center; flex: none;
+  width: 18px; height: 18px; margin: 0;
+  border: 1.5px solid #b4ada3; border-radius: 5px; background: #fff;
+  cursor: pointer; vertical-align: -4px;
+  transition: background .15s, border-color .15s, box-shadow .15s;
+}
+input[type="checkbox"]:hover { border-color: var(--peru-red); }
+input[type="checkbox"]:checked {
+  border-color: var(--peru-red); background-color: var(--peru-red);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E");
+  background-size: 14px; background-position: center; background-repeat: no-repeat;
+}
+input[type="checkbox"]:focus-visible { outline: none; box-shadow: var(--ring); }
+input[type="checkbox"]:disabled { opacity: .45; cursor: default; }
+label:has(> input[type="checkbox"]) { cursor: pointer; }
+
+/* Primary actions use the flag red; everything else stays neutral. */
+:is(#export, #load-more, #past-more, #retry, #evolution-retry, .compare-form button) {
+  background: var(--peru-red); border-color: var(--peru-red); color: #fff; font-weight: 600;
+  box-shadow: 0 1px 2px rgba(163, 13, 38, .25);
+}
+:is(#export, #load-more, #past-more, #retry, #evolution-retry, .compare-form button):hover:not(:disabled) {
+  background: var(--peru-red-dark); border-color: var(--peru-red-dark);
+}
+:is(#export, #load-more, #past-more, #retry, #evolution-retry, .compare-form button):focus-visible { outline-color: rgba(200, 16, 46, .45); outline-offset: 3px; }
+:is(#export, #load-more, #past-more, #retry, #evolution-retry, .compare-form button):disabled { opacity: .45; }
+button:hover:not(:disabled) { background: var(--peru-red-tint); }
