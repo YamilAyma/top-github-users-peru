@@ -1096,6 +1096,16 @@ footer {
 .compare-chip { border: 1px solid; border-radius: 20px; background: #fff; padding: 8px 14px; font: inherit; font-size: 13px; cursor: pointer; }
 .comparison-plot { position: relative; height: 220px; margin: 20px 0 12px; border-bottom: 1px solid var(--line); background: repeating-linear-gradient(to bottom,#fff 0,#fff 54px,#f0efed 55px); }
 .comparison-plot .history-chart { position: absolute; inset: 0; width: 100%; height: 100%; }
+.plot-frame { display: grid; grid-template-columns: 56px minmax(0,1fr); margin: 20px 0 12px; font-size: 11px; color: var(--muted); }
+.plot-frame .comparison-plot { margin: 0; background: none; }
+.plot-yaxis { position: relative; height: 220px; }
+.plot-yaxis span { position: absolute; right: 8px; transform: translateY(-50%); font-variant-numeric: tabular-nums; }
+.plot-gridline { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid #f0efed; pointer-events: none; }
+.plot-xaxis { position: relative; height: 22px; margin-top: 4px; }
+.plot-xaxis span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.plot-xaxis .edge-start { transform: none; }
+.plot-xaxis .edge-end { transform: translateX(-100%); }
+@media (max-width: 560px) { .plot-xaxis span:nth-child(even) { display: none; } .plot-frame { grid-template-columns: 44px minmax(0,1fr); } }
 .chart-scale { font-size: 12px; color: var(--muted); }
 .chart-endpoints { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--muted); }
 .comparison-detail { padding-left: 12px; border-left: 3px solid; font-size: 13px; line-height: 1.9; }

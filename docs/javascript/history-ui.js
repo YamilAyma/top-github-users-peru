@@ -47,6 +47,29 @@
     }
     return svg;
   }
+  const PLOT_H = 220, PAD = 5;
+  const isoOfDay = d => new Date(Math.floor(d) * 86400000).toISOString().slice(0, 10);
+  // Wraps a plot in a frame with value ticks, grid lines and date ticks (HTML, so text is never stretched).
+  function framePlot(plot, {dates, domain, format=v=>String(v), rank=false}) {
+    const [low, high] = domain, start = day(dates[0]), end = day(dates.at(-1));
+    const frame = node('div', 'plot-frame'), yAxis = node('div', 'plot-yaxis'), xAxis = node('div', 'plot-xaxis');
+    yAxis.setAttribute('aria-hidden', 'true'); xAxis.setAttribute('aria-hidden', 'true');
+    const fractions = low === high ? [0.5] : [0, 1/3, 2/3, 1];
+    for (const f of fractions) {
+      const top = low === high ? PLOT_H / 2 : PAD + f * (PLOT_H - 2 * PAD);
+      const value = low === high ? low : rank ? low + f * (high - low) : high - f * (high - low);
+      const tick = node('span', '', format(Math.round(value))); tick.style.top = `${top}px`; yAxis.append(tick);
+      const line = node('i', 'plot-gridline'); line.style.top = `${top}px`; plot.append(line);
+    }
+    const count = start === end ? 1 : Math.min(5, dates.length);
+    for (let k = 0; k < count; k++) {
+      const f = count === 1 ? 0.5 : k / (count - 1);
+      const label = node('span', k === 0 && count > 1 ? 'edge-start' : k === count - 1 && count > 1 ? 'edge-end' : '', dateLabel(isoOfDay(start + f * (end - start))));
+      label.style.left = `${(PAD + f * (900 - 2 * PAD)) / 9}%`; xAxis.append(label);
+    }
+    frame.append(yAxis, plot, node('span'), xAxis);
+    return frame;
+  }
   function rankMovement(dates, ranks, {compact=false}={}) {
     const indices=ranks.map((v,i)=>v!==null && Number.isFinite(v)?i:-1).filter(i=>i>=0);
     const wrap=node('div',compact?'rank-movement compact':'rank-movement');
@@ -102,5 +125,5 @@
     window.dispatchEvent(new Event('favorites-changed'));
     return true;
   }
-  window.PeruHistory = {chart, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
+  window.PeruHistory = {chart, framePlot, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
 })();

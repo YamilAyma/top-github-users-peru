@@ -160,8 +160,8 @@
       }
       $('profile-details').append(detail);
     });
-    $('profile-chart').append(H.node('p','chart-scale',`${rankView?'Puesto nacional · mejores posiciones arriba':labels[metric]} · escala compartida: ${fmt.format(min)} – ${fmt.format(max)}`),plot);
-    const ends=H.node('div','chart-endpoints');ends.append(H.node('span','',H.dateLabel(selected[0].date)),H.node('span','',H.dateLabel(selected.at(-1).date)));$('profile-chart').append(ends);
+    const dates=selected.map(s=>s.date);
+    $('profile-chart').append(H.node('p','chart-scale',`${rankView?'Puesto nacional · mejores posiciones arriba':labels[metric]} · escala compartida: ${fmt.format(min)} – ${fmt.format(max)}`),H.framePlot(plot,{dates,domain:[min,max],format:v=>fmt.format(v),rank:rankView}));
     $('download-card').disabled=false;
   }
   function renderPast() {
