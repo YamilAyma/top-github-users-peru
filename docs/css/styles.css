@@ -1373,3 +1373,15 @@ body { overflow-x: clip; }
   select:not([multiple]) option:disabled { color: #9a9ca4; cursor: default; }
   .history-preview .preview-window select:open { border-color: #fff; }
 }
+
+/* Hover card with the full chart for a table row */
+.trend-popover { position: fixed; z-index: 60; box-sizing: border-box; width: min(440px, calc(100vw - 24px)); background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 24px 56px -18px rgba(35, 37, 44, .38), 0 4px 12px rgba(35, 37, 44, .08); overflow: hidden; }
+.trend-popover[hidden] { display: none; }
+.trend-popover .history-card { min-height: 0; border: 0; border-radius: 0; background: #fff; }
+.trend-popover .history-card h3 { font-weight: 600; }
+.trend-popover .history-value { margin-bottom: 8px; }
+.trend-popover .history-card-caption { display: none; }
+.trend-popover-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px 14px; border-top: 1px solid var(--line); background: #fcfaf8; }
+.trend-popover-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--peru-red-dark); text-decoration: underline; text-underline-offset: 3px; }
+.trend-popover-link .stat-icon { width: 14px; height: 14px; margin: 0; }
+.trend-popover .history-card .plot-tooltip { min-width: 240px; max-width: 280px; }

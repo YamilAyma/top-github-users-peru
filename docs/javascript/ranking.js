@@ -204,6 +204,60 @@
       );
     });
   }
+  // Hover / focus card with the full chart for a row's trend sparkline.
+  const canHover = matchMedia('(hover: hover) and (pointer: fine)');
+  let trendPopover = null, trendOwner = null, showTimer = 0, hideTimer = 0;
+  function ensurePopover() {
+    if (trendPopover) return trendPopover;
+    trendPopover = element('div', 'trend-popover');
+    trendPopover.setAttribute('role', 'dialog');
+    trendPopover.hidden = true;
+    trendPopover.addEventListener('pointerenter', () => clearTimeout(hideTimer));
+    trendPopover.addEventListener('pointerleave', () => scheduleHide());
+    document.body.append(trendPopover);
+    return trendPopover;
+  }
+  function hideTrend() {
+    clearTimeout(showTimer); clearTimeout(hideTimer);
+    if (trendPopover) trendPopover.hidden = true;
+    trendOwner = null;
+  }
+  function scheduleHide() { clearTimeout(showTimer); clearTimeout(hideTimer); hideTimer = setTimeout(hideTrend, 180); }
+  function showTrend(anchor, info) {
+    clearTimeout(hideTimer);
+    if (trendOwner === anchor && trendPopover && !trendPopover.hidden) return;
+    const pop = ensurePopover();
+    trendOwner = anchor;
+    pop.setAttribute('aria-label', `Evolución de ${info.login}`);
+    const card = history.metricCard(info.dates, info.values, `@${info.login} · ${info.label}`, {interval: 'daily'});
+    pop.replaceChildren(card);
+    const foot = element('div', 'trend-popover-foot');
+    if (info.positions && info.positions.some(v => v !== null)) foot.append(history.rankMovement(info.dates, info.positions, {compact: true}));
+    const link = element('a', 'trend-popover-link', 'Explorar evolución');
+    link.href = info.href; link.append(history.icon('arrowUp'));
+    link.lastChild.style.transform = 'rotate(45deg)';
+    foot.append(link);
+    pop.append(foot);
+    pop.hidden = false;
+    const rect = anchor.getBoundingClientRect(), width = pop.offsetWidth, height = pop.offsetHeight, margin = 12;
+    const left = Math.min(Math.max(margin, rect.right - width), innerWidth - width - margin);
+    const below = rect.bottom + 8, above = rect.top - height - 8;
+    const top = below + height <= innerHeight - margin ? below : above >= margin ? above : Math.max(margin, innerHeight - height - margin);
+    pop.style.left = `${left}px`; pop.style.top = `${top}px`;
+  }
+  function bindTrend(anchor, info) {
+    anchor.addEventListener('pointerenter', () => {
+      if (!canHover.matches) return;
+      clearTimeout(hideTimer); clearTimeout(showTimer);
+      showTimer = setTimeout(() => showTrend(anchor, info), 140);
+    });
+    anchor.addEventListener('pointerleave', () => { if (canHover.matches) scheduleHide(); });
+    anchor.addEventListener('focus', () => showTrend(anchor, info));
+    anchor.addEventListener('blur', () => scheduleHide());
+  }
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hideTrend(); });
+  window.addEventListener('scroll', hideTrend, {passive: true, capture: true});
+  window.addEventListener('resize', hideTrend);
   function decorateTrends() {
     const metric = state.metric;
     const data = trendCache.get(metric);
@@ -234,8 +288,12 @@
       detail.setAttribute('aria-label', `Explorar evolución de ${tr.dataset.login}`);
       const finite=values.filter(v=>v!==null);
       const change=finite.length>1 ? finite.at(-1)-finite[0] : 0;
-      detail.append(history.chart(data.dates, values, {minSpan:Math.max(1,(finite[0] || 0)*.1), color:change>0?'#176b55':change<0?'#b63735':'#737b87', label:`${labels[metric]} de ${tr.dataset.login}`}));
+      const spark=history.chart(data.dates, values, {minSpan:Math.max(1,(finite[0] || 0)*.1), color:change>0?'#176b55':change<0?'#b63735':'#737b87', label:`${labels[metric]} de ${tr.dataset.login}`});
+      // The hover card replaces the browser's native tooltip; the svg keeps its aria-label.
+      spark.querySelectorAll?.('title').forEach(t=>t.remove());
+      detail.append(spark);
       cell.append(detail);
+      bindTrend(detail,{login:tr.dataset.login,label:labels[metric],dates:data.dates,values,positions,href:detail.href});
       const valid=values.map((value,i)=>value===null ? -1 : i).filter(i=>i>=0);
       if (valid.length < 2) {
         cell.append(element('small','history-empty', valid.length ? 'Primera captura' : 'Sin capturas'));
