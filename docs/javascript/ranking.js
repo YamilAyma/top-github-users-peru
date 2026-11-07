@@ -201,6 +201,32 @@
     const th = document.querySelector(`th[data-sort="${state.metric}"]`);
     th?.animate([{ backgroundColor: 'rgba(200, 16, 46, .12)' }, { backgroundColor: 'transparent' }], { duration: 700, easing: 'ease-out' });
   }
+  // Microfeedback: favorite star pop, staggered rows on "load more", fading empty state and sliding tab indicator.
+  let pendingPop = null, lastStatus = '';
+  function popFavorite() {
+    if (!pendingPop) return;
+    const login = pendingPop; pendingPop = null;
+    if (!motionOK() || !history.favorites.has(login)) return;
+    const star = [...document.querySelectorAll('#rows .favorite-button')].find((b) => b.dataset.favorite === login)?.querySelector('svg');
+    star?.animate([{ transform: 'scale(.7)' }, { transform: 'scale(1.4)', offset: .5 }, { transform: 'scale(1)' }], { duration: 380, easing: FLIP_EASE });
+  }
+  function enterAppended(rows) {
+    if (!motionOK()) return;
+    rows.filter((tr) => inViewport(tr.getBoundingClientRect())).slice(0, 8).forEach((tr, i) => {
+      tr.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 320, delay: i * 30, easing: FLIP_EASE, fill: 'backwards' });
+    });
+  }
+  function slideTabIndicator(animate = true) {
+    const tabs = document.querySelector('.tabs');
+    const active = tabs?.querySelector('.tab.active');
+    if (!tabs || !active) return;
+    let bar = tabs.querySelector('.tab-indicator');
+    if (!bar) { bar = element('span', 'tab-indicator'); bar.setAttribute('aria-hidden', 'true'); tabs.prepend(bar); }
+    bar.style.transition = animate && motionOK() ? '' : 'none';
+    bar.style.width = `${active.offsetWidth}px`;
+    bar.style.transform = `translateX(${active.offsetLeft}px)`;
+    tabs.classList.add('tabs-ready');
+  }
   let lastMetric = null, lastDirection = null, lastResults = '';
   let rendered = 0;
   let observer;
@@ -251,8 +277,11 @@
     }
     const before = reset && !firstRowsRender && motionOK() ? snapshotRows() : null;
     if (reset) firstRowsRender = false;
+    const appended = reset ? [] : [...fragment.children];
     if (reset) $("rows").replaceChildren(fragment);
     else $("rows").append(fragment);
+    if (appended.length) enterAppended(appended);
+    popFavorite();
     if (before && before.size) animateRows(before);
     if (before && lastMetric !== null && lastMetric !== state.metric) pulseActiveMetric();
     rendered = end;
@@ -260,6 +289,9 @@
     $("status").textContent = filtered.length
       ? ""
       : "No encontramos perfiles con esos filtros. Prueba otro nombre o ciudad.";
+    if (motionOK() && $("status").textContent && $("status").textContent !== lastStatus)
+      $("status").animate([{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }], { duration: 280, easing: FLIP_EASE });
+    lastStatus = $("status").textContent;
     $("results").textContent = filtered.length
       ? `Mostrando ${format.format(state.start + 1)}–${format.format(end)} de ${format.format(filtered.length)} perfiles${end === filtered.length ? " · Llegaste al final" : ""}`
       : "0 perfiles";
@@ -285,6 +317,7 @@
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", String(active));
     });
+    slideTabIndicator(lastMetric !== null);
     document.querySelectorAll("th[data-sort]").forEach((th) => {
       const active = th.dataset.sort === state.metric;
       th.setAttribute(
@@ -443,9 +476,12 @@
   $('rows').addEventListener('click', event=>{
     const button=event.target.closest('[data-favorite]');
     if (!button) return;
+    pendingPop = button.dataset.favorite;
     if (!history.favorites.toggle(button.dataset.favorite)) $('favorites-status').textContent='El navegador no permite guardar favoritos. Revisa sus ajustes de almacenamiento.';
   });
   window.addEventListener('favorites-changed', ()=>render());
+  window.addEventListener('resize', ()=>slideTabIndicator(false));
+  document.fonts?.ready.then(()=>slideTabIndicator(false));
   const ONLY_FAVORITES_KEY = 'github-peru:only-favorites:v1';
   const onlyFavorites = $('only-favorites');
   try { onlyFavorites.checked = localStorage.getItem(ONLY_FAVORITES_KEY) === '1'; } catch { /* storage unavailable: start unchecked */ }
