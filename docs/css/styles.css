@@ -1409,3 +1409,15 @@ body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   #rows tr, #rows tr.row-enter, .spark-reveal, .trend-skeleton { animation: none !important; }
 }
+
+/* ---- Microfeedback ---- */
+.tabs { position: relative; }
+.tab-indicator { position: absolute; z-index: 0; top: 4px; bottom: 4px; left: 0; border-radius: 6px; background: #fff; box-shadow: 0 1px 4px #00000012; transition: transform .28s var(--ease-out), width .28s var(--ease-out); pointer-events: none; }
+.tabs .tab { position: relative; z-index: 1; }
+.tabs-ready .tab.active { background: transparent; box-shadow: none; }
+input[type="checkbox"] { background-size: 0; }
+input[type="checkbox"]:checked { background-size: 14px; }
+input[type="checkbox"] { transition: background .15s, background-size .18s var(--ease-out), border-color .15s, box-shadow .15s; }
+@media (prefers-reduced-motion: reduce) {
+  .tab-indicator, input[type="checkbox"] { transition: none !important; }
+}
