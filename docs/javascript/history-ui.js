@@ -47,36 +47,37 @@
     }
     return svg;
   }
-  const PLOT_H = 220, PAD = 5;
+  const PAD = 5;
   const isoOfDay = d => new Date(Math.floor(d) * 86400000).toISOString().slice(0, 10);
   // Wraps a plot in a frame with value ticks, grid lines and date ticks (HTML, so text is never stretched).
-  function framePlot(plot, {dates, domain, format=v=>String(v), rank=false}) {
+  function framePlot(plot, {dates, domain, format=v=>String(v), rank=false, width=900, height=220, maxTicks=5}) {
     const [low, high] = domain, start = day(dates[0]), end = day(dates.at(-1));
     const frame = node('div', 'plot-frame'), yAxis = node('div', 'plot-yaxis'), xAxis = node('div', 'plot-xaxis');
+    yAxis.style.height = plot.style.height = `${height}px`;
     yAxis.setAttribute('aria-hidden', 'true'); xAxis.setAttribute('aria-hidden', 'true');
     const fractions = low === high ? [0.5] : [0, 1/3, 2/3, 1];
     for (const f of fractions) {
-      const top = low === high ? PLOT_H / 2 : PAD + f * (PLOT_H - 2 * PAD);
+      const top = low === high ? height / 2 : PAD + f * (height - 2 * PAD);
       const value = low === high ? low : rank ? low + f * (high - low) : high - f * (high - low);
       const tick = node('span', '', format(Math.round(value))); tick.style.top = `${top}px`; yAxis.append(tick);
       const line = node('i', 'plot-gridline'); line.style.top = `${top}px`; plot.append(line);
     }
-    const count = start === end ? 1 : Math.min(5, dates.length);
+    const count = start === end ? 1 : Math.min(maxTicks, dates.length);
     for (let k = 0; k < count; k++) {
       const f = count === 1 ? 0.5 : k / (count - 1);
       const label = node('span', k === 0 && count > 1 ? 'edge-start' : k === count - 1 && count > 1 ? 'edge-end' : '', dateLabel(isoOfDay(start + f * (end - start))));
-      label.style.left = `${(PAD + f * (900 - 2 * PAD)) / 9}%`; xAxis.append(label);
+      label.style.left = `${(PAD + f * (width - 2 * PAD)) / width * 100}%`; xAxis.append(label);
     }
     frame.append(yAxis, plot, node('span'), xAxis);
     return frame;
   }
   // Hover / touch / keyboard cursor: shows every series' value on the nearest capture.
-  function attachCursor(plot, {dates, series, colors, names, ranks, domain, format=v=>String(v), rank=false}) {
+  function attachCursor(plot, {dates, series, colors, names, ranks, domain, format=v=>String(v), rank=false, width=900, height=220, extra}) {
     const [low, high] = domain, start = day(dates[0]), end = day(dates.at(-1));
     const indices = dates.map((_, i) => i).filter(i => series.some(s => s[i] !== null && Number.isFinite(s[i])));
     if (!indices.length) return;
-    const fracOf = i => start === end ? 0.5 : (PAD + (day(dates[i]) - start) / (end - start) * (900 - 2 * PAD)) / 900;
-    const yOf = v => low === high ? PLOT_H / 2 : PAD + (rank ? v - low : high - v) / (high - low) * (PLOT_H - 2 * PAD);
+    const fracOf = i => start === end ? 0.5 : (PAD + (day(dates[i]) - start) / (end - start) * (width - 2 * PAD)) / width;
+    const yOf = v => low === high ? height / 2 : PAD + (rank ? v - low : high - v) / (high - low) * (height - 2 * PAD);
     const cursor = node('i', 'plot-cursor'), tip = node('div', 'plot-tooltip'), live = node('span', 'sr-only');
     const dots = series.map((_, k) => { const d = node('i', 'plot-cursor-dot'); d.style.background = colors[k]; return d; });
     cursor.hidden = tip.hidden = true; dots.forEach(d => d.hidden = true);
@@ -99,7 +100,7 @@
         let prev = -1; for (let j = i - 1; j >= 0; j--) if (values[j] !== null && Number.isFinite(values[j])) { prev = j; break; }
         const row = node('p', 'plot-tooltip-row'); row.style.borderColor = colors[k];
         const change = prev < 0 ? 'primera captura' : rank ? (values[prev] === v ? 'sin cambio' : `${values[prev] - v > 0 ? '↑' : '↓'} ${Math.abs(values[prev] - v)}`) : `${nf.format(v - values[prev])} vs. captura previa`;
-        const place = !rank && ranks?.[k]?.[i] ? ` · puesto #${ranks[k][i]}` : '';
+        const place = extra ? extra(k, i) : !rank && ranks?.[k]?.[i] ? ` · puesto #${ranks[k][i]}` : '';
         row.append(node('span', '', names[k]), node('b', '', rank ? `#${format(v)}` : format(v)), node('small', '', change + place));
         tip.append(row); spoken.push(`${names[k]}: ${rank ? '#' : ''}${format(v)}, ${change}${place}`);
       });
@@ -109,7 +110,7 @@
     }
     const hide = () => { current = -1; cursor.hidden = tip.hidden = true; dots.forEach(d => d.hidden = true); };
     plot.addEventListener('pointermove', e => {
-      const r = plot.getBoundingClientRect(), f = ((e.clientX - r.left) / r.width * 900 - PAD) / (900 - 2 * PAD);
+      const r = plot.getBoundingClientRect(), f = ((e.clientX - r.left) / r.width * width - PAD) / (width - 2 * PAD);
       const target = start + f * (end - start);
       let best = indices[0]; for (const i of indices) if (Math.abs(day(dates[i]) - target) < Math.abs(day(dates[best]) - target)) best = i;
       if (best !== current) show(best, false);
@@ -156,14 +157,21 @@
     const text=valid.length===1?'Primera captura · todavía sin comparación':delta===0?`Sin cambios en ${valid.length} capturas`:`${signed(delta)}${percent} desde ${dateLabel(dates[first])}`;
     card.append(node('p',`counter-change ${delta>0?'up':delta<0?'down':'stable'}`,text));
     const changes=values.map(v=>v===null?null:v-values[first]);
-    const plot=node('div','delta-plot');
-    const ticks=node('div','delta-axis');
     const actual=valid.map(i=>changes[i]);
     const low=Math.min(0,...actual), high=Math.max(0,...actual);
-    ticks.append(node('span','',signed(high)),node('span','',low===high?'':signed(low)));
-    plot.append(ticks,chart(dates,changes,{width:420,height:80,interval,domain:[low,high],window:{from:dates[first],through:dates[last]},color:delta===0?'#737b87':'#b63735',label:`Variación de ${label.toLowerCase()} respecto a ${dateLabel(dates[first])}`}));
-    card.append(plot);
-    const ends=node('div','chart-endpoints');ends.append(node('span','',dateLabel(dates[first])),node('span','',first===last?'':dateLabel(dates[last])));card.append(ends);
+    const W=420, Hh=120, color=delta===0?'#737b87':'#b63735';
+    const plot=node('div','comparison-plot card-plot');
+    plot.append(chart(dates,changes,{width:W,height:Hh,interval,domain:[low,high],window:{from:dates[first],through:dates[last]},color,label:`Variación de ${label.toLowerCase()} respecto a ${dateLabel(dates[first])}`}));
+    const frameDates=dates.slice(first,last+1);
+    card.append(framePlot(plot,{dates:frameDates,domain:[low,high],format:signed,width:W,height:Hh,maxTicks:3}));
+    attachCursor(plot,{dates:dates.slice(first,last+1),series:[changes.slice(first,last+1)],colors:[color],names:[label],domain:[low,high],format:signed,width:W,height:Hh,extra:(k,i)=>` · total ${fmt.format(values[first+i])}`});
+    if (valid.length>1) {
+      const days=day(dates[last])-day(dates[first]);
+      let high=first,lo=first;valid.forEach(j=>{if(values[j]>values[high])high=j;if(values[j]<values[lo])lo=j;});
+      const parts=[`Máx ${fmt.format(values[high])} · ${dateLabel(dates[high])}`,`Mín ${fmt.format(values[lo])} · ${dateLabel(dates[lo])}`];
+      if (days>0) parts.push(`Promedio ${signed((Math.round(delta/days*10)/10)||0)} por día`);
+      card.append(node('p','history-card-stats',parts.join(' · ')));
+    }
     card.append(node('p','history-card-caption',valid.length===1?'Hace falta otra captura para trazar una evolución.':'La línea muestra la variación del contador desde la primera captura, no actividad diaria.'));
     return card;
   }

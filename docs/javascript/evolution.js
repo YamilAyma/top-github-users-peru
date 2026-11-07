@@ -114,7 +114,7 @@
     const ranked=valid.map(j=>positions[j].get(key)).filter(v=>v!==undefined), best=ranked.length?Math.min(...ranked):null;
     const stats=[
       ['Crecimiento',`${signed(delta)} (${pct})`],
-      ['Promedio por día',days>0?signed(Math.round(delta/days*10)/10):'—'],
+      ['Promedio por día',days>0?signed((Math.round(delta/days*10)/10)||0):'—'],
       ['Mayor salto',jump.gain>0?`${signed(jump.gain)} · ${H.dateLabel(selected[jump.at].date)}`:'Sin subidas'],
       ['Máximo',`${fmt.format(values[high])} · ${H.dateLabel(selected[high].date)}`],
       ['Mínimo',`${fmt.format(values[low])} · ${H.dateLabel(selected[low].date)}`],

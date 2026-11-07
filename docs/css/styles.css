@@ -1118,6 +1118,10 @@ footer {
 .comparison-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 10px 16px; margin: 6px 0 14px; padding: 10px 0 10px 12px; border-left: 3px solid; font-size: 12px; }
 .comparison-stats dt { color: var(--muted); font-size: 11px; }
 .comparison-stats dd { margin: 2px 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.history-card .plot-frame { margin: 14px 0 6px; grid-template-columns: 44px minmax(0,1fr); }
+.history-card .plot-xaxis span:nth-child(even) { display: block; }
+.history-card .plot-tooltip { min-width: 200px; max-width: 240px; }
+.history-card .history-card-stats { font-size: 11px; line-height: 1.6; }
 .chart-scale { font-size: 12px; color: var(--muted); }
 .chart-endpoints { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--muted); }
 .comparison-detail { padding-left: 12px; border-left: 3px solid; font-size: 13px; line-height: 1.9; }
