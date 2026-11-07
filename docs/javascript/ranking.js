@@ -153,7 +153,7 @@
     const tops = new Map();
     document.querySelectorAll('#rows tr[data-login]').forEach((tr) => {
       const rect = tr.getBoundingClientRect();
-      if (inViewport(rect)) tops.set(tr.dataset.login, rect.top);
+      if (inViewport(rect)) tops.set(tr.dataset.login, { top: rect.top, position: tr.querySelector('.position')?.textContent ?? '' });
     });
     return tops;
   }
@@ -163,9 +163,10 @@
       const rect = tr.getBoundingClientRect();
       if (!inViewport(rect)) return;
       const previous = before.get(tr.dataset.login);
-      const travel = previous === undefined ? null : previous - rect.top;
+      const travel = previous === undefined ? null : previous.top - rect.top;
       if (travel !== null && Math.abs(travel) <= innerHeight * 0.9) {
         if (Math.abs(travel) > 1) tr.animate([{ transform: `translateY(${travel}px)` }, { transform: 'none' }], { duration: 340, easing: FLIP_EASE });
+        rollPosition(tr, previous.position);
         return;
       }
       if (entering >= 10) return;
@@ -173,6 +174,34 @@
       entering += 1;
     });
   }
+  // Value transitions: the position number rolls to its new value and the active metric pill pulses.
+  function rollNumber(el, from, to, duration = 320) {
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration), eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = format.format(Math.round(from + (to - from) * eased));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const parseNumber = (text) => Number(String(text).replace(/[^\d]/g, ''));
+  function rollPosition(tr, previousText) {
+    const el = tr.querySelector('.position');
+    if (!el || !previousText || previousText === el.textContent) return;
+    const from = parseNumber(previousText), to = parseNumber(el.textContent);
+    if (!from || !to) return;
+    rollNumber(el, from, to);
+    el.animate([{ backgroundColor: 'rgba(200, 16, 46, .16)' }, { backgroundColor: 'transparent' }], { duration: 700, easing: 'ease-out' });
+  }
+  function pulseActiveMetric() {
+    document.querySelectorAll('#rows .metric-pill').forEach((pill) => {
+      if (!inViewport(pill.getBoundingClientRect())) return;
+      pill.animate([{ transform: 'scale(.9)', opacity: .35 }, { transform: 'none', opacity: 1 }], { duration: 320, easing: FLIP_EASE });
+    });
+    const th = document.querySelector(`th[data-sort="${state.metric}"]`);
+    th?.animate([{ backgroundColor: 'rgba(200, 16, 46, .12)' }, { backgroundColor: 'transparent' }], { duration: 700, easing: 'ease-out' });
+  }
+  let lastMetric = null, lastDirection = null, lastResults = '';
   let rendered = 0;
   let observer;
   function render(reset = true) {
@@ -225,6 +254,7 @@
     if (reset) $("rows").replaceChildren(fragment);
     else $("rows").append(fragment);
     if (before && before.size) animateRows(before);
+    if (before && lastMetric !== null && lastMetric !== state.metric) pulseActiveMetric();
     rendered = end;
     decorateTrends();
     $("status").textContent = filtered.length
@@ -233,6 +263,9 @@
     $("results").textContent = filtered.length
       ? `Mostrando ${format.format(state.start + 1)}–${format.format(end)} de ${format.format(filtered.length)} perfiles${end === filtered.length ? " · Llegaste al final" : ""}`
       : "0 perfiles";
+    if (motionOK() && lastResults && lastResults !== $("results").textContent)
+      $("results").animate([{ opacity: .35, transform: 'translateY(3px)' }, { opacity: 1, transform: 'none' }], { duration: 240, easing: FLIP_EASE });
+    lastResults = $("results").textContent;
     $("load-more").disabled = end >= filtered.length;
     $("load-more").hidden = end >= filtered.length;
     observer?.unobserve($("feed-sentinel"));
@@ -258,10 +291,13 @@
         "aria-sort",
         active ? (state.direction === -1 ? "descending" : "ascending") : "none",
       );
-      th.querySelector("span").replaceChildren(
-        history.icon(active ? (state.direction === -1 ? "arrowDown" : "arrowUp") : "sort"),
-      );
+      const sortIcon = history.icon(active ? (state.direction === -1 ? "arrowDown" : "arrowUp") : "sort");
+      th.querySelector("span").replaceChildren(sortIcon);
+      if (active && lastDirection !== null && motionOK() && (lastDirection !== state.direction || lastMetric !== state.metric))
+        sortIcon.animate([{ transform: `rotate(${lastMetric === state.metric ? 180 : 0}deg) scale(.6)`, opacity: .3 }, { transform: 'none', opacity: 1 }], { duration: 280, easing: FLIP_EASE });
     });
+    lastMetric = state.metric;
+    lastDirection = state.direction;
   }
   // Hover / focus card with the full chart for a row's trend sparkline.
   const canHover = matchMedia('(hover: hover) and (pointer: fine)');
