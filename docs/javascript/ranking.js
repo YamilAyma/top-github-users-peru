@@ -146,6 +146,33 @@
     tr.append(last);
     return tr;
   }
+  // FLIP: rows that persist across a re-render slide to their new position; new rows fade in.
+  const FLIP_EASE = 'cubic-bezier(.22, .61, .36, 1)';
+  const inViewport = (rect) => rect.bottom > -200 && rect.top < innerHeight + 200;
+  function snapshotRows() {
+    const tops = new Map();
+    document.querySelectorAll('#rows tr[data-login]').forEach((tr) => {
+      const rect = tr.getBoundingClientRect();
+      if (inViewport(rect)) tops.set(tr.dataset.login, rect.top);
+    });
+    return tops;
+  }
+  function animateRows(before) {
+    let entering = 0;
+    document.querySelectorAll('#rows tr[data-login]').forEach((tr) => {
+      const rect = tr.getBoundingClientRect();
+      if (!inViewport(rect)) return;
+      const previous = before.get(tr.dataset.login);
+      const travel = previous === undefined ? null : previous - rect.top;
+      if (travel !== null && Math.abs(travel) <= innerHeight * 0.9) {
+        if (Math.abs(travel) > 1) tr.animate([{ transform: `translateY(${travel}px)` }, { transform: 'none' }], { duration: 340, easing: FLIP_EASE });
+        return;
+      }
+      if (entering >= 10) return;
+      tr.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 300, delay: entering * 24, easing: FLIP_EASE, fill: 'backwards' });
+      entering += 1;
+    });
+  }
   let rendered = 0;
   let observer;
   function render(reset = true) {
@@ -193,9 +220,11 @@
         tr.style.animationDelay = `${Math.round(delay)}ms`;
       });
     }
+    const before = reset && !firstRowsRender && motionOK() ? snapshotRows() : null;
     if (reset) firstRowsRender = false;
     if (reset) $("rows").replaceChildren(fragment);
     else $("rows").append(fragment);
+    if (before && before.size) animateRows(before);
     rendered = end;
     decorateTrends();
     $("status").textContent = filtered.length
