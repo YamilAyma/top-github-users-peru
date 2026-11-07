@@ -1136,6 +1136,8 @@ th button .stat-icon { width: 13px; height: 13px; margin: 0 0 0 4px; vertical-al
 .site-nav a .stat-icon { width: 15px; height: 15px; margin-right: 6px; vertical-align: -3px; }
 .favorite-controls .stat-icon { width: 13px; height: 13px; margin: 0 0 0 4px; color: #96322f; vertical-align: -2px; }
 .filters .search.input-icon, .filters .search .input-icon { width: 100%; }
+.history-card { position: relative; isolation: isolate; }
+.history-card .card-bg-icon { position: absolute; z-index: -1; top: 14px; right: 14px; width: 88px; height: 88px; margin: 0; color: #b63735; opacity: .08; pointer-events: none; }
 .comparison-stats dt { display: flex; align-items: center; }
 .comparison-stats dt .stat-icon { width: 14px; height: 14px; }
 .comparison-detail a .stat-icon { width: 14px; height: 14px; margin-right: 4px; }

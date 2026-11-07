@@ -155,6 +155,7 @@
     pulse: 'M3 12h4l3-8 4 16 3-8h4',
     chevronDown: 'M6 9l6 6 6-6',
     refresh: 'M20 11a8 8 0 00-14.5-4M4 4v4h4M4 13a8 8 0 0014.5 4M20 20v-4h-4',
+    heart: 'M12 20s-8-4.9-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 9c0 6.1-8 11-8 11z',
     globe: 'M12 21a9 9 0 100-18 9 9 0 000 18zM3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18',
     sigma: 'M18 5H6l6 7-6 7h12',
     star: 'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z',
@@ -201,7 +202,10 @@
   function metricCard(dates, values, label, {interval='daily'}={}) {
     const fmt=new Intl.NumberFormat('es-PE');
     const valid=values.map((v,i)=>v!==null && Number.isFinite(v)?i:-1).filter(i=>i>=0);
-    const card=node('article','history-card');card.append(node('h3','',label));
+    const card=node('article','history-card');
+    const lower=label.toLowerCase(), bg=icon(lower.includes('seguidores')?'heart':lower.includes('perfiles')?'user':'pulse');
+    bg.classList.add('card-bg-icon'); bg.setAttribute('width', 88); bg.setAttribute('height', 88); bg.setAttribute('stroke-width', 1.5);
+    card.append(bg, node('h3','',label));
     card.append(node('strong','history-value',valid.length?fmt.format(values[valid.at(-1)]):'Sin cobertura histórica'));
     if (!valid.length) {
       card.append(node('p','history-empty','Las capturas locales comienzan cuando se registra la ciudad; no se reconstruyen con ubicaciones actuales.'));
