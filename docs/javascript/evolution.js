@@ -113,15 +113,15 @@
     const pct=values[first]?`${signed(Math.round(delta/values[first]*1000)/10)} %`:'—';
     const ranked=valid.map(j=>positions[j].get(key)).filter(v=>v!==undefined), best=ranked.length?Math.min(...ranked):null;
     const stats=[
-      ['Crecimiento',`${signed(delta)} (${pct})`],
-      ['Promedio por día',days>0?signed((Math.round(delta/days*10)/10)||0):'—'],
-      ['Mayor salto',jump.gain>0?`${signed(jump.gain)} · ${H.dateLabel(selected[jump.at].date)}`:'Sin subidas'],
-      ['Máximo',`${fmt.format(values[high])} · ${H.dateLabel(selected[high].date)}`],
-      ['Mínimo',`${fmt.format(values[low])} · ${H.dateLabel(selected[low].date)}`],
-      ['Puesto nacional',ranked.length?`#${ranked[0]} → #${ranked.at(-1)} · mejor #${best}`:'Sin puesto']
+      ['Crecimiento','growth',`${signed(delta)} (${pct})`],
+      ['Promedio por día','daily',days>0?signed((Math.round(delta/days*10)/10)||0):'—'],
+      ['Mayor salto','jump',jump.gain>0?`${signed(jump.gain)} · ${H.dateLabel(selected[jump.at].date)}`:'Sin subidas'],
+      ['Máximo','max',`${fmt.format(values[high])} · ${H.dateLabel(selected[high].date)}`],
+      ['Mínimo','min',`${fmt.format(values[low])} · ${H.dateLabel(selected[low].date)}`],
+      ['Puesto nacional','rank',ranked.length?`#${ranked[0]} → #${ranked.at(-1)} · mejor #${best}`:'Sin puesto']
     ];
     const dl=H.node('dl','comparison-stats');dl.style.borderColor=color;dl.setAttribute('aria-label',`Estadísticas de @${key} · ${labels[metric]}`);
-    for(const [term,text] of stats){const item=H.node('div');item.append(H.node('dt','',term),H.node('dd','',text));dl.append(item);}
+    for(const [term,ic,text] of stats){const item=H.node('div');const dt=H.node('dt','',term);dt.prepend(H.icon(ic));item.append(dt,H.node('dd','',text));dl.append(item);}
     return dl;
   }
   function renderProfiles() {
@@ -144,7 +144,7 @@
       profileKeys.forEach((key,i)=>{
         const card=H.node('article','rank-journey');card.style.borderTopColor=colors[i];
         const link=H.node('a','rank-profile',`@${key}`);link.href=`https://github.com/${encodeURIComponent(key)}`;link.target='_blank';link.rel='noopener noreferrer';
-        card.append(link,H.node('p','history-notice',`${labels[metric]} · puesto nacional`));
+        link.prepend(H.icon('user'));card.append(link,H.node('p','history-notice',`${labels[metric]} · puesto nacional`));
         card.append(H.rankMovement(selected.map(s=>s.date),series[i]));
         const valid=series[i].map((v,j)=>v===null?-1:j).filter(j=>j>=0);
         if(valid.length) {
@@ -158,7 +158,7 @@
           if(valid.length>1){
             const bestAt=valid.find(j=>series[i][j]===lo),worstAt=valid.find(j=>series[i][j]===hi),moves=valid.filter((j,k)=>k>0&&series[i][j]!==series[i][valid[k-1]]).length;
             const dl=H.node('dl','comparison-stats');dl.style.borderColor=colors[i];
-            for(const [t,x] of [['Mejor puesto',`#${lo} · ${H.dateLabel(selected[bestAt].date)}`],['Peor puesto',`#${hi} · ${H.dateLabel(selected[worstAt].date)}`],['Cambios de puesto',`${moves} en ${valid.length} capturas`]]){const it=H.node('div');it.append(H.node('dt','',t),H.node('dd','',x));dl.append(it);}
+            for(const [t,ic,x] of [['Mejor puesto','rank',`#${lo} · ${H.dateLabel(selected[bestAt].date)}`],['Peor puesto','worst',`#${hi} · ${H.dateLabel(selected[worstAt].date)}`],['Cambios de puesto','moves',`${moves} en ${valid.length} capturas`]]){const it=H.node('div'),dt=H.node('dt','',t);dt.prepend(H.icon(ic));it.append(dt,H.node('dd','',x));dl.append(it);}
             card.append(dl);
           }
           card.append(H.node('p','rank-dates',`${H.dateLabel(selected[first].date)} → ${H.dateLabel(selected[last].date)} · ${valid.length} capturas`));
@@ -185,7 +185,7 @@
       const valid=series[i].map((v,j)=>v===null?-1:j).filter(j=>j>=0);
       const detail=H.node('p','comparison-detail');
       detail.style.borderColor=colors[i];
-      const link=H.node('a','',`@${key}`);link.href=`https://github.com/${encodeURIComponent(key)}`;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);
+      const link=H.node('a','',`@${key}`);link.href=`https://github.com/${encodeURIComponent(key)}`;link.target='_blank';link.rel='noopener noreferrer';link.prepend(H.icon('user'));detail.append(link);
       if (!valid.length) detail.append(document.createTextNode(' · Sin datos en esta selección.'));
       else {
         const first=valid[0],last=valid.at(-1),delta=series[i][last]-series[i][first];

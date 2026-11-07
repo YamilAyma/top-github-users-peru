@@ -128,6 +128,22 @@
       e.preventDefault(); show(next, true);
     });
   }
+  const ICONS = {
+    growth: 'M3 17l6-6 4 4 8-8M15 7h6v6',
+    daily: 'M7 3v4M17 3v4M4 9h16M5 5h14a1 1 0 011 1v13a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1zM9 14h6',
+    jump: 'M13 2L5 14h6l-1 8 8-12h-6z',
+    max: 'M12 20V6M6 12l6-6 6 6M5 3h14',
+    min: 'M12 4v14M6 12l6 6 6-6M5 21h14',
+    rank: 'M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0zM7 6H4v1a3 3 0 003 3M17 6h3v1a3 3 0 01-3 3',
+    worst: 'M12 4v14M6 12l6 6 6-6',
+    moves: 'M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7',
+    user: 'M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0'
+  };
+  function icon(name) {
+    const svg = svgNode('svg', {viewBox: '0 0 24 24', width: 16, height: 16, fill: 'none', stroke: 'currentColor', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', class: 'stat-icon', 'aria-hidden': 'true', focusable: 'false'});
+    svg.append(svgNode('path', {d: ICONS[name] || ICONS.growth}));
+    return svg;
+  }
   function rankMovement(dates, ranks, {compact=false}={}) {
     const indices=ranks.map((v,i)=>v!==null && Number.isFinite(v)?i:-1).filter(i=>i>=0);
     const wrap=node('div',compact?'rank-movement compact':'rank-movement');
@@ -190,5 +206,5 @@
     window.dispatchEvent(new Event('favorites-changed'));
     return true;
   }
-  window.PeruHistory = {chart, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
+  window.PeruHistory = {chart, icon, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
 })();
