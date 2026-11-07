@@ -45,9 +45,28 @@
     link.rel = "noopener noreferrer";
     return link;
   }
+  // Motion: subtle, transform/opacity only, and off under prefers-reduced-motion.
+  const motionOK = () => !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ROW_STAGGER = 28, ROW_DURATION = 380, ROW_COUNT = 12;
+  const paintStart = performance.getEntriesByType('paint').find((p) => p.name === 'first-contentful-paint')?.startTime ?? 0;
+  let firstRowsRender = true;
+  const statSeen = new Set();
+  function setStat(id, value) {
+    const el = $(id);
+    if (statSeen.has(id) || !motionOK()) { statSeen.add(id); el.textContent = format.format(value); return; }
+    statSeen.add(id);
+    const start = performance.now(), duration = 600;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration), eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = format.format(Math.round(value * (0.85 + 0.15 * eased)));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
   function row(user, rank) {
     const tr = element("tr");
     tr.dataset.login = user.login;
+    tr.dataset.live = "";
     tr.classList.toggle("is-favorite", history.favorites.has(user.login));
     const position = element("td");
     position.append(
@@ -127,6 +146,88 @@
     tr.append(last);
     return tr;
   }
+  // FLIP: rows that persist across a re-render slide to their new position; new rows fade in.
+  const FLIP_EASE = 'cubic-bezier(.22, .61, .36, 1)';
+  const inViewport = (rect) => rect.bottom > -200 && rect.top < innerHeight + 200;
+  function snapshotRows() {
+    const tops = new Map();
+    document.querySelectorAll('#rows tr[data-login]').forEach((tr) => {
+      const rect = tr.getBoundingClientRect();
+      if (inViewport(rect)) tops.set(tr.dataset.login, { top: rect.top, position: tr.querySelector('.position')?.textContent ?? '' });
+    });
+    return tops;
+  }
+  function animateRows(before) {
+    let entering = 0;
+    document.querySelectorAll('#rows tr[data-login]').forEach((tr) => {
+      const rect = tr.getBoundingClientRect();
+      if (!inViewport(rect)) return;
+      const previous = before.get(tr.dataset.login);
+      const travel = previous === undefined ? null : previous.top - rect.top;
+      if (travel !== null && Math.abs(travel) <= innerHeight * 0.9) {
+        if (Math.abs(travel) > 1) tr.animate([{ transform: `translateY(${travel}px)` }, { transform: 'none' }], { duration: 340, easing: FLIP_EASE });
+        rollPosition(tr, previous.position);
+        return;
+      }
+      if (entering >= 10) return;
+      tr.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 300, delay: entering * 24, easing: FLIP_EASE, fill: 'backwards' });
+      entering += 1;
+    });
+  }
+  // Value transitions: the position number rolls to its new value and the active metric pill pulses.
+  function rollNumber(el, from, to, duration = 320) {
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration), eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = format.format(Math.round(from + (to - from) * eased));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const parseNumber = (text) => Number(String(text).replace(/[^\d]/g, ''));
+  function rollPosition(tr, previousText) {
+    const el = tr.querySelector('.position');
+    if (!el || !previousText || previousText === el.textContent) return;
+    const from = parseNumber(previousText), to = parseNumber(el.textContent);
+    if (!from || !to) return;
+    rollNumber(el, from, to);
+    el.animate([{ backgroundColor: 'rgba(200, 16, 46, .16)' }, { backgroundColor: 'transparent' }], { duration: 700, easing: 'ease-out' });
+  }
+  function pulseActiveMetric() {
+    document.querySelectorAll('#rows .metric-pill').forEach((pill) => {
+      if (!inViewport(pill.getBoundingClientRect())) return;
+      pill.animate([{ transform: 'scale(.9)', opacity: .35 }, { transform: 'none', opacity: 1 }], { duration: 320, easing: FLIP_EASE });
+    });
+    const th = document.querySelector(`th[data-sort="${state.metric}"]`);
+    th?.animate([{ backgroundColor: 'rgba(200, 16, 46, .12)' }, { backgroundColor: 'transparent' }], { duration: 700, easing: 'ease-out' });
+  }
+  // Microfeedback: favorite star pop, staggered rows on "load more", fading empty state and sliding tab indicator.
+  let pendingPop = null, lastStatus = '';
+  function popFavorite() {
+    if (!pendingPop) return;
+    const login = pendingPop; pendingPop = null;
+    if (!motionOK() || !history.favorites.has(login)) return;
+    const star = [...document.querySelectorAll('#rows .favorite-button')].find((b) => b.dataset.favorite === login)?.querySelector('svg');
+    star?.animate([{ transform: 'scale(.7)' }, { transform: 'scale(1.4)', offset: .5 }, { transform: 'scale(1)' }], { duration: 380, easing: FLIP_EASE });
+  }
+  function enterAppended(rows) {
+    if (!motionOK()) return;
+    rows.filter((tr) => inViewport(tr.getBoundingClientRect())).slice(0, 8).forEach((tr, i) => {
+      tr.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 320, delay: i * 30, easing: FLIP_EASE, fill: 'backwards' });
+    });
+  }
+  function slideTabIndicator(animate = true) {
+    const tabs = document.querySelector('.tabs');
+    const active = tabs?.querySelector('.tab.active');
+    if (!tabs || !active) return;
+    let bar = tabs.querySelector('.tab-indicator');
+    if (!bar) { bar = element('span', 'tab-indicator'); bar.setAttribute('aria-hidden', 'true'); tabs.prepend(bar); }
+    bar.style.transition = animate && motionOK() ? '' : 'none';
+    bar.style.width = `${active.offsetWidth}px`;
+    bar.style.transform = `translateX(${active.offsetLeft}px)`;
+    tabs.classList.add('tabs-ready');
+  }
+  let lastMetric = null, lastDirection = null, lastResults = '';
   let rendered = 0;
   let observer;
   function render(reset = true) {
@@ -164,16 +265,39 @@
     filtered
       .slice(reset ? state.start : rendered, end)
       .forEach((user) => fragment.append(row(user, ranks.get(user.login))));
+    if (reset && firstRowsRender && motionOK()) {
+      // The server-rendered rows already fade in via CSS; continue that animation on the live rows so the swap is invisible.
+      const elapsed = performance.now() - paintStart;
+      [...fragment.children].slice(0, ROW_COUNT).forEach((tr, i) => {
+        const delay = i * ROW_STAGGER - elapsed;
+        if (delay + ROW_DURATION <= 0) return;
+        tr.classList.add("row-enter");
+        tr.style.animationDelay = `${Math.round(delay)}ms`;
+      });
+    }
+    const before = reset && !firstRowsRender && motionOK() ? snapshotRows() : null;
+    if (reset) firstRowsRender = false;
+    const appended = reset ? [] : [...fragment.children];
     if (reset) $("rows").replaceChildren(fragment);
     else $("rows").append(fragment);
+    if (appended.length) enterAppended(appended);
+    popFavorite();
+    if (before && before.size) animateRows(before);
+    if (before && lastMetric !== null && lastMetric !== state.metric) pulseActiveMetric();
     rendered = end;
     decorateTrends();
     $("status").textContent = filtered.length
       ? ""
       : "No encontramos perfiles con esos filtros. Prueba otro nombre o ciudad.";
+    if (motionOK() && $("status").textContent && $("status").textContent !== lastStatus)
+      $("status").animate([{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }], { duration: 280, easing: FLIP_EASE });
+    lastStatus = $("status").textContent;
     $("results").textContent = filtered.length
       ? `Mostrando ${format.format(state.start + 1)}–${format.format(end)} de ${format.format(filtered.length)} perfiles${end === filtered.length ? " · Llegaste al final" : ""}`
       : "0 perfiles";
+    if (motionOK() && lastResults && lastResults !== $("results").textContent)
+      $("results").animate([{ opacity: .35, transform: 'translateY(3px)' }, { opacity: 1, transform: 'none' }], { duration: 240, easing: FLIP_EASE });
+    lastResults = $("results").textContent;
     $("load-more").disabled = end >= filtered.length;
     $("load-more").hidden = end >= filtered.length;
     observer?.unobserve($("feed-sentinel"));
@@ -193,22 +317,85 @@
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", String(active));
     });
+    slideTabIndicator(lastMetric !== null);
     document.querySelectorAll("th[data-sort]").forEach((th) => {
       const active = th.dataset.sort === state.metric;
       th.setAttribute(
         "aria-sort",
         active ? (state.direction === -1 ? "descending" : "ascending") : "none",
       );
-      th.querySelector("span").replaceChildren(
-        history.icon(active ? (state.direction === -1 ? "arrowDown" : "arrowUp") : "sort"),
-      );
+      const sortIcon = history.icon(active ? (state.direction === -1 ? "arrowDown" : "arrowUp") : "sort");
+      th.querySelector("span").replaceChildren(sortIcon);
+      if (active && lastDirection !== null && motionOK() && (lastDirection !== state.direction || lastMetric !== state.metric))
+        sortIcon.animate([{ transform: `rotate(${lastMetric === state.metric ? 180 : 0}deg) scale(.6)`, opacity: .3 }, { transform: 'none', opacity: 1 }], { duration: 280, easing: FLIP_EASE });
     });
+    lastMetric = state.metric;
+    lastDirection = state.direction;
   }
+  // Hover / focus card with the full chart for a row's trend sparkline.
+  const canHover = matchMedia('(hover: hover) and (pointer: fine)');
+  let trendPopover = null, trendOwner = null, showTimer = 0, hideTimer = 0;
+  function ensurePopover() {
+    if (trendPopover) return trendPopover;
+    trendPopover = element('div', 'trend-popover');
+    trendPopover.setAttribute('role', 'dialog');
+    trendPopover.hidden = true;
+    trendPopover.addEventListener('pointerenter', () => clearTimeout(hideTimer));
+    trendPopover.addEventListener('pointerleave', () => scheduleHide());
+    document.body.append(trendPopover);
+    return trendPopover;
+  }
+  function hideTrend() {
+    clearTimeout(showTimer); clearTimeout(hideTimer);
+    if (trendPopover) trendPopover.hidden = true;
+    trendOwner = null;
+  }
+  function scheduleHide() { clearTimeout(showTimer); clearTimeout(hideTimer); hideTimer = setTimeout(hideTrend, 180); }
+  function showTrend(anchor, info) {
+    clearTimeout(hideTimer);
+    if (trendOwner === anchor && trendPopover && !trendPopover.hidden) return;
+    const pop = ensurePopover();
+    trendOwner = anchor;
+    pop.setAttribute('aria-label', `Evolución de ${info.login}`);
+    const card = history.metricCard(info.dates, info.values, `@${info.login} · ${info.label}`, {interval: 'daily'});
+    pop.replaceChildren(card);
+    const foot = element('div', 'trend-popover-foot');
+    if (info.positions && info.positions.some(v => v !== null)) foot.append(history.rankMovement(info.dates, info.positions, {compact: true}));
+    const link = element('a', 'trend-popover-link', 'Explorar evolución');
+    link.href = info.href; link.append(history.icon('arrowUp'));
+    link.lastChild.style.transform = 'rotate(45deg)';
+    foot.append(link);
+    pop.append(foot);
+    pop.hidden = false;
+    const rect = anchor.getBoundingClientRect(), width = pop.offsetWidth, height = pop.offsetHeight, margin = 12;
+    const left = Math.min(Math.max(margin, rect.right - width), innerWidth - width - margin);
+    const below = rect.bottom + 8, above = rect.top - height - 8;
+    const top = below + height <= innerHeight - margin ? below : above >= margin ? above : Math.max(margin, innerHeight - height - margin);
+    pop.style.left = `${left}px`; pop.style.top = `${top}px`;
+  }
+  function bindTrend(anchor, info) {
+    anchor.addEventListener('pointerenter', () => {
+      if (!canHover.matches) return;
+      clearTimeout(hideTimer); clearTimeout(showTimer);
+      showTimer = setTimeout(() => showTrend(anchor, info), 140);
+    });
+    anchor.addEventListener('pointerleave', () => { if (canHover.matches) scheduleHide(); });
+    anchor.addEventListener('focus', () => showTrend(anchor, info));
+    anchor.addEventListener('blur', () => scheduleHide());
+  }
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hideTrend(); });
+  window.addEventListener('scroll', hideTrend, {passive: true, capture: true});
+  window.addEventListener('resize', hideTrend);
+  const revealed = new Set();
   function decorateTrends() {
     const metric = state.metric;
     const data = trendCache.get(metric);
     if (!data || typeof data.then === 'function') {
-      document.querySelectorAll('#rows .trend-cell').forEach(cell=>cell.replaceChildren(element('span','history-empty', tableVisible ? 'Cargando historial…' : 'Historial de 90 días')));
+      document.querySelectorAll('#rows .trend-cell').forEach(cell=>{
+        if (!tableVisible) { cell.replaceChildren(element('span','history-empty','Historial de 90 días')); return; }
+        const wait=element('span','trend-skeleton');wait.setAttribute('role','status');wait.setAttribute('aria-label','Cargando historial');
+        cell.replaceChildren(wait);
+      });
       if (tableVisible && !data) loadTrends(metric);
       return;
     }
@@ -234,8 +421,16 @@
       detail.setAttribute('aria-label', `Explorar evolución de ${tr.dataset.login}`);
       const finite=values.filter(v=>v!==null);
       const change=finite.length>1 ? finite.at(-1)-finite[0] : 0;
-      detail.append(history.chart(data.dates, values, {minSpan:Math.max(1,(finite[0] || 0)*.1), color:change>0?'#176b55':change<0?'#b63735':'#737b87', label:`${labels[metric]} de ${tr.dataset.login}`}));
+      const spark=history.chart(data.dates, values, {minSpan:Math.max(1,(finite[0] || 0)*.1), color:change>0?'#176b55':change<0?'#b63735':'#737b87', label:`${labels[metric]} de ${tr.dataset.login}`});
+      // The hover card replaces the browser's native tooltip; the svg keeps its aria-label.
+      spark.querySelectorAll?.('title').forEach(t=>t.remove());
+      if (!revealed.has(metric) && motionOK() && tr.rowIndex<=ROW_COUNT) {
+        spark.classList.add('spark-reveal');
+        spark.style.animationDelay=`${Math.max(0,tr.rowIndex-1)*ROW_STAGGER}ms`;
+      }
+      detail.append(spark);
       cell.append(detail);
+      bindTrend(detail,{login:tr.dataset.login,label:labels[metric],dates:data.dates,values,positions,href:detail.href});
       const valid=values.map((value,i)=>value===null ? -1 : i).filter(i=>i>=0);
       if (valid.length < 2) {
         cell.append(element('small','history-empty', valid.length ? 'Primera captura' : 'Sin capturas'));
@@ -247,6 +442,7 @@
       }
       if (valid.length && values[0]===null) cell.append(element('small','history-empty','Nuevo en el registro'));
     });
+    revealed.add(metric);
   }
   async function loadTrends(metric) {
     const pending=fetch(`./data/trends-${metric}.json?schema=2`, {priority:'low'}).then(async response=>{
@@ -280,10 +476,24 @@
   $('rows').addEventListener('click', event=>{
     const button=event.target.closest('[data-favorite]');
     if (!button) return;
+    pendingPop = button.dataset.favorite;
     if (!history.favorites.toggle(button.dataset.favorite)) $('favorites-status').textContent='El navegador no permite guardar favoritos. Revisa sus ajustes de almacenamiento.';
   });
   window.addEventListener('favorites-changed', ()=>render());
-  $('only-favorites').addEventListener('change', ()=>{ state.start=0; state.visible=state.batch; render(); });
+  window.addEventListener('resize', ()=>slideTabIndicator(false));
+  document.fonts?.ready.then(()=>slideTabIndicator(false));
+  const ONLY_FAVORITES_KEY = 'github-peru:only-favorites:v1';
+  const onlyFavorites = $('only-favorites');
+  try { onlyFavorites.checked = localStorage.getItem(ONLY_FAVORITES_KEY) === '1'; } catch { /* storage unavailable: start unchecked */ }
+  onlyFavorites.addEventListener('change', ()=>{
+    try { localStorage.setItem(ONLY_FAVORITES_KEY, onlyFavorites.checked ? '1' : '0'); } catch { /* the filter still works for this visit */ }
+    state.start=0; state.visible=state.batch; render();
+  });
+  window.addEventListener('storage', (event)=>{
+    if (event.key !== ONLY_FAVORITES_KEY) return;
+    onlyFavorites.checked = event.newValue === '1';
+    state.start=0; state.visible=state.batch; render();
+  });
   async function load() {
     $("retry").hidden = true;
     $("status").textContent = "Cargando la comunidad…";
@@ -345,9 +555,9 @@
   function updateScope() {
     const city=document.body.dataset.city || $('city').value;
     const group=city ? state.users.filter(u=>u.cities.includes(city)) : state.users;
-    $('stat-users').textContent=format.format(group.length);
-    $('stat-contributions').textContent=format.format(group.reduce((n,u)=>n+u.publicContributions,0));
-    $('stat-followers').textContent=format.format(group.reduce((n,u)=>n+u.followers,0));
+    setStat('stat-users',group.length);
+    setStat('stat-contributions',group.reduce((n,u)=>n+u.publicContributions,0));
+    setStat('stat-followers',group.reduce((n,u)=>n+u.followers,0));
     const label=state.cities.find(c=>c.id===city)?.label;
     $('stat-scope').textContent=label ? `Perfiles que mencionan ${label}` : 'Personas y organizaciones de Perú';
     const link=document.querySelector('#history-preview .text-link');
