@@ -1096,6 +1096,28 @@ footer {
 .compare-chip { border: 1px solid; border-radius: 20px; background: #fff; padding: 8px 14px; font: inherit; font-size: 13px; cursor: pointer; }
 .comparison-plot { position: relative; height: 220px; margin: 20px 0 12px; border-bottom: 1px solid var(--line); background: repeating-linear-gradient(to bottom,#fff 0,#fff 54px,#f0efed 55px); }
 .comparison-plot .history-chart { position: absolute; inset: 0; width: 100%; height: 100%; }
+.plot-frame { display: grid; grid-template-columns: 56px minmax(0,1fr); margin: 20px 0 12px; font-size: 11px; color: var(--muted); }
+.plot-frame .comparison-plot { margin: 0; background: none; }
+.plot-yaxis { position: relative; height: 220px; }
+.plot-yaxis span { position: absolute; right: 8px; transform: translateY(-50%); font-variant-numeric: tabular-nums; }
+.plot-gridline { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid #f0efed; pointer-events: none; }
+.plot-xaxis { position: relative; height: 22px; margin-top: 4px; }
+.plot-xaxis span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.plot-xaxis .edge-start { transform: none; }
+.plot-xaxis .edge-end { transform: translateX(-100%); }
+@media (max-width: 560px) { .plot-xaxis span:nth-child(even) { display: none; } .plot-frame { grid-template-columns: 44px minmax(0,1fr); } }
+.comparison-plot { touch-action: pan-y; cursor: crosshair; }
+.comparison-plot:focus-visible { outline: 2px solid var(--accent, #b63735); outline-offset: 2px; }
+.plot-cursor { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px dashed #8a8f98; pointer-events: none; }
+.plot-cursor-dot { position: absolute; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.25); pointer-events: none; }
+.plot-tooltip { position: absolute; top: 8px; transform: translateX(12px); z-index: 2; min-width: 170px; max-width: 260px; padding: 8px 10px; background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,.12); font-size: 12px; color: #292b31; pointer-events: none; }
+.plot-tooltip.flip { transform: translateX(calc(-100% - 12px)); }
+.plot-tooltip strong { display: block; margin-bottom: 4px; }
+.plot-tooltip-row { display: grid; grid-template-columns: 1fr auto; gap: 0 10px; margin: 4px 0 0; padding-left: 8px; border-left: 3px solid; }
+.plot-tooltip-row small { grid-column: 1 / -1; color: var(--muted); }
+.comparison-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 10px 16px; margin: 6px 0 14px; padding: 10px 0 10px 12px; border-left: 3px solid; font-size: 12px; }
+.comparison-stats dt { color: var(--muted); font-size: 11px; }
+.comparison-stats dd { margin: 2px 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
 .chart-scale { font-size: 12px; color: var(--muted); }
 .chart-endpoints { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--muted); }
 .comparison-detail { padding-left: 12px; border-left: 3px solid; font-size: 13px; line-height: 1.9; }
