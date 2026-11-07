@@ -1344,3 +1344,32 @@ body { overflow-x: clip; }
 .history-preview .history-empty { color: var(--on-band-mute); }
 .history-preview .preview-window select { padding: 8px 36px 8px 12px; color: #23252c; border-color: transparent; }
 @media (max-width: 560px) { .history-card .plot-xaxis span:nth-child(2):not(:last-child) { display: none; } }
+
+/* Fully styled dropdowns (button + list) where the browser supports customizable selects */
+@supports (appearance: base-select) {
+  select:not([multiple]), select:not([multiple])::picker(select) { appearance: base-select; }
+  select:not([multiple]) { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-right: 12px; background-image: none; text-align: left; }
+  select[hidden] { display: none; }
+  select:not([multiple])::picker-icon {
+    content: ""; flex: none; width: 16px; height: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c8102e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 16px no-repeat;
+    transition: rotate .18s ease;
+  }
+  select:not([multiple]):open::picker-icon { rotate: 180deg; }
+  select:not([multiple]):open { border-color: var(--peru-red); box-shadow: var(--ring); }
+  select:not([multiple])::picker(select) {
+    box-sizing: border-box; margin-block: 6px; padding: 6px; max-height: min(340px, 60vh);
+    background: #fff; border: 1px solid var(--control-border); border-radius: 12px;
+    box-shadow: 0 18px 40px -14px rgba(35, 37, 44, .32), 0 2px 6px rgba(35, 37, 44, .08);
+    scrollbar-width: thin; scrollbar-color: #d8c2c6 transparent;
+  }
+  select:not([multiple]) option {
+    display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px;
+    color: #23252c; background: transparent; font-size: 14px; font-weight: 400; cursor: pointer;
+  }
+  select:not([multiple]) option:hover, select:not([multiple]) option:focus-visible { background: var(--peru-red-tint); color: #7a1f2c; outline: none; }
+  select:not([multiple]) option:checked { font-weight: 600; color: var(--peru-red-dark); }
+  select:not([multiple]) option::checkmark { order: 1; margin-left: auto; color: var(--peru-red); }
+  select:not([multiple]) option:disabled { color: #9a9ca4; cursor: default; }
+  .history-preview .preview-window select:open { border-color: #fff; }
+}
