@@ -9,6 +9,7 @@ sys.dont_write_bytecode = True
 spec = importlib.util.spec_from_file_location('history_storage', Path(__file__).with_name('capture-history.py'))
 storage = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(storage)
+import analytics
 METRICS = ('publicContributions', 'total', 'followers')
 
 
@@ -38,8 +39,9 @@ def scope_rows(snapshot, city):
     return [snapshot['users'][index] for index in membership[city]]
 
 
-def point(snapshot, city):
-    rows = scope_rows(snapshot, city)
+def point(snapshot, city, excluded=frozenset()):
+    # Aggregates of an incomplete capture would draw a false cliff; leave them out as a visible gap.
+    rows = None if snapshot['date'] in excluded else scope_rows(snapshot, city)
     return {'date': snapshot['date'], 'profiles': len(rows) if rows is not None else None,
             'publicContributions': sum(row[1] for row in rows) if rows is not None else None,
             'followers': sum(row[3] for row in rows) if rows is not None else None}
@@ -66,9 +68,11 @@ def build_history_views(docs, cities):
     index_path = docs / 'history/index.json'
     catalog = json.loads(index_path.read_text()) if index_path.exists() else {'daily_window': None, 'latest': None}
     summary = {'version': 1, 'window': catalog['daily_window'], 'latest': catalog['latest'], 'scopes': {}}
+    quality = analytics.quality_report([s for _, s in sorted(records['daily'].items())])
+    excluded = frozenset(quality['excluded'])
     for city in ['', *cities]:
-        series = {tier: [point(s, city) for _, s in sorted(rows.items())] for tier, rows in records.items()}
-        daily = [s for _, s in sorted(records['daily'].items()) if scope_rows(s, city) is not None]
+        series = {tier: [point(s, city, excluded) for _, s in sorted(rows.items())] for tier, rows in records.items()}
+        daily = [s for _, s in sorted(records['daily'].items()) if s['date'] not in excluded and scope_rows(s, city) is not None]
         weekly = None
         if len(daily) >= 2:
             latest = date.fromisoformat(daily[-1]['date'])
@@ -80,6 +84,7 @@ def build_history_views(docs, cities):
     out = docs / 'data'
     out.mkdir(exist_ok=True)
     (out / 'evolution-summary.json').write_text(storage.compact(summary) + '\n')
+    (out / 'analytics-quality.json').write_text(storage.compact(quality) + '\n')
     daily = [s for _, s in sorted(records['daily'].items())]
     dates = [s['date'] for s in daily]
     logins = sorted({r[0].lower() for s in daily for r in s['users']})

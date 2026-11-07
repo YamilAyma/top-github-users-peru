@@ -1421,3 +1421,14 @@ input[type="checkbox"] { transition: background .15s, background-size .18s var(-
 @media (prefers-reduced-motion: reduce) {
   .tab-indicator, input[type="checkbox"] { transition: none !important; }
 }
+
+/* Data-quality marks along the date axis */
+.plot-mark { position: absolute; bottom: -1px; width: 0; height: 0; margin-left: -6px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 9px solid #d98a00; cursor: help; z-index: 2; }
+.plot-mark.shift { border-bottom-color: #8a8d96; }
+.plot-mark:focus-visible { outline: 2px solid var(--peru-red); outline-offset: 3px; }
+.plot-mark::after { content: attr(data-label); position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); width: max-content; max-width: 220px; padding: 6px 9px; border-radius: 8px; background: #23252c; color: #fff; font: 500 11px/1.4 Inter, sans-serif; opacity: 0; pointer-events: none; transition: opacity .15s; }
+.plot-mark:hover::after, .plot-mark:focus-visible::after { opacity: 1; }
+.history-preview .plot-mark { border-bottom-color: #ffd37a; }
+.history-preview .plot-mark.shift { border-bottom-color: #d6c9cc; }
+.plot-mark.edge-start::after { left: -6px; transform: none; }
+.plot-mark.edge-end::after { left: auto; right: -6px; transform: none; }

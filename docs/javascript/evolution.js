@@ -6,7 +6,7 @@
   const colors=['#b63735','#176b77','#7152a3'];
   const params=new URLSearchParams(location.search);
   const files=new Map();
-  let catalog, summary, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
+  let catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
   const value=(row,metric)=>metric==='total'?row[1]+row[2]:metric==='followers'?row[3]:row[1];
   const signed=v=>`${v>0?'+':''}${fmt.format(v)}`;
   const movement=v=>v>0?`↑ ${v}`:v<0?`↓ ${-v}`:'— Sin cambio';
@@ -88,20 +88,43 @@
       $('evolution-app').hidden=true;
     }
   }
+  const excludedDates=()=>new Set(quality?.excluded||[]);
+  const usableSelected=()=>{const skip=excludedDates();return selected.filter(s=>!skip.has(s.date));};
+  const weekdayName=new Intl.DateTimeFormat('es-PE',{weekday:'long',timeZone:'UTC'});
+  function qualityMarks() {
+    const flags=new Map((quality?.snapshots||[]).filter(r=>r.status==='incomplete'||r.status==='window-shift').map(r=>[r.date,r]));
+    return selected.filter(s=>flags.has(s.date)).map(s=>{
+      const r=flags.get(s.date);
+      return r.status==='incomplete'
+        ? {date:s.date,kind:'incomplete',short:`${H.dateLabel(s.date)}: ${fmt.format(r.profiles)} de ${fmt.format(r.expectedProfiles)} perfiles`,label:`${H.dateLabel(s.date)}: captura incompleta (${fmt.format(r.profiles)} de ${fmt.format(r.expectedProfiles)} perfiles), excluida de los totales`}
+        : {date:s.date,kind:'shift',label:`${H.dateLabel(s.date)}: ajuste de ventana, muchos contadores bajan a la vez`};
+    });
+  }
+  function renderQuality() {
+    const marks=qualityMarks(), incomplete=marks.filter(m=>m.kind==='incomplete'), shifts=marks.filter(m=>m.kind==='shift');
+    const parts=[];
+    if (incomplete.length) parts.push(`${incomplete.length} ${incomplete.length===1?'captura incompleta excluida':'capturas incompletas excluidas'} de los totales (${incomplete.map(m=>m.short).join('; ')})`);
+    if (shifts.length) {
+      const days=new Set(shifts.map(m=>weekdayName.format(new Date(`${m.date}T12:00:00Z`))));
+      parts.push(`${shifts.length} ${shifts.length===1?'ajuste':'ajustes'} de ventana${days.size===1?` en ${[...days][0]}`:''}: muchos contadores bajan a la vez y no reflejan actividad`);
+    }
+    $('e-quality').textContent=quality?`Calidad de datos: ${parts.length?parts.join('. ')+'.':'sin anomalías en las capturas seleccionadas.'}`:'';
+  }
   function renderCommunity() {
     const tier=$('e-tier').value, dates=selected.map(s=>s.date);
     $('community-charts').replaceChildren();
     for (const [key,label,field] of [['profiles','Perfiles registrados',null],['publicContributions','Contador público agregado',1],['followers','Seguidores acumulados',3]]) {
-      const values=selected.map(s=>{const rows=cityRows(s);return rows===null?null:field===null?rows.length:rows.reduce((n,r)=>n+r[field],0);});
-      const card=H.metricCard(dates,values,label,{interval:tier});
+      const skip=excludedDates();
+      const values=selected.map(s=>{const rows=skip.has(s.date)?null:cityRows(s);return rows===null?null:field===null?rows.length:rows.reduce((n,r)=>n+r[field],0);});
+      const card=H.metricCard(dates,values,label,{interval:tier,marks:qualityMarks()});
       $('community-charts').append(card);
     }
-    const a=cityRows(selected[0]), b=cityRows(selected.at(-1));
+    const pool=usableSelected(), a=pool.length?cityRows(pool[0]):null, b=pool.length?cityRows(pool.at(-1)):null;
     if (a===null || b===null) { $('matched-summary').textContent='No hay cobertura local comparable en ambos extremos. Las ubicaciones actuales no se aplican al pasado.'; return; }
     const first=new Map(a.map(r=>[r[0].toLowerCase(),r])), last=new Map(b.map(r=>[r[0].toLowerCase(),r]));
     const common=[...first.keys()].filter(k=>last.has(k));
     const delta=common.reduce((n,k)=>n+value(last.get(k),$('e-metric').value)-value(first.get(k),$('e-metric').value),0);
-    $('matched-summary').textContent=selected.length<2?'Hace falta otra captura para comparar cambios.':`${common.length} perfiles presentes en ambos extremos: ${signed(delta)} en ${labels[$('e-metric').value].toLowerCase()}. Entradas: ${[...last.keys()].filter(k=>!first.has(k)).length}; salidas: ${[...first.keys()].filter(k=>!last.has(k)).length}. Las variaciones no equivalen a actividad del período.`;
+    $('matched-summary').textContent=pool.length<2?'Hace falta otra captura para comparar cambios.':`${common.length} perfiles presentes en ambos extremos: ${signed(delta)} en ${labels[$('e-metric').value].toLowerCase()}. Entradas: ${[...last.keys()].filter(k=>!first.has(k)).length}; salidas: ${[...first.keys()].filter(k=>!last.has(k)).length}. Las variaciones no equivalen a actividad del período.`;
   }
   function statsGrid(key,values,valid,metric,color,positions) {
     const first=valid[0],last=valid.at(-1),delta=values[last]-values[first],days=H.day(selected[last].date)-H.day(selected[first].date);
@@ -214,11 +237,12 @@
   }
   function renderPast() {
     $('past-rows').replaceChildren();
-    if (!selected.length) { $('past-more').hidden=true;return; }
-    const last=selected.at(-1), rows=cityRows(last), beforeRows=cityRows(selected[0]);
+    const pool=usableSelected();
+    if (!pool.length) { $('past-more').hidden=true;return; }
+    const last=pool.at(-1), rows=cityRows(last), beforeRows=cityRows(pool[0]);
     $('past-caption').textContent=`Captura del ${H.dateLabel(last.date)} · ${labels[$('e-metric').value]}. Puestos nacionales; los empates comparten posición. ${$('e-tier').value==='daily'?'':'Última captura disponible del período; el período actual es provisional.'}`;
     if (rows===null) { $('past-caption').textContent+=' Sin cobertura local en esta captura.';$('past-more').hidden=true;return; }
-    const old=ranks(selected[0]), current=ranks(last), oldKeys=new Set((beforeRows || []).map(r=>r[0].toLowerCase()));
+    const old=ranks(pool[0]), current=ranks(last), oldKeys=new Set((beforeRows || []).map(r=>r[0].toLowerCase()));
     const query=$('past-search').value.trim().replace(/^@/,'').toLowerCase();
     const ordered=[...rows].filter(r=>r[0].toLowerCase().includes(query)).sort((a,b)=>current.get(a[0].toLowerCase())-current.get(b[0].toLowerCase()) || a[0].toLowerCase().localeCompare(b[0].toLowerCase(),'en'));
     for (const row of ordered.slice(0,pastLimit)) {
@@ -226,8 +250,8 @@
       tr.append(H.node('td','',fmt.format(current.get(key))));
       const profile=H.node('td'), button=H.node('button','history-profile-button',`@${row[0]}`);
       button.addEventListener('click',()=>addProfile(key)); profile.append(button);tr.append(profile,H.node('td','numeric',fmt.format(value(row,$('e-metric').value))));
-      const moveCell=H.node('td','',selected.length<2?'Primera captura':beforeRows===null?'Sin cobertura inicial':oldKeys.has(key)?'':'No presente al inicio');
-      if (selected.length>=2 && beforeRows!==null && oldKeys.has(key)) {
+      const moveCell=H.node('td','',pool.length<2?'Primera captura':beforeRows===null?'Sin cobertura inicial':oldKeys.has(key)?'':'No presente al inicio');
+      if (pool.length>=2 && beforeRows!==null && oldKeys.has(key)) {
         const v=old.get(key)-current.get(key);
         moveCell.className=`rank-change-cell ${v>0?'up':v<0?'down':'stable'}`;
         moveCell.append(H.icon(v>0?'arrowUp':v<0?'arrowDown':'equal'),v===0?'Sin cambio':String(Math.abs(v)));
@@ -260,6 +284,7 @@
       renderWeekly();updateURL();return;
     }
     const cityCount=selected.filter(s=>cityRows(s)!==null).length;
+    renderQuality();
     $('e-coverage').textContent=`${selected.length} capturas seleccionadas · ${H.dateLabel(selected[0].date)} – ${H.dateLabel(selected.at(-1).date)}. ${selected.length===1?'Primera captura: todavía no hay una tendencia. ':''}${$('e-city').value?`${cityCount} con cobertura de ciudad. `:''}Los huecos se conservan. Hora de referencia: Perú.`;
     renderCommunity();renderProfiles();renderPast();renderWeekly();updateURL();
   }
@@ -275,7 +300,7 @@
     decorateControls();
     $('evolution-retry').hidden=true;
     try {
-      [catalog,summary]=await Promise.all([json('./history/index.json'),json('./data/evolution-summary.json')]);
+      [catalog,summary,quality]=await Promise.all([json('./history/index.json'),json('./data/evolution-summary.json'),json('./data/analytics-quality.json').catch(()=>null)]);
       if (!catalog.series || !summary.scopes) throw new Error('Invalid catalog');
       for (const [id,key] of [['e-city','city'],['e-tier','tier'],['e-days','days'],['e-metric','metric'],['e-view','view']]) selectKnown(id,key);
       profileKeys=[...new Set((params.get('users') || '').split(',').map(v=>v.toLowerCase()).filter(v=>/^[a-z0-9-]{1,39}$/.test(v)))].slice(0,3);
