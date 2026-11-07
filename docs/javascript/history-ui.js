@@ -55,7 +55,7 @@
     const frame = node('div', 'plot-frame'), yAxis = node('div', 'plot-yaxis'), xAxis = node('div', 'plot-xaxis');
     yAxis.style.height = plot.style.height = `${height}px`;
     yAxis.setAttribute('aria-hidden', 'true'); xAxis.setAttribute('aria-hidden', 'true');
-    const fractions = low === high ? [0.5] : [0, 1/3, 2/3, 1];
+    const fractions = low === high ? [0.5] : high - low <= 4 && Number.isInteger(low) && Number.isInteger(high) ? Array.from({length: high - low + 1}, (_, k) => k / (high - low)) : [0, 1/3, 2/3, 1];
     for (const f of fractions) {
       const top = low === high ? height / 2 : PAD + f * (height - 2 * PAD);
       const value = low === high ? low : rank ? low + f * (high - low) : high - f * (high - low);

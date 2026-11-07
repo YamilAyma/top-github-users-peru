@@ -149,6 +149,18 @@
         const valid=series[i].map((v,j)=>v===null?-1:j).filter(j=>j>=0);
         if(valid.length) {
           const first=valid[0],last=valid.at(-1);
+          const ranksOf=valid.map(j=>series[i][j]),lo=Math.min(...ranksOf),hi=Math.max(...ranksOf),W=420,Ht=140;
+          const rdates=selected.map(s=>s.date),rplot=H.node('div','comparison-plot card-plot');
+          rplot.append(H.chart(rdates,series[i],{rank:true,width:W,height:Ht,interval:$('e-tier').value,domain:[lo,hi],window:{from:rdates[first],through:rdates[last]},label:`@${key}: puesto nacional`,color:colors[i]}));
+          const span=rdates.slice(first,last+1);
+          card.append(H.framePlot(rplot,{dates:span,domain:[lo,hi],format:v=>`#${fmt.format(v)}`,rank:true,width:W,height:Ht,maxTicks:3}));
+          H.attachCursor(rplot,{dates:span,series:[series[i].slice(first,last+1)],colors:[colors[i]],names:[`@${key}`],domain:[lo,hi],format:v=>fmt.format(v),rank:true,width:W,height:Ht});
+          if(valid.length>1){
+            const bestAt=valid.find(j=>series[i][j]===lo),worstAt=valid.find(j=>series[i][j]===hi),moves=valid.filter((j,k)=>k>0&&series[i][j]!==series[i][valid[k-1]]).length;
+            const dl=H.node('dl','comparison-stats');dl.style.borderColor=colors[i];
+            for(const [t,x] of [['Mejor puesto',`#${lo} · ${H.dateLabel(selected[bestAt].date)}`],['Peor puesto',`#${hi} · ${H.dateLabel(selected[worstAt].date)}`],['Cambios de puesto',`${moves} en ${valid.length} capturas`]]){const it=H.node('div');it.append(H.node('dt','',t),H.node('dd','',x));dl.append(it);}
+            card.append(dl);
+          }
           card.append(H.node('p','rank-dates',`${H.dateLabel(selected[first].date)} → ${H.dateLabel(selected[last].date)} · ${valid.length} capturas`));
           const details=H.node('details','rank-events');details.append(H.node('summary','','Ver cambios registrados'));
           const list=H.node('ol','rank-event-list');
