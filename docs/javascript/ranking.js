@@ -45,9 +45,28 @@
     link.rel = "noopener noreferrer";
     return link;
   }
+  // Motion: subtle, transform/opacity only, and off under prefers-reduced-motion.
+  const motionOK = () => !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ROW_STAGGER = 28, ROW_DURATION = 380, ROW_COUNT = 12;
+  const paintStart = performance.getEntriesByType('paint').find((p) => p.name === 'first-contentful-paint')?.startTime ?? 0;
+  let firstRowsRender = true;
+  const statSeen = new Set();
+  function setStat(id, value) {
+    const el = $(id);
+    if (statSeen.has(id) || !motionOK()) { statSeen.add(id); el.textContent = format.format(value); return; }
+    statSeen.add(id);
+    const start = performance.now(), duration = 600;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration), eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = format.format(Math.round(value * (0.85 + 0.15 * eased)));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
   function row(user, rank) {
     const tr = element("tr");
     tr.dataset.login = user.login;
+    tr.dataset.live = "";
     tr.classList.toggle("is-favorite", history.favorites.has(user.login));
     const position = element("td");
     position.append(
@@ -164,6 +183,17 @@
     filtered
       .slice(reset ? state.start : rendered, end)
       .forEach((user) => fragment.append(row(user, ranks.get(user.login))));
+    if (reset && firstRowsRender && motionOK()) {
+      // The server-rendered rows already fade in via CSS; continue that animation on the live rows so the swap is invisible.
+      const elapsed = performance.now() - paintStart;
+      [...fragment.children].slice(0, ROW_COUNT).forEach((tr, i) => {
+        const delay = i * ROW_STAGGER - elapsed;
+        if (delay + ROW_DURATION <= 0) return;
+        tr.classList.add("row-enter");
+        tr.style.animationDelay = `${Math.round(delay)}ms`;
+      });
+    }
+    if (reset) firstRowsRender = false;
     if (reset) $("rows").replaceChildren(fragment);
     else $("rows").append(fragment);
     rendered = end;
@@ -258,11 +288,16 @@
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') hideTrend(); });
   window.addEventListener('scroll', hideTrend, {passive: true, capture: true});
   window.addEventListener('resize', hideTrend);
+  const revealed = new Set();
   function decorateTrends() {
     const metric = state.metric;
     const data = trendCache.get(metric);
     if (!data || typeof data.then === 'function') {
-      document.querySelectorAll('#rows .trend-cell').forEach(cell=>cell.replaceChildren(element('span','history-empty', tableVisible ? 'Cargando historial…' : 'Historial de 90 días')));
+      document.querySelectorAll('#rows .trend-cell').forEach(cell=>{
+        if (!tableVisible) { cell.replaceChildren(element('span','history-empty','Historial de 90 días')); return; }
+        const wait=element('span','trend-skeleton');wait.setAttribute('role','status');wait.setAttribute('aria-label','Cargando historial');
+        cell.replaceChildren(wait);
+      });
       if (tableVisible && !data) loadTrends(metric);
       return;
     }
@@ -291,6 +326,10 @@
       const spark=history.chart(data.dates, values, {minSpan:Math.max(1,(finite[0] || 0)*.1), color:change>0?'#176b55':change<0?'#b63735':'#737b87', label:`${labels[metric]} de ${tr.dataset.login}`});
       // The hover card replaces the browser's native tooltip; the svg keeps its aria-label.
       spark.querySelectorAll?.('title').forEach(t=>t.remove());
+      if (!revealed.has(metric) && motionOK() && tr.rowIndex<=ROW_COUNT) {
+        spark.classList.add('spark-reveal');
+        spark.style.animationDelay=`${Math.max(0,tr.rowIndex-1)*ROW_STAGGER}ms`;
+      }
       detail.append(spark);
       cell.append(detail);
       bindTrend(detail,{login:tr.dataset.login,label:labels[metric],dates:data.dates,values,positions,href:detail.href});
@@ -305,6 +344,7 @@
       }
       if (valid.length && values[0]===null) cell.append(element('small','history-empty','Nuevo en el registro'));
     });
+    revealed.add(metric);
   }
   async function loadTrends(metric) {
     const pending=fetch(`./data/trends-${metric}.json?schema=2`, {priority:'low'}).then(async response=>{
@@ -414,9 +454,9 @@
   function updateScope() {
     const city=document.body.dataset.city || $('city').value;
     const group=city ? state.users.filter(u=>u.cities.includes(city)) : state.users;
-    $('stat-users').textContent=format.format(group.length);
-    $('stat-contributions').textContent=format.format(group.reduce((n,u)=>n+u.publicContributions,0));
-    $('stat-followers').textContent=format.format(group.reduce((n,u)=>n+u.followers,0));
+    setStat('stat-users',group.length);
+    setStat('stat-contributions',group.reduce((n,u)=>n+u.publicContributions,0));
+    setStat('stat-followers',group.reduce((n,u)=>n+u.followers,0));
     const label=state.cities.find(c=>c.id===city)?.label;
     $('stat-scope').textContent=label ? `Perfiles que mencionan ${label}` : 'Personas y organizaciones de Perú';
     const link=document.querySelector('#history-preview .text-link');
