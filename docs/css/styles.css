@@ -1299,3 +1299,9 @@ label:has(> input[type="checkbox"]) { cursor: pointer; }
 :is(#export, #load-more, #past-more, #retry, #evolution-retry, .compare-form button):focus-visible { outline-color: rgba(200, 16, 46, .45); outline-offset: 3px; }
 :is(#export, #load-more, #past-more, #retry, #evolution-retry, .compare-form button):disabled { opacity: .45; }
 button:hover:not(:disabled) { background: var(--peru-red-tint); }
+
+/* Summary stat cards */
+.stat { position: relative; isolation: isolate; overflow: hidden; border-top: 3px solid var(--peru-red); }
+.stat .card-bg-icon { position: absolute; z-index: -1; right: 14px; top: 50%; width: 96px; height: 96px; margin-top: -48px; color: var(--peru-red); opacity: .09; pointer-events: none; }
+.stat-label { color: #3b3e46; }
+.stat-label span { color: var(--peru-red); font-weight: 700; }
