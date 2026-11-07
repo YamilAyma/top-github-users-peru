@@ -78,6 +78,8 @@
     if (!indices.length) return;
     const fracOf = i => start === end ? 0.5 : (PAD + (day(dates[i]) - start) / (end - start) * (width - 2 * PAD)) / width;
     const yOf = v => low === high ? height / 2 : PAD + (rank ? v - low : high - v) / (high - low) * (height - 2 * PAD);
+    // The custom tooltip replaces the browser's native one; the svg keeps its aria-label.
+    plot.querySelectorAll('svg title').forEach(t => t.remove());
     const cursor = node('i', 'plot-cursor'), tip = node('div', 'plot-tooltip'), live = node('span', 'sr-only');
     const dots = series.map((_, k) => { const d = node('i', 'plot-cursor-dot'); d.style.background = colors[k]; return d; });
     cursor.hidden = tip.hidden = true; dots.forEach(d => d.hidden = true);
