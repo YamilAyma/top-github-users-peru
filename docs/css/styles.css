@@ -1117,9 +1117,18 @@ footer {
 .plot-tooltip-row small { grid-column: 1 / -1; color: var(--muted); }
 .comparison-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 10px 16px; margin: 6px 0 14px; padding: 10px 0 10px 12px; border-left: 3px solid; font-size: 12px; }
 .button .stat-icon { margin-right: 7px; }
+.evolution-page h2 > .stat-icon { width: 22px; height: 22px; margin-right: 10px; vertical-align: -3px; color: #b63735; }
+.label-text { display: inline-flex; align-items: center; }
+.input-icon { position: relative; display: block; min-width: 0; }
+.input-icon > .stat-icon { position: absolute; left: 12px; top: 50%; width: 16px; height: 16px; margin: -8px 0 0; color: var(--muted); pointer-events: none; }
+.input-icon > input { padding-left: 36px; }
+.compare-form .input-icon { flex: 1 1 200px; }
 .compare-chip .stat-icon { width: 12px; height: 12px; margin: 0 0 0 6px; }
 .movement-badge .stat-icon { width: 12px; height: 12px; margin: 0 3px 0 0; vertical-align: -1px; }
 .mover-link .stat-icon, .history-profile-button .stat-icon { width: 12px; height: 12px; margin: 0 3px 0 6px; vertical-align: -1px; }
+.rank-change-cell .stat-icon { width: 13px; height: 13px; margin-right: 4px; vertical-align: -2px; }
+.rank-change-cell.up { color: #176b55; }
+.rank-change-cell.down { color: #a22f38; }
 .stat-icon { flex: none; vertical-align: -3px; margin-right: 5px; }
 .comparison-stats dt { display: flex; align-items: center; }
 .comparison-stats dt .stat-icon { width: 14px; height: 14px; }

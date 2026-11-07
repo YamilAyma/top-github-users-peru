@@ -146,12 +146,34 @@
     view: 'M3 17l5-5 4 4 8-9M4 4v16h16',
     arrowUp: 'M12 19V5M5 12l7-7 7 7',
     arrowDown: 'M12 5v14M5 12l7 7 7-7',
-    equal: 'M5 9h14M5 15h14'
+    equal: 'M5 9h14M5 15h14',
+    pin: 'M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11zM12 12a2.5 2.5 0 100-5 2.5 2.5 0 000 5z',
+    archive: 'M4 5h16v4H4zM5 9v10h14V9M10 13h4',
+    clock: 'M12 21a9 9 0 100-18 9 9 0 000 18zM12 7v5l3 2',
+    bars: 'M5 20V10M12 20V4M19 20v-7',
+    users: 'M9 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM2 20a7 7 0 0114 0M16 4.3a3.5 3.5 0 010 6.4M18 14a7 7 0 013.5 6',
+    pulse: 'M3 12h4l3-8 4 16 3-8h4',
+    chevronDown: 'M6 9l6 6 6-6',
+    refresh: 'M20 11a8 8 0 00-14.5-4M4 4v4h4M4 13a8 8 0 0014.5 4M20 20v-4h-4',
+    search: 'M11 18a7 7 0 100-14 7 7 0 000 14zM21 21l-4.5-4.5'
   };
   function icon(name) {
     const svg = svgNode('svg', {viewBox: '0 0 24 24', width: 16, height: 16, fill: 'none', stroke: 'currentColor', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', class: 'stat-icon', 'aria-hidden': 'true', focusable: 'false'});
     svg.append(svgNode('path', {d: ICONS[name] || ICONS.growth}));
     return svg;
+  }
+  // Prepends an icon to a label / heading / button without disturbing its form control.
+  function decorate(el, name) {
+    if (!el) return;
+    const first = el.firstChild;
+    if (first && first.nodeType === 3 && el.querySelector('select,input')) {
+      const text = node('span', 'label-text'); text.append(icon(name), first.textContent); first.replaceWith(text);
+    } else el.prepend(icon(name));
+  }
+  // Wraps a text input so it can show a leading search icon.
+  function searchField(input) {
+    if (!input || input.parentElement.classList.contains('input-icon')) return;
+    const wrap = node('span', 'input-icon'); input.replaceWith(wrap); wrap.append(icon('search'), input);
   }
   function rankMovement(dates, ranks, {compact=false}={}) {
     const indices=ranks.map((v,i)=>v!==null && Number.isFinite(v)?i:-1).filter(i=>i>=0);
@@ -218,5 +240,5 @@
     window.dispatchEvent(new Event('favorites-changed'));
     return true;
   }
-  window.PeruHistory = {chart, icon, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
+  window.PeruHistory = {chart, icon, decorate, searchField, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
 })();

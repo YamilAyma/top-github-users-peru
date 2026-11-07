@@ -126,9 +126,12 @@
   }
   function decorateControls() {
     const add=(el,name)=>el&&el.prepend(H.icon(name));
-    const viewLabel=$('e-view').closest('label'),text=H.node('span','label-text'),node=viewLabel.firstChild;
-    if(node&&node.nodeType===3){text.append(H.icon('view'),node.textContent);node.replaceWith(text);}
+    H.decorate($('e-view').closest('label'),'view');
+    for (const [id,name] of [['e-city','pin'],['e-tier','archive'],['e-days','clock'],['e-metric','bars'],['e-from','daily'],['e-to','daily']]) H.decorate($(id).closest('label'),name);
+    for (const [id,name] of [['community-heading','users'],['weekly-heading','pulse'],['past-ranking-heading','clock']]) add($(id),name);
     add($('share-view'),'link'); add($('download-card'),'download'); add($('compare-form').querySelector('button'),'plus');
+    add($('past-more'),'chevronDown'); add($('evolution-retry'),'refresh');
+    H.searchField($('e-profile')); H.searchField($('past-search'));
   }
   function flashIcon(button) {
     const old=button.querySelector('.stat-icon'); if(!old) return;
@@ -223,7 +226,13 @@
       tr.append(H.node('td','',fmt.format(current.get(key))));
       const profile=H.node('td'), button=H.node('button','history-profile-button',`@${row[0]}`);
       button.addEventListener('click',()=>addProfile(key)); profile.append(button);tr.append(profile,H.node('td','numeric',fmt.format(value(row,$('e-metric').value))));
-      tr.append(H.node('td','',selected.length<2?'Primera captura':beforeRows===null?'Sin cobertura inicial':oldKeys.has(key)?movement(old.get(key)-current.get(key)):'No presente al inicio'));
+      const moveCell=H.node('td','',selected.length<2?'Primera captura':beforeRows===null?'Sin cobertura inicial':oldKeys.has(key)?'':'No presente al inicio');
+      if (selected.length>=2 && beforeRows!==null && oldKeys.has(key)) {
+        const v=old.get(key)-current.get(key);
+        moveCell.className=`rank-change-cell ${v>0?'up':v<0?'down':'stable'}`;
+        moveCell.append(H.icon(v>0?'arrowUp':v<0?'arrowDown':'equal'),v===0?'Sin cambio':String(Math.abs(v)));
+      }
+      tr.append(moveCell);
       $('past-rows').append(tr);
     }
     if (!ordered.length) $('past-caption').textContent+=' No hay perfiles con esa búsqueda.';
