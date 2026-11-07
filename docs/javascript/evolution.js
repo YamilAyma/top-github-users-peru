@@ -124,6 +124,16 @@
     for(const [term,ic,text] of stats){const item=H.node('div');const dt=H.node('dt','',term);dt.prepend(H.icon(ic));item.append(dt,H.node('dd','',text));dl.append(item);}
     return dl;
   }
+  function decorateControls() {
+    const add=(el,name)=>el&&el.prepend(H.icon(name));
+    const viewLabel=$('e-view').closest('label'),text=H.node('span','label-text'),node=viewLabel.firstChild;
+    if(node&&node.nodeType===3){text.append(H.icon('view'),node.textContent);node.replaceWith(text);}
+    add($('share-view'),'link'); add($('download-card'),'download'); add($('compare-form').querySelector('button'),'plus');
+  }
+  function flashIcon(button) {
+    const old=button.querySelector('.stat-icon'); if(!old) return;
+    const check=H.icon('check'); old.replaceWith(check); setTimeout(()=>check.replaceWith(old),2000);
+  }
   function renderProfiles() {
     $('compare-chips').replaceChildren(); $('profile-chart').replaceChildren(); $('profile-details').replaceChildren();
     $('download-card').disabled=true;
@@ -135,7 +145,7 @@
     const series=profileKeys.map(key=>maps.map((rows,i)=>rows.has(key)?rankView?positions[i].get(key):value(rows.get(key),metric):null));
     const all=series.flat().filter(v=>v!==null);
     profileKeys.forEach((key,i)=>{
-      const chip=H.node('button','compare-chip',`@${key} ×`);chip.style.borderColor=colors[i];chip.setAttribute('aria-label',`Quitar ${key} de la comparación`);
+      const chip=H.node('button','compare-chip',`@${key}`);chip.append(H.icon('close'));chip.style.borderColor=colors[i];chip.setAttribute('aria-label',`Quitar ${key} de la comparación`);
       chip.addEventListener('click',()=>{profileKeys=profileKeys.filter(k=>k!==key);render();});$('compare-chips').append(chip);
     });
     if (!all.length) { $('profile-chart').append(H.node('p','history-notice','No hay capturas de esos perfiles en el ámbito y las fechas seleccionados.'));return; }
@@ -226,7 +236,7 @@
     wrap.append(H.node('p','',`Variación del contador público en perfiles comparables: ${signed(w.publicDeltaMatched)}. Seguidores: ${signed(w.followersDeltaMatched)}.`));
     if (!w.movers.length) wrap.append(H.node('p','','Sin ascensos de puesto nacional entre estas capturas.'));
     for (const mover of w.movers) {
-      const b=H.node('button','history-profile-button',`@${mover.login} ↑ ${mover.change} puestos nacionales`);b.addEventListener('click',()=>addProfile(mover.login.toLowerCase()));wrap.append(b);
+      const b=H.node('button','history-profile-button',`@${mover.login}`);b.append(H.icon('arrowUp'),`${mover.change} puestos nacionales`);b.addEventListener('click',()=>addProfile(mover.login.toLowerCase()));wrap.append(b);
     }
   }
   function render() {
@@ -253,6 +263,7 @@
     profileKeys.push(key);$('e-profile').value='';$('compare-status').textContent='';render();
   }
   async function start() {
+    decorateControls();
     $('evolution-retry').hidden=true;
     try {
       [catalog,summary]=await Promise.all([json('./history/index.json'),json('./data/evolution-summary.json')]);
@@ -273,7 +284,7 @@
   $('compare-form').addEventListener('submit',event=>{event.preventDefault();addProfile($('e-profile').value);});
   $('share-view').addEventListener('click',async()=>{
     updateURL();
-    try {await navigator.clipboard.writeText(location.href);$('share-status').textContent='Enlace copiado.';}
+    try {await navigator.clipboard.writeText(location.href);$('share-status').textContent='Enlace copiado.';flashIcon($('share-view'));}
     catch {$('share-url').value=location.href;$('share-url').hidden=false;$('share-url').select();$('share-status').textContent='Copia el enlace del campo seleccionado.';}
   });
   $('download-card').addEventListener('click',()=>{

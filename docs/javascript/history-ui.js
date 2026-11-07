@@ -137,7 +137,16 @@
     rank: 'M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0zM7 6H4v1a3 3 0 003 3M17 6h3v1a3 3 0 01-3 3',
     worst: 'M12 4v14M6 12l6 6 6-6',
     moves: 'M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7',
-    user: 'M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0'
+    user: 'M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0',
+    link: 'M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1',
+    check: 'M5 12.5l4.5 4.5L19 7',
+    download: 'M12 4v11M7 11l5 5 5-5M5 20h14',
+    plus: 'M12 5v14M5 12h14',
+    close: 'M6 6l12 12M18 6L6 18',
+    view: 'M3 17l5-5 4 4 8-9M4 4v16h16',
+    arrowUp: 'M12 19V5M5 12l7-7 7 7',
+    arrowDown: 'M12 5v14M5 12l7 7 7-7',
+    equal: 'M5 9h14M5 15h14'
   };
   function icon(name) {
     const svg = svgNode('svg', {viewBox: '0 0 24 24', width: 16, height: 16, fill: 'none', stroke: 'currentColor', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', class: 'stat-icon', 'aria-hidden': 'true', focusable: 'false'});
@@ -149,7 +158,10 @@
     const wrap=node('div',compact?'rank-movement compact':'rank-movement');
     if(!indices.length) {wrap.append(node('span','history-empty','Sin capturas'));return wrap;}
     const first=indices[0], last=indices.at(-1), change=ranks[first]-ranks[last];
-    const badge=node('span',`movement-badge ${change>0?'up':change<0?'down':'stable'}`,indices.length===1?'Primera captura':change>0?`↑ ${change} ${change===1?'puesto':'puestos'}`:change<0?`↓ ${-change} ${change===-1?'puesto':'puestos'}`:'= Sin cambio');
+    const dir=change>0?'up':change<0?'down':'stable', amount=Math.abs(change);
+    const badge=node('span',`movement-badge ${dir}`);
+    if (indices.length===1) badge.append('Primera captura');
+    else badge.append(icon(change>0?'arrowUp':change<0?'arrowDown':'equal'), change===0?'Sin cambio':`${amount} ${amount===1?'puesto':'puestos'}`);
     const journey=node('div','rank-endpoints');
     journey.append(node('span','rank-token',`#${ranks[first]}`));
     if(indices.length>1) {journey.append(node('span','rank-arrow','→'),node('span','rank-token current',`#${ranks[last]}`));}

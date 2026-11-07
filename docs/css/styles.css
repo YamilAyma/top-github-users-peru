@@ -1116,6 +1116,10 @@ footer {
 .plot-tooltip-row { display: grid; grid-template-columns: 1fr auto; gap: 0 10px; margin: 4px 0 0; padding-left: 8px; border-left: 3px solid; }
 .plot-tooltip-row small { grid-column: 1 / -1; color: var(--muted); }
 .comparison-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 10px 16px; margin: 6px 0 14px; padding: 10px 0 10px 12px; border-left: 3px solid; font-size: 12px; }
+.button .stat-icon { margin-right: 7px; }
+.compare-chip .stat-icon { width: 12px; height: 12px; margin: 0 0 0 6px; }
+.movement-badge .stat-icon { width: 12px; height: 12px; margin: 0 3px 0 0; vertical-align: -1px; }
+.mover-link .stat-icon, .history-profile-button .stat-icon { width: 12px; height: 12px; margin: 0 3px 0 6px; vertical-align: -1px; }
 .stat-icon { flex: none; vertical-align: -3px; margin-right: 5px; }
 .comparison-stats dt { display: flex; align-items: center; }
 .comparison-stats dt .stat-icon { width: 14px; height: 14px; }

@@ -29,7 +29,7 @@
       const w=scope.weekly;
       weekly.append(H.node('p','',`Pulso semanal · ${H.dateLabel(w.from)} – ${H.dateLabel(w.through)}. ${w.matched} perfiles comparables, ${w.entered} entradas y ${w.left} salidas.`));
       for (const mover of w.movers.slice(0,3)) {
-        const a=H.node('a','mover-link',`@${mover.login} ↑ ${mover.change}`);
+        const a=H.node('a','mover-link',`@${mover.login}`);a.append(H.icon('arrowUp'),String(mover.change));
         a.href=`./evolucion/?users=${encodeURIComponent(mover.login)}${city?`&city=${encodeURIComponent(city)}`:''}`;
         weekly.append(a);
       }
