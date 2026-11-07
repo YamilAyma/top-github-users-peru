@@ -160,7 +160,8 @@
       }
       $('profile-details').append(detail);
     });
-    const dates=selected.map(s=>s.date);
+    const dates=selected.map(s=>s.date), format=v=>fmt.format(v);
+    H.attachCursor(plot,{dates,series,colors,names:profileKeys.map(k=>`@${k}`),ranks:profileKeys.map(k=>positions.map(m=>m.get(k)??null)),domain:[min,max],format,rank:rankView});
     $('profile-chart').append(H.node('p','chart-scale',`${rankView?'Puesto nacional · mejores posiciones arriba':labels[metric]} · escala compartida: ${fmt.format(min)} – ${fmt.format(max)}`),H.framePlot(plot,{dates,domain:[min,max],format:v=>fmt.format(v),rank:rankView}));
     $('download-card').disabled=false;
   }

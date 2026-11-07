@@ -70,6 +70,63 @@
     frame.append(yAxis, plot, node('span'), xAxis);
     return frame;
   }
+  // Hover / touch / keyboard cursor: shows every series' value on the nearest capture.
+  function attachCursor(plot, {dates, series, colors, names, ranks, domain, format=v=>String(v), rank=false}) {
+    const [low, high] = domain, start = day(dates[0]), end = day(dates.at(-1));
+    const indices = dates.map((_, i) => i).filter(i => series.some(s => s[i] !== null && Number.isFinite(s[i])));
+    if (!indices.length) return;
+    const fracOf = i => start === end ? 0.5 : (PAD + (day(dates[i]) - start) / (end - start) * (900 - 2 * PAD)) / 900;
+    const yOf = v => low === high ? PLOT_H / 2 : PAD + (rank ? v - low : high - v) / (high - low) * (PLOT_H - 2 * PAD);
+    const cursor = node('i', 'plot-cursor'), tip = node('div', 'plot-tooltip'), live = node('span', 'sr-only');
+    const dots = series.map((_, k) => { const d = node('i', 'plot-cursor-dot'); d.style.background = colors[k]; return d; });
+    cursor.hidden = tip.hidden = true; dots.forEach(d => d.hidden = true);
+    live.setAttribute('role', 'status'); live.setAttribute('aria-live', 'polite');
+    plot.append(cursor, ...dots, tip, live);
+    plot.tabIndex = 0; plot.setAttribute('role', 'group');
+    plot.setAttribute('aria-label', 'Gráfica interactiva. Usa las flechas izquierda y derecha para recorrer las capturas.');
+    let current = -1;
+    const nf = new Intl.NumberFormat('es-PE', {signDisplay: 'exceptZero'});
+    function show(i, announce) {
+      current = i;
+      const left = fracOf(i) * 100;
+      cursor.style.left = `${left}%`; cursor.hidden = false;
+      tip.replaceChildren(node('strong', '', dateLabel(dates[i])));
+      const spoken = [dateLabel(dates[i])];
+      series.forEach((values, k) => {
+        const dot = dots[k], v = values[i];
+        if (v === null || !Number.isFinite(v)) { dot.hidden = true; return; }
+        dot.style.left = `${left}%`; dot.style.top = `${yOf(v)}px`; dot.hidden = false;
+        let prev = -1; for (let j = i - 1; j >= 0; j--) if (values[j] !== null && Number.isFinite(values[j])) { prev = j; break; }
+        const row = node('p', 'plot-tooltip-row'); row.style.borderColor = colors[k];
+        const change = prev < 0 ? 'primera captura' : rank ? (values[prev] === v ? 'sin cambio' : `${values[prev] - v > 0 ? '↑' : '↓'} ${Math.abs(values[prev] - v)}`) : `${nf.format(v - values[prev])} vs. captura previa`;
+        const place = !rank && ranks?.[k]?.[i] ? ` · puesto #${ranks[k][i]}` : '';
+        row.append(node('span', '', names[k]), node('b', '', rank ? `#${format(v)}` : format(v)), node('small', '', change + place));
+        tip.append(row); spoken.push(`${names[k]}: ${rank ? '#' : ''}${format(v)}, ${change}${place}`);
+      });
+      tip.hidden = false; tip.classList.toggle('flip', left > 60);
+      tip.style.left = `${left}%`;
+      if (announce) live.textContent = spoken.join('. ');
+    }
+    const hide = () => { current = -1; cursor.hidden = tip.hidden = true; dots.forEach(d => d.hidden = true); };
+    plot.addEventListener('pointermove', e => {
+      const r = plot.getBoundingClientRect(), f = ((e.clientX - r.left) / r.width * 900 - PAD) / (900 - 2 * PAD);
+      const target = start + f * (end - start);
+      let best = indices[0]; for (const i of indices) if (Math.abs(day(dates[i]) - target) < Math.abs(day(dates[best]) - target)) best = i;
+      if (best !== current) show(best, false);
+    });
+    plot.addEventListener('pointerleave', () => { if (document.activeElement !== plot) hide(); });
+    plot.addEventListener('blur', hide);
+    plot.addEventListener('keydown', e => {
+      const pos = indices.indexOf(current);
+      let next = null;
+      if (e.key === 'ArrowLeft') next = pos < 0 ? indices.at(-1) : indices[Math.max(0, pos - 1)];
+      else if (e.key === 'ArrowRight') next = pos < 0 ? indices[0] : indices[Math.min(indices.length - 1, pos + 1)];
+      else if (e.key === 'Home') next = indices[0]; else if (e.key === 'End') next = indices.at(-1);
+      else if (e.key === 'Escape') { hide(); return; }
+      if (next === null) return;
+      e.preventDefault(); show(next, true);
+    });
+  }
   function rankMovement(dates, ranks, {compact=false}={}) {
     const indices=ranks.map((v,i)=>v!==null && Number.isFinite(v)?i:-1).filter(i=>i>=0);
     const wrap=node('div',compact?'rank-movement compact':'rank-movement');
@@ -125,5 +182,5 @@
     window.dispatchEvent(new Event('favorites-changed'));
     return true;
   }
-  window.PeruHistory = {chart, framePlot, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
+  window.PeruHistory = {chart, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
 })();
