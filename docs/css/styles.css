@@ -1130,6 +1130,12 @@ footer {
 .rank-change-cell.up { color: #176b55; }
 .rank-change-cell.down { color: #a22f38; }
 .stat-icon { flex: none; vertical-align: -3px; margin-right: 5px; }
+.favorite-button .stat-icon { width: 22px; height: 22px; margin: 0; vertical-align: middle; }
+.tab .stat-icon { width: 15px; height: 15px; margin-right: 6px; vertical-align: -3px; }
+th button .stat-icon { width: 13px; height: 13px; margin: 0 0 0 4px; vertical-align: -2px; }
+.site-nav a .stat-icon { width: 15px; height: 15px; margin-right: 6px; vertical-align: -3px; }
+.favorite-controls .stat-icon { width: 13px; height: 13px; margin: 0 0 0 4px; color: #96322f; vertical-align: -2px; }
+.filters .search.input-icon, .filters .search .input-icon { width: 100%; }
 .comparison-stats dt { display: flex; align-items: center; }
 .comparison-stats dt .stat-icon { width: 14px; height: 14px; }
 .comparison-detail a .stat-icon { width: 14px; height: 14px; margin-right: 4px; }

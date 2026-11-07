@@ -88,7 +88,8 @@
     info.append(name, element("span", "handle", `@${user.login}`));
     link.append(info);
     profile.append(link);
-    const favorite = element('button', 'favorite-button', history.favorites.has(user.login) ? '★' : '☆');
+    const favorite = element('button', 'favorite-button');
+    favorite.append(history.icon('star', {fill: history.favorites.has(user.login)}));
     favorite.type = 'button';
     favorite.dataset.favorite = user.login;
     favorite.setAttribute('aria-pressed', String(history.favorites.has(user.login)));
@@ -198,11 +199,9 @@
         "aria-sort",
         active ? (state.direction === -1 ? "descending" : "ascending") : "none",
       );
-      th.querySelector("span").textContent = active
-        ? state.direction === -1
-          ? "↓"
-          : "↑"
-        : "↕";
+      th.querySelector("span").replaceChildren(
+        history.icon(active ? (state.direction === -1 ? "arrowDown" : "arrowUp") : "sort"),
+      );
     });
   }
   function decorateTrends() {
@@ -388,6 +387,16 @@
     state.visible += state.batch;
     render(false);
   }
+  (function decorateStatic() {
+    const tabIcons = {publicContributions: "globe", total: "sigma", followers: "users"};
+    document.querySelectorAll(".tab[data-metric]").forEach((tab) => tab.prepend(history.icon(tabIcons[tab.dataset.metric] || "bars")));
+    $("export").prepend(history.icon("download"));
+    $("load-more").prepend(history.icon("chevronDown"));
+    $("retry").prepend(history.icon("refresh"));
+    history.searchField($("search"));
+    const fav = $("only-favorites").closest("label");
+    if (fav) fav.append(history.icon("star", {fill: true}));
+  })();
   $("load-more").addEventListener("click", loadMore);
   $("auto-load").addEventListener("change", () => {
     observer?.unobserve($("feed-sentinel"));

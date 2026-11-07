@@ -52,7 +52,8 @@
   function sync() {
     cancelAnimationFrame(frame);
     previous = null;
-    toggle.textContent = paused ? "Animar bandera" : "Pausar bandera";
+    const H = window.PeruHistory;
+    toggle.replaceChildren(...(H ? [H.icon(paused ? "play" : "pause")] : []), paused ? "Animar bandera" : "Pausar bandera");
     toggle.setAttribute("aria-pressed", String(paused));
     if (!paused && visible && !document.hidden)
       frame = requestAnimationFrame(tick);
