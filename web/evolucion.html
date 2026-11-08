@@ -12,7 +12,7 @@
 <script src="./javascript/footer-flag.js" defer></script>
 </head>
 <body>
-<header class="topbar"><a class="brand" href="./"><span class="brand-mark">PE</span> GitHub <strong>Perú</strong></a><nav class="site-nav" aria-label="Principal"><a href="./">Ranking</a><a href="./evolucion/" aria-current="page">Evolución</a></nav></header>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark">PE</span> GitHub <strong>Perú</strong></a><nav class="site-nav" aria-label="Principal"><a href="./">Ranking</a><a href="./evolucion/" aria-current="page">Evolución</a><a href="./estadisticas/">Estadísticas</a></nav></header>
 <main class="evolution-page">
 <!--BREADCRUMBS-->
 <section class="evolution-intro"><div class="eyebrow">LA COMUNIDAD, EN EL TIEMPO</div><h1>Cada posición<br>tiene una <em>historia.</em></h1><p>Explora cómo cambia el ranking, encuentra tu perfil y compara capturas reales de GitHub Perú.</p><span class="badge"><!--HISTORY_COVERAGE--></span></section>
@@ -31,8 +31,7 @@
 <p id="e-coverage" class="history-notice"></p>
 <p id="e-quality" class="history-notice" role="status"></p>
 <section aria-labelledby="community-heading"><div class="panel-heading"><div><div class="eyebrow">UNA MIRADA A LA COMUNIDAD</div><h2 id="community-heading">Cómo cambia la selección</h2></div></div><div id="community-charts" class="history-grid"></div><p id="matched-summary" class="history-notice"></p></section>
-<section class="group-panel" id="group-analysis" aria-labelledby="group-heading" hidden><div class="panel-heading"><div><div class="eyebrow">ANÁLISIS DEL GRUPO</div><h2 id="group-heading">Qué pasa dentro del grupo.</h2></div><div class="export-actions"><button id="export-group-csv" class="button">Exportar CSV</button><button id="export-group-json" class="button">Exportar JSON</button></div></div><div id="group-body"></div></section>
-<section class="group-panel" id="community-view" aria-labelledby="community-view-heading" hidden><div class="panel-heading"><div><div class="eyebrow">LA COMUNIDAD COMPLETA</div><h2 id="community-view-heading">Cómo está la comunidad.</h2></div><div class="export-actions"><button id="export-community-csv" class="button">Exportar CSV</button><button id="export-community-json" class="button">Exportar JSON</button></div></div><div id="community-view-body"></div></section>
+<section class="stats-callout" aria-label="Estadísticas del grupo"><div><div class="eyebrow">DEL GRUPO A LA COMUNIDAD</div><strong id="to-stats-label">Estadísticas de toda la comunidad</strong><p>Distribución, concentración, crecimiento, actividad frente a audiencia y comparación entre ámbitos.</p></div><a id="to-stats" class="button" href="./estadisticas/">Ver estadísticas</a></section>
 <section class="comparison-panel" aria-labelledby="comparison-heading">
 <div class="panel-heading"><div><div class="eyebrow">ENCUENTRA TU RECORRIDO</div><h2 id="comparison-heading">Tu evolución, en perspectiva.</h2></div><label>Vista<select id="e-view"><option value="value">Evolución de la métrica</option><option value="rank">Movimientos de puestos</option></select></label></div>
 <form id="compare-form" class="compare-form"><label for="e-profile" class="sr-only">Usuario de GitHub para comparar</label><input id="e-profile" type="search" placeholder="Escribe tu @usuario" list="profile-suggestions" autocomplete="off" maxlength="39"><datalist id="profile-suggestions"></datalist><button class="button" type="submit">Añadir perfil</button><span>Hasta 3 perfiles</span></form>

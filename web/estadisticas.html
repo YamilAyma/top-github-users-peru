@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<!--SEO_HEAD-->
+<title>Estadísticas de la comunidad de GitHub en Perú</title>
+<meta name="description" content="Estadísticas de la comunidad de GitHub Perú: distribución, concentración, crecimiento, actividad frente a audiencia y concentración geográfica.">
+<meta name="theme-color" content="#b63735">
+<link rel="stylesheet" href="./css/styles.css">
+<script src="./javascript/history-ui.js" defer></script>
+<script src="./javascript/statistics.js" defer></script>
+<script src="./javascript/footer-flag.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark">PE</span> GitHub <strong>Perú</strong></a><nav class="site-nav" aria-label="Principal"><a href="./">Ranking</a><a href="./evolucion/">Evolución</a><a href="./estadisticas/" aria-current="page">Estadísticas</a></nav></header>
+<main class="evolution-page stats-page">
+<!--BREADCRUMBS-->
+<section class="evolution-intro"><div class="eyebrow">LA COMUNIDAD, EN NÚMEROS</div><h1>Lo que dicen<br>los <em>datos.</em></h1><p>Distribución, concentración y crecimiento de un grupo, y cómo se relacionan la actividad y la audiencia en toda la comunidad.</p></section>
+<p class="history-notice">Las variaciones de los contadores no equivalen a contribuciones realizadas durante el período. Las ubicaciones son declaradas por cada perfil. <a href="./metodologia/#historico">Cómo leer estos datos</a>.</p>
+<noscript><p>Activa JavaScript para explorar las estadísticas. También puedes consultar el <a href="./">ranking actual</a> y los <a href="./data/analytics-groups.json">datos de grupos en JSON</a>.</p></noscript>
+<div id="stats-status" role="status" aria-live="polite">Cargando las estadísticas…</div><button id="stats-retry" class="button" hidden>Reintentar</button>
+<div id="stats-app" hidden>
+<section class="evolution-controls stats-controls" aria-label="Seleccionar ámbito y métrica">
+<label>Ámbito<select id="e-city"><option value="">Todo Perú</option><!--CITY_OPTIONS--></select></label>
+<label>Métrica<select id="e-metric"><option value="publicContributions">Contribuciones públicas</option><option value="total">Contribuciones totales</option><option value="followers">Seguidores</option></select></label>
+<div class="stats-link"><a id="to-evolution" class="button" href="./evolucion/">Ver evolución en el tiempo</a></div>
+</section>
+<p id="stats-coverage" class="history-notice"></p>
+<p id="stats-quality" class="history-notice" role="status"></p>
+<section class="group-panel" id="group-analysis" aria-labelledby="group-heading" hidden><div class="panel-heading"><div><div class="eyebrow">ANÁLISIS DEL GRUPO</div><h2 id="group-heading">Qué pasa dentro del grupo.</h2></div><div class="export-actions"><button id="export-group-csv" class="button">Exportar CSV</button><button id="export-group-json" class="button">Exportar JSON</button></div></div><div id="group-body"></div></section>
+<section class="group-panel" id="community-view" aria-labelledby="community-view-heading" hidden><div class="panel-heading"><div><div class="eyebrow">LA COMUNIDAD COMPLETA</div><h2 id="community-view-heading">Cómo está la comunidad.</h2></div><div class="export-actions"><button id="export-community-csv" class="button">Exportar CSV</button><button id="export-community-json" class="button">Exportar JSON</button></div></div><div id="community-view-body"></div></section>
+</div>
+<aside class="about"><strong>Una muestra, no un censo.</strong><p>Las estadísticas describen los perfiles incluidos en este ranking, no a toda la comunidad de desarrolladores de Perú. Con poco historial, las tendencias y proyecciones llevan un nivel de confianza.</p></aside>
+</main>
+<!--FOOTER-->
+</body></html>

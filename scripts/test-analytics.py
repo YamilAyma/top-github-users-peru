@@ -281,6 +281,11 @@ class CommunityTests(unittest.TestCase):
         self.assertGreater(result['spearman'], 0.7)
         self.assertEqual(result['n'], 42)
 
+    def test_scatter_with_no_variation_on_an_axis_reports_missing_correlation(self):
+        result = scatter_analysis([(f'u{i}', i, 5) for i in range(40)])
+        self.assertIsNone(result['spearman'])
+        self.assertIsNone(result['pearsonLog'])
+
     def test_scatter_needs_a_minimum_sample_and_aligned_data_has_no_outliers(self):
         self.assertIsNone(scatter_analysis([(f'u{i}', i, i) for i in range(10)]))
         result = scatter_analysis([(f'u{i}', i, i) for i in range(50)])
@@ -321,6 +326,14 @@ class CommunityTests(unittest.TestCase):
         self.assertEqual(seasonality_status(data), {'available': False, 'weeks': 2, 'neededWeeks': 8})
         far = [snap('2026-01-01', 5), snap('2026-03-15', 5)]
         self.assertTrue(seasonality_status(far)['available'])
+
+    def test_points_carry_public_followers_and_total_contributions(self):
+        users = {f'u{i}': (lambda d, i=i: i) for i in range(40)}
+        data = history(10, users)
+        data[-1]['users'][3][2] = 7  # private contributions of u3 in the latest capture
+        result = build_community(data, [])
+        point = next(p for p in result['points'] if p[0] == 'u3')
+        self.assertEqual(point, ['u3', 3, 1, 10])
 
     def test_build_community_hides_points_when_scatter_is_not_meaningful(self):
         result = build_community(history(10, {'a': lambda d: d, 'b': lambda d: 2}), [])
