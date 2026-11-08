@@ -1540,3 +1540,7 @@ input[type="checkbox"] { transition: background .15s, background-size .18s var(-
 .stats-callout .button:hover:not(:disabled) { background: var(--peru-red-dark); border-color: var(--peru-red-dark); }
 .evolution-page .stats-callout .button, .evolution-page .stats-link .button { text-decoration: none; }
 .preview-links { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+
+/* Landing on a section from a link keeps a little air above it and no focus ring on the heading */
+#tu-evolucion { scroll-margin-top: 16px; }
+#comparison-heading:focus { outline: none; }
