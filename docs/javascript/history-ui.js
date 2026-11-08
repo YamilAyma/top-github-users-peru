@@ -50,7 +50,7 @@
   const PAD = 5;
   const isoOfDay = d => new Date(Math.floor(d) * 86400000).toISOString().slice(0, 10);
   // Wraps a plot in a frame with value ticks, grid lines and date ticks (HTML, so text is never stretched).
-  function framePlot(plot, {dates, domain, format=v=>String(v), rank=false, width=900, height=220, maxTicks=5}) {
+  function framePlot(plot, {dates, domain, format=v=>String(v), rank=false, width=900, height=220, maxTicks=5, marks=[]}) {
     const [low, high] = domain, start = day(dates[0]), end = day(dates.at(-1));
     const frame = node('div', 'plot-frame'), yAxis = node('div', 'plot-yaxis'), xAxis = node('div', 'plot-xaxis');
     yAxis.style.height = plot.style.height = `${height}px`;
@@ -67,6 +67,16 @@
       const f = count === 1 ? 0.5 : k / (count - 1);
       const label = node('span', k === 0 && count > 1 ? 'edge-start' : k === count - 1 && count > 1 ? 'edge-end' : '', dateLabel(isoOfDay(start + f * (end - start))));
       label.style.left = `${(PAD + f * (width - 2 * PAD)) / width * 100}%`; xAxis.append(label);
+    }
+    // Marks flag captures with a data-quality note (excluded or adjusted), drawn along the date axis.
+    for (const mark of marks) {
+      if (start === end) break;
+      const f = (day(mark.date) - start) / (end - start);
+      if (f < 0 || f > 1) continue;
+      const el = node('i', `plot-mark ${mark.kind || ''} ${f < 0.3 ? 'edge-start' : f > 0.7 ? 'edge-end' : ''}`);
+      el.style.left = `${(PAD + f * (width - 2 * PAD)) / width * 100}%`;
+      el.setAttribute('role', 'img'); el.setAttribute('aria-label', mark.label); el.dataset.label = mark.label; el.tabIndex = 0;
+      plot.append(el);
     }
     frame.append(yAxis, plot, node('span'), xAxis);
     return frame;
@@ -112,6 +122,7 @@
     }
     const hide = () => { current = -1; cursor.hidden = tip.hidden = true; dots.forEach(d => d.hidden = true); };
     plot.addEventListener('pointermove', e => {
+      if (e.target.closest && e.target.closest('.plot-mark')) { hide(); return; }
       const r = plot.getBoundingClientRect(), f = ((e.clientX - r.left) / r.width * width - PAD) / (width - 2 * PAD);
       const target = start + f * (end - start);
       let best = indices[0]; for (const i of indices) if (Math.abs(day(dates[i]) - target) < Math.abs(day(dates[best]) - target)) best = i;
@@ -164,6 +175,11 @@
     sort: 'M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4',
     pause: 'M8 5v14M16 5v14',
     play: 'M7 4l13 8-13 8z',
+    swap: 'M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7',
+    map: 'M9 4l-6 2v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14',
+    layers: 'M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5',
+    forecast: 'M3 17l5-5 4 3 3-4M17 9h4v4M15 11l6-3',
+    info: 'M12 21a9 9 0 100-18 9 9 0 000 18zM12 11v5M12 8h.01',
     search: 'M11 18a7 7 0 100-14 7 7 0 000 14zM21 21l-4.5-4.5'
   };
   function icon(name, {fill = false} = {}) {
@@ -201,7 +217,7 @@
     wrap.setAttribute('aria-label',`Puesto nacional: ${ranks[first]}${indices.length>1?` a ${ranks[last]}`:''}. ${badge.textContent}. ${dateLabel(dates[first])} – ${dateLabel(dates[last])}`);
     return wrap;
   }
-  function metricCard(dates, values, label, {interval='daily'}={}) {
+  function metricCard(dates, values, label, {interval='daily', marks=[]}={}) {
     const fmt=new Intl.NumberFormat('es-PE');
     const valid=values.map((v,i)=>v!==null && Number.isFinite(v)?i:-1).filter(i=>i>=0);
     const card=node('article','history-card');
@@ -225,7 +241,7 @@
     const plot=node('div','comparison-plot card-plot');
     plot.append(chart(dates,changes,{width:W,height:Hh,interval,domain:[low,high],window:{from:dates[first],through:dates[last]},color,label:`Variación de ${label.toLowerCase()} respecto a ${dateLabel(dates[first])}`}));
     const frameDates=dates.slice(first,last+1);
-    card.append(framePlot(plot,{dates:frameDates,domain:[low,high],format:signed,width:W,height:Hh,maxTicks:3}));
+    card.append(framePlot(plot,{dates:frameDates,domain:[low,high],format:signed,width:W,height:Hh,maxTicks:3,marks}));
     attachCursor(plot,{dates:dates.slice(first,last+1),series:[changes.slice(first,last+1)],colors:[color],names:[label],domain:[low,high],format:signed,width:W,height:Hh,extra:(k,i)=>` · total ${fmt.format(values[first+i])}`});
     if (valid.length>1) {
       const days=day(dates[last])-day(dates[first]);
@@ -236,6 +252,22 @@
     }
     card.append(node('p','history-card-caption',valid.length===1?'Hace falta otra captura para trazar una evolución.':'La línea muestra la variación del contador desde la primera captura, no actividad diaria.'));
     return card;
+  }
+  // CSV: UTF-8 with BOM for Excel, quoted when needed, and text that a spreadsheet could run as a formula is neutralised.
+  function toCSV(rows) {
+    const cell = (value) => {
+      if (value === null || value === undefined) return '';
+      let text = typeof value === 'number' ? String(value) : String(value);
+      if (typeof value === 'string' && /^[=+\-@\t\r]/.test(text)) text = `'${text}`;
+      return /[",\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+    };
+    return '\uFEFF' + rows.map((row) => row.map(cell).join(',')).join('\r\n') + '\r\n';
+  }
+  function download(filename, mime, text) {
+    const url = URL.createObjectURL(new Blob([text], {type: `${mime};charset=utf-8`}));
+    const link = document.createElement('a');
+    link.href = url; link.download = filename; document.body.append(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   const KEY = 'github-peru:favorites:v1';
   let available = true, saved = new Set();
@@ -260,5 +292,5 @@
     });
   }
   decorateNav();
-  window.PeruHistory = {chart, icon, decorate, searchField, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
+  window.PeruHistory = {chart, icon, toCSV, download, decorate, searchField, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
 })();

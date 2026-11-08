@@ -9,6 +9,7 @@ sys.dont_write_bytecode = True
 spec = importlib.util.spec_from_file_location('history_storage', Path(__file__).with_name('capture-history.py'))
 storage = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(storage)
+import analytics
 METRICS = ('publicContributions', 'total', 'followers')
 
 
@@ -38,8 +39,9 @@ def scope_rows(snapshot, city):
     return [snapshot['users'][index] for index in membership[city]]
 
 
-def point(snapshot, city):
-    rows = scope_rows(snapshot, city)
+def point(snapshot, city, excluded=frozenset()):
+    # Aggregates of an incomplete capture would draw a false cliff; leave them out as a visible gap.
+    rows = None if snapshot['date'] in excluded else scope_rows(snapshot, city)
     return {'date': snapshot['date'], 'profiles': len(rows) if rows is not None else None,
             'publicContributions': sum(row[1] for row in rows) if rows is not None else None,
             'followers': sum(row[3] for row in rows) if rows is not None else None}
@@ -66,9 +68,11 @@ def build_history_views(docs, cities):
     index_path = docs / 'history/index.json'
     catalog = json.loads(index_path.read_text()) if index_path.exists() else {'daily_window': None, 'latest': None}
     summary = {'version': 1, 'window': catalog['daily_window'], 'latest': catalog['latest'], 'scopes': {}}
+    quality = analytics.quality_report([s for _, s in sorted(records['daily'].items())])
+    excluded = frozenset(quality['excluded'])
     for city in ['', *cities]:
-        series = {tier: [point(s, city) for _, s in sorted(rows.items())] for tier, rows in records.items()}
-        daily = [s for _, s in sorted(records['daily'].items()) if scope_rows(s, city) is not None]
+        series = {tier: [point(s, city, excluded) for _, s in sorted(rows.items())] for tier, rows in records.items()}
+        daily = [s for _, s in sorted(records['daily'].items()) if s['date'] not in excluded and scope_rows(s, city) is not None]
         weekly = None
         if len(daily) >= 2:
             latest = date.fromisoformat(daily[-1]['date'])
@@ -80,6 +84,7 @@ def build_history_views(docs, cities):
     out = docs / 'data'
     out.mkdir(exist_ok=True)
     (out / 'evolution-summary.json').write_text(storage.compact(summary) + '\n')
+    (out / 'analytics-quality.json').write_text(storage.compact(quality) + '\n')
     daily = [s for _, s in sorted(records['daily'].items())]
     dates = [s['date'] for s in daily]
     logins = sorted({r[0].lower() for s in daily for r in s['users']})
@@ -90,4 +95,25 @@ def build_history_views(docs, cities):
                    'values': {login: [values.get(login) for values in daily_values] for login in logins},
                    'ranks': {login: [ranks.get(login) for ranks in daily_ranks] for login in logins}}
         (out / f'trends-{metric}.json').write_text(storage.compact(payload) + '\n')
+    # Insights use only captures that passed the quality checks.
+    clean = analytics.usable(daily, quality)
+    basis = {'from': clean[0]['date'], 'through': clean[-1]['date'], 'captures': len(clean)} if clean else None
+    groups = {}
+    for metric in METRICS:
+        value_of = lambda row, m=metric: metric_value(row, m)
+        insights = analytics.build_user_insights(clean, value_of)
+        payload = {'version': 1, 'engine': analytics.ENGINE_VERSION, 'metric': metric, 'horizonDays': 30, 'basis': basis, 'users': insights}
+        (out / f'analytics-users-{metric}.json').write_text(storage.compact(payload) + '\n')
+        if clean:
+            # Groups are the profiles that declare each city in the latest usable capture, followed through their own history.
+            latest = clean[-1]
+            scopes = {'peru': [row[0].lower() for row in latest['users']]}
+            for city in cities:
+                rows = scope_rows(latest, city)
+                if rows is not None:
+                    scopes[city] = [row[0].lower() for row in rows]
+            groups[metric] = analytics.build_group_insights(clean, value_of, insights, scopes)
+    community = analytics.build_community(clean, cities) if clean else None
+    (out / 'analytics-community.json').write_text(storage.compact({'version': 1, 'engine': analytics.ENGINE_VERSION, 'basis': basis, 'community': community}) + '\n')
+    (out / 'analytics-groups.json').write_text(storage.compact({'version': 1, 'engine': analytics.ENGINE_VERSION, 'basis': basis, 'metrics': groups}) + '\n')
     return summary
