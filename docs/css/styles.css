@@ -1531,3 +1531,11 @@ input[type="checkbox"] { transition: background .15s, background-size .18s var(-
 .stats-link { display: flex; align-items: end; }
 .stats-link .button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; font-size: 14px; }
 @media (max-width: 900px) { .stats-controls { grid-template-columns: 1fr; } }
+
+/* Link from Evolution to the Statistics page */
+.stats-callout { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin: 28px 0; padding: 22px 28px; background: var(--peru-red-tint); border: 1px solid #f0ccd2; border-radius: 14px; }
+.stats-callout strong { display: block; margin-top: 6px; font-size: 18px; letter-spacing: -.3px; }
+.stats-callout p { margin: 4px 0 0; font-size: 13px; color: #50535c; max-width: 560px; }
+.stats-callout .button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; font-size: 14px; font-weight: 600; background: var(--peru-red); border-color: var(--peru-red); color: #fff; }
+.stats-callout .button:hover:not(:disabled) { background: var(--peru-red-dark); border-color: var(--peru-red-dark); }
+.evolution-page .stats-callout .button, .evolution-page .stats-link .button { text-decoration: none; }
