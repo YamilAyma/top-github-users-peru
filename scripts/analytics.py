@@ -409,8 +409,9 @@ def scatter_analysis(rows):
     pack = lambda items: [{'login': r[0], 'public': r[1], 'followers': r[2], 'gap': round(abs(g), 2)} for r, g in items[:5]]
     activity = sorted((t for t in gaps if t[1] >= RANK_GAP), key=lambda t: (-t[1], t[0][0]))
     audience = sorted((t for t in gaps if t[1] <= -RANK_GAP), key=lambda t: (t[1], t[0][0]))
-    return {'n': n, 'spearman': round(spearman(public, followers), 3),
-            'pearsonLog': round(pearson([log1p(v) for v in public], [log1p(v) for v in followers]), 3),
+    rho, r = spearman(public, followers), pearson([log1p(v) for v in public], [log1p(v) for v in followers])
+    # A correlation is undefined when one axis has no variation; report it as missing instead of failing.
+    return {'n': n, 'spearman': None if rho is None else round(rho, 3), 'pearsonLog': None if r is None else round(r, 3),
             'rankGap': RANK_GAP, 'moreAudience': pack(audience), 'moreActivity': pack(activity),
             'audienceCount': len(audience), 'activityCount': len(activity)}
 
@@ -471,4 +472,4 @@ def build_community(daily, cities):
     scatter = scatter_analysis(rows)
     return {'health': community_health(daily), 'scatter': scatter, 'geo': geo_concentration(latest, cities),
             'seasonality': seasonality_status(daily),
-            'points': [[r[0], r[1], r[2]] for r in rows] if scatter else []}
+            'points': [[row[0], row[1], row[3], row[1] + row[2]] for row in latest['users']] if scatter else []}
