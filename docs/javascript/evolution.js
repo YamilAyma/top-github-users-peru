@@ -183,7 +183,7 @@
     if (!u) { box.append(H.node('p','history-notice','Aún no hay análisis para este perfil: necesita presencia en la última captura válida.'));return box; }
     const unit=metric==='followers'?'seguidores':metric==='total'?'contribuciones totales':'contribuciones públicas';
     const head=H.node('div','insights-head');
-    const title=H.node('h4','',' Lecturas del análisis');title.prepend(H.icon('forecast'));
+    const title=H.node('h3','',' Lecturas del análisis');title.prepend(H.icon('forecast'));
     const chip=H.node('span',`confidence-chip conf-${u.confidence}`,confidenceText[u.confidence]);
     chip.title=`${u.n} capturas en ${u.spanDays} días`;
     head.append(title,chip);box.append(head);
