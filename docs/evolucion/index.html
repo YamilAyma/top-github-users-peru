@@ -6,9 +6,9 @@
 <title>Evolución del ranking de GitHub en Perú</title>
 <meta name="description" content="Explora el histórico de GitHub Perú: evolución de posiciones, contribuciones y seguidores, comparaciones de perfiles y capturas por fecha.">
 <meta name="theme-color" content="#b63735">
-<link rel="stylesheet" href="./css/styles.css?v=0b6edc610357">
-<script src="./javascript/history-ui.js?v=dbf7f58bfde1" defer></script>
-<script src="./javascript/evolution.js?v=db4d4944d82d" defer></script>
+<link rel="stylesheet" href="./css/styles.css?v=4c97369af64a">
+<script src="./javascript/history-ui.js?v=0f0a8162cd61" defer></script>
+<script src="./javascript/evolution.js?v=fe090f3ecca8" defer></script>
 <script src="./javascript/footer-flag.js?v=ee52e351aaac" defer></script>
 </head>
 <body>
@@ -29,13 +29,16 @@
 <label>Desde<select id="e-from"></select></label><label>Hasta<select id="e-to"></select></label>
 </section>
 <p id="e-coverage" class="history-notice"></p>
+<p id="e-quality" class="history-notice" role="status"></p>
 <section aria-labelledby="community-heading"><div class="panel-heading"><div><div class="eyebrow">UNA MIRADA A LA COMUNIDAD</div><h2 id="community-heading">Cómo cambia la selección</h2></div></div><div id="community-charts" class="history-grid"></div><p id="matched-summary" class="history-notice"></p></section>
+<section class="group-panel" id="group-analysis" aria-labelledby="group-heading" hidden><div class="panel-heading"><div><div class="eyebrow">ANÁLISIS DEL GRUPO</div><h2 id="group-heading">Qué pasa dentro del grupo.</h2></div><div class="export-actions"><button id="export-group-csv" class="button">Exportar CSV</button><button id="export-group-json" class="button">Exportar JSON</button></div></div><div id="group-body"></div></section>
+<section class="group-panel" id="community-view" aria-labelledby="community-view-heading" hidden><div class="panel-heading"><div><div class="eyebrow">LA COMUNIDAD COMPLETA</div><h2 id="community-view-heading">Cómo está la comunidad.</h2></div><div class="export-actions"><button id="export-community-csv" class="button">Exportar CSV</button><button id="export-community-json" class="button">Exportar JSON</button></div></div><div id="community-view-body"></div></section>
 <section class="comparison-panel" aria-labelledby="comparison-heading">
 <div class="panel-heading"><div><div class="eyebrow">ENCUENTRA TU RECORRIDO</div><h2 id="comparison-heading">Tu evolución, en perspectiva.</h2></div><label>Vista<select id="e-view"><option value="value">Evolución de la métrica</option><option value="rank">Movimientos de puestos</option></select></label></div>
 <form id="compare-form" class="compare-form"><label for="e-profile" class="sr-only">Usuario de GitHub para comparar</label><input id="e-profile" type="search" placeholder="Escribe tu @usuario" list="profile-suggestions" autocomplete="off" maxlength="39"><datalist id="profile-suggestions"></datalist><button class="button" type="submit">Añadir perfil</button><span>Hasta 3 perfiles</span></form>
 <p id="compare-status" role="status"></p><div id="compare-chips" class="compare-chips"></div>
 <div id="profile-chart"></div><div id="profile-details"></div>
-<div class="share-actions"><button id="share-view" class="button">Copiar enlace de esta vista</button><button id="download-card" class="button" disabled>Descargar tarjeta SVG</button><label class="sr-only" for="share-url">Enlace de la vista</label><input id="share-url" readonly hidden></div><p id="share-status" role="status"></p>
+<div class="share-actions"><button id="share-view" class="button">Copiar enlace de esta vista</button><button id="download-card" class="button" disabled>Descargar tarjeta SVG</button><button id="export-profiles-series" class="button" disabled>Exportar serie (CSV)</button><button id="export-profiles-analysis" class="button" disabled>Exportar análisis (CSV)</button><button id="export-profiles-json" class="button" disabled>Exportar todo (JSON)</button><label class="sr-only" for="share-url">Enlace de la vista</label><input id="share-url" readonly hidden></div><p id="share-status" role="status"></p>
 </section>
 <section class="history-ranking" aria-labelledby="past-ranking-heading"><div class="panel-heading"><div><div class="eyebrow">VUELVE A UNA CAPTURA</div><h2 id="past-ranking-heading">El ranking en esa fecha</h2></div><label>Buscar usuario<input id="past-search" type="search" placeholder="@usuario" autocomplete="off"></label></div><p id="past-caption" class="history-notice"></p><div class="table-scroll" tabindex="0" role="region" aria-label="Ranking histórico, desplazamiento horizontal"><table><thead><tr><th scope="col">Puesto nacional</th><th scope="col">Perfil</th><th scope="col">Valor</th><th scope="col">Cambio de puesto</th></tr></thead><tbody id="past-rows"></tbody></table></div><button id="past-more" class="button">Mostrar más perfiles</button></section>
 <section class="weekly-panel" aria-labelledby="weekly-heading"><h2 id="weekly-heading">El pulso de la semana</h2><div id="weekly-summary"></div></section>
