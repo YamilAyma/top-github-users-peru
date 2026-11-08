@@ -239,7 +239,7 @@ def build_pages(data):
                 urls.append(BASE_URL + path)
     methodology = ROOT / 'web/metodologia.html'
     title = 'Metodología del ranking de GitHub en Perú'
-    html = methodology.read_text().replace('<!--MIN_FOLLOWERS-->', str(data['minimumFollowers'])).replace('<!--SEO_HEAD-->', head_html('metodologia/', title, 'Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú.') + structured_data('metodologia/', title, None, 0, [('Ranking de Perú', ''), ('Metodología', 'metodologia/')]))
+    html = methodology.read_text().replace('<!--MIN_FOLLOWERS-->', str(data['minimumFollowers'])).replace('<!--FOOTER-->', template[template.index('    <footer'):template.index('  </body>')]).replace('<!--SEO_HEAD-->', head_html('metodologia/', title, 'Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú.') + structured_data('metodologia/', title, None, 0, [('Ranking de Perú', ''), ('Metodología', 'metodologia/')]))
     destination = docs / 'metodologia/index.html'
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(version_assets(html))
@@ -258,7 +258,7 @@ def build_pages(data):
     values = {'SEO_HEAD': head_html('evolucion/', title, 'Histórico del ranking de GitHub Perú: compara perfiles, posiciones y contadores en capturas diarias, mensuales y anuales.') + structured_data('evolucion/', title, None, 0, crumbs),
               'BREADCRUMBS': breadcrumbs_html(crumbs), 'HISTORY_COVERAGE': escape(coverage), 'HISTORY_STATIC': static,
               'CITY_OPTIONS': ''.join(f'<option value="{escape(c["id"], quote=True)}">{escape(c["label"])}</option>' for c in data['cities']),
-              'FOOTER': template[template.index('    <footer>'):template.index('  </body>')]}
+              'FOOTER': template[template.index('    <footer'):template.index('  </body>')]}
     for key, value in values.items():
         html = html.replace('<!--' + key + '-->', value)
     destination = docs / 'evolucion/index.html'
@@ -272,7 +272,7 @@ def build_pages(data):
     values = {'SEO_HEAD': head_html('estadisticas/', title, 'Estadísticas de GitHub Perú: distribución, concentración y crecimiento de cada grupo, y cómo se relacionan la actividad y la audiencia en la comunidad.') + structured_data('estadisticas/', title, None, 0, crumbs),
               'BREADCRUMBS': breadcrumbs_html(crumbs),
               'CITY_OPTIONS': ''.join(f'<option value="{escape(c["id"], quote=True)}">{escape(c["label"])}</option>' for c in data['cities']),
-              'FOOTER': template[template.index('    <footer>'):template.index('  </body>')]}
+              'FOOTER': template[template.index('    <footer'):template.index('  </body>')]}
     for key, value in values.items():
         html = html.replace('<!--' + key + '-->', value)
     destination = docs / 'estadisticas/index.html'
