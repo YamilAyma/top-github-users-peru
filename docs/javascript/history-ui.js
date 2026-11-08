@@ -253,6 +253,22 @@
     card.append(node('p','history-card-caption',valid.length===1?'Hace falta otra captura para trazar una evolución.':'La línea muestra la variación del contador desde la primera captura, no actividad diaria.'));
     return card;
   }
+  // CSV: UTF-8 with BOM for Excel, quoted when needed, and text that a spreadsheet could run as a formula is neutralised.
+  function toCSV(rows) {
+    const cell = (value) => {
+      if (value === null || value === undefined) return '';
+      let text = typeof value === 'number' ? String(value) : String(value);
+      if (typeof value === 'string' && /^[=+\-@\t\r]/.test(text)) text = `'${text}`;
+      return /[",\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+    };
+    return '\uFEFF' + rows.map((row) => row.map(cell).join(',')).join('\r\n') + '\r\n';
+  }
+  function download(filename, mime, text) {
+    const url = URL.createObjectURL(new Blob([text], {type: `${mime};charset=utf-8`}));
+    const link = document.createElement('a');
+    link.href = url; link.download = filename; document.body.append(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
   const KEY = 'github-peru:favorites:v1';
   let available = true, saved = new Set();
   try {
@@ -276,5 +292,5 @@
     });
   }
   decorateNav();
-  window.PeruHistory = {chart, icon, decorate, searchField, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
+  window.PeruHistory = {chart, icon, toCSV, download, decorate, searchField, framePlot, attachCursor, metricCard, rankMovement, node, day, dateLabel, favorites: {has: login=>saved.has(login.toLowerCase()), toggle, available:()=>available}};
 })();
