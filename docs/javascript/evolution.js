@@ -6,7 +6,7 @@
   const colors=['#b63735','#176b77','#7152a3'];
   const params=new URLSearchParams(location.search);
   const files=new Map();
-  let renderToken=0, groups=null, catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
+  let renderToken=0, groups=null, community=null, catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
   const value=(row,metric)=>metric==='total'?row[1]+row[2]:metric==='followers'?row[3]:row[1];
   const signed=v=>`${v>0?'+':''}${fmt.format(v)}`;
   const movement=v=>v>0?`↑ ${v}`:v<0?`↓ ${-v}`:'— Sin cambio';
@@ -333,6 +333,108 @@
     note.append(`Grupo: perfiles que hoy declaran este ámbito, seguidos en su propio historial (las ubicaciones actuales no se aplican al pasado). Base: ${groups.basis.captures} capturas válidas. Los contadores son una ventana móvil, no actividad diaria.`);
     body.append(note);
   }
+  // ---- Community view (computed at build time by scripts/analytics.py) ----
+  const cityLabel=id=>[...$('e-city').options].find(o=>o.value===id)?.textContent.split(' · ')[0]||id;
+  const corrWord=r=>{const a=Math.abs(r);return a<0.2?'casi no se relacionan':a<0.4?'se relacionan débilmente':a<0.6?'se relacionan de forma moderada':'se relacionan con fuerza';};
+  function tile(icon,label,value,sub) {
+    const el=H.node('div','kpi-tile');const head=H.node('span','kpi-label',label);head.prepend(H.icon(icon));
+    el.append(head,H.node('strong','kpi-value',value),H.node('small','',sub));return el;
+  }
+  function rotationChart(rotation) {
+    const wrap=H.node('div','rotation-chart');wrap.setAttribute('role','img');
+    const top=Math.max(1,...rotation.map(r=>Math.max(r.entered,r.left)));
+    wrap.setAttribute('aria-label',`Entradas y salidas diarias: ${rotation.map(r=>`${H.dateLabel(r.date)} +${r.entered} −${r.left}`).join('; ')}`);
+    for (const r of rotation) {
+      const col=H.node('div','rot-col');
+      const up=H.node('span','rot-up'),down=H.node('span','rot-down');
+      up.style.height=`${r.entered/top*100}%`;down.style.height=`${r.left/top*100}%`;
+      col.append(up,down);wrap.append(col);
+    }
+    return wrap;
+  }
+  function scatter(data) {
+    const NS='http://www.w3.org/2000/svg',W=900,Ht=420,L=58,B=36,T=12,R=14;
+    const pts=data.points, log=v=>Math.log1p(v);
+    const maxX=Math.max(...pts.map(p=>p[1])), maxY=Math.max(...pts.map(p=>p[2])), minY=Math.min(...pts.map(p=>p[2]));
+    const lx=log(maxX)||1, ly0=log(minY), ly1=log(maxY)||1;
+    const X=v=>L+log(v)/lx*(W-L-R), Y=v=>T+(1-(log(v)-ly0)/(ly1-ly0||1))*(Ht-T-B);
+    const wrap=H.node('div','scatter-wrap');
+    const svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox',`0 0 ${W} ${Ht}`);svg.setAttribute('class','scatter');svg.setAttribute('role','img');
+    svg.setAttribute('aria-label',`Contribuciones públicas contra seguidores de ${fmt.format(pts.length)} perfiles, en escala logarítmica. Correlación de rangos ${dec.format(data.scatter.spearman)}.`);
+    const mk=(tag,attrs)=>{const el=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs)) el.setAttribute(k,v);return el;};
+    const xticks=[0,10,100,1000,10000].filter(v=>v<=maxX*1.05), yticks=[10,30,100,300,1000,3000,10000].filter(v=>v>=minY*0.9&&v<=maxY*1.1);
+    for (const v of yticks) { svg.append(mk('line',{x1:L,x2:W-R,y1:Y(v),y2:Y(v),class:'sc-grid'})); const t=mk('text',{x:L-8,y:Y(v)+4,class:'sc-tick','text-anchor':'end'});t.textContent=fmt.format(v);svg.append(t); }
+    for (const v of xticks) { svg.append(mk('line',{x1:X(v),x2:X(v),y1:T,y2:Ht-B,class:'sc-grid'})); const t=mk('text',{x:X(v),y:Ht-B+18,class:'sc-tick','text-anchor':'middle'});t.textContent=fmt.format(v);svg.append(t); }
+    const ax=mk('text',{x:(L+W-R)/2,y:Ht-4,class:'sc-axis','text-anchor':'middle'});ax.textContent='Contribuciones públicas (escala logarítmica)';svg.append(ax);
+    const ay=mk('text',{x:14,y:(T+Ht-B)/2,class:'sc-axis','text-anchor':'middle',transform:`rotate(-90 14 ${(T+Ht-B)/2})`});ay.textContent='Seguidores';svg.append(ay);
+    const act=new Set(data.scatter.moreActivity.map(o=>o.login)), aud=new Set(data.scatter.moreAudience.map(o=>o.login));
+    const rows=[...pts].sort((a,b)=>(act.has(a[0])||aud.has(a[0])?1:0)-(act.has(b[0])||aud.has(b[0])?1:0));
+    for (const [login,pub,fol] of rows) {
+      const c=mk('circle',{cx:X(pub).toFixed(1),cy:Y(fol).toFixed(1),r:act.has(login)||aud.has(login)?4.2:2.6,class:`sc-dot${act.has(login)?' activity':aud.has(login)?' audience':''}`});
+      c.dataset.login=login;svg.append(c);
+    }
+    const mine=[];
+    profileKeys.forEach((key,i)=>{ const p=pts.find(q=>q[0].toLowerCase()===key); if (!p) return;
+      svg.append(mk('circle',{cx:X(p[1]),cy:Y(p[2]),r:8,class:'sc-ring'}));
+      const right=X(p[1])>W*0.75, t=mk('text',{x:X(p[1])+(right?-11:11),y:Y(p[2])-10-i*15,class:'sc-me','text-anchor':right?'end':'start'});
+      t.textContent=`@${p[0]}`;svg.append(t);mine.push(p); });
+    const tip=H.node('div','scatter-tip');tip.hidden=true;
+    svg.addEventListener('pointermove',e=>{
+      const r=svg.getBoundingClientRect(),sx=W/r.width,x=(e.clientX-r.left)*sx,y=(e.clientY-r.top)*sx;
+      let best=null,d=Infinity;for (const p of pts){const dx=X(p[1])-x,dy=Y(p[2])-y,dd=dx*dx+dy*dy;if(dd<d){d=dd;best=p;}}
+      if (!best||d>26*26){tip.hidden=true;return;}
+      tip.replaceChildren(H.node('strong','',`@${best[0]}`),H.node('span','',`${fmt.format(best[1])} contribuciones públicas`),H.node('span','',`${fmt.format(best[2])} seguidores`));
+      tip.hidden=false;const px=X(best[1])/W*100;tip.style.left=`${px}%`;tip.style.top=`${Y(best[2])/Ht*100}%`;tip.classList.toggle('flip',px>65);svg.style.cursor='pointer';svg.dataset.hover=best[0];
+    });
+    svg.addEventListener('pointerleave',()=>{tip.hidden=true;delete svg.dataset.hover;});
+    svg.addEventListener('click',()=>{ if (svg.dataset.hover) addProfile(svg.dataset.hover.toLowerCase()); });
+    wrap.append(svg,tip);return wrap;
+  }
+  function renderCommunityView() {
+    const panel=$('community-view'),body=$('community-view-body'),c=community?.community;
+    if (!c||!c.health) { panel.hidden=true;return; }
+    panel.hidden=false;body.replaceChildren();
+    const h=c.health,w=h.weekly;
+    const tiles=H.node('div','kpi-grid');
+    tiles.append(tile('users','Perfiles registrados',fmt.format(h.profiles),`mediana ${fmt.format(h.medianPublic)} contribuciones · ${fmt.format(h.medianFollowers)} seguidores`));
+    if (w) {
+      tiles.append(tile('growth','Con aumento reciente',pct1(w.activeShare),`subieron su contador entre ${H.dateLabel(w.from)} y ${H.dateLabel(w.through)}`));
+      tiles.append(tile('swap','Rotación semanal',`+${fmt.format(w.entered)} / −${fmt.format(w.left)}`,`entradas y salidas (${pct1((w.entered+w.left)/2/h.profiles)} de la comunidad)`));
+      tiles.append(tile('pulse','Variación semanal',signed(w.publicDelta),`contribuciones públicas · ${signed(w.followersDelta)} seguidores`));
+    } else tiles.append(tile('info','Comparación semanal','Pendiente','hace falta una captura de al menos 7 días antes'));
+    body.append(tiles);
+    if (h.rotation.length>1) { const block=H.node('div','group-block');block.append(H.node('h3','','Entradas y salidas por día'),rotationChart(h.rotation.slice(-30)),H.node('p','history-notice','Barras hacia arriba: perfiles que aparecen; hacia abajo: perfiles que dejan de aparecer en la muestra.'));body.append(block); }
+    if (c.scatter&&c.points.length) {
+      const sc=c.scatter,block=H.node('div','group-block');
+      block.append(H.node('h3','','Actividad frente a audiencia'));
+      block.append(H.node('p','history-notice',`Contribuciones públicas y seguidores ${corrWord(sc.spearman)} en esta muestra (correlación de rangos ${new Intl.NumberFormat('es-PE',{minimumFractionDigits:2,maximumFractionDigits:2}).format(sc.spearman)}). Pasa el cursor para ver un perfil y haz clic para compararlo.`));
+      block.append(scatter(c));
+      const legend=H.node('p','scatter-legend');legend.append(H.node('span','dot audience','Mucha más audiencia que actividad'),H.node('span','dot activity','Mucha más actividad que audiencia'));block.append(legend);
+      const cols=H.node('div','group-lists');
+      for (const [title,items,count] of [['Más audiencia que actividad',sc.moreAudience,sc.audienceCount],['Más actividad que audiencia',sc.moreActivity,sc.activityCount]]) {
+        const col=H.node('div','group-list');col.append(H.node('h3','',`${title} (${fmt.format(count)})`));const ol=H.node('ol');
+        for (const r of items) { const li=H.node('li');const b=H.node('button','history-profile-button',`@${r.login}`);b.addEventListener('click',()=>addProfile(r.login.toLowerCase()));li.append(b,H.node('span','',`${fmt.format(r.public)} contrib. · ${fmt.format(r.followers)} seg.`));ol.append(li); }
+        col.append(ol);cols.append(col);
+      }
+      block.append(cols);body.append(block);
+    }
+    const geo=c.geo;
+    if (geo?.cities.length) {
+      const block=H.node('div','group-block');block.append(H.node('h3','','Concentración geográfica'));
+      const lead=geo.cities[0];
+      block.append(H.node('p','history-notice',`${cityLabel(lead.id)} reúne el ${pct1(lead.share)} de los perfiles y el ${pct1(lead.publicShare)} de las contribuciones públicas. ${fmt.format(geo.unassigned)} perfiles (${pct1(geo.unassigned/geo.profiles)}) no declaran una ciudad reconocida.`));
+      const bars=H.node('div','geo-bars');
+      for (const r of geo.cities.slice(0,8)) {
+        const row=H.node('div','geo-row');
+        const track=H.node('div','geo-track');const a=H.node('span','geo-profiles');a.style.width=`${r.share/lead.share*100}%`;const b=H.node('span','geo-public');b.style.width=`${Math.min(100,r.publicShare/lead.share*100)}%`;track.append(a,b);
+        row.append(H.node('span','geo-name',cityLabel(r.id)),track,H.node('span','geo-values',`${pct1(r.share)} perfiles · ${pct1(r.publicShare)} contrib.`));bars.append(row);
+      }
+      block.append(bars,H.node('p','history-notice','Un perfil puede declarar varias ciudades, por lo que los porcentajes pueden sumar más del 100 %.'));
+      body.append(block);
+    }
+    const seas=c.seasonality;
+    if (seas) { const note=H.node('p','insights-basis');note.prepend(H.icon('info'));note.append(seas.available?'Hay historial suficiente para estudiar estacionalidad; aún no se calcula.':`Estacionalidad: se mostrará con al menos ${seas.neededWeeks} semanas de historial (hoy ${seas.weeks}).`);body.append(note); }
+  }
   function renderProfiles() {
     renderToken++;
     $('compare-chips').replaceChildren(); $('profile-chart').replaceChildren(); $('profile-details').replaceChildren();
@@ -465,7 +567,7 @@
     const cityCount=selected.filter(s=>cityRows(s)!==null).length;
     renderQuality();
     $('e-coverage').textContent=`${selected.length} capturas seleccionadas · ${H.dateLabel(selected[0].date)} – ${H.dateLabel(selected.at(-1).date)}. ${selected.length===1?'Primera captura: todavía no hay una tendencia. ':''}${$('e-city').value?`${cityCount} con cobertura de ciudad. `:''}Los huecos se conservan. Hora de referencia: Perú.`;
-    renderCommunity();renderGroup();renderProfiles();renderPast();renderWeekly();updateURL();
+    renderCommunity();renderGroup();renderCommunityView();renderProfiles();renderPast();renderWeekly();updateURL();
   }
   function addProfile(input) {
     const key=input.trim().replace(/^@/,'').toLowerCase();
@@ -479,7 +581,7 @@
     decorateControls();
     $('evolution-retry').hidden=true;
     try {
-      [catalog,summary,quality,groups]=await Promise.all([json('./history/index.json'),json('./data/evolution-summary.json'),json('./data/analytics-quality.json').catch(()=>null),json('./data/analytics-groups.json').catch(()=>null)]);
+      [catalog,summary,quality,groups,community]=await Promise.all([json('./history/index.json'),json('./data/evolution-summary.json'),json('./data/analytics-quality.json').catch(()=>null),json('./data/analytics-groups.json').catch(()=>null),json('./data/analytics-community.json').catch(()=>null)]);
       if (!catalog.series || !summary.scopes) throw new Error('Invalid catalog');
       for (const [id,key] of [['e-city','city'],['e-tier','tier'],['e-days','days'],['e-metric','metric'],['e-view','view']]) selectKnown(id,key);
       profileKeys=[...new Set((params.get('users') || '').split(',').map(v=>v.toLowerCase()).filter(v=>/^[a-z0-9-]{1,39}$/.test(v)))].slice(0,3);
