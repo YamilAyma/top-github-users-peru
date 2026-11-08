@@ -1519,3 +1519,9 @@ input[type="checkbox"] { transition: background .15s, background-size .18s var(-
 .geo-values { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
 @media (max-width: 860px) { .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .geo-row { grid-template-columns: 90px minmax(0, 1fr); } .geo-values { grid-column: 1 / -1; } }
 @media (max-width: 480px) { .kpi-grid { grid-template-columns: 1fr; } }
+
+/* Export actions */
+.export-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.export-actions .button, #export-profiles-series, #export-profiles-analysis, #export-profiles-json { background: #fff; color: var(--ink); border-color: var(--control-border); box-shadow: none; font-weight: 550; }
+.export-actions .button:hover:not(:disabled), #export-profiles-series:hover:not(:disabled), #export-profiles-analysis:hover:not(:disabled), #export-profiles-json:hover:not(:disabled) { background: var(--peru-red-tint); }
+.share-actions { flex-wrap: wrap; }

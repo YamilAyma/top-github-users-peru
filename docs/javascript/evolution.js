@@ -6,7 +6,7 @@
   const colors=['#b63735','#176b77','#7152a3'];
   const params=new URLSearchParams(location.search);
   const files=new Map();
-  let renderToken=0, groups=null, community=null, catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
+  let renderToken=0, exportState=null, groups=null, community=null, catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
   const value=(row,metric)=>metric==='total'?row[1]+row[2]:metric==='followers'?row[3]:row[1];
   const signed=v=>`${v>0?'+':''}${fmt.format(v)}`;
   const movement=v=>v>0?`↑ ${v}`:v<0?`↓ ${-v}`:'— Sin cambio';
@@ -155,6 +155,14 @@
     add($('share-view'),'link'); add($('download-card'),'download'); add($('compare-form').querySelector('button'),'plus');
     add($('past-more'),'chevronDown'); add($('evolution-retry'),'refresh');
     H.searchField($('e-profile')); H.searchField($('past-search'));
+    for (const id of ['export-profiles-series','export-profiles-analysis','export-profiles-json','export-group-csv','export-group-json','export-community-csv','export-community-json']) add($(id),'download');
+    $('export-profiles-series').addEventListener('click',()=>exportProfiles('series'));
+    $('export-profiles-analysis').addEventListener('click',()=>exportProfiles('analysis'));
+    $('export-profiles-json').addEventListener('click',()=>exportProfiles('json'));
+    $('export-group-csv').addEventListener('click',()=>exportGroup('csv'));
+    $('export-group-json').addEventListener('click',()=>exportGroup('json'));
+    $('export-community-csv').addEventListener('click',()=>exportCommunity('csv'));
+    $('export-community-json').addEventListener('click',()=>exportCommunity('json'));
   }
   function flashIcon(button) {
     const old=button.querySelector('.stat-icon'); if(!old) return;
@@ -435,10 +443,60 @@
     const seas=c.seasonality;
     if (seas) { const note=H.node('p','insights-basis');note.prepend(H.icon('info'));note.append(seas.available?'Hay historial suficiente para estudiar estacionalidad; aún no se calcula.':`Estacionalidad: se mostrará con al menos ${seas.neededWeeks} semanas de historial (hoy ${seas.weeks}).`);body.append(note); }
   }
+  // ---- Data export (everything is generated in the browser from the data already loaded) ----
+  const slug=text=>String(text).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const stamp=()=>groups?.basis?.through||new Date().toISOString().slice(0,10);
+  const exportMeta=()=>({generado:new Date().toISOString(),fuente:'GitHub Perú · Evolución',base:groups?.basis||null,
+    notas:['Los contadores de GitHub son una ventana móvil de 12 meses: sus variaciones no equivalen a actividad diaria.','Las capturas incompletas se excluyen de los agregados y del análisis.','Las proyecciones suponen que el ritmo actual se mantiene y se acompañan de su nivel de confianza.']});
+  const saveCSV=(name,rows)=>H.download(`${name}.csv`,'text/csv',H.toCSV(rows));
+  const saveJSON=(name,payload)=>H.download(`${name}.json`,'application/json',JSON.stringify(payload,null,2)+'\n');
+  function seriesRows() {
+    const st=exportState,rows=[['fecha','perfil','metrica','valor','puesto_nacional']];
+    st.dates.forEach((date,i)=>st.keys.forEach((key,k)=>{ if (st.values[k][i]!==null) rows.push([date,key,st.metric,st.values[k][i],st.ranks[k][i]]); }));
+    return rows;
+  }
+  async function analysisRows() {
+    const st=exportState,data=await loadInsights(st.metric),last=usableSelected().at(-1),rankNow=last?ranks(last):new Map();
+    const rows=[['perfil','metrica','valor_actual','puesto_actual','capturas','dias','ritmo_por_dia','ritmo_ultimos_7_dias','tendencia','pendiente_por_dia','r2','confianza','proyeccion_30d','proyeccion_30d_bajo','proyeccion_30d_alto','puesto_probable_30d','puesto_mejor','puesto_peor','salto_fecha','salto_valor','salto_veces_su_ritmo','salto_parte_del_crecimiento','alcanza_a','distancia','dias_para_alcanzar','depende_de_un_salto']];
+    for (const key of st.keys) {
+      const u=data?.users?.[key],cur=last?(cityRows(last)||[]).find(r=>r[0].toLowerCase()===key):null;
+      if (!u) { rows.push([key,st.metric,cur?value(cur,st.metric):null,rankNow.get(key)??null]);continue; }
+      const p=u.projection||{},j=(u.jumps||[])[0]||{},c=u.catchUp||{};
+      rows.push([key,st.metric,cur?value(cur,st.metric):null,rankNow.get(key)??null,u.n,u.spanDays,u.perDay,u.recentPerDay,u.trend,u.slope??null,u.r2??null,u.confidence,p.value??null,p.low??null,p.high??null,p.rank??null,p.rankBest??null,p.rankWorst??null,j.date??null,j.delta??null,j.times??null,j.share??null,c.login??null,c.gap??null,c.days??null,u.jumpDriven?'sí':'no']);
+    }
+    return rows;
+  }
+  async function exportProfiles(kind) {
+    if (!exportState) return;
+    const st=exportState,name=`github-peru-${kind==='series'?'serie':kind==='analysis'?'analisis':'perfiles'}-${st.metric}-${stamp()}`;
+    if (kind==='series') saveCSV(name,seriesRows());
+    else if (kind==='analysis') saveCSV(name,await analysisRows());
+    else {
+      const data=await loadInsights(st.metric);
+      saveJSON(name,{...exportMeta(),metrica:st.metric,perfiles:st.keys.map((key,k)=>({perfil:key,serie:st.dates.map((date,i)=>({fecha:date,valor:st.values[k][i],puesto:st.ranks[k][i]})).filter(r=>r.valor!==null),analisis:data?.users?.[key]||null}))});
+    }
+  }
+  function exportGroup(format) {
+    const metric=$('e-metric').value,scope=$('e-city').value||'peru',data=groups?.metrics?.[metric];if (!data) return;
+    const name=`github-peru-grupo-${slug(scope)}-${metric}-${stamp()}`;
+    if (format==='json') { saveJSON(name,{...exportMeta(),metrica:metric,ambito:scope,grupo:data[scope]||null,todosLosAmbitos:data});return; }
+    const rows=[['ambito','nombre','perfiles','grupo_pequeno','total','media','mediana','p90','p99','maximo','gini','parte_top10','parte_top1_por_ciento','perfiles_comparables','perfiles_nuevos','variacion','variacion_pct','perfiles_que_crecieron','parte_que_crecio','mediana_variacion','parte_del_aumento_top10','al_alza','estables','a_la_baja','ritmo_mediano_por_dia']];
+    for (const [id,v] of Object.entries(data).sort((a,b)=>b[1].profiles-a[1].profiles)) {
+      const gr=v.growth||{},t=v.trends||{};
+      rows.push([id,cityLabel(id==='peru'?'':id)||'Todo Perú',v.profiles,v.small?'sí':'no',v.total??null,v.mean??null,v.median??null,v.p90??null,v.p99??null,v.max??null,v.gini??null,v.top10Share??null,v.top1PctShare??null,gr.matched??null,gr.newInGroup??null,gr.delta??null,gr.pct??null,gr.growers??null,gr.growersShare??null,gr.medianDelta??null,gr.top10Share??null,t.alza??0,t.estable??0,t.baja??0,v.medianPerDay??null]);
+    }
+    saveCSV(name,rows);
+  }
+  function exportCommunity(format) {
+    const c=community?.community;if (!c) return;
+    const name=`github-peru-comunidad-${stamp()}`;
+    if (format==='json') { saveJSON(name,{...exportMeta(),comunidad:{salud:c.health,actividadFrenteAAudiencia:c.scatter,geografia:c.geo,estacionalidad:c.seasonality,perfiles:c.points.map(([perfil,contribuciones_publicas,seguidores])=>({perfil,contribuciones_publicas,seguidores}))}});return; }
+    saveCSV(name,[['perfil','contribuciones_publicas','seguidores'],...c.points]);
+  }
   function renderProfiles() {
     renderToken++;
     $('compare-chips').replaceChildren(); $('profile-chart').replaceChildren(); $('profile-details').replaceChildren();
-    $('download-card').disabled=true;
+    $('download-card').disabled=true;exportState=null;for (const id of ['export-profiles-series','export-profiles-analysis','export-profiles-json']) $(id).disabled=true;
     if (!profileKeys.length) { $('profile-chart').append(H.node('p','history-notice','Busca tu usuario para descubrir su recorrido. Puedes comparar hasta tres perfiles.'));return; }
     const metric=$('e-metric').value, rankView=$('e-view').value==='rank';
     $('profile-chart').dataset.view=rankView?'rank':'value';
@@ -450,6 +508,10 @@
       const chip=H.node('button','compare-chip',`@${key}`);chip.append(H.icon('close'));chip.style.borderColor=colors[i];chip.setAttribute('aria-label',`Quitar ${key} de la comparación`);
       chip.addEventListener('click',()=>{profileKeys=profileKeys.filter(k=>k!==key);render();});$('compare-chips').append(chip);
     });
+    exportState={metric,keys:[...profileKeys],dates:selected.map(s=>s.date),
+      values:profileKeys.map(key=>maps.map(m=>m.has(key)?value(m.get(key),metric):null)),
+      ranks:profileKeys.map(key=>positions.map(p=>p.get(key)??null))};
+    if (all.length) for (const id of ['export-profiles-series','export-profiles-analysis','export-profiles-json']) $(id).disabled=false;
     if (!all.length) { $('profile-chart').append(H.node('p','history-notice','No hay capturas de esos perfiles en el ámbito y las fechas seleccionados.'));return; }
     if (rankView) {
       const grid=H.node('div','rank-journeys');
