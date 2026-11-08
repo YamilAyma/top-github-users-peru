@@ -6,7 +6,7 @@
   const colors=['#b63735','#176b77','#7152a3'];
   const params=new URLSearchParams(location.search);
   const files=new Map();
-  let catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
+  let renderToken=0, catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
   const value=(row,metric)=>metric==='total'?row[1]+row[2]:metric==='followers'?row[3]:row[1];
   const signed=v=>`${v>0?'+':''}${fmt.format(v)}`;
   const movement=v=>v>0?`↑ ${v}`:v<0?`↓ ${-v}`:'— Sin cambio';
@@ -160,7 +160,87 @@
     const old=button.querySelector('.stat-icon'); if(!old) return;
     const check=H.icon('check'); old.replaceWith(check); setTimeout(()=>check.replaceWith(old),2000);
   }
+  // ---- Per-profile insights (computed at build time by scripts/analytics.py) ----
+  const insightCache=new Map();
+  const loadInsights=metric=>{ if(!insightCache.has(metric)) insightCache.set(metric,json(`./data/analytics-users-${metric}.json`).catch(()=>null)); return insightCache.get(metric); };
+  const confidenceText={alta:'Confianza alta',media:'Confianza media',baja:'Confianza baja',insuficiente:'Datos insuficientes'};
+  const dec=new Intl.NumberFormat('es-PE',{maximumFractionDigits:1});
+  const per=v=>`${v>0?'+':''}${dec.format(v)}`;
+  function insightRow(icon,label,text) {
+    const li=H.node('li');const head=H.node('strong','',label);head.prepend(H.icon(icon));
+    li.append(head,H.node('span','',text));return li;
+  }
+  function buildInsights(key,metric,data,color) {
+    const u=data?.users?.[key];
+    const box=H.node('section','profile-insights');box.style.borderColor=color;
+    box.setAttribute('aria-label',`Lecturas del análisis de @${key}`);
+    if (!u) { box.append(H.node('p','history-notice','Aún no hay análisis para este perfil: necesita presencia en la última captura válida.'));return box; }
+    const unit=metric==='followers'?'seguidores':metric==='total'?'contribuciones totales':'contribuciones públicas';
+    const head=H.node('div','insights-head');
+    const title=H.node('h4','',' Lecturas del análisis');title.prepend(H.icon('forecast'));
+    const chip=H.node('span',`confidence-chip conf-${u.confidence}`,confidenceText[u.confidence]);
+    chip.title=`${u.n} capturas en ${u.spanDays} días`;
+    head.append(title,chip);box.append(head);
+    const list=H.node('ul','insight-list');
+    const pool=usableSelected(), last=pool.at(-1);
+    // Pace
+    if (u.perDay!==null) {
+      let text=`${per(u.perDay)} por día en promedio`;
+      if (u.recentPerDay!==null) {
+        text+=` · últimos 7 días: ${per(u.recentPerDay)} por día`;
+        if (u.perDay>0 && u.recentPerDay>0) text+=` (${dec.format(u.recentPerDay/u.perDay)}× su promedio)`;
+      }
+      list.append(insightRow('daily','Ritmo',text));
+    }
+    // Trend
+    const trendText={alza:'Tendencia al alza',baja:'Tendencia a la baja',estable:'Sin tendencia distinguible del ruido','sin-datos':'Sin datos suficientes'}[u.trend];
+    list.append(insightRow('growth','Tendencia',u.slope!==undefined?`${trendText} (${per(u.slope)} por día${u.r2!==null&&u.r2!==undefined?`, R² ${dec.format(u.r2)}`:''})`:trendText));
+    // Position
+    if (last) {
+      const rows=last.users, mine=rows.find(r=>r[0].toLowerCase()===key);
+      if (mine) {
+        const rank=ranks(last).get(key), top=Math.max(1,Math.ceil(rank/rows.length*100));
+        let text=`Puesto #${fmt.format(rank)} · entre el ${top} % superior de ${fmt.format(rows.length)} perfiles`;
+        const city=$('e-city').value, cityList=city?cityRows(last):null;
+        if (cityList && cityList.length) {
+          const here=cityList.filter(r=>value(r,metric)>value(mine,metric)).length+1;
+          text+=` · #${fmt.format(here)} de ${fmt.format(cityList.length)} en el ámbito elegido`;
+        }
+        list.append(insightRow('rank','Posición',text));
+      }
+    }
+    // Projection
+    if (u.projection) {
+      const p=u.projection;
+      let text=`≈ ${fmt.format(p.value)} ${unit} (rango ${fmt.format(p.low)}–${fmt.format(p.high)})`;
+      text+=` · puesto probable #${fmt.format(p.rank)}${p.rankBest!==p.rankWorst?` (entre #${fmt.format(p.rankBest)} y #${fmt.format(p.rankWorst)})`:''}`;
+      const row=insightRow('forecast','En 30 días',text);
+      row.append(H.node('small','',u.jumpDriven?'Depende sobre todo de un único salto: tómala con mucha cautela.':'Supone que el ritmo actual se mantiene; es una referencia, no una predicción.'));
+      list.append(row);
+    } else list.append(insightRow('forecast','En 30 días','Todavía no hay suficientes capturas para proyectar.'));
+    if (u.catchUp) list.append(insightRow('arrowUp','Alcance',`Alcanzaría a @${u.catchUp.login} (a ${fmt.format(u.catchUp.gap)}) en ~${fmt.format(u.catchUp.days)} días si ambos mantienen su ritmo.`));
+    // Jumps
+    for (const j of (u.jumps||[]).filter((j,index)=>index===0||(j.share||0)>=0.1)) list.append(insightRow('jump','Salto atípico',`${signed(j.delta)} el ${H.dateLabel(j.date)} (${dec.format(j.times)}× su ritmo habitual)${j.share?`: explica el ${Math.round(j.share*100)} % de su crecimiento`:''}.`));
+    // Neighbours
+    if (last) {
+      const ordered=[...last.users].sort((a,b)=>value(b,metric)-value(a,metric)||a[0].toLowerCase().localeCompare(b[0].toLowerCase()));
+      const at=ordered.findIndex(r=>r[0].toLowerCase()===key);
+      if (at>=0) {
+        const mine=value(ordered[at],metric), near=[...ordered.slice(Math.max(0,at-2),at),...ordered.slice(at+1,at+3)];
+        const li=insightRow('users','A su alrededor','');const holder=li.querySelector('span');
+        near.forEach(r=>{const b=H.node('button','history-profile-button',`@${r[0]} ${signed(value(r,metric)-mine)}`);b.addEventListener('click',()=>addProfile(r[0].toLowerCase()));holder.append(b);});
+        list.append(li);
+      }
+    }
+    box.append(list);
+    const note=H.node('p','insights-basis');note.prepend(H.icon('info'));
+    const skipped=(quality?.excluded||[]).length;
+    note.append(`Basado en ${data.basis.captures} capturas válidas (${H.dateLabel(data.basis.from)} – ${H.dateLabel(data.basis.through)})${skipped?`; excluye ${skipped} incompleta${skipped===1?'':'s'}`:''}. Los contadores son una ventana móvil, no actividad diaria.`);
+    box.append(note);
+    return box;
+  }
   function renderProfiles() {
+    renderToken++;
     $('compare-chips').replaceChildren(); $('profile-chart').replaceChildren(); $('profile-details').replaceChildren();
     $('download-card').disabled=true;
     if (!profileKeys.length) { $('profile-chart').append(H.node('p','history-notice','Busca tu usuario para descubrir su recorrido. Puedes comparar hasta tres perfiles.'));return; }
@@ -229,6 +309,11 @@
       }
       $('profile-details').append(detail);
       if (valid.length>1) $('profile-details').append(statsGrid(key,series[i],valid,metric,colors[i],positions));
+      if (!rankView) {
+        const slot=H.node('div','insights-slot');slot.style.minHeight='64px';$('profile-details').append(slot);
+        const token=renderToken;
+        loadInsights(metric).then(data=>{ if (token!==renderToken || !slot.isConnected) return; slot.replaceWith(buildInsights(key,metric,data,colors[i])); });
+      }
     });
     const dates=selected.map(s=>s.date), format=v=>fmt.format(v);
     H.attachCursor(plot,{dates,series,colors,names:profileKeys.map(k=>`@${k}`),ranks:profileKeys.map(k=>positions.map(m=>m.get(k)??null)),domain:[min,max],format,rank:rankView});
