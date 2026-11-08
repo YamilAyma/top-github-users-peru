@@ -1,6 +1,7 @@
 """Regression checks for the analytics engine: data quality and statistics helpers."""
 import unittest
-from analytics import snapshot_quality, quality_report, usable, linear_fit, confidence, percentile
+from analytics import (snapshot_quality, quality_report, usable, linear_fit, confidence, percentile,
+                       t_critical, predict, trend_label, jumps, build_user_insights)
 
 
 def snap(day, count, public=10, sha=None, bump=None):
@@ -91,6 +92,99 @@ class StatsTests(unittest.TestCase):
         self.assertEqual(percentile([1, 2, 3, 4], 50), 2.5)
         self.assertEqual(percentile([4, 1, 3, 2], 100), 4)
         self.assertEqual(percentile([1, 2, 3, 4, 5], 0), 1)
+
+
+def history(days, users):
+    """days: number of daily snapshots; users: {login: callable(day_index) -> value or None}."""
+    out = []
+    for d in range(days):
+        rows = [[login, fn(d), 0, 1] for login, fn in users.items() if fn(d) is not None]
+        out.append({'date': f'2026-10-{d + 1:02d}', 'users': rows, 'cache_sha256': str(d)})
+    return out
+
+
+def pub(row):
+    return row[1]
+
+
+class InsightTests(unittest.TestCase):
+    def test_pace_trend_and_projection_of_a_linear_user(self):
+        data = history(15, {'fast': lambda d: 100 + 10 * d, 'slow': lambda d: 500 + 1 * d})
+        ins = build_user_insights(data, pub)
+        fast = ins['fast']
+        self.assertEqual(fast['trend'], 'alza')
+        self.assertAlmostEqual(fast['perDay'], 10)
+        self.assertAlmostEqual(fast['slope'], 10)
+        self.assertEqual(fast['projection']['value'], 100 + 10 * (14 + 30))
+        self.assertEqual(fast['projection']['low'], fast['projection']['high'])  # perfect line: no spread
+        self.assertEqual(fast['confidence'], 'media')  # 15 captures over 14 days
+
+    def test_short_history_has_low_confidence(self):
+        ins = build_user_insights(history(12, {'a': lambda d: 10 * d, 'b': lambda d: 5}), pub)
+        self.assertEqual(ins['a']['confidence'], 'baja')
+
+    def test_projection_overtakes_slower_neighbour_and_catch_up_is_reported(self):
+        data = history(12, {'fast': lambda d: 100 + 20 * d, 'slow': lambda d: 500 + 1 * d})
+        ins = build_user_insights(data, pub)
+        self.assertEqual(ins['fast']['projection']['rank'], 1)   # 100 + 20 * 41 = 920 > 541
+        self.assertEqual(ins['slow']['projection']['rank'], 2)
+        # fast is at 320, slow at 511; gap 191 closes at 19 per day: ~10 days
+        self.assertEqual(ins['fast']['catchUp'], {'login': 'slow', 'gap': 191, 'days': 10})
+        self.assertNotIn('catchUp', ins['slow'])
+
+    def test_flat_user_is_stable_without_noise_claims(self):
+        ins = build_user_insights(history(12, {'flat': lambda d: 50, 'other': lambda d: 10 + d}), pub)
+        self.assertEqual(ins['flat']['trend'], 'estable')
+        self.assertEqual(ins['flat']['perDay'], 0)
+
+    def test_noisy_series_without_a_real_trend_is_stable(self):
+        wobble = [100, 103, 99, 104, 98, 102, 100, 105, 99, 103, 100, 101]
+        ins = build_user_insights(history(12, {'n': lambda d: wobble[d], 'x': lambda d: d}), pub)
+        self.assertEqual(ins['n']['trend'], 'estable')
+
+    def test_not_enough_history_means_no_projection(self):
+        ins = build_user_insights(history(4, {'a': lambda d: 10 * d, 'b': lambda d: 5}), pub)
+        self.assertEqual(ins['a']['confidence'], 'insuficiente')
+        self.assertNotIn('projection', ins['a'])
+        self.assertEqual(build_user_insights(history(1, {'a': lambda d: 1}), pub), {})
+
+    def test_single_jump_is_flagged_and_caps_confidence(self):
+        data = history(14, {'spiky': lambda d: 100 + (500 if d >= 7 else 0) + d, 'x': lambda d: 7})
+        entry = build_user_insights(data, pub)['spiky']
+        self.assertEqual(entry['jumps'][0]['date'], '2026-10-08')
+        self.assertGreaterEqual(entry['jumps'][0]['share'], 0.9)
+        self.assertTrue(entry['jumpDriven'])
+        self.assertEqual(entry['confidence'], 'baja')
+        self.assertIn('projection', entry)
+
+    def test_users_missing_from_the_last_snapshot_are_left_out(self):
+        data = history(8, {'stays': lambda d: d, 'left': lambda d: d if d < 5 else None})
+        ins = build_user_insights(data, pub)
+        self.assertIn('stays', ins)
+        self.assertNotIn('left', ins)
+
+    def test_late_arrivals_are_fitted_on_their_own_history(self):
+        data = history(14, {'old': lambda d: 10 * d, 'new': lambda d: 3 * d if d >= 6 else None})
+        entry = build_user_insights(data, pub)['new']
+        self.assertEqual(entry['n'], 8)
+        self.assertEqual(entry['spanDays'], 7)
+        self.assertAlmostEqual(entry['slope'], 3)
+
+    def test_prediction_interval_widens_with_the_horizon(self):
+        fit = linear_fit([(0, 0), (1, 2), (2, 1), (3, 4), (4, 3), (5, 6)])
+        _, low30, high30 = predict(fit, 35)
+        _, low5, high5 = predict(fit, 10)
+        self.assertGreater(high30 - low30, high5 - low5)
+
+    def test_t_critical_and_trend_label_edges(self):
+        self.assertEqual(t_critical(1), 12.706)
+        self.assertEqual(t_critical(100), 1.96)
+        self.assertIsNone(t_critical(0))
+        self.assertEqual(trend_label(None), 'sin-datos')
+
+    def test_jumps_ignore_small_changes(self):
+        points = [(i, 100 + i, f'2026-10-{i + 1:02d}', 'u') for i in range(8)]
+        self.assertEqual(jumps(points), [])
 
 
 if __name__ == '__main__':

@@ -95,4 +95,11 @@ def build_history_views(docs, cities):
                    'values': {login: [values.get(login) for values in daily_values] for login in logins},
                    'ranks': {login: [ranks.get(login) for ranks in daily_ranks] for login in logins}}
         (out / f'trends-{metric}.json').write_text(storage.compact(payload) + '\n')
+    # Per-user insights use only captures that passed the quality checks.
+    clean = analytics.usable(daily, quality)
+    for metric in METRICS:
+        insights = analytics.build_user_insights(clean, lambda row, m=metric: metric_value(row, m))
+        basis = {'from': clean[0]['date'], 'through': clean[-1]['date'], 'captures': len(clean)} if clean else None
+        payload = {'version': 1, 'engine': analytics.ENGINE_VERSION, 'metric': metric, 'horizonDays': 30, 'basis': basis, 'users': insights}
+        (out / f'analytics-users-{metric}.json').write_text(storage.compact(payload) + '\n')
     return summary
