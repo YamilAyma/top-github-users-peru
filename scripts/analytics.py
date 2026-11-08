@@ -21,6 +21,8 @@ WINDOW_SHIFT_DROP = 0.15
 WINDOW_SHIFT_MIN_MATCHED = 50
 # A single jump explaining at least this share of the growth caps the confidence at 'baja'.
 JUMP_DRIVEN_SHARE = 0.5
+# Minimum R2 for calling a series a trend instead of noise or a one-off step.
+MIN_TREND_R2 = 0.3
 THRESHOLDS = {'minCoverage': MIN_COVERAGE, 'minExpectedProfiles': MIN_EXPECTED, 'windowShiftDrop': WINDOW_SHIFT_DROP,
               'windowShiftMinMatched': WINDOW_SHIFT_MIN_MATCHED, 'neighbours': NEIGHBOURS}
 
@@ -155,11 +157,11 @@ def predict(fit, x):
 
 
 def trend_label(fit):
-    """alza / baja / estable. A slope within two standard errors of zero is not distinguishable from flat."""
+    """alza / baja / estable. Needs a slope clearly away from zero and a line that explains the series (R2 >= 0.3)."""
     if fit is None:
         return 'sin-datos'
     slope, error = fit['slope'], fit['slopeStdErr']
-    if slope == 0 or error is None or (error > 0 and abs(slope) < 2 * error):
+    if slope == 0 or error is None or (error > 0 and abs(slope) < 2 * error) or (fit['r2'] is not None and fit['r2'] < MIN_TREND_R2):
         return 'estable'
     return 'alza' if slope > 0 else 'baja'
 

@@ -142,6 +142,12 @@ class InsightTests(unittest.TestCase):
         ins = build_user_insights(history(12, {'n': lambda d: wobble[d], 'x': lambda d: d}), pub)
         self.assertEqual(ins['n']['trend'], 'estable')
 
+    def test_a_step_is_not_a_trend(self):
+        # Flat, one small bump, then flat again: the slope is positive but the line explains little.
+        values = [100, 100, 100, 100, 100, 100, 158, 150, 140, 130, 120, 110, 100, 100]
+        ins = build_user_insights(history(14, {'step': lambda d: values[d], 'x': lambda d: d}), pub)
+        self.assertEqual(ins['step']['trend'], 'estable')
+
     def test_not_enough_history_means_no_projection(self):
         ins = build_user_insights(history(4, {'a': lambda d: 10 * d, 'b': lambda d: 5}), pub)
         self.assertEqual(ins['a']['confidence'], 'insuficiente')
