@@ -175,6 +175,8 @@
     sort: 'M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4',
     pause: 'M8 5v14M16 5v14',
     play: 'M7 4l13 8-13 8z',
+    forecast: 'M3 17l5-5 4 3 3-4M17 9h4v4M15 11l6-3',
+    info: 'M12 21a9 9 0 100-18 9 9 0 000 18zM12 11v5M12 8h.01',
     search: 'M11 18a7 7 0 100-14 7 7 0 000 14zM21 21l-4.5-4.5'
   };
   function icon(name, {fill = false} = {}) {
