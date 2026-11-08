@@ -288,7 +288,7 @@
     document.querySelectorAll('.site-nav a:not(.repository)').forEach(a => {
       if (a.querySelector('.stat-icon')) return;
       const href = a.getAttribute('href') || '';
-      a.prepend(icon(/evolucion\/?$/.test(href) ? 'view' : 'rank'));
+      a.prepend(icon(/evolucion\/?(\?.*)?$/.test(href) ? 'view' : /estadisticas\/?(\?.*)?$/.test(href) ? 'layers' : 'rank'));
     });
   }
   decorateNav();
