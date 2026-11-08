@@ -1525,3 +1525,9 @@ input[type="checkbox"] { transition: background .15s, background-size .18s var(-
 .export-actions .button, #export-profiles-series, #export-profiles-analysis, #export-profiles-json { background: #fff; color: var(--ink); border-color: var(--control-border); box-shadow: none; font-weight: 550; }
 .export-actions .button:hover:not(:disabled), #export-profiles-series:hover:not(:disabled), #export-profiles-analysis:hover:not(:disabled), #export-profiles-json:hover:not(:disabled) { background: var(--peru-red-tint); }
 .share-actions { flex-wrap: wrap; }
+
+/* Statistics page */
+.stats-controls { align-items: end; }
+.stats-link { display: flex; align-items: end; }
+.stats-link .button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; font-size: 14px; }
+@media (max-width: 900px) { .stats-controls { grid-template-columns: 1fr; } }

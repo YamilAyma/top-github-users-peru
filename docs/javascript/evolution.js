@@ -490,8 +490,8 @@
   function exportCommunity(format) {
     const c=community?.community;if (!c) return;
     const name=`github-peru-comunidad-${stamp()}`;
-    if (format==='json') { saveJSON(name,{...exportMeta(),comunidad:{salud:c.health,actividadFrenteAAudiencia:c.scatter,geografia:c.geo,estacionalidad:c.seasonality,perfiles:c.points.map(([perfil,contribuciones_publicas,seguidores])=>({perfil,contribuciones_publicas,seguidores}))}});return; }
-    saveCSV(name,[['perfil','contribuciones_publicas','seguidores'],...c.points]);
+    if (format==='json') { saveJSON(name,{...exportMeta(),comunidad:{salud:c.health,actividadFrenteAAudiencia:c.scatter,geografia:c.geo,estacionalidad:c.seasonality,perfiles:c.points.map(([perfil,contribuciones_publicas,seguidores,contribuciones_totales])=>({perfil,contribuciones_publicas,seguidores,contribuciones_totales}))}});return; }
+    saveCSV(name,[['perfil','contribuciones_publicas','seguidores','contribuciones_totales'],...c.points]);
   }
   function renderProfiles() {
     renderToken++;
