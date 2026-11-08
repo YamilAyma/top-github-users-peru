@@ -2,7 +2,8 @@
 import unittest
 from analytics import (snapshot_quality, quality_report, usable, linear_fit, confidence, percentile,
                        t_critical, predict, trend_label, jumps, build_user_insights, gini, top_share, log_histogram,
-                       build_group_insights)
+                       build_group_insights, pearson, spearman, scatter_analysis, community_health, geo_concentration,
+                       seasonality_status, build_community)
 
 
 def snap(day, count, public=10, sha=None, bump=None):
@@ -261,6 +262,71 @@ class GroupTests(unittest.TestCase):
         self.assertEqual([e['login'] for e in emerging][:1], ['low3'])
         self.assertTrue(all(e['value'] <= 5000 for e in emerging))
         self.assertFalse(any(e['login'].startswith('big') for e in emerging))
+
+
+class CommunityTests(unittest.TestCase):
+    def test_correlations(self):
+        self.assertAlmostEqual(pearson([1, 2, 3, 4], [2, 4, 6, 8]), 1)
+        self.assertAlmostEqual(pearson([1, 2, 3, 4], [8, 6, 4, 2]), -1)
+        self.assertIsNone(pearson([1, 1, 1], [1, 2, 3]))
+        self.assertAlmostEqual(spearman([1, 10, 100, 1000], [5, 6, 7, 800]), 1)  # monotonic, not linear
+        self.assertAlmostEqual(spearman([1, 2, 3, 4], [1, 1, 1, 1] if False else [4, 3, 2, 1]), -1)
+
+    def test_scatter_flags_profiles_whose_rank_differs_by_axis(self):
+        rows = [(f'u{i}', i, i) for i in range(40)]  # perfectly aligned
+        rows += [('famous', 0, 1000), ('busy', 1000, 0)]
+        result = scatter_analysis(rows)
+        self.assertEqual(result['moreAudience'][0]['login'], 'famous')
+        self.assertEqual(result['moreActivity'][0]['login'], 'busy')
+        self.assertGreater(result['spearman'], 0.7)
+        self.assertEqual(result['n'], 42)
+
+    def test_scatter_needs_a_minimum_sample_and_aligned_data_has_no_outliers(self):
+        self.assertIsNone(scatter_analysis([(f'u{i}', i, i) for i in range(10)]))
+        result = scatter_analysis([(f'u{i}', i, i) for i in range(50)])
+        self.assertEqual(result['audienceCount'] + result['activityCount'], 0)
+
+    def test_health_weekly_growth_and_rotation(self):
+        data = history(10, {'a': lambda d: 10 + d, 'b': lambda d: 5, 'c': lambda d: 7 + (d if d > 4 else 0),
+                            'late': lambda d: 3 if d >= 8 else None, 'gone': lambda d: 4 if d < 7 else None})
+        health = community_health(data)
+        self.assertEqual(health['profiles'], 4)
+        self.assertEqual(health['weekly']['from'], '2026-10-03')  # latest capture at least 7 days before
+        self.assertEqual(health['weekly']['through'], '2026-10-10')
+        by_date = {r['date']: r for r in health['rotation']}
+        self.assertEqual(by_date['2026-10-08']['left'], 1)
+        self.assertEqual(by_date['2026-10-09']['entered'], 1)
+        self.assertEqual(health['weekly']['entered'], 1)
+        self.assertEqual(health['weekly']['left'], 1)
+        # matched are a and c (b is flat): both grew, b did not
+        self.assertEqual(health['weekly']['matched'], 3)
+        self.assertEqual(health['weekly']['activeShare'], round(2 / 3, 3))
+
+    def test_health_without_a_week_of_history_has_no_weekly_block(self):
+        health = community_health(history(5, {'a': lambda d: d}))
+        self.assertNotIn('weekly', health)
+        self.assertIsNone(community_health(history(1, {'a': lambda d: d})))
+
+    def test_geography_counts_overlaps_and_unassigned(self):
+        users = [[f'u{i}', 10 * (i + 1), 0, 1] for i in range(10)]
+        latest = {'date': '2026-10-01', 'users': users, 'city_membership': {'lima': [0, 1, 2, 3, 4, 5], 'cusco': [5, 6], 'iquitos': []}}
+        geo = geo_concentration(latest, ['lima', 'cusco', 'iquitos'])
+        self.assertEqual([c['id'] for c in geo['cities']], ['lima', 'cusco'])
+        self.assertEqual(geo['cities'][0]['share'], 0.6)
+        self.assertEqual(geo['unassigned'], 3)
+        self.assertAlmostEqual(geo['cities'][0]['publicShare'], round((10 + 20 + 30 + 40 + 50 + 60) / 550, 3))
+
+    def test_seasonality_needs_weeks_of_history(self):
+        data = [snap(f'2026-10-{d:02d}', 5) for d in (1, 15)]
+        self.assertEqual(seasonality_status(data), {'available': False, 'weeks': 2, 'neededWeeks': 8})
+        far = [snap('2026-01-01', 5), snap('2026-03-15', 5)]
+        self.assertTrue(seasonality_status(far)['available'])
+
+    def test_build_community_hides_points_when_scatter_is_not_meaningful(self):
+        result = build_community(history(10, {'a': lambda d: d, 'b': lambda d: 2}), [])
+        self.assertEqual(result['points'], [])
+        self.assertIsNone(result['scatter'])
+        self.assertIsNone(build_community(history(1, {'a': lambda d: 1}), []))
 
 
 if __name__ == '__main__':

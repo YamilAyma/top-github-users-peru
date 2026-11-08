@@ -113,5 +113,7 @@ def build_history_views(docs, cities):
                 if rows is not None:
                     scopes[city] = [row[0].lower() for row in rows]
             groups[metric] = analytics.build_group_insights(clean, value_of, insights, scopes)
+    community = analytics.build_community(clean, cities) if clean else None
+    (out / 'analytics-community.json').write_text(storage.compact({'version': 1, 'engine': analytics.ENGINE_VERSION, 'basis': basis, 'community': community}) + '\n')
     (out / 'analytics-groups.json').write_text(storage.compact({'version': 1, 'engine': analytics.ENGINE_VERSION, 'basis': basis, 'metrics': groups}) + '\n')
     return summary
