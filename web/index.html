@@ -37,6 +37,7 @@
     data-start="<!--START-->"
     data-city="<!--CITY-->"
   >
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="masthead">
       <picture class="masthead-image" aria-hidden="true">
         <source
@@ -87,7 +88,7 @@
         </div>
       </section>
     </div>
-    <main>
+    <main id="contenido" tabindex="-1">
       <!--BREADCRUMBS-->
       <!--CITY_SELECTOR-->
       <!--CITY_CONTEXT-->
@@ -244,23 +245,63 @@
         /></a>
       </aside>
     </main>
-    <footer>
-      <div class="footer-flag">
-        <div
-          role="img"
-          aria-label="Bandera peruana en ASCII, roja, blanca y roja"
-        >
-          <pre id="peru-flag" aria-hidden="true"></pre>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-flag">
+          <div
+            role="img"
+            aria-label="Bandera peruana en ASCII, roja, blanca y roja"
+          >
+            <pre id="peru-flag" aria-hidden="true"></pre>
+          </div>
+          <button id="flag-toggle" class="button js-only" aria-pressed="false">
+            Pausar bandera
+          </button>
         </div>
-        <button id="flag-toggle" class="button js-only" aria-pressed="false">
-          Pausar bandera
-        </button>
+        <div class="footer-about">
+          <a class="footer-brand" href="./"
+            ><span class="brand-mark">PE</span> GitHub <strong>Perú</strong></a
+          >
+          <p class="footer-tagline">Costa, sierra, selva y código.</p>
+          <p>
+            Un ranking de la comunidad de desarrolladores de Perú, hecho con
+            datos públicos de GitHub y capturas diarias de su historia.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Explorar el sitio">
+          <p class="footer-heading">Explorar</p>
+          <ul>
+            <li><a href="./">Ranking</a></li>
+            <li><a href="./totales/">Contribuciones totales</a></li>
+            <li><a href="./seguidores/">Seguidores</a></li>
+            <li><a href="./evolucion/">Evolución</a></li>
+            <li><a href="./estadisticas/">Estadísticas</a></li>
+            <li><a href="./metodologia/">Metodología</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-links" aria-label="Datos y proyecto">
+          <p class="footer-heading">Datos y proyecto</p>
+          <ul>
+            <li><a href="./data/peru.json">Ranking en JSON</a></li>
+            <li><a href="./history/index.json">Historial en JSON</a></li>
+            <li><a href="./data/analytics-groups.json">Análisis de grupos en JSON</a></li>
+            <li>
+              <a
+                href="https://github.com/YamilAyma/top-github-users-peru"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Código en GitHub</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div class="footer-copy">
+      <div class="footer-legal">
+        <span>Un proyecto de la comunidad · Sin afiliación con GitHub</span>
         <span
-          >GitHub Perú <span class="footer-separator">/</span> Costa, sierra,
-          selva y código.</span
-        ><span>Un proyecto de la comunidad · Sin afiliación con GitHub</span>
+          >Las ubicaciones son declaradas por cada perfil. Los contadores son
+          una ventana móvil de 12 meses.</span
+        >
       </div>
     </footer>
   </body>

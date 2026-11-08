@@ -183,7 +183,7 @@
     if (!u) { box.append(H.node('p','history-notice','Aún no hay análisis para este perfil: necesita presencia en la última captura válida.'));return box; }
     const unit=metric==='followers'?'seguidores':metric==='total'?'contribuciones totales':'contribuciones públicas';
     const head=H.node('div','insights-head');
-    const title=H.node('h4','',' Lecturas del análisis');title.prepend(H.icon('forecast'));
+    const title=H.node('h3','',' Lecturas del análisis');title.prepend(H.icon('forecast'));
     const chip=H.node('span',`confidence-chip conf-${u.confidence}`,confidenceText[u.confidence]);
     chip.title=`${u.n} capturas en ${u.spanDays} días`;
     head.append(title,chip);box.append(head);
@@ -372,32 +372,74 @@
     $('profile-chart').append(H.node('p','chart-scale',`${rankView?'Puesto nacional · mejores posiciones arriba':labels[metric]} · escala compartida: ${fmt.format(min)} – ${fmt.format(max)}`),H.framePlot(plot,{dates,domain:[min,max],format:v=>fmt.format(v),rank:rankView}));
     $('download-card').disabled=false;
   }
+  // Names, avatars and locations come from the ranking data; the table works without them and fills in when they arrive.
+  let profileInfo=null, profileInfoPromise=null;
+  function loadProfileInfo() {
+    if (!profileInfoPromise) profileInfoPromise=json('./data/peru.json').then(data=>{
+      profileInfo=new Map(data.users.map(u=>[u.login.toLowerCase(),u]));renderPast();
+    }).catch(()=>{});
+    return profileInfoPromise;
+  }
+  const cleanText=v=>!v||v==='undefined value'?'':String(v);
   function renderPast() {
     $('past-rows').replaceChildren();
     const pool=usableSelected();
     if (!pool.length) { $('past-more').hidden=true;return; }
     const last=pool.at(-1), rows=cityRows(last), beforeRows=cityRows(pool[0]);
-    $('past-caption').textContent=`Captura del ${H.dateLabel(last.date)} · ${labels[$('e-metric').value]}. Puestos nacionales; los empates comparten posición. ${$('e-tier').value==='daily'?'':'Última captura disponible del período; el período actual es provisional.'}`;
+    $('past-caption').textContent=`Captura del ${H.dateLabel(last.date)} · Ordenado por ${labels[$('e-metric').value].toLowerCase()}. Puestos nacionales; los empates comparten posición. ${$('e-tier').value==='daily'?'':'Última captura disponible del período; el período actual es provisional. '}`.trim();
     if (rows===null) { $('past-caption').textContent+=' Sin cobertura local en esta captura.';$('past-more').hidden=true;return; }
+    loadProfileInfo();
+    const metric=$('e-metric').value;
+    document.querySelectorAll('#past-ranking-heading ~ *, .history-ranking th[data-metric]').forEach(th=>{ if (th.dataset?.metric) th.classList.toggle('active-metric',th.dataset.metric===metric); });
     const old=ranks(pool[0]), current=ranks(last), oldKeys=new Set((beforeRows || []).map(r=>r[0].toLowerCase()));
     const query=$('past-search').value.trim().replace(/^@/,'').toLowerCase();
-    const ordered=[...rows].filter(r=>r[0].toLowerCase().includes(query)).sort((a,b)=>current.get(a[0].toLowerCase())-current.get(b[0].toLowerCase()) || a[0].toLowerCase().localeCompare(b[0].toLowerCase(),'en'));
-    for (const row of ordered.slice(0,pastLimit)) {
-      const key=row[0].toLowerCase(), tr=H.node('tr');
-      tr.append(H.node('td','',fmt.format(current.get(key))));
-      const profile=H.node('td'), button=H.node('button','history-profile-button',`@${row[0]}`);
-      button.addEventListener('click',()=>addProfile(key)); profile.append(button);tr.append(profile,H.node('td','numeric',fmt.format(value(row,$('e-metric').value))));
+    const ordered=[...rows].filter(r=>{const key=r[0].toLowerCase(),info=profileInfo?.get(key);return key.includes(query)||(info&&String(info.name||'').toLowerCase().includes(query));}).sort((a,b)=>current.get(a[0].toLowerCase())-current.get(b[0].toLowerCase()) || a[0].toLowerCase().localeCompare(b[0].toLowerCase(),'en'));
+    const shown=ordered.slice(0,pastLimit);
+    const maps=pool.map(s=>new Map((cityRows(s)||[]).map(r=>[r[0].toLowerCase(),r])));
+    for (const row of shown) {
+      const key=row[0].toLowerCase(), tr=H.node('tr'), rank=current.get(key), info=profileInfo?.get(key);
+      const position=H.node('td');position.append(H.node('span',`position${rank<=3?' top':''}`,fmt.format(rank)));
+      // Profile: avatar, name and handle (the handle adds the profile to the comparison).
+      const profile=H.node('td','past-profile'), who=H.node('div','past-who');
+      const fallback=H.node('span','avatar avatar-fallback',row[0].slice(0,2).toUpperCase());fallback.setAttribute('aria-hidden','true');
+      if (info?.avatarUrl) {
+        const img=H.node('img','avatar');img.src=info.avatarUrl;img.alt='';img.width=34;img.height=34;img.loading='lazy';img.referrerPolicy='no-referrer';
+        img.addEventListener('error',()=>img.replaceWith(fallback),{once:true});who.append(img);
+      } else who.append(fallback);
+      const text=H.node('div','past-text');
+      const name=cleanText(info?.name);
+      if (name) text.append(H.node('span','past-name',name));
+      const button=H.node('button','history-profile-button',`@${row[0]}`);button.title='Añadir a la comparación';button.addEventListener('click',()=>addProfile(key));
+      text.append(button);who.append(text);profile.append(who);
+      const place=H.node('td','past-place',cleanText(info?.location)||'—');
+      tr.append(position,profile,place);
+      for (const m of ['publicContributions','total','followers']) {
+        const td=H.node('td','numeric'),v=fmt.format(value(row,m));
+        if (m===metric) td.append(H.node('span','metric-pill',v)); else td.textContent=v;
+        tr.append(td);
+      }
+      // Trend over the selected captures.
+      const points=maps.map(map=>map.has(key)?value(map.get(key),metric):null);
+      const trend=H.node('td','past-trend'), valid=points.filter(v=>v!==null);
+      if (valid.length>1) {
+        const delta=valid.at(-1)-valid[0];
+        const spark=H.chart(pool.map(s=>s.date),points,{minSpan:Math.max(1,(valid[0]||0)*.1),color:delta>0?'#176b55':delta<0?'#b63735':'#737b87',label:`${labels[metric]} de ${row[0]}`});
+        spark.querySelectorAll?.('title').forEach(t=>t.remove());
+        trend.append(spark,H.node('small',`rank-change ${delta>0?'up':delta<0?'down':'stable'}`,delta?signed(delta):'Sin cambio'));
+      } else trend.append(H.node('small','history-empty',valid.length?'Primera captura':'Sin capturas'));
+      tr.append(trend);
       const moveCell=H.node('td','',pool.length<2?'Primera captura':beforeRows===null?'Sin cobertura inicial':oldKeys.has(key)?'':'No presente al inicio');
       if (pool.length>=2 && beforeRows!==null && oldKeys.has(key)) {
         const v=old.get(key)-current.get(key);
         moveCell.className=`rank-change-cell ${v>0?'up':v<0?'down':'stable'}`;
-        moveCell.append(H.icon(v>0?'arrowUp':v<0?'arrowDown':'equal'),v===0?'Sin cambio':String(Math.abs(v)));
+        moveCell.append(H.icon(v>0?'arrowUp':v<0?'arrowDown':'equal'),v===0?'Sin cambio':String(Math.abs(v)),H.node('small','past-from',`#${fmt.format(old.get(key))} → #${fmt.format(rank)}`));
       }
       tr.append(moveCell);
       $('past-rows').append(tr);
     }
     if (!ordered.length) $('past-caption').textContent+=' No hay perfiles con esa búsqueda.';
     $('past-more').hidden=ordered.length<=pastLimit;
+    $('past-count')&&($('past-count').textContent=`Mostrando ${fmt.format(Math.min(pastLimit,ordered.length))} de ${fmt.format(ordered.length)} perfiles`);
   }
   function renderWeekly() {
     const w=summary.scopes[$('e-city').value || 'peru']?.weekly, wrap=$('weekly-summary');wrap.replaceChildren();
@@ -433,6 +475,17 @@
     if (!snapshots.some(s=>s.users.some(r=>r[0].toLowerCase()===key))) { $('compare-status').textContent='No encontramos ese usuario en las capturas de este período.';return; }
     profileKeys.push(key);$('e-profile').value='';$('compare-status').textContent='';render();
   }
+  // Arriving with profiles in the link (from the ranking, a hover card or Statistics) lands on their evolution, not at the top.
+  function goToProfileSection() {
+    const wants=profileKeys.length>0 || location.hash==='#tu-evolucion';
+    const target=$('tu-evolucion');
+    if (!wants || !target || $('evolution-app').hidden) return;
+    const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    requestAnimationFrame(()=>{
+      target.scrollIntoView({behavior:calm?'auto':'smooth',block:'start'});
+      const heading=$('comparison-heading');heading.tabIndex=-1;heading.focus({preventScroll:true});
+    });
+  }
   async function start() {
     decorateControls();
     $('evolution-retry').hidden=true;
@@ -442,6 +495,7 @@
       for (const [id,key] of [['e-city','city'],['e-tier','tier'],['e-days','days'],['e-metric','metric'],['e-view','view']]) selectKnown(id,key);
       profileKeys=[...new Set((params.get('users') || '').split(',').map(v=>v.toLowerCase()).filter(v=>/^[a-z0-9-]{1,39}$/.test(v)))].slice(0,3);
       await loadTier(true);
+      goToProfileSection();
     } catch {
       $('evolution-status').textContent='No pudimos cargar el índice de capturas. Puedes reintentar o consultar el ranking actual.';
       $('evolution-retry').hidden=false;

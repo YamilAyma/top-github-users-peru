@@ -91,9 +91,22 @@ def structured_data(path, title, entries, start, breadcrumbs):
             'itemListElement': [{'@type': 'ListItem', 'position': start + i + 1,
                 'item': {'@type': 'Thing', 'name': clean(u['name']) or u['login'], 'url': 'https://github.com/' + u['login']}}
                 for i, u in enumerate(entries)]}
-    return json_ld({'@context': 'https://schema.org', '@graph': [
+    graph = [
         {'@type': 'WebSite', '@id': BASE_URL + '#website', 'url': BASE_URL, 'name': 'GitHub Perú', 'inLanguage': 'es-PE'},
-        page,
+        page]
+    if path == '':
+        graph.append({'@type': 'Dataset', '@id': BASE_URL + '#dataset', 'name': 'Ranking de GitHub en Perú: contribuciones, seguidores e historial',
+            'description': 'Perfiles de GitHub que declaran una ubicación en Perú, con contribuciones públicas, totales y seguidores, capturas diarias de su evolución y análisis derivados.',
+            'url': BASE_URL, 'inLanguage': 'es-PE', 'isAccessibleForFree': True,
+            'license': 'https://opendatacommons.org/licenses/odbl/1-0/',
+            'creator': {'@type': 'Organization', 'name': 'GitHub Perú', 'url': BASE_URL},
+            'spatialCoverage': {'@type': 'Place', 'name': 'Perú'},
+            'keywords': ['GitHub', 'Perú', 'desarrolladores', 'contribuciones', 'ranking', 'open source'],
+            'distribution': [
+                {'@type': 'DataDownload', 'encodingFormat': 'application/json', 'contentUrl': BASE_URL + 'data/peru.json'},
+                {'@type': 'DataDownload', 'encodingFormat': 'application/json', 'contentUrl': BASE_URL + 'history/index.json'},
+                {'@type': 'DataDownload', 'encodingFormat': 'application/json', 'contentUrl': BASE_URL + 'data/analytics-groups.json'}]})
+    return json_ld({'@context': 'https://schema.org', '@graph': graph + [
         {'@type': 'BreadcrumbList', '@id': canonical + '#breadcrumbs', 'itemListElement': [
             {'@type': 'ListItem', 'position': i + 1, 'name': name, 'item': BASE_URL + item_path}
             for i, (name, item_path) in enumerate(breadcrumbs)]}]})
@@ -102,15 +115,24 @@ def structured_data(path, title, entries, start, breadcrumbs):
 def head_html(path, title, description):
     base = '../' * len(path.strip('/').split('/')) if path else './'
     canonical = BASE_URL + path
+    image = BASE_URL + 'assets/og-peru.jpg'
+    alt = 'Panorama ilustrativo del Perú, de Machu Picchu a la costa de Lima, generado con IA'
     return (f'<base href="{base}">'
             f'<link rel="canonical" href="{canonical}">'
-            f'<meta property="og:type" content="website"><meta property="og:locale" content="es_PE">'
+            '<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">'
+            '<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">'
+            '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">'
+            f'<meta property="og:type" content="website"><meta property="og:locale" content="es_PE"><meta property="og:site_name" content="GitHub Perú">'
             f'<meta property="og:title" content="{escape(title, quote=True)}">'
             f'<meta property="og:description" content="{escape(description, quote=True)}">'
             f'<meta property="og:url" content="{canonical}">'
-            f'<meta property="og:image" content="{BASE_URL}assets/peru-collage.webp">'
-            '<meta property="og:image:alt" content="Collage ilustrativo del Perú generado con IA">'
-            '<meta name="twitter:card" content="summary_large_image">')
+            f'<meta property="og:image" content="{image}"><meta property="og:image:type" content="image/jpeg">'
+            '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'
+            f'<meta property="og:image:alt" content="{alt}">'
+            '<meta name="twitter:card" content="summary_large_image">'
+            f'<meta name="twitter:title" content="{escape(title, quote=True)}">'
+            f'<meta name="twitter:description" content="{escape(description, quote=True)}">'
+            f'<meta name="twitter:image" content="{image}"><meta name="twitter:image:alt" content="{alt}">')
 
 
 def version_assets(html):
@@ -239,7 +261,7 @@ def build_pages(data):
                 urls.append(BASE_URL + path)
     methodology = ROOT / 'web/metodologia.html'
     title = 'Metodología del ranking de GitHub en Perú'
-    html = methodology.read_text().replace('<!--MIN_FOLLOWERS-->', str(data['minimumFollowers'])).replace('<!--SEO_HEAD-->', head_html('metodologia/', title, 'Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú.') + structured_data('metodologia/', title, None, 0, [('Ranking de Perú', ''), ('Metodología', 'metodologia/')]))
+    html = methodology.read_text().replace('<!--MIN_FOLLOWERS-->', str(data['minimumFollowers'])).replace('<!--FOOTER-->', template[template.index('    <footer'):template.index('  </body>')]).replace('<!--SEO_HEAD-->', head_html('metodologia/', title, 'Fuentes, criterios, limitaciones y licencia de los datos del ranking de GitHub en Perú.') + structured_data('metodologia/', title, None, 0, [('Ranking de Perú', ''), ('Metodología', 'metodologia/')]))
     destination = docs / 'metodologia/index.html'
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(version_assets(html))
@@ -258,7 +280,7 @@ def build_pages(data):
     values = {'SEO_HEAD': head_html('evolucion/', title, 'Histórico del ranking de GitHub Perú: compara perfiles, posiciones y contadores en capturas diarias, mensuales y anuales.') + structured_data('evolucion/', title, None, 0, crumbs),
               'BREADCRUMBS': breadcrumbs_html(crumbs), 'HISTORY_COVERAGE': escape(coverage), 'HISTORY_STATIC': static,
               'CITY_OPTIONS': ''.join(f'<option value="{escape(c["id"], quote=True)}">{escape(c["label"])}</option>' for c in data['cities']),
-              'FOOTER': template[template.index('    <footer>'):template.index('  </body>')]}
+              'FOOTER': template[template.index('    <footer'):template.index('  </body>')]}
     for key, value in values.items():
         html = html.replace('<!--' + key + '-->', value)
     destination = docs / 'evolucion/index.html'
@@ -272,7 +294,7 @@ def build_pages(data):
     values = {'SEO_HEAD': head_html('estadisticas/', title, 'Estadísticas de GitHub Perú: distribución, concentración y crecimiento de cada grupo, y cómo se relacionan la actividad y la audiencia en la comunidad.') + structured_data('estadisticas/', title, None, 0, crumbs),
               'BREADCRUMBS': breadcrumbs_html(crumbs),
               'CITY_OPTIONS': ''.join(f'<option value="{escape(c["id"], quote=True)}">{escape(c["label"])}</option>' for c in data['cities']),
-              'FOOTER': template[template.index('    <footer>'):template.index('  </body>')]}
+              'FOOTER': template[template.index('    <footer'):template.index('  </body>')]}
     for key, value in values.items():
         html = html.replace('<!--' + key + '-->', value)
     destination = docs / 'estadisticas/index.html'
@@ -281,6 +303,13 @@ def build_pages(data):
     generated.append('estadisticas/index.html')
     urls.append(BASE_URL + 'estadisticas/')
     # Only remove files previously registered by this generator, never whole directories.
+    # In-page anchors resolve against <base href>, so the skip link must carry its own page path.
+    for generated_path in generated:
+        target = docs / generated_path
+        text = target.read_text()
+        if 'href="#contenido"' in text:
+            folder = generated_path.removesuffix('index.html')
+            target.write_text(text.replace('href="#contenido"', f'href="./{folder}#contenido"'))
     manifest = docs / '.generated-pages.json'
     valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|(?:metodologia|evolucion|estadisticas)/index\.html|ciudades/[a-z]+(?:-[a-z]+)*/(?:pagina/[0-9]+/)?index\.html)'
     previous = json.loads(manifest.read_text()) if manifest.exists() else []
