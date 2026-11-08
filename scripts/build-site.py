@@ -119,7 +119,7 @@ def version_assets(html):
         asset = ROOT / 'docs' / match.group(2)
         version = hashlib.sha256(asset.read_bytes()).hexdigest()[:12]
         return match.group(1) + match.group(2) + '?v=' + version + match.group(3)
-    return re.sub(r'((?:href|src|srcset)="\./)(css/styles\.css|javascript/(?:ranking|footer-flag|history-ui|evolution|evolution-summary)\.js|assets/peru-(?:mobile|desktop)\.(?:avif|webp))(")', reference, html)
+    return re.sub(r'((?:href|src|srcset)="\./)(css/styles\.css|javascript/(?:ranking|footer-flag|history-ui|evolution|evolution-summary|statistics)\.js|assets/peru-(?:mobile|desktop)\.(?:avif|webp))(")', reference, html)
 
 
 def build_pages(data):
@@ -266,9 +266,23 @@ def build_pages(data):
     destination.write_text(version_assets(html))
     generated.append('evolucion/index.html')
     urls.append(BASE_URL + 'evolucion/')
+    title = 'Estadísticas de la comunidad de GitHub en Perú'
+    crumbs = [('Ranking de Perú', ''), ('Estadísticas', 'estadisticas/')]
+    html = (ROOT / 'web/estadisticas.html').read_text()
+    values = {'SEO_HEAD': head_html('estadisticas/', title, 'Estadísticas de GitHub Perú: distribución, concentración y crecimiento de cada grupo, y cómo se relacionan la actividad y la audiencia en la comunidad.') + structured_data('estadisticas/', title, None, 0, crumbs),
+              'BREADCRUMBS': breadcrumbs_html(crumbs),
+              'CITY_OPTIONS': ''.join(f'<option value="{escape(c["id"], quote=True)}">{escape(c["label"])}</option>' for c in data['cities']),
+              'FOOTER': template[template.index('    <footer>'):template.index('  </body>')]}
+    for key, value in values.items():
+        html = html.replace('<!--' + key + '-->', value)
+    destination = docs / 'estadisticas/index.html'
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(version_assets(html))
+    generated.append('estadisticas/index.html')
+    urls.append(BASE_URL + 'estadisticas/')
     # Only remove files previously registered by this generator, never whole directories.
     manifest = docs / '.generated-pages.json'
-    valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|(?:metodologia|evolucion)/index\.html|ciudades/[a-z]+(?:-[a-z]+)*/(?:pagina/[0-9]+/)?index\.html)'
+    valid = r'(?:index\.html|(?:totales|seguidores)/index\.html|(?:publicas|totales|seguidores)/pagina/[0-9]+/index\.html|(?:metodologia|evolucion|estadisticas)/index\.html|ciudades/[a-z]+(?:-[a-z]+)*/(?:pagina/[0-9]+/)?index\.html)'
     previous = json.loads(manifest.read_text()) if manifest.exists() else []
     for old in set(previous) - set(generated):
         if not re.fullmatch(valid, old):
