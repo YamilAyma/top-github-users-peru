@@ -6,7 +6,7 @@
   const colors=['#b63735','#176b77','#7152a3'];
   const params=new URLSearchParams(location.search);
   const files=new Map();
-  let renderToken=0, catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
+  let renderToken=0, groups=null, catalog, summary, quality=null, snapshots=[], selected=[], profileKeys=[], pastLimit=25, requestId=0;
   const value=(row,metric)=>metric==='total'?row[1]+row[2]:metric==='followers'?row[3]:row[1];
   const signed=v=>`${v>0?'+':''}${fmt.format(v)}`;
   const movement=v=>v>0?`↑ ${v}`:v<0?`↓ ${-v}`:'— Sin cambio';
@@ -239,6 +239,100 @@
     box.append(note);
     return box;
   }
+  // ---- Group analysis (computed at build time by scripts/analytics.py) ----
+  const pct1=v=>`${dec.format(Math.round(v*1000)/10)} %`;
+  const giniWord=g=>g<0.4?'bastante parejo':g<0.6?'moderadamente desigual':g<0.75?'desigual':'muy desigual';
+  function groupRow(icon,label,text) {
+    const li=H.node('li');const head=H.node('strong','',label);head.prepend(H.icon(icon));li.append(head,H.node('span','',text));return li;
+  }
+  function distribution(g,metric) {
+    const wrap=H.node('div','group-hist');wrap.setAttribute('role','img');
+    const {edges,counts}=g.histogram, top=Math.max(...counts);
+    // Where the selected profiles fall in the distribution.
+    const last=usableSelected().at(-1), mine=new Map();
+    if (last) for (const key of profileKeys) { const row=cityRows(last)?.find(r=>r[0].toLowerCase()===key); if (row) mine.set(key,value(row,metric)); }
+    const youIn=counts.map(()=>[]);
+    mine.forEach((v,key)=>{let b=counts.length-1;for(let i=0;i<counts.length;i++){if(v<edges[i+1]||i===counts.length-1){b=i;break;}}youIn[b].push(key);});
+    wrap.setAttribute('aria-label',`Distribución de ${labels[metric].toLowerCase()}: ${counts.map((c,i)=>`${fmt.format(edges[i])} a ${fmt.format(edges[i+1])}: ${c} perfiles`).join('; ')}`);
+    counts.forEach((c,i)=>{
+      const col=H.node('div','hist-col');
+      const bar=H.node('div','hist-bar');bar.style.height=`${Math.max(c?4:0,c/top*100)}%`;
+      if (youIn[i].length) { bar.classList.add('has-you'); bar.dataset.you=youIn[i].map(k=>`@${k}`).join(', '); }
+      const label=H.node('span','hist-label');label.append(H.node('span','',fmt.format(edges[i])),H.node('span','hi',i===counts.length-1?'+':`–${fmt.format(edges[i+1]-1)}`));
+      col.append(H.node('span','hist-count',fmt.format(c)),bar,label);
+      wrap.append(col);
+    });
+    return wrap;
+  }
+  function renderGroup() {
+    const panel=$('group-analysis'), body=$('group-body');
+    const metric=$('e-metric').value, scope=$('e-city').value||'peru', data=groups?.metrics?.[metric];
+    if (!data || !selected.length) { panel.hidden=true;return; }
+    const g=data[scope], name=$('e-city').selectedOptions[0]?.textContent.split(' · ')[0]||'Todo Perú';
+    panel.hidden=false;body.replaceChildren();
+    $('group-heading').textContent=scope==='peru'?'Qué pasa en todo Perú.':`Qué pasa en ${name}.`;
+    if (!g || !g.profiles) { body.append(H.node('p','history-notice','Este ámbito no tiene perfiles en la última captura válida.'));return; }
+    const unit=labels[metric].toLowerCase();
+    const list=H.node('ul','insight-list');
+    if (g.small) list.append(groupRow('info','Grupo pequeño',`${fmt.format(g.profiles)} ${g.profiles===1?'perfil':'perfiles'} y ${fmt.format(g.total)} de ${unit} en total. Con menos de 10 perfiles no se calculan distribución ni concentración.`));
+    else {
+      list.append(groupRow('users','Tamaño',`${fmt.format(g.profiles)} perfiles · ${fmt.format(g.total)} de ${unit} · mediana ${fmt.format(g.median)} · P90 ${fmt.format(g.p90)} · P99 ${fmt.format(g.p99)}`));
+      list.append(groupRow('layers','Concentración',`Los 10 mayores reúnen el ${pct1(g.top10Share)} del total${g.top1PctShare!==g.top10Share?` y el 1 % superior, el ${pct1(g.top1PctShare)}`:''}. Gini ${new Intl.NumberFormat('es-PE',{minimumFractionDigits:2,maximumFractionDigits:2}).format(g.gini)}: ${giniWord(g.gini)}.`));
+    }
+    const gr=g.growth;
+    if (gr.matched) {
+      const dir=gr.delta>=0?'sube':'baja';
+      let text=`De ${fmt.format(gr.matched)} perfiles comparables, el ${pct1(gr.growersShare)} aumentó su contador; la mediana es ${signed(gr.medianDelta)}. En conjunto ${dir} ${signed(gr.delta)}${gr.pct!==null?` (${per(gr.pct)} %)`:''} entre ${H.dateLabel(groups.basis.from)} y ${H.dateLabel(groups.basis.through)}.`;
+      if (gr.top10Share!==null && gr.growers>=10) text+=` Los 10 que más suben aportan el ${pct1(gr.top10Share)} del aumento.`;
+      list.append(groupRow('growth','Crecimiento',text));
+    }
+    const mix=g.trends||{}, total=(mix.alza||0)+(mix.estable||0)+(mix.baja||0);
+    if (total) {
+      const row=groupRow('forecast','Tendencias','');
+      const bar=H.node('div','trend-mix');bar.setAttribute('role','img');
+      bar.setAttribute('aria-label',`${mix.alza||0} al alza, ${mix.estable||0} estables, ${mix.baja||0} a la baja`);
+      for (const [k,label] of [['alza','al alza'],['estable','estables'],['baja','a la baja']]) if (mix[k]) { const seg=H.node('span',`mix-${k}`,`${fmt.format(mix[k])} ${label}`);seg.style.flexGrow=mix[k];bar.append(seg); }
+      row.querySelector('span').append(bar);list.append(row);
+    }
+    if (gr.newInGroup) list.append(groupRow('plus','Entradas',`${fmt.format(gr.newInGroup)} ${gr.newInGroup===1?'perfil no estaba':'perfiles no estaban'} en la primera captura válida y no cuentan como crecimiento.`));
+    body.append(list);
+    if (g.histogram) { const block=H.node('div','group-block');block.append(H.node('h3','','Distribución de perfiles'),distribution(g,metric),H.node('p','history-notice',profileKeys.length?'Resaltado: dónde caen los perfiles que comparas.':'Cada barra cuenta los perfiles dentro de ese rango; la escala es logarítmica.'));body.append(block); }
+    if (gr.topGainers?.length||gr.emerging?.length) {
+      const cols=H.node('div','group-lists');
+      for (const [title,items,fmtItem] of [['Mayores avances',gr.topGainers,r=>signed(r.delta)],['Emergentes: base baja, ritmo alto',gr.emerging,r=>`${signed(r.delta)} (+${r.pct} %)`]]) {
+        if (!items?.length) continue;
+        const col=H.node('div','group-list');col.append(H.node('h3','',title));
+        const ol=H.node('ol');
+        for (const r of items) { const li=H.node('li'); const b=H.node('button','history-profile-button',`@${r.login}`);b.addEventListener('click',()=>addProfile(r.login.toLowerCase()));li.append(b,H.node('span','',fmtItem(r)));ol.append(li); }
+        col.append(ol);cols.append(col);
+      }
+      body.append(cols);
+    }
+    // City comparison, normalised by group size.
+    const rows=Object.entries(data).filter(([,v])=>v.profiles>=10&&!v.small);
+    if (rows.length>1) {
+      const options=new Map([...$('e-city').options].map(o=>[o.value||'peru',o.textContent.split(' · ')[0]]));
+      const block=H.node('div','group-block');block.append(H.node('h3','','Comparación entre ámbitos'));
+      const wrap=H.node('div','table-scroll');wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','Comparación entre ámbitos, desplazamiento horizontal');
+      const table=H.node('table');const head=H.node('tr');
+      ['Ámbito','Perfiles','Mediana','Top 10','Crecimiento','Crecieron'].forEach((h,i)=>head.append(Object.assign(H.node('th',i?'numeric':'',h),{scope:'col'})));
+      const thead=H.node('thead');thead.append(head);table.append(thead);
+      const tb=H.node('tbody');
+      for (const [id,v] of rows.sort((a,b)=>b[1].profiles-a[1].profiles)) {
+        const tr=H.node('tr',id===scope?'current':'');
+        const nameCell=H.node('td');const btn=H.node('button','history-profile-button',options.get(id)||id);btn.addEventListener('click',()=>{$('e-city').value=id==='peru'?'':id;$('e-city').dispatchEvent(new Event('change',{bubbles:true}));});nameCell.append(btn);
+        tr.append(nameCell,H.node('td','numeric',fmt.format(v.profiles)),H.node('td','numeric',fmt.format(v.median)),H.node('td','numeric',pct1(v.top10Share)),H.node('td','numeric',v.growth?.pct!=null?`${per(v.growth.pct)} %`:'—'),H.node('td','numeric',v.growth?.growersShare!=null?pct1(v.growth.growersShare):'—'));
+        tb.append(tr);
+      }
+      table.append(tb);wrap.append(table);block.append(wrap);
+      const skipped=Object.values(data).filter(v=>v.profiles&&v.profiles<10).length;
+      if (skipped) block.append(H.node('p','history-notice',`${skipped} ${skipped===1?'ámbito con':'ámbitos con'} menos de 10 perfiles no se comparan.`));
+      body.append(block);
+    }
+    const note=H.node('p','insights-basis');note.prepend(H.icon('info'));
+    note.append(`Grupo: perfiles que hoy declaran este ámbito, seguidos en su propio historial (las ubicaciones actuales no se aplican al pasado). Base: ${groups.basis.captures} capturas válidas. Los contadores son una ventana móvil, no actividad diaria.`);
+    body.append(note);
+  }
   function renderProfiles() {
     renderToken++;
     $('compare-chips').replaceChildren(); $('profile-chart').replaceChildren(); $('profile-details').replaceChildren();
@@ -371,7 +465,7 @@
     const cityCount=selected.filter(s=>cityRows(s)!==null).length;
     renderQuality();
     $('e-coverage').textContent=`${selected.length} capturas seleccionadas · ${H.dateLabel(selected[0].date)} – ${H.dateLabel(selected.at(-1).date)}. ${selected.length===1?'Primera captura: todavía no hay una tendencia. ':''}${$('e-city').value?`${cityCount} con cobertura de ciudad. `:''}Los huecos se conservan. Hora de referencia: Perú.`;
-    renderCommunity();renderProfiles();renderPast();renderWeekly();updateURL();
+    renderCommunity();renderGroup();renderProfiles();renderPast();renderWeekly();updateURL();
   }
   function addProfile(input) {
     const key=input.trim().replace(/^@/,'').toLowerCase();
@@ -385,7 +479,7 @@
     decorateControls();
     $('evolution-retry').hidden=true;
     try {
-      [catalog,summary,quality]=await Promise.all([json('./history/index.json'),json('./data/evolution-summary.json'),json('./data/analytics-quality.json').catch(()=>null)]);
+      [catalog,summary,quality,groups]=await Promise.all([json('./history/index.json'),json('./data/evolution-summary.json'),json('./data/analytics-quality.json').catch(()=>null),json('./data/analytics-groups.json').catch(()=>null)]);
       if (!catalog.series || !summary.scopes) throw new Error('Invalid catalog');
       for (const [id,key] of [['e-city','city'],['e-tier','tier'],['e-days','days'],['e-metric','metric'],['e-view','view']]) selectKnown(id,key);
       profileKeys=[...new Set((params.get('users') || '').split(',').map(v=>v.toLowerCase()).filter(v=>/^[a-z0-9-]{1,39}$/.test(v)))].slice(0,3);

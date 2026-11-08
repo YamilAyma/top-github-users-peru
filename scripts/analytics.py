@@ -21,6 +21,8 @@ WINDOW_SHIFT_DROP = 0.15
 WINDOW_SHIFT_MIN_MATCHED = 50
 # A single jump explaining at least this share of the growth caps the confidence at 'baja'.
 JUMP_DRIVEN_SHARE = 0.5
+# Distribution and concentration statistics need a minimum group size to mean anything.
+MIN_GROUP = 10
 # Minimum R2 for calling a series a trend instead of noise or a one-off step.
 MIN_TREND_R2 = 0.3
 THRESHOLDS = {'minCoverage': MIN_COVERAGE, 'minExpectedProfiles': MIN_EXPECTED, 'windowShiftDrop': WINDOW_SHIFT_DROP,
@@ -255,3 +257,100 @@ def build_user_insights(daily, metric_value, horizon=30):
                     entry['catchUp'] = {'login': names[rival_login], 'gap': rival_value - current[login], 'days': round(days)}
         insights[login] = entry
     return insights
+
+
+def gini(values):
+    """Gini coefficient (0 = perfectly even, 1 = everything in one profile) of non-negative numbers."""
+    data = sorted(v for v in values if v is not None)
+    n, total = len(data), sum(data)
+    if n == 0 or total <= 0:
+        return None
+    weighted = sum((index + 1) * value for index, value in enumerate(data))
+    return max(0.0, (2 * weighted) / (n * total) - (n + 1) / n)
+
+
+def top_share(values, count):
+    """Share of the total held by the `count` largest values."""
+    data = sorted((v for v in values if v is not None), reverse=True)
+    total = sum(data)
+    return sum(data[:count]) / total if total > 0 else None
+
+
+def log_histogram(values, bins=8):
+    """Counts on log-spaced buckets between the smallest and largest value. Edges are rounded, counts exact."""
+    from math import expm1, log1p
+    data = [v for v in values if v is not None]
+    if not data:
+        return None
+    low, high = min(data), max(data)
+    if low == high:
+        return {'edges': [low, high], 'counts': [len(data)]}
+    step = (log1p(high) - log1p(low)) / bins
+    edges = [round(expm1(log1p(low) + step * i)) for i in range(bins)] + [high]
+    counts = [0] * bins
+    for v in data:
+        index = min(bins - 1, int((log1p(v) - log1p(low)) / step))
+        counts[index] += 1
+    return {'edges': edges, 'counts': counts}
+
+
+def group_summary(logins, series, current, insights, names, first_day, last_day):
+    """Distribution, concentration, growth and trend mix for one group of profiles.
+
+    `logins` are lowercase members, `series` maps login -> [(day, value, date, name)], `current` login -> latest value.
+    Growth compares the same members at the first and last usable capture, so entries and exits do not inflate it.
+    """
+    members = [l for l in logins if l in current]
+    values = [current[l] for l in members]
+    result = {'profiles': len(members)}
+    if not members:
+        return result
+    result['total'] = sum(values)
+    result['small'] = len(members) < MIN_GROUP
+    if not result['small']:
+        result.update(mean=round(sum(values) / len(values), 1), median=median(values), p90=round(percentile(values, 90)),
+                      p99=round(percentile(values, 99)), max=max(values), gini=round(gini(values), 3),
+                      top10Share=round(top_share(values, 10), 3), top1PctShare=round(top_share(values, max(1, round(len(values) * 0.01))), 3),
+                      histogram=log_histogram(values))
+    # Growth between the first and last usable captures, for members present in both.
+    deltas, firsts = {}, {}
+    for login in members:
+        points = series[login]
+        if points[0][0] == first_day:
+            firsts[login] = points[0][1]
+            deltas[login] = current[login] - points[0][1]
+    growth = {'matched': len(deltas), 'newInGroup': len(members) - len(deltas)}
+    if deltas:
+        positive = {l: d for l, d in deltas.items() if d > 0}
+        gained = sum(positive.values())
+        base = sum(firsts.values())
+        growth.update(delta=sum(deltas.values()), pct=round(sum(deltas.values()) / base * 100, 2) if base else None,
+                      growers=len(positive), growersShare=round(len(positive) / len(deltas), 3), medianDelta=median(deltas.values()),
+                      top10Share=round(sum(sorted(positive.values(), reverse=True)[:10]) / gained, 3) if gained else None)
+        if len(members) >= MIN_GROUP:
+            cutoff = median(values)
+            emerging = [(l, deltas[l] / max(20, firsts[l])) for l in positive if current[l] <= cutoff and len(series[l]) >= 5 and firsts[l] >= 0]
+            growth['emerging'] = [{'login': names[l], 'delta': deltas[l], 'pct': round(r * 100), 'value': current[l]}
+                                  for l, r in sorted(emerging, key=lambda t: (-t[1], t[0]))[:5]]
+            growth['topGainers'] = [{'login': names[l], 'delta': d} for l, d in sorted(positive.items(), key=lambda t: (-t[1], t[0]))[:5]]
+    result['growth'] = growth
+    mix = {}
+    for login in members:
+        trend = (insights.get(login) or {}).get('trend', 'sin-datos')
+        mix[trend] = mix.get(trend, 0) + 1
+    result['trends'] = mix
+    paces = [insights[l]['perDay'] for l in members if l in insights and insights[l].get('perDay') is not None]
+    result['medianPerDay'] = round(median(paces), 2) if paces else None
+    return result
+
+
+def build_group_insights(daily, metric_value, insights, scopes):
+    """Group summaries for every scope. `scopes` maps scope id -> list of member logins (lowercase)."""
+    if len(daily) < 2:
+        return {}
+    series, origin = _series(daily, metric_value)
+    last_day = (date.fromisoformat(max(s['date'] for s in daily)) - origin).days
+    first_day = 0
+    current = {login: pts[-1][1] for login, pts in series.items() if pts[-1][0] == last_day}
+    names = {login: pts[-1][3] for login, pts in series.items()}
+    return {scope: group_summary(members, series, current, insights, names, first_day, last_day) for scope, members in scopes.items()}
