@@ -95,11 +95,23 @@ def build_history_views(docs, cities):
                    'values': {login: [values.get(login) for values in daily_values] for login in logins},
                    'ranks': {login: [ranks.get(login) for ranks in daily_ranks] for login in logins}}
         (out / f'trends-{metric}.json').write_text(storage.compact(payload) + '\n')
-    # Per-user insights use only captures that passed the quality checks.
+    # Insights use only captures that passed the quality checks.
     clean = analytics.usable(daily, quality)
+    basis = {'from': clean[0]['date'], 'through': clean[-1]['date'], 'captures': len(clean)} if clean else None
+    groups = {}
     for metric in METRICS:
-        insights = analytics.build_user_insights(clean, lambda row, m=metric: metric_value(row, m))
-        basis = {'from': clean[0]['date'], 'through': clean[-1]['date'], 'captures': len(clean)} if clean else None
+        value_of = lambda row, m=metric: metric_value(row, m)
+        insights = analytics.build_user_insights(clean, value_of)
         payload = {'version': 1, 'engine': analytics.ENGINE_VERSION, 'metric': metric, 'horizonDays': 30, 'basis': basis, 'users': insights}
         (out / f'analytics-users-{metric}.json').write_text(storage.compact(payload) + '\n')
+        if clean:
+            # Groups are the profiles that declare each city in the latest usable capture, followed through their own history.
+            latest = clean[-1]
+            scopes = {'peru': [row[0].lower() for row in latest['users']]}
+            for city in cities:
+                rows = scope_rows(latest, city)
+                if rows is not None:
+                    scopes[city] = [row[0].lower() for row in rows]
+            groups[metric] = analytics.build_group_insights(clean, value_of, insights, scopes)
+    (out / 'analytics-groups.json').write_text(storage.compact({'version': 1, 'engine': analytics.ENGINE_VERSION, 'basis': basis, 'metrics': groups}) + '\n')
     return summary

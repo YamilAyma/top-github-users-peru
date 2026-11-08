@@ -1,7 +1,8 @@
 """Regression checks for the analytics engine: data quality and statistics helpers."""
 import unittest
 from analytics import (snapshot_quality, quality_report, usable, linear_fit, confidence, percentile,
-                       t_critical, predict, trend_label, jumps, build_user_insights)
+                       t_critical, predict, trend_label, jumps, build_user_insights, gini, top_share, log_histogram,
+                       build_group_insights)
 
 
 def snap(day, count, public=10, sha=None, bump=None):
@@ -191,6 +192,75 @@ class InsightTests(unittest.TestCase):
     def test_jumps_ignore_small_changes(self):
         points = [(i, 100 + i, f'2026-10-{i + 1:02d}', 'u') for i in range(8)]
         self.assertEqual(jumps(points), [])
+
+
+class GroupTests(unittest.TestCase):
+    def test_gini_and_concentration(self):
+        self.assertEqual(gini([5, 5, 5, 5]), 0)
+        self.assertAlmostEqual(gini([0, 0, 0, 100]), 0.75)
+        self.assertIsNone(gini([]))
+        self.assertIsNone(gini([0, 0]))
+        self.assertAlmostEqual(top_share([50, 30, 10, 10], 2), 0.8)
+        self.assertIsNone(top_share([0, 0], 1))
+
+    def test_histogram_counts_every_value_once(self):
+        values = [0, 1, 2, 5, 10, 40, 100, 500, 1000, 5000]
+        histogram = log_histogram(values, bins=5)
+        self.assertEqual(sum(histogram['counts']), len(values))
+        self.assertEqual(len(histogram['edges']), 6)
+        self.assertEqual(histogram['edges'][0], 0)
+        self.assertEqual(histogram['edges'][-1], 5000)
+        self.assertEqual(log_histogram([7, 7, 7])['counts'], [3])
+        self.assertIsNone(log_histogram([]))
+
+    def groups(self, days=12, **users):
+        data = history(days, users)
+        ins = build_user_insights(data, pub)
+        logins = list(users)
+        return build_group_insights(data, pub, ins, {'all': logins, 'few': logins[:3], 'ghost': ['nobody']}), ins
+
+    def test_distribution_growth_and_trend_mix(self):
+        users = {f'u{i}': (lambda d, i=i: 100 + i * 10 + (5 * d if i < 4 else 0)) for i in range(12)}
+        result, _ = self.groups(**users)
+        g = result['all']
+        self.assertEqual(g['profiles'], 12)
+        self.assertFalse(g['small'])
+        self.assertEqual(g['growth']['matched'], 12)
+        self.assertEqual(g['growth']['growers'], 4)
+        self.assertEqual(g['growth']['growersShare'], round(4 / 12, 3))
+        self.assertEqual(g['growth']['delta'], 4 * 5 * 11)
+        self.assertEqual(g['growth']['top10Share'], 1.0)
+        self.assertEqual(g['trends']['alza'], 4)
+        self.assertEqual(g['trends']['estable'], 8)
+        self.assertEqual(sum(g['histogram']['counts']), 12)
+        self.assertGreater(g['gini'], 0)
+
+    def test_small_groups_skip_distribution_statistics(self):
+        users = {f'u{i}': (lambda d, i=i: 10 * i + d) for i in range(12)}
+        result, _ = self.groups(**users)
+        self.assertTrue(result['few']['small'])
+        self.assertNotIn('gini', result['few'])
+        self.assertNotIn('histogram', result['few'])
+        self.assertEqual(result['few']['profiles'], 3)
+        self.assertEqual(result['ghost'], {'profiles': 0})
+
+    def test_members_who_arrive_late_do_not_count_as_growth(self):
+        users = {f'u{i}': (lambda d, i=i: 10 * i) for i in range(11)}
+        users['late'] = lambda d: 5000 if d >= 6 else None
+        result, _ = self.groups(days=12, **users)
+        g = result['all']['growth']
+        self.assertEqual(g['newInGroup'], 1)
+        self.assertEqual(g['matched'], 11)
+        self.assertEqual(g['delta'], 0)
+
+    def test_emerging_profiles_have_low_base_and_real_growth(self):
+        users = {f'big{i}': (lambda d, i=i: 5000 + 100 * i) for i in range(8)}
+        users.update({f'low{i}': (lambda d, i=i: 30 + (2 + i) * d) for i in range(4)})
+        result, _ = self.groups(days=12, **users)
+        emerging = result['all']['growth']['emerging']
+        self.assertEqual([e['login'] for e in emerging][:1], ['low3'])
+        self.assertTrue(all(e['value'] <= 5000 for e in emerging))
+        self.assertFalse(any(e['login'].startswith('big') for e in emerging))
 
 
 if __name__ == '__main__':
