@@ -433,6 +433,17 @@
     if (!snapshots.some(s=>s.users.some(r=>r[0].toLowerCase()===key))) { $('compare-status').textContent='No encontramos ese usuario en las capturas de este período.';return; }
     profileKeys.push(key);$('e-profile').value='';$('compare-status').textContent='';render();
   }
+  // Arriving with profiles in the link (from the ranking, a hover card or Statistics) lands on their evolution, not at the top.
+  function goToProfileSection() {
+    const wants=profileKeys.length>0 || location.hash==='#tu-evolucion';
+    const target=$('tu-evolucion');
+    if (!wants || !target || $('evolution-app').hidden) return;
+    const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    requestAnimationFrame(()=>{
+      target.scrollIntoView({behavior:calm?'auto':'smooth',block:'start'});
+      const heading=$('comparison-heading');heading.tabIndex=-1;heading.focus({preventScroll:true});
+    });
+  }
   async function start() {
     decorateControls();
     $('evolution-retry').hidden=true;
@@ -442,6 +453,7 @@
       for (const [id,key] of [['e-city','city'],['e-tier','tier'],['e-days','days'],['e-metric','metric'],['e-view','view']]) selectKnown(id,key);
       profileKeys=[...new Set((params.get('users') || '').split(',').map(v=>v.toLowerCase()).filter(v=>/^[a-z0-9-]{1,39}$/.test(v)))].slice(0,3);
       await loadTier(true);
+      goToProfileSection();
     } catch {
       $('evolution-status').textContent='No pudimos cargar el índice de capturas. Puedes reintentar o consultar el ranking actual.';
       $('evolution-retry').hidden=false;
