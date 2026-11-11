@@ -119,7 +119,7 @@
       },
       {
         "path": "daily/2026-11.json",
-        "bytes": 244775,
+        "bytes": 244794,
         "snapshots": 9,
         "periods": [
           {
@@ -182,7 +182,7 @@
     "monthly": [
       {
         "path": "monthly/2026.json",
-        "bytes": 54480,
+        "bytes": 54499,
         "snapshots": 2,
         "periods": [
           {
@@ -203,7 +203,7 @@
     "yearly": [
       {
         "path": "yearly/2026.json",
-        "bytes": 27302,
+        "bytes": 27321,
         "snapshots": 1,
         "periods": [
           {
@@ -218,8 +218,8 @@
   },
   "latest": {
     "date": "2026-11-10",
-    "source_commit": "bb9727e5e6176536bfb805bfc08520474ed35b21",
-    "source_updated_at": "2026-11-10T05:21:06Z",
+    "source_commit": "d9466c9e5c6183aa6531bb55492ef4fd7b0d788f",
+    "source_updated_at": "2026-11-11T03:53:28Z",
     "profiles": 963
   }
 }
